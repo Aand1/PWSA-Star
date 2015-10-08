@@ -10,54 +10,6 @@
 
 namespace treap {
 
-template<class Node>
-class BinaryTree {
-protected:
-  Node *r;    // root node
-  Node *nil;  // null-like node
-  virtual int size(Node *u);
-  virtual int height(Node *u);
-  virtual void traverse(Node *u);
-public:
-  virtual ~BinaryTree();
-  BinaryTree();
-  BinaryTree(Node *nil);
-  virtual void clear();
-  virtual int depth(Node *u);
-  virtual int size();
-  virtual int size2();
-  virtual int height();
-  virtual void traverse();
-  virtual void traverse2();
-  virtual void bfTraverse();
-};
-
-template<class Node, class T>
-class BinarySearchTree : public BinaryTree<Node> {
-protected:
-  using BinaryTree<Node>::r;
-  using BinaryTree<Node>::nil;
-  int n;
-  T null;
-  virtual Node *findLast(T x);
-  virtual bool addChild(Node *p, Node *u);
-  virtual void splice(Node *u);
-  virtual void remove(Node *u);
-  virtual void rotateRight(Node *u);
-  virtual void rotateLeft(Node *u);
-  virtual bool add(Node *u);
-public:
-  BinarySearchTree();
-  BinarySearchTree(T null);
-  virtual ~BinarySearchTree();
-  virtual bool add(T x);
-  virtual bool remove(T x);
-  virtual T find(T x);
-  virtual T findEQ(T x);
-  virtual int size();
-  virtual void clear();
-};
-
 template<class Node, class T> class Treap;
 
 template<class Node, class T>
@@ -70,10 +22,10 @@ protected:
 template<class Node, class T>
 class Treap {
 protected:
-	using BinaryTree<Node>::r;
-	using BinaryTree<Node>::nil;
-	using BinarySearchTree<Node,T>::null;
-	using BinarySearchTree<Node,T>::n;
+  Node *r;   // root node
+  Node *nil; // null-like node
+  int n;
+  T null;
 	void bubbleUp(Node *u);
 	void trickleDown(Node *u);
 public:
@@ -98,16 +50,14 @@ Treap<Node, T>::Treap() {
 }
 
 template<class Node, class T>
-Treap<Node, T>::Treap(T null) : BinarySearchTree<Node,T>(null) {
-	// nothing to do
-}
+Treap<Node, T>::Treap(T null) {}
 
 template<class Node, class T>
 bool Treap<Node, T>::add(T x) {
 	Node *u = new Node;
 	u->x = x;
 	u->p = rand();
-	if (BinarySearchTree<Node,T>::add(u)) {
+	if (add(u)) {
 		bubbleUp(u);
 		return true;
 	}
@@ -192,6 +142,7 @@ Treap<Node,T>* Treap<Node, T>::split(T x) {
 	n = INT_MIN;
 	return ret;
 }
+
 /**
  * Absorb the elements of treap t, which should all be smaller than
  * all the elements in this
