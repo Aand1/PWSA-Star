@@ -7,8 +7,7 @@
  */
 
 #include "benchmark.hpp"
-
-
+#include "treap.h"
 
 int main(int argc, char** argv) {
   long n;
