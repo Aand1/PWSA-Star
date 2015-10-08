@@ -10,6 +10,7 @@
 
 template <class KEY, class VALUE>
 class Treap {
+
 private:
   struct Node {
     KEY key;
@@ -28,10 +29,6 @@ private:
   inline long node_total_weight(Node* N) {
     return N == nullptr ? 0l : N->total_weight;
   }
-
-  // void fix_total_weight(Node* N) {
-  //   N->total_weight = node_total_weight(N->left) + N->weight + node_total_weight(N->right);
-  // }
 
   Node* maybe_rotate_right(Node* N) {
     assert(N != nullptr);
@@ -127,10 +124,29 @@ private:
       return std::pair<Node*,Node*>(pair.first, N);
     }
     else if (w <= weightL + N->weight) {
-      auto pair = std::pair<Node*,Node*>(N, N->right);
-      N->total_weight -= node_total_weight(N->right);
-      N->right = nullptr;
-      return pair;
+      long leftw = w - weightL;
+      long rightw = N->weight - leftw;
+      if (rightw == 0) {
+        N->total_weight -= node_total_weight(N->right);
+        auto pair = std::pair<Node*,Node*>(N, N->right);
+        N->right = nullptr;
+        return pair;
+      }
+      else {
+        Node* rightN = new Node;
+        rightN->key = N->key;
+        rightN->value = N->value.split_at(leftw);
+        rightN->weight = rightw;
+        rightN->priority = N->priority;
+        rightN->left = nullptr;
+        rightN->right = N->right;
+        rightN->total_weight = rightw + node_total_weight(rightN->right);
+
+        N->weight = leftw;
+        N->total_weight = leftw + node_total_weight(N->left);
+        N->right = nullptr;
+        return std::pair<Node*,Node*>(N, rightN);
+      }
     }
     else {
       N->total_weight -= node_total_weight(N->right);
@@ -146,7 +162,7 @@ private:
     else {
       std::cout << "(";
       display_node(N->left);
-      std::cout << " " << N->key /*<< " " << N->value << N->weight << " " << N->total_weight*/ << " ";
+      std::cout << " " << N->key /*<< " " << N->value << N->weight*/ << " " << N->total_weight << " ";
       display_node(N->right);
       std::cout << ")";
     }

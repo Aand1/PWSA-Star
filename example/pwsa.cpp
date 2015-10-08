@@ -8,10 +8,10 @@
 
 #include "benchmark.hpp"
 #include "treap-frontier.hpp"
+#include "weighted-graph.hpp"
 
 int main(int argc, char** argv) {
   long n;
-  Treap<long,long> T;
 
   auto init = [&] {
     n = (long)pasl::util::cmdline::parse_or_default_long("n", 24);
@@ -19,6 +19,22 @@ int main(int argc, char** argv) {
 
   auto run = [&] (bool sequential) {
     std::cout << n << std::endl;
+
+    auto T = Treap<long,Range<int,int>>();
+    for (int i = 0; i < n; i++) {
+      long x = rand() % 1000;
+      T.insert(x, Range<int,int>(x,x,2*x), x);
+    }
+
+    T.check();
+    //T.display();
+
+    auto M = T.split_at_weight(T.total_weight() / 2);
+    T.check();
+    M.check();
+
+    //T.display();
+    //M.display();
   };
 
   auto output = [&] {
