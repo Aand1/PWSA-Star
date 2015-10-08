@@ -26,11 +26,11 @@ public:
   }
 };
 
-class WeightedGraph {
+typedef std::size_t nat;
+typedef std::size_t vertex;
+typedef std::size_t weight;
 
-  using nat = std::size_t;
-  using vertex = std::size_t;
-  using weight = std::size_t;
+class WeightedGraph {
 
 private:
 

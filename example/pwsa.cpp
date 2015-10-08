@@ -10,6 +10,12 @@
 #include "treap-frontier.hpp"
 #include "weighted-graph.hpp"
 
+// template <class FRONTIER>
+// void pwsa(const WeightedGraph& graph, const vertex& source, const vertex& destination) {
+//   nat N = graph.number_vertices();
+//   std::atomic<bool>* visited =
+// }
+
 int main(int argc, char** argv) {
   long n;
 
