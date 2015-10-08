@@ -30,7 +30,6 @@ VERBOSE_DEPENDENCIES=0
 PROGRAMS=\
 	fib.cpp \
 	hull.cpp \
-	frontier.cpp \
 	bhut.cpp \
 	sequence.cpp
 #       add reference to your cpp source here
