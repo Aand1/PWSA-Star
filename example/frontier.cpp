@@ -19,7 +19,6 @@ int main(int argc, char** argv) {
 
   auto run = [&] (bool sequential) {
     std::cout << n << std::endl;
-    hi();
   };
 
   auto output = [&] {
