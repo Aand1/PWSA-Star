@@ -38,12 +38,6 @@ public:
 	virtual void absorb(Treap<Node,T> &t);
 };
 
-template<class T>
-class TreapNode1 : public TreapNode<TreapNode1<T>, T> { };
-
-template<class T>
-class Treap1 : public Treap<TreapNode1<T>, T> { };
-
 template<class Node, class T>
 Treap<Node, T>::Treap() {
 	// nothing to do
