@@ -5,9 +5,19 @@
  *
  */
 
+#include "container.hpp"
+
 #ifndef _PWSA_TREAP_FRONTIER_H_
 #define _PWSA_TREAP_FRONTIER_H_
 
+// Assume objects k of type KEY have method k.hash(), which returns a long.
+// Assume objects src of type VALUE have methods
+//   * src.weight(), which returns a long. A weight of 0 indicates a useless
+//     value whose node can be deleted.
+//   * src.split_at(w, VALUE& dst), which "puts w of src into dst".
+//     The value src.weight() before the split should be equal to
+//     src.weight() + dst.weight() after the split, and src.weight() after
+//     should be w.
 template <class KEY, class VALUE>
 class Treap {
 
@@ -15,7 +25,6 @@ private:
   struct Node {
     KEY key;
     VALUE value;
-    long weight;
     long priority;
 
     long total_weight;
@@ -30,14 +39,20 @@ private:
     return N == nullptr ? 0l : N->total_weight;
   }
 
+  inline void fix_weights(Node* N) {
+    N->total_weight = node_total_weight(N->left)
+                    + N->value.weight()
+                    + node_total_weight(N->right);
+  }
+
   Node* maybe_rotate_right(Node* N) {
     assert(N != nullptr);
     assert(N->left != nullptr);
     if (N->left->priority > N->priority) {
       if (N->left->key == N->key) {
-        N->left->total_weight += N->weight - N->left->weight;
+        N->left->total_weight += N->value.weight() - N->left->value.weight();
         std::swap(N->left->key, N->key);
-        std::swap(N->left->weight, N->weight);
+        std::swap(N->left->value, N->value);
         std::swap(N->left->priority, N->priority);
         return N;
       }
@@ -69,30 +84,27 @@ private:
     return N;
   }
 
-  Node* node_insert(Node* N, const KEY& key, const VALUE& value, long weight) {
+  Node* node_insert(Node* N, const KEY& key, const VALUE& value) {
     if (N == nullptr) {
-      Node* newN = new Node;
-      newN->key = key;
-      newN->value = value;
-      newN->weight = weight;
-      newN->total_weight = weight;
-      newN->priority = rand();
+      N = pasl::data::mynew<Node>();
+      N->key = key;
+      N->value = value;
+      N->total_weight = value.weight();
+      N->priority = key.hash();
 
-      newN->left = nullptr;
-      newN->right = nullptr;
-      return newN;
+      N->left = nullptr;
+      N->right = nullptr;
+      return N;
     }
 
     if (key <= N->key) {
-      N->total_weight -= node_total_weight(N->left);
-      N->left = node_insert(N->left, key, value, weight);
-      N->total_weight += node_total_weight(N->left);
+      N->left = node_insert(N->left, key, value);
+      fix_weights(N);
       return maybe_rotate_right(N);
     }
     else {
-      N->total_weight -= node_total_weight(N->right);
-      N->right = node_insert(N->right, key, value, weight);
-      N->total_weight += node_total_weight(N->right);
+      N->right = node_insert(N->right, key, value);
+      fix_weights(N);
       return maybe_rotate_left(N);
     }
   }
@@ -102,57 +114,47 @@ private:
       kresult = N->key;
       vresult = N->value;
       Node* result = N->right;
-      delete N;
+      pasl::data::myfree(N);
       return result;
     }
 
-    N->total_weight -= node_total_weight(N->left);
     N->left = node_delete_min(N->left, kresult, vresult);
-    N->total_weight += node_total_weight(N->left);
+    fix_weights(N);
     return N;
   }
 
   std::pair<Node*,Node*> node_split_at(Node* N, long w) {
     if (N == nullptr) return std::pair<Node*,Node*>(nullptr, nullptr);
 
-    long weightL = node_total_weight(N->left);
-    if (w <= weightL) {
-      N->total_weight -= weightL;
+    if (w <= node_total_weight(N->left)) {
       auto pair = node_split_at(N->left, w);
       N->left = pair.second;
-      N->total_weight += node_total_weight(N->left);
+      fix_weights(N);
       return std::pair<Node*,Node*>(pair.first, N);
     }
-    else if (w <= weightL + N->weight) {
-      long leftw = w - weightL;
-      long rightw = N->weight - leftw;
-      if (rightw == 0) {
-        N->total_weight -= node_total_weight(N->right);
-        auto pair = std::pair<Node*,Node*>(N, N->right);
-        N->right = nullptr;
-        return pair;
-      }
-      else {
-        Node* rightN = new Node;
-        rightN->key = N->key;
-        rightN->value = N->value.split_at(leftw);
-        rightN->weight = rightw;
-        rightN->priority = N->priority;
-        rightN->left = nullptr;
-        rightN->right = N->right;
-        rightN->total_weight = rightw + node_total_weight(rightN->right);
+    else if (w < node_total_weight(N->left) + N->value.weight()) {
+      Node* M = pasl::data::mynew<Node>();
+      M->key = N->key;
+      M->priority = N->priority;
+      M->left = nullptr;
+      M->right = N->right;
+      N->value.split_at(w - node_total_weight(N->left), M->value);
 
-        N->weight = leftw;
-        N->total_weight = leftw + node_total_weight(N->left);
-        N->right = nullptr;
-        return std::pair<Node*,Node*>(N, rightN);
-      }
+      N->right = nullptr;
+      fix_weights(N);
+      fix_weights(M);
+      return std::pair<Node*,Node*>(N, M);
+    }
+    else if (w == node_total_weight(N->left) + N->value.weight()) {
+      auto pair = std::pair<Node*,Node*>(N, N->right);
+      N->right = nullptr;
+      fix_weights(N);
+      return pair;
     }
     else {
-      N->total_weight -= node_total_weight(N->right);
-      auto pair = node_split_at(N->right, w - weightL - N->weight);
+      auto pair = node_split_at(N->right, w - node_total_weight(N->left) - N->value.weight());
       N->right = pair.first;
-      N->total_weight += node_total_weight(N->right);
+      fix_weights(N);
       return std::pair<Node*,Node*>(N, pair.second);
     }
   }
@@ -162,7 +164,7 @@ private:
     else {
       std::cout << "(";
       display_node(N->left);
-      std::cout << " " << N->key /*<< " " << N->value << N->weight*/ << " " << N->total_weight << " ";
+      std::cout << " " << N->key << " " << N->value /*<< N->weight*/ << " " /*<< N->total_weight << " "*/;
       display_node(N->right);
       std::cout << ")";
     }
@@ -173,7 +175,7 @@ private:
     assert(left_bound == nullptr || (*left_bound) < N->key);
     assert(right_bound == nullptr || N->key <= (*right_bound));
     assert(p_bound == nullptr || N->priority <= (*p_bound));
-    assert(N->total_weight == node_total_weight(N->left) + N->weight + node_total_weight(N->right));
+    assert(N->total_weight == node_total_weight(N->left) + N->value.weight() + node_total_weight(N->right));
     node_check(N->left, left_bound, &(N->key), &(N->priority));
     node_check(N->right, &(N->key), right_bound, &(N->priority));
   }
@@ -184,12 +186,13 @@ public:
 
   Treap() : root(nullptr) { }
 
-  void insert(const KEY& key, const VALUE& value, long weight) {
-    root = node_insert(root, key, value, weight);
+  void insert(const KEY& key, const VALUE& value) {
+    root = node_insert(root, key, value);
   }
 
   std::pair<KEY,VALUE> delete_min() {
     auto pair = std::pair<KEY,VALUE>();
+    // node_delete_min writes into pair.first, pair.second
     root = node_delete_min(root, pair.first, pair.second);
     return pair;
   }
@@ -198,13 +201,10 @@ public:
     return node_total_weight(root);
   }
 
-  self_type split_at_weight(long w) {
+  void split_at(long w, self_type& other) {
     auto pair = node_split_at(root, w);
     root = pair.first;
-
-    auto other = Treap<KEY,VALUE>();
     other.root = pair.second;
-    return other;
   }
 
   void display() {
