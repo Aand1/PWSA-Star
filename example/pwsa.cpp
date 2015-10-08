@@ -119,6 +119,14 @@ int main(int argc, char** argv) {
     std::cout << n << std::endl;
 
     auto T = Treap<X,Y>();
+// HOWTOGRAPH
+//    bool isSym = false;
+//    char const* fname = "test2.txt"; (some file using WeightedAdjacencySeq format)
+//    graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);  
+//
+//    std::cout << "outW = " << g.V[1].getInWeight(1) << std::endl;
+
+    auto T = Treap<long,Range<int,int>>();
     for (int i = 0; i < n; i++) {
       long x = rand() % 1000;
       long y = rand() % 15;
