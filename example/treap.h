@@ -39,12 +39,13 @@ public:
 };
 
 template<class Node, class T>
-Treap<Node, T>::Treap() {
-	// nothing to do
-}
+Treap<Node, T>::Treap() {}
 
 template<class Node, class T>
 Treap<Node, T>::Treap(T null) {}
+
+template<class Node, class T>
+Treap<Node, T>::~Treap() {}
 
 template<class Node, class T>
 bool Treap<Node, T>::add(T x) {
@@ -56,11 +57,6 @@ bool Treap<Node, T>::add(T x) {
 		return true;
 	}
 	return false;
-}
-
-template<class Node, class T>
-Treap<Node, T>::~Treap() {
-	// nothing to do
 }
 
 template<class Node, class T>
