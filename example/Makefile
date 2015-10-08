@@ -31,7 +31,8 @@ PROGRAMS=\
 	fib.cpp \
 	hull.cpp \
 	bhut.cpp \
-	sequence.cpp
+	sequence.cpp \
+	pwsa.cpp
 #       add reference to your cpp source here
 
 ####################################################################

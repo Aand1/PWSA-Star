@@ -5,6 +5,9 @@
  *
  */
 
+#ifndef _PWSA_TREAP_FRONTIER_H_
+#define _PWSA_TREAP_FRONTIER_H_
+
 template <class KEY, class VALUE>
 class Treap {
 private:
@@ -202,6 +205,8 @@ public:
   }
 
 };
+
+#endif
 
 // **************************************************************************
 
