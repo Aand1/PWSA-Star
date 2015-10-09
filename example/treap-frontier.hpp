@@ -134,17 +134,25 @@ private:
       return std::pair<Node*,Node*>(pair.first, N);
     }
     else if (w < node_total_weight(N->left) + N->value.weight()) {
-      Node* M = pasl::data::mynew<Node>();
-      M->key = N->key;
-      M->priority = N->priority;
-      M->left = nullptr;
-      M->right = N->right;
-      N->value.split_at(w - node_total_weight(N->left), M->value);
+      if (N->value.mustProcess) {
+        Node* M = pasl::data::mynew<Node>();
+        M->key = N->key;
+        M->priority = N->priority;
+        M->left = nullptr;
+        M->right = N->right;
+        N->value.split_at(w - node_total_weight(N->left), M->value);
 
-      N->right = nullptr;
-      fix_weights(N);
-      fix_weights(M);
-      return std::pair<Node*,Node*>(N, M);
+        N->right = nullptr;
+        fix_weights(N);
+        fix_weights(M);
+        return std::pair<Node*,Node*>(N, M);
+      }
+      else {
+        auto pair = std::pair<Node*,Node*>(N, N->right);
+        N->right = nullptr;
+        fix_weights(N);
+        return pair;
+      }
     }
     else if (w == node_total_weight(N->left) + N->value.weight()) {
       auto pair = std::pair<Node*,Node*>(N, N->right);
@@ -210,7 +218,7 @@ public:
 
   void display() {
     display_node(root);
-    std::cout << std::endl;
+    //std::cout << std::endl;
   }
 
   void swap(self_type& other) {
