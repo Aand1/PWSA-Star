@@ -17,79 +17,45 @@
 
 using namespace std;
 
-typedef size_t nat;
-typedef size_t vertex;
-typedef size_t weight;
-
-// Yes. Respect the > >
 typedef pair<uintT, pair<uintT,intT> > intTriple;
 typedef pair<uintT,uintT> intPair;
 
 template <class E>
 struct pairFirstCmp {
   bool operator() (pair<uintT,E> a, pair<uintT,E> b) {
-    return a.first < b.first; }
+    return a.first < b.first; 
+  }
 };
 
-template <class T, class NUMBER>
 class Range {
 public:
-  T source;
-  NUMBER low;
-  NUMBER high;
+  intT vertexId;
+  intT low;
+  intT high;
+  bool mustProcess;
+  intT distance;
 
   Range() { }
 
-  Range(const T& source, const NUMBER& low, const NUMBER& high)
-    : source(source), low(low), high(high) { }
+  Range(const intT& source, const intT& low, const intT& high,
+        const bool& mustProcess, const intT& distance)
+    : source(source), low(low), high(high), mustProcess(mustProcess),
+       distance(distance){ }
 
-  Range<T,NUMBER> split_at(NUMBER w) {
+  Range split_at(intT w) {
     high = low + w;
-    return Range<T,NUMBER>(source, low + w, high);
+    return Range(source, low + w, high, mustProcess, distance);
+  }
+
+  void setMustProcess(bool _mustProcess) {
+    mustProcess = _mustProcess;
   }
 };
-
-class WeightedGraph {
-
-private:
-
-  const nat num_vertices;
-  const nat num_edges;
-
-  const std::pair<vertex,weight>* neighbors;
-  const nat* offsets; // has num_vertices+1 entries, where the neighbors of v
-                      // are stored between
-                      // neighbors[offsets[v]] and neighbors[offsets[v+1]]
-
-public:
-
-  nat number_vertices() {
-    return num_vertices;
-  }
-
-  nat degree(const vertex& v) {
-    return offsets[v+1] - offsets[v];
-  }
-
-  Range<vertex,nat> vertex_with_out_neighbors(const vertex& v) {
-    return Range<vertex,nat>(v, offsets[v], offsets[v+1]);
-  }
-
-  // f expects arguments (u, v, edge weight between u and v)
-  template <class FUNC>
-  void apply_to_each_in_range(const Range<vertex,nat>& r, const FUNC& f) {
-    for (nat i = r.low; i < r.high; i++) {
-      f(r.source, neighbors[i].first, neighbors[i].second);
-    }
-  }
-
-};
-
 
 struct symmetricVertex {
   intT* neighbors;
   uintT degree;
-  void del() {free(neighbors); }
+  void del() { free(neighbors); }
   symmetricVertex(intT* n, uintT d) : neighbors(n), degree(d) {}
   //weights are stored in the entry after the neighbor ID
   //so size of neighbor list is twice the degree
@@ -127,16 +93,15 @@ struct asymmetricVertex {
 template <class vertex>
 struct graph {
   vertex *V;
-  long n;
-  long m;
+  intT n;
+  intT m; 
   intT* edges;
   intT* inEdges;
-  graph(vertex* VV, long nn, long mm, intT* _edges)
-  : V(VV), n(nn), m(mm), edges(_edges) { }
+  graph(vertex* _V, long _n, long _m, intT* _edges)
+  : V(_V), n(_n), m(_m), edges(_edges) { }
 
   graph(vertex* VV, long nn, long mm, intT* _edges, intT* _inEdges)
-  : V(VV), n(nn), m(mm), edges(_edges), inEdges(_inEdges) { }
-
+  : V(_V), n(_n), m(_m), edges(_edges), inEdges(_inEdges) { }
 
   void del() {
     for (long i=0; i < n; i++) V[i].del();
@@ -144,7 +109,27 @@ struct graph {
     free(edges);
     if(inEdges != NULL) free(inEdges);
   }
+
+  intT number_vertices() {
+    return n;
+  }
+
+  uintT outDegree(const intT& v) {
+    return V[v].outDegree;
+  }
+
+  // f expects arguments (u, v, edge weight between u and v)
+  template <class FUNC, class vertex>
+  void apply_to_each_in_range(const Range& r, const FUNC& f) {
+    vertex v = V[r.vertexId];
+    for (intT i = r.low; i < r.high; i++) {
+      f(v.getOutNeighbor(i), v.getOutWeight(i));
+    }
+  }
+
 };
+
+// TODO(lax): move this all out into graph-utils
 
 // A structure that keeps a sequence of strings all allocated from
 // the same block of memory
