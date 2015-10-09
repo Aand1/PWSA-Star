@@ -43,7 +43,7 @@ public:
        distance(distance){ }
 
   long weight() {
-    return high - low;
+    return std::max(1, high - low);
   }
 
   void split_at(intT w, VertexPackage &other) {
