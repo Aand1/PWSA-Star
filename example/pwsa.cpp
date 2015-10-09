@@ -10,6 +10,7 @@
 #include "treap-frontier.hpp"
 //include "hash.hpp"
 #include "weighted-graph.hpp"
+#include <cstring>
 
 static inline void pmemset(char * ptr, int value, size_t num) {
   const size_t cutoff = 100000;
@@ -17,7 +18,7 @@ static inline void pmemset(char * ptr, int value, size_t num) {
     std::memset(ptr, value, num);
   } else {
     long m = num/2;
-    sched::native::fork2([&] {
+    pasl::sched::native::fork2([&] {
       pmemset(ptr, value, m);
     }, [&] {
       pmemset(ptr+m, value, num-m);
