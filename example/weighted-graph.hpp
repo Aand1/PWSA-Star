@@ -77,6 +77,16 @@ struct symmetricVertex {
   uintT getOutDegree() { return degree; }
   void setInDegree(uintT _d) { degree = _d; }
   void setOutDegree(uintT _d) { degree = _d; }
+  void printOutNeighbors(intT vertexId) {
+    std::cout << "vertex " << vertexId << "{";
+    for (intT i = 0; i < degree; i++) {
+      if (i < degree - 1) {
+        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << "), "; 
+      } else{
+        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << ") }";
+      }
+    }
+  }
 };
 
 struct asymmetricVertex {
@@ -96,6 +106,16 @@ struct asymmetricVertex {
   uintT getOutDegree() { return outDegree; }
   void setInDegree(uintT _d) { inDegree = _d; }
   void setOutDegree(uintT _d) { outDegree = _d; }
+  void printOutNeighbors(intT vertexId) {
+    std::cout << "vertex " << vertexId << "{";
+    for (intT i = 0; i < outDegree; i++) {
+      if (i < outDegree - 1) {
+        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << "), "; 
+      } else{
+        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << ") }";
+      }
+    }
+  }
 };
 
 template <class vertex>
@@ -140,6 +160,13 @@ struct graph {
     vertex v = V[r.vertexId];
     for (intT i = r.low; i < r.high; i++) {
       f(v.getOutNeighbor(i), v.getOutWeight(i));
+    }
+  }
+
+  void printGraph() {
+    for (intT i = 0; i < n; i++) {
+      V[i].printOutNeighbors(i);
+      std::cout << std::endl;
     }
   }
 

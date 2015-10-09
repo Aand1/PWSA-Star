@@ -154,6 +154,8 @@ int main(int argc, char** argv) {
     char const* fname = "simple_weighted.txt";
     bool isSym = false;
     graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);
+
+    g.printGraph();
     auto heuristic = [] (intT vtx) { return 0; };
     std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, decltype(heuristic), asymmetricVertex>(g, heuristic, 0, 4, 1, 1);
     for (int i = 0; i < g.n; i++) {
