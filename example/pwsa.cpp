@@ -30,8 +30,8 @@
 //   pmemset((char*)array, val, sz*sizeof(Number));
 // }
 
-template <class FRONTIER, class HEURISTIC>
-std::atomic<long*> pwsa(const WeightedGraph& graph, const HEURISTIC& heuristic,
+template <class FRONTIER, class HEURISTIC, class VERTEX>
+std::atomic<long*> pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
                         const vertex& source, const vertex& destination,
                         int split_cutoff, int poll_cutoff) {
   nat N = graph.number_vertices();
@@ -39,7 +39,7 @@ std::atomic<long*> pwsa(const WeightedGraph& graph, const HEURISTIC& heuristic,
   fill_array_par(finalized, N, -1l);
 
   FRONTIER initF();
-  initF.insert(heuristic(source), graph.vertex_package(source, 0));
+  initF.insert(heuristic(source), graph.make_vertex_package(source, false, 0));
 
   pasl::data::perworker::array<int> work_since_split;
   work_since_split.init(0);

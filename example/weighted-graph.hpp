@@ -27,7 +27,7 @@ struct pairFirstCmp {
   }
 };
 
-class Range {
+class VertexPackage {
 public:
   intT vertexId;
   intT low;
@@ -35,16 +35,16 @@ public:
   bool mustProcess;
   intT distance;
 
-  Range() { }
+  VertexPackage() { }
 
-  Range(const intT& source, const intT& low, const intT& high,
+  VertexPackage(const intT& vertexId, const intT& low, const intT& high,
         const bool& mustProcess, const intT& distance)
-    : source(source), low(low), high(high), mustProcess(mustProcess),
+    : vertexId(vertexId), low(low), high(high), mustProcess(mustProcess),
        distance(distance){ }
 
-  Range split_at(intT w) {
+  VertexPackage split_at(intT w) {
     high = low + w;
-    return Range(source, low + w, high, mustProcess, distance);
+    return VertexPackage(source, low + w, high, mustProcess, distance);
   }
 
   void setMustProcess(bool _mustProcess) {
@@ -118,9 +118,17 @@ struct graph {
     return V[v].outDegree;
   }
 
+  VertexPackage make_vertex_package(const intT& vertexId, 
+                                    const bool& mustProcess,
+                                    const intT& distance) {
+    return VertexPackage(vertexId, 0, V[vertexId].outDegree, 
+                         mustProcess, distance);
+  }
+
+
   // f expects arguments (u, v, edge weight between u and v)
   template <class FUNC, class vertex>
-  void apply_to_each_in_range(const Range& r, const FUNC& f) {
+  void apply_to_each_in_range(const VertexPackage& r, const FUNC& f) {
     vertex v = V[r.vertexId];
     for (intT i = r.low; i < r.high; i++) {
       f(v.getOutNeighbor(i), v.getOutWeight(i));
