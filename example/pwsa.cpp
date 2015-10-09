@@ -124,24 +124,30 @@ int main(int argc, char** argv) {
   long n;
   int split_cutoff;
   int poll_cutoff;
+  std::string fname;
+  int src;
+  int dst;
 
   auto init = [&] {
     n = (long)pasl::util::cmdline::parse_or_default_long("n", 24);
     split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 100);
     poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 100);
+    fname = pasl::util::cmdline::parse_or_default_string("graph", "simple_weighted.txt");
+    src = (int)pasl::util::cmdline::parse_or_default_int("src", 0);
+    dst = (int)pasl::util::cmdline::parse_or_default_int("dst", 0);
   };
 
   auto run = [&] (bool sequential) {
     std::cout << n << std::endl;
 
     //char const* fname = "simple_weighted.txt";
-    char const* fname = "simple_weighted_2.txt";
+    //char const* fname = "simple_weighted_2.txt";
     bool isSym = false;
-    graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);
+    graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname.c_str(), isSym);
 
     g.printGraph();
     auto heuristic = [] (intT vtx) { return 0; };
-    std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, decltype(heuristic), asymmetricVertex>(g, heuristic, 0, 9, split_cutoff, poll_cutoff);
+    std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, decltype(heuristic), asymmetricVertex>(g, heuristic, src, dst, split_cutoff, poll_cutoff);
     for (int i = 0; i < g.n; i++) {
       std::cout << "res[" << i << "] = " << res[i].load() << std::endl;
     }
