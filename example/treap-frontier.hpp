@@ -85,13 +85,13 @@ private:
     return N;
   }
 
-  Node* node_insert(Node* N, const KEY& key, const VALUE& value) {
+  Node* node_insert(Node* N, KEY& key, VALUE& value) {
     if (N == nullptr) {
       N = pasl::data::mynew<Node>();
       N->key = key;
       N->value = value;
       N->total_weight = value.weight();
-      N->priority = hash_signed(key);
+      N->priority = hash_signed((long) key);
 
       N->left = nullptr;
       N->right = nullptr;
@@ -187,7 +187,7 @@ public:
 
   Treap() : root(nullptr) { }
 
-  void insert(const KEY& key, const VALUE& value) {
+  void insert(KEY& key, VALUE& value) {
     root = node_insert(root, key, value);
   }
 

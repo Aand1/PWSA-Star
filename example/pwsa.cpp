@@ -10,6 +10,8 @@
 #include "treap-frontier.hpp"
 //include "hash.hpp"
 #include "weighted-graph.hpp"
+#include "native.hpp"
+#include "defaults.hpp"
 #include <cstring>
 
 static inline void pmemset(char * ptr, int value, size_t num) {
@@ -32,15 +34,17 @@ void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
 }
 
 template <class FRONTIER, class HEURISTIC, class VERTEX>
-std::atomic<long>* pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
-                        const vertex& source, const vertex& destination,
+std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
+                        const intT& source, const intT& destination,
                         int split_cutoff, int poll_cutoff) {
-  nat N = graph.number_vertices();
+  intT N = graph.number_vertices();
   std::atomic<long>* finalized = pasl::data::mynew_array<std::atomic<long>>(N);
   fill_array_par(finalized, N, -1l);
 
-  FRONTIER initF();
-  initF.insert(heuristic(source), graph.make_vertex_package(source, false, 0));
+  FRONTIER initF = FRONTIER();
+  int heur = heuristic(source);
+  VertexPackage vtxPackage = graph.make_vertex_package(source, false, 0);
+  initF.insert(heur, vtxPackage);
 
   pasl::data::perworker::array<int> work_since_split;
   work_since_split.init(0);
@@ -76,9 +80,9 @@ std::atomic<long>* pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
         if (vpack.vertexId == destination) {
           return true;
         }
-        if (work_this_round + vpack.weight > poll_cutoff) {
+        if (work_this_round + vpack.weight() > poll_cutoff) {
           // need to split vpack
-          VertexPackage other();
+          VertexPackage other = VertexPackage();
           vpack.split_at(poll_cutoff - work_this_round, other);
           other.mustProcess = true;
           frontier.insert(pair.first, other);
@@ -86,7 +90,8 @@ std::atomic<long>* pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
         // Have to process our vpack
         graph.apply_to_each_in_range(vpack, [&] (intT ngh, intT weight) {
           VertexPackage nghpack = graph.make_vertex_package(ngh, false, vpack.distance + weight);
-          frontier.insert(heuristic(ngh) + vpack.distance + weight, nghpack);
+          int heur = heuristic(ngh) + vpack.distance + weight; 
+          frontier.insert(heur, nghpack);
         });
         work_this_round += vpack.weight();
       } else {
@@ -97,7 +102,7 @@ std::atomic<long>* pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
     return false;
   };
 
-  parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
   return finalized;
 }
 
@@ -146,30 +151,14 @@ int main(int argc, char** argv) {
   auto run = [&] (bool sequential) {
     std::cout << n << std::endl;
 
-    //auto T = Treap<X,Y>();
-// HOWTOGRAPH
-//    bool isSym = false;
-//    char const* fname = "test2.txt"; (some file using WeightedAdjacencySeq format)
-//    graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);
-//
-//    std::cout << "outW = " << g.V[1].getInWeight(1) << std::endl;
-
-    // auto T = Treap<long,Range<int,int>>();
-    // for (int i = 0; i < n; i++) {
-    //   long x = rand() % 1000;
-    //   long y = rand() % 15;
-    //   T.insert(X(x), Y(y));
-    // }
-    //
-    // T.check();
-    //
-    // auto M = Treap<X,Y>();
-    // long w = T.total_weight();
-    // T.split_at(T.total_weight() / 2, M);
-    // assert(T.total_weight() == w / 2);
-    // assert(M.total_weight() == w - (w/2));
-    // T.check();
-    // M.check();
+    char const* fname = "test2.txt";
+    bool isSym = false;
+    graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);
+    auto heuristic = [] (intT vtx) { return 0; };
+    std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, decltype(heuristic), asymmetricVertex>(g, heuristic, 0, 4, 1, 1);
+    for (int i = 0; i < g.n; i++) {
+      std::cout << "res[" << i << "] = " << res[i].load() << std::endl;
+    }
   };
 
   auto output = [&] {
