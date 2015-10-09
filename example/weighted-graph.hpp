@@ -71,10 +71,7 @@ public:
     return offsets[v+1] - offsets[v];
   }
 
-  Range<vertex,nat> out_neighbors(const vertex& v) {
-    pbbs::native::parallel_for(int(0), 4, [&] (int i) {
-      std::cout << "i is : " << i;
-    });
+  Range<vertex,nat> vertex_with_out_neighbors(const vertex& v) {
     return Range<vertex,nat>(v, offsets[v], offsets[v+1]);
   }
 

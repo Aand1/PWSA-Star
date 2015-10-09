@@ -30,83 +30,97 @@
 //   pmemset((char*)array, val, sz*sizeof(Number));
 // }
 
-// template <class FRONTIER, class HEURISTIC>
-// void pwsa(const WeightedGraph& graph, const HEURISTIC& heuristic,
-//           const vertex& source, const vertex& destination,
-//           int split_cutoff, int poll_cutoff) {
-//   nat N = graph.number_vertices();
-//   std::atomic<bool>* visited = pasl::data::mynew_array<std::atomic<bool>>(N);
-//   fill_array_par(visited, N, false);
+template <class FRONTIER, class HEURISTIC>
+std::atomic<long*> pwsa(const WeightedGraph& graph, const HEURISTIC& heuristic,
+                        const vertex& source, const vertex& destination,
+                        int split_cutoff, int poll_cutoff) {
+  nat N = graph.number_vertices();
+  std::atomic<long>* finalized = pasl::data::mynew_array<std::atomic<long>>(N);
+  fill_array_par(finalized, N, -1l);
+
+  FRONTIER initF();
+  initF.insert(heuristic(source), graph.vertex_package(source, 0));
+
+  pasl::data::perworker::array<int> work_since_split;
+  work_since_split.init(0);
+
+  auto size = [&] (FRONTIER& frontier) {
+    auto sz = frontier.total_weight();
+    if (sz == 0) {
+      work_since_split.mine() = 0;
+      return 0; // no work left
+    }
+    if (sz > split_cutoff || (work_since_split.mine() > split_cutoff && sz > 1))
+      return 2; // split
+    else
+      return 1; // don't split
+  };
+
+  auto fork = [&] (FRONTIER& src, FRONTIER& dst) {
+    src.split_at(src.total_weight() / 2, dst);
+    work_since_split.mine() = 0;
+  };
+
+  auto set_in_env = [&] (FRONTIER& f) {
+    ; // nothing to do
+  };
+
+  auto do_work = [&] (FRONTIER& frontier) {
+    int work_this_round = 0;
+    while (work_this_round < poll_cutoff && frontier.total_weight() > 0) {
+      auto pair = frontier.delete_min();
+      VertexPackage vpack = pair.second;
+      if (vpack.weight() + work_this_round > poll_cutoff) {
+        VertexPackage other();
+        vpack.split_at(poll_cutoff - work_this_round, other);
+        frontier.insert(heuristic(other.vertex()) + other.distance_to(), other);
+      }
+      long orig = -1l;
+      finalized[vpack.vertex()].compare_exchange_strong(orig, vpack.distance_to());
+      long actual_distance = finalized[vpack.vertex()].load(std::memory_order_relaxed);
+      graph.apply_to_each_out_neighbor_in(vpack, [&] (const vertex& u, long edge_weight) {
+        frontier.insert(heuristic(u) + actual_distance + edge_weight, 
+      });
+    }
+
+  };
+
+}
+
+// class X {
+// public:
+//   long x;
 //
-//   FRONTIER initF();
-//   initF.insert(heuristic(source), graph.vertex_with_out_neighbors(source), graph.degree(source));
+//   X(long x) : x(x) { }
 //
-//   pasl::data::perworker::array<int> processed_since_last_split;
-//   processed_since_last_split.init(0);
+//   long hash() const { return hash_signed(x); }
 //
-//   auto size = [&] (FRONTIER& frontier) {
-//     auto sz = frontier.total_weight();
-//     if (sz == 0) {
-//       processed_since_last_split.mine() = 0;
-//       return 0; // no work left
-//     }
-//     if (sz > split_cutoff || (processed_since_last_split.mine() > split_cutoff && sz > 1))
-//       return 2; // split
-//     else
-//       return 1; // don't split
-//   };
+//   inline bool operator < (const X& b) const { return x < b.x; }
+//   inline bool operator <= (const X& b) const { return x <= b.x; }
+//   inline bool operator == (const X& b) const { return x == b.x; }
+// };
 //
-//   auto fork = [&] (FRONTIER& src, FRONTIER& dst) {
-//     FRONTIER right_half = src.split_at_weight(src.total_weight() / 2);
-//     right_half.swap(dst);
-//     processed_since_last_split.mine() = 0;
-//   };
-//
-//   auto set_in_env = [&] (FRONTIER& f) {
-//     ; // nothing to do
-//   };
-//
-//   auto do_work = [&] (FRONTIER& frontier) {
-//     int num_processed_this_round = 0;
-//     for (int i = 0; i < poll_cutoff && frontier.total_weight() > 0; i++)
-//   };
-//
+// std::ostream& operator << (std::ostream& out, const X& a) {
+//   return out << a.x;
 // }
-
-class X {
-public:
-  long x;
-
-  X(long x) : x(x) { }
-
-  long hash() const { return hash_signed(x); }
-
-  inline bool operator < (const X& b) const { return x < b.x; }
-  inline bool operator <= (const X& b) const { return x <= b.x; }
-  inline bool operator == (const X& b) const { return x == b.x; }
-};
-
-std::ostream& operator << (std::ostream& out, const X& a) {
-  return out << a.x;
-}
-
-class Y {
-public:
-  long y;
-
-  Y(long y) : y(y) { }
-
-  long weight() const { return y; }
-
-  void split_at(long w, Y& dst) {
-    dst.y = y - w;
-    y = w;
-  }
-};
-
-std::ostream& operator << (std::ostream& out, const Y& a) {
-  return out << a.y;
-}
+//
+// class Y {
+// public:
+//   long y;
+//
+//   Y(long y) : y(y) { }
+//
+//   long weight() const { return y; }
+//
+//   void split_at(long w, Y& dst) {
+//     dst.y = y - w;
+//     y = w;
+//   }
+// };
+//
+// std::ostream& operator << (std::ostream& out, const Y& a) {
+//   return out << a.y;
+// }
 
 int main(int argc, char** argv) {
   long n;
