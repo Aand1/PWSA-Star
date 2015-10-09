@@ -314,14 +314,14 @@ void parallel_while_cilk_rec(Input& input, const Size_input& size_input, const F
   }
 }
 #endif
-  
+
 const bool debug_print = false;
 template <class Body>
 void msg(const Body& b) {
   if (debug_print)
     util::atomic::msg(b);
 }
- 
+
 template <class Input, class Size_input, class Fork_input, class Set_in_env, class Body>
 void parallel_while(Input& input, const Size_input& size_input, const Fork_input& fork_input,
                     const Set_in_env& set_in_env, const Body& body) {
@@ -351,14 +351,14 @@ void parallel_while(Input& input, const Size_input& size_input, const Fork_input
   join->finish(thread);
 #endif
 }
-  
+
 template <class Input, class Size_input, class Fork_input, class Body>
 void parallel_while(Input& input, const Size_input& size_input, const Fork_input& fork_input,
                     const Body& body) {
   auto set_in_env = [] (Input&) { };
   parallel_while(input, size_input, fork_input, set_in_env, body);
 }
-  
+
 template <class Body>
 void parallel_while(const Body& body) {
   using input_type = struct { };
@@ -377,7 +377,7 @@ void parallel_while(const Body& body) {
   thread_type* thread = new thread_type(b, size_fct, fork_fct, set_fct, join);
   join->finish(thread);
 }
-  
+
 //! \todo replace calls to frontier.swap with calls to new given function called input_swap
 
 // size_input: returns 0 for no work left, returns > 1 for splitting, returns 1 for refusing to split.
@@ -447,6 +447,149 @@ void parallel_while_cas_ri(Input& input, const Size_input& size_input, const For
         } else { // have some work to do
           // TODO: should communicate first, before working
           body(my_frontier);
+          // communicate
+          msg([&] { std::cout << "communicate my_id=" << my_id << std::endl; });
+          request_type req = request[my_id].load();
+          assert(req != Request_blocked);
+          if (req != Request_waiting) {
+            worker_id_t j = req;
+            if (size_input(my_frontier) > 1) {
+              counter++;
+              msg([&] { std::cout << "transfer from my_id=" << my_id << " to " << j << " sum=" << counter.sum() << std::endl; });
+              fork_input(my_frontier, frontier[j]);
+            } else {
+              msg([&] { std::cout << "reject from my_id=" << my_id << " to " << j << std::endl; });
+            }
+            answer[j].store(Answer_transfered);
+            request[my_id].store(Request_waiting);
+          }
+        }
+      }
+      assert(sz == 0);
+    acquire:
+      sz = 0;
+      // reject
+      while (true) {
+        request_type t = request[my_id].load();
+        if (t == Request_blocked) {
+          break;
+        } else if (t == Request_waiting) {
+          request[my_id].compare_exchange_strong(t, Request_blocked);
+        } else {
+          worker_id_t j = t;
+          request[my_id].compare_exchange_strong(t, Request_blocked);
+          answer[j].store(Answer_transfered);
+        }
+      }
+      // acquire
+      msg([&] { std::cout << "acquire my_id=" << my_id << std::endl; });
+      while (true) {
+        thread->yield();
+        if (is_done.load())
+          return;
+        answer[my_id].store(Answer_waiting);
+        if (my_id == leader_id && counter.sum() == 0) {
+          is_done.store(true);
+          continue;
+        }
+        util::ticks::microseconds_sleep(1.0);
+        if (nb_workers > 1) {
+          worker_id_t id = sched->random_other();
+          if (request[id].load() == Request_blocked)
+            continue;
+          request_type orig = Request_waiting;
+          bool s = request[id].compare_exchange_strong(orig, my_id);
+          if (! s)
+            continue;
+          while (answer[my_id].load() == Answer_waiting) {
+            thread->yield();
+            util::ticks::microseconds_sleep(1.0);
+            if (is_done.load())
+              return;
+          }
+          frontier[my_id].swap(my_frontier);
+          sz = (long)size_input(my_frontier);
+        }
+        if (sz > 0) {
+          msg([&] { std::cout << "received " << sz << " items my_id=" << my_id << std::endl; });
+          request[my_id].store(Request_waiting);
+          break;
+        }
+      }
+    }
+    msg([&] { std::cout << "exiting my_id=" << my_id << std::endl; });
+  };
+  parallel_while(b);
+#endif
+}
+
+template <class Input, class Size_input, class Fork_input, class Set_in_env, class Body>
+void parallel_while_pwsa(Input& input, const Size_input& size_input, const Fork_input& fork_input,
+                         const Set_in_env& set_in_env, const Body& body) {
+#if defined(SEQUENTIAL_ELISION)
+  parallel_while(input, size_input, fork_input, set_in_env, body);
+#elif defined(USE_CILK_RUNTIME) && defined(__PASL_CILK_EXT)
+  parallel_while(input, size_input, fork_input, set_in_env, body);
+#else
+  using request_type = worker_id_t;
+  const request_type Request_blocked = -2;
+  const request_type Request_waiting = -1;
+  using answer_type = enum {
+    Answer_waiting,
+    Answer_transfered
+  };
+  data::perworker::array<Input> frontier;
+  data::perworker::array<std::atomic<request_type>> request;
+  data::perworker::array<std::atomic<answer_type>> answer;
+  data::perworker::counter::carray<long> counter;
+  worker_id_t leader_id = threaddag::get_my_id();
+  msg([&] { std::cout << "leader_id=" << leader_id << std::endl; });
+  frontier.for_each([&] (worker_id_t, Input& f) {
+    set_in_env(f);
+  });
+  request.for_each([&] (worker_id_t i, std::atomic<request_type>& r) {
+    request_type t = (i == leader_id) ? Request_waiting : Request_blocked;
+    r.store(t);
+  });
+  answer.for_each([] (worker_id_t, std::atomic<answer_type>& a) {
+    a.store(Answer_waiting);
+  });
+  counter.init(0);
+  std::atomic<bool> is_done(false);
+  auto b = [&] {
+    worker_id_t my_id = threaddag::get_my_id();
+    scheduler_p sched = threaddag::my_sched();
+    multishot* thread = my_thread();
+    int nb_workers = threaddag::get_nb_workers();
+    Input my_frontier;
+    set_in_env(my_frontier); // probably redundant
+    if (my_id == leader_id) {
+      counter++;
+      my_frontier.swap(input);
+    }
+    msg([&] { std::cout << "entering my_id=" << my_id << std::endl; });
+    long sz;
+    bool init = (my_id != leader_id);
+    while (true) {
+      if (init) {
+        init = false;
+        goto acquire;
+      }
+      // try to perform some local work
+      while (true) {
+        thread->yield();
+        if (is_done.load())
+          return;
+        sz = (long)size_input(my_frontier);
+        if (sz == 0) {
+          counter--;
+          msg([&] { std::cout << "decr my_id=" << my_id << " sum=" << counter.sum() << std::endl; });
+          break;
+        } else { // have some work to do
+          // TODO: should communicate first, before working
+          if (body(my_frontier)) {
+            is_done.store(true);
+          }
           // communicate
           msg([&] { std::cout << "communicate my_id=" << my_id << std::endl; });
           request_type req = request[my_id].load();

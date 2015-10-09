@@ -8,30 +8,30 @@
 
 #include "benchmark.hpp"
 #include "treap-frontier.hpp"
-#include "hash.hpp"
-// include "weighted-graph.hpp"
+//include "hash.hpp"
+#include "weighted-graph.hpp"
 
-// static inline void pmemset(char * ptr, int value, size_t num) {
-//   const size_t cutoff = 100000;
-//   if (num <= cutoff) {
-//     memset(ptr, value, num);
-//   } else {
-//     long m = num/2;
-//     sched::native::fork2([&] {
-//       pmemset(ptr, value, m);
-//     }, [&] {
-//       pmemset(ptr+m, value, num-m);
-//     });
-//   }
-// }
+static inline void pmemset(char * ptr, int value, size_t num) {
+  const size_t cutoff = 100000;
+  if (num <= cutoff) {
+    std::memset(ptr, value, num);
+  } else {
+    long m = num/2;
+    sched::native::fork2([&] {
+      pmemset(ptr, value, m);
+    }, [&] {
+      pmemset(ptr+m, value, num-m);
+    });
+  }
+}
 
-// template <class Number, class Size>
-// void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
-//   pmemset((char*)array, val, sz*sizeof(Number));
-// }
+template <class Number, class Size>
+void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
+  pmemset((char*)array, val, sz*sizeof(Number));
+}
 
 template <class FRONTIER, class HEURISTIC, class VERTEX>
-std::atomic<long*> pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
+std::atomic<long>* pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
                         const vertex& source, const vertex& destination,
                         int split_cutoff, int poll_cutoff) {
   nat N = graph.number_vertices();
@@ -72,6 +72,9 @@ std::atomic<long*> pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
       VertexPackage vpack = pair.second;
       long orig = -1l;
       if (vpack.mustProcess || (finalized[vpack.vertexId].load() == -1 && finalized[vpack.vertexId].compare_exchange_strong(orig, vpack.distance))) {
+        if (vpack.vertexId == destination) {
+          return true;
+        }
         if (work_this_round + vpack.weight > poll_cutoff) {
           // need to split vpack
           VertexPackage other();
@@ -79,19 +82,22 @@ std::atomic<long*> pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
           other.mustProcess = true;
           frontier.insert(pair.first, other);
         }
-        // Have to process our vpack 
+        // Have to process our vpack
         graph.apply_to_each_in_range(vpack, [&] (intT ngh, intT weight) {
           VertexPackage nghpack = graph.make_vertex_package(ngh, false, vpack.distance + weight);
           frontier.insert(heuristic(ngh) + vpack.distance + weight, nghpack);
         });
         work_this_round += vpack.weight();
-      } else { 
+      } else {
         // Account 1 for popping.
         work_this_round += 1;
       }
     }
+    return false;
   };
 
+  parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  return finalized;
 }
 
 // class X {
@@ -139,30 +145,30 @@ int main(int argc, char** argv) {
   auto run = [&] (bool sequential) {
     std::cout << n << std::endl;
 
-    auto T = Treap<X,Y>();
+    //auto T = Treap<X,Y>();
 // HOWTOGRAPH
 //    bool isSym = false;
 //    char const* fname = "test2.txt"; (some file using WeightedAdjacencySeq format)
-//    graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);  
+//    graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);
 //
 //    std::cout << "outW = " << g.V[1].getInWeight(1) << std::endl;
 
-    auto T = Treap<long,Range<int,int>>();
-    for (int i = 0; i < n; i++) {
-      long x = rand() % 1000;
-      long y = rand() % 15;
-      T.insert(X(x), Y(y));
-    }
-
-    T.check();
-
-    auto M = Treap<X,Y>();
-    long w = T.total_weight();
-    T.split_at(T.total_weight() / 2, M);
-    assert(T.total_weight() == w / 2);
-    assert(M.total_weight() == w - (w/2));
-    T.check();
-    M.check();
+    // auto T = Treap<long,Range<int,int>>();
+    // for (int i = 0; i < n; i++) {
+    //   long x = rand() % 1000;
+    //   long y = rand() % 15;
+    //   T.insert(X(x), Y(y));
+    // }
+    //
+    // T.check();
+    //
+    // auto M = Treap<X,Y>();
+    // long w = T.total_weight();
+    // T.split_at(T.total_weight() / 2, M);
+    // assert(T.total_weight() == w / 2);
+    // assert(M.total_weight() == w - (w/2));
+    // T.check();
+    // M.check();
   };
 
   auto output = [&] {

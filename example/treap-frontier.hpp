@@ -6,6 +6,7 @@
  */
 
 #include "container.hpp"
+#include "hash.hpp"
 
 #ifndef _PWSA_TREAP_FRONTIER_H_
 #define _PWSA_TREAP_FRONTIER_H_
@@ -90,7 +91,7 @@ private:
       N->key = key;
       N->value = value;
       N->total_weight = value.weight();
-      N->priority = key.hash();
+      N->priority = hash_signed(key);
 
       N->left = nullptr;
       N->right = nullptr;

@@ -23,7 +23,7 @@ typedef pair<uintT,uintT> intPair;
 template <class E>
 struct pairFirstCmp {
   bool operator() (pair<uintT,E> a, pair<uintT,E> b) {
-    return a.first < b.first; 
+    return a.first < b.first;
   }
 };
 
@@ -102,13 +102,13 @@ template <class vertex>
 struct graph {
   vertex *V;
   intT n;
-  intT m; 
+  intT m;
   intT* edges;
   intT* inEdges;
   graph(vertex* _V, long _n, long _m, intT* _edges)
   : V(_V), n(_n), m(_m), edges(_edges) { }
 
-  graph(vertex* VV, long nn, long mm, intT* _edges, intT* _inEdges)
+  graph(vertex* _V, long _n, long _m, intT* _edges, intT* _inEdges)
   : V(_V), n(_n), m(_m), edges(_edges), inEdges(_inEdges) { }
 
   void del() {
@@ -126,16 +126,16 @@ struct graph {
     return V[v].outDegree;
   }
 
-  VertexPackage make_vertex_package(const intT& vertexId, 
+  VertexPackage make_vertex_package(const intT& vertexId,
                                     const bool& mustProcess,
                                     const intT& distance) {
-    return VertexPackage(vertexId, 0, V[vertexId].outDegree, 
+    return VertexPackage(vertexId, 0, V[vertexId].outDegree,
                          mustProcess, distance);
   }
 
 
   // f expects arguments (u, v, edge weight between u and v)
-  template <class FUNC, class vertex>
+  template <class FUNC>
   void apply_to_each_in_range(const VertexPackage& r, const FUNC& f) {
     vertex v = V[r.vertexId];
     for (intT i = r.low; i < r.high; i++) {
@@ -189,7 +189,7 @@ pbbs::_seq<char> readStringFromFile(char const *fileName) {
 // parallel code for converting a string to words
 words stringToWords(char *Str, long n) {
   pbbs::native::parallel_for(long(0), n, [&] (long i){
-      if (isSpace(Str[i])) Str[i] = 0; 
+      if (isSpace(Str[i])) Str[i] = 0;
   });
 
   // mark start of words
