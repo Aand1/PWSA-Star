@@ -70,19 +70,26 @@ std::atomic<long*> pwsa(const graph<VERTEX>& graph, const HEURISTIC& heuristic,
     while (work_this_round < poll_cutoff && frontier.total_weight() > 0) {
       auto pair = frontier.delete_min();
       VertexPackage vpack = pair.second;
-      if (vpack.weight() + work_this_round > poll_cutoff) {
-        VertexPackage other();
-        vpack.split_at(poll_cutoff - work_this_round, other);
-        frontier.insert(heuristic(other.vertex()) + other.distance_to(), other);
-      }
       long orig = -1l;
-      finalized[vpack.vertex()].compare_exchange_strong(orig, vpack.distance_to());
-      long actual_distance = finalized[vpack.vertex()].load(std::memory_order_relaxed);
-      graph.apply_to_each_out_neighbor_in(vpack, [&] (const vertex& u, long edge_weight) {
-        frontier.insert(heuristic(u) + actual_distance + edge_weight, 
-      });
+      if (vpack.mustProcess || (finalized[vpack.vertexId].load() == -1 && finalized[vpack.vertexId].compare_exchange_strong(orig, vpack.distance))) {
+        if (work_this_round + vpack.weight > poll_cutoff) {
+          // need to split vpack
+          VertexPackage other();
+          vpack.split_at(poll_cutoff - work_this_round, other);
+          other.mustProcess = true;
+          frontier.insert(pair.first, other);
+        }
+        // Have to process our vpack 
+        graph.apply_to_each_in_range(vpack, [&] (intT ngh, intT weight) {
+          VertexPackage nghpack = graph.make_vertex_package(ngh, false, vpack.distance + weight);
+          frontier.insert(heuristic(ngh) + vpack.distance + weight, nghpack);
+        });
+        work_this_round += vpack.weight();
+      } else { 
+        // Account 1 for popping.
+        work_this_round += 1;
+      }
     }
-
   };
 
 }

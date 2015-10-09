@@ -42,9 +42,17 @@ public:
     : vertexId(vertexId), low(low), high(high), mustProcess(mustProcess),
        distance(distance){ }
 
-  VertexPackage split_at(intT w) {
+  long weight() {
+    return high - low + 1;
+  }
+
+  void split_at(intT w, VertexPackage &other) {
     high = low + w;
-    return VertexPackage(source, low + w, high, mustProcess, distance);
+    other.vertexId = vertexId;
+    other.low = low + w;
+    other.high = high;
+    other.mustProcess = mustProcess;
+    other.distance = distance;
   }
 
   void setMustProcess(bool _mustProcess) {
