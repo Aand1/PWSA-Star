@@ -165,7 +165,7 @@ private:
     else {
       std::cout << "(";
       display_node(N->left);
-      std::cout << " " << N->key << " " << N->value /*<< N->weight*/ << " " /*<< N->total_weight << " "*/;
+      std::cout << " " << N->key << " " << N->value.vertexId /*<< N->weight*/ << " " << N->value.weight() << " ";
       display_node(N->right);
       std::cout << ")";
     }

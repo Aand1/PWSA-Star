@@ -43,20 +43,24 @@ public:
        distance(distance){ }
 
   long weight() {
-    return high - low + 1;
+    return high - low;
   }
 
   void split_at(intT w, VertexPackage &other) {
-    high = low + w;
     other.vertexId = vertexId;
     other.low = low + w;
-    other.high = high;
     other.mustProcess = mustProcess;
     other.distance = distance;
+    other.high = high;
+    high = low + w;
   }
 
   void setMustProcess(bool _mustProcess) {
     mustProcess = _mustProcess;
+  }
+
+  void display() {
+    std::cout << "{vertexId=" << vertexId << ",low=" << low << ",high=" << high << ",mustProcess=" << mustProcess << ",distance=" << distance << "}" << std::endl;
   }
 };
 
@@ -81,7 +85,7 @@ struct symmetricVertex {
     std::cout << "vertex " << vertexId << "{";
     for (intT i = 0; i < degree; i++) {
       if (i < degree - 1) {
-        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << "), "; 
+        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << "), ";
       } else{
         std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << ") }";
       }
@@ -110,7 +114,7 @@ struct asymmetricVertex {
     std::cout << "vertex " << vertexId << "{";
     for (intT i = 0; i < outDegree; i++) {
       if (i < outDegree - 1) {
-        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << "), "; 
+        std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << "), ";
       } else{
         std::cout << "(" << getOutNeighbor(i) << "," << getOutWeight(i) << ") }";
       }

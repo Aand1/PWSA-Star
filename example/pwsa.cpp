@@ -52,16 +52,22 @@ std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
   auto size = [&] (FRONTIER& frontier) {
     auto sz = frontier.total_weight();
     if (sz == 0) {
+      std::cout << "no work left" << std::endl;
       work_since_split.mine() = 0;
       return 0; // no work left
     }
-    if (sz > split_cutoff || (work_since_split.mine() > split_cutoff && sz > 1))
+    if (sz > split_cutoff || (work_since_split.mine() > split_cutoff && sz > 1)) {
+      std::cout << "split!" << std::endl;
       return 2; // split
-    else
+    }
+    else {
+      std::cout << "don't split" << std::endl;
       return 1; // don't split
+    }
   };
 
   auto fork = [&] (FRONTIER& src, FRONTIER& dst) {
+    std::cout << "we're splitting!" << std::endl;
     src.split_at(src.total_weight() / 2, dst);
     work_since_split.mine() = 0;
   };
@@ -71,27 +77,37 @@ std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
   };
 
   auto do_work = [&] (FRONTIER& frontier) {
+    std::cout << "Frontier dump: ";
+    frontier.display();
     int work_this_round = 0;
     while (work_this_round < poll_cutoff && frontier.total_weight() > 0) {
       auto pair = frontier.delete_min();
       VertexPackage vpack = pair.second;
+      std::cout << "DelMin: " << vpack.vertexId << " dist: " << vpack.distance << " heur+dist: " << pair.first << std::endl;
       long orig = -1l;
       if (vpack.mustProcess || (finalized[vpack.vertexId].load() == -1 && finalized[vpack.vertexId].compare_exchange_strong(orig, vpack.distance))) {
+        if (vpack.mustProcess) { std::cout << "must process "; vpack.display(); }
+        else { std::cout << "CAS win "; vpack.display(); }
         if (vpack.vertexId == destination) {
           return true;
         }
         if (work_this_round + vpack.weight() > poll_cutoff) {
           // need to split vpack
           VertexPackage other = VertexPackage();
+          std::cout << "vpack before split: "; vpack.display();
           vpack.split_at(poll_cutoff - work_this_round, other);
+          std::cout << "after split: "; vpack.display();
+          std::cout << "...and other: "; other.display();
           other.mustProcess = true;
-          frontier.insert(pair.first, other);
+          if (other.weight() != 0) frontier.insert(pair.first, other);
         }
         // Have to process our vpack
         graph.apply_to_each_in_range(vpack, [&] (intT ngh, intT weight) {
+          std::cout << "inserting edge (" << vpack.vertexId << "," << ngh << ") with weight " << weight << std::endl;
           VertexPackage nghpack = graph.make_vertex_package(ngh, false, vpack.distance + weight);
-          int heur = heuristic(ngh) + vpack.distance + weight; 
+          int heur = heuristic(ngh) + vpack.distance + weight;
           frontier.insert(heur, nghpack);
+          frontier.display();
         });
         work_this_round += vpack.weight();
       } else {
@@ -143,9 +159,13 @@ std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
 
 int main(int argc, char** argv) {
   long n;
+  int split_cutoff;
+  int poll_cutoff;
 
   auto init = [&] {
     n = (long)pasl::util::cmdline::parse_or_default_long("n", 24);
+    split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 100);
+    poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 100);
   };
 
   auto run = [&] (bool sequential) {
@@ -157,7 +177,7 @@ int main(int argc, char** argv) {
 
     g.printGraph();
     auto heuristic = [] (intT vtx) { return 0; };
-    std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, decltype(heuristic), asymmetricVertex>(g, heuristic, 0, 4, 1, 1);
+    std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, decltype(heuristic), asymmetricVertex>(g, heuristic, 0, 4, split_cutoff, poll_cutoff);
     for (int i = 0; i < g.n; i++) {
       std::cout << "res[" << i << "] = " << res[i].load() << std::endl;
     }
