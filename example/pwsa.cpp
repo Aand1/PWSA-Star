@@ -151,7 +151,7 @@ int main(int argc, char** argv) {
   auto run = [&] (bool sequential) {
     std::cout << n << std::endl;
 
-    char const* fname = "test2.txt";
+    char const* fname = "simple_weighted.txt";
     bool isSym = false;
     graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname, isSym);
     auto heuristic = [] (intT vtx) { return 0; };
