@@ -32,9 +32,12 @@ void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
   pmemset((char*)array, val, sz*sizeof(Number));
 }
 
+bool shouldPrint = false;
 template <class Body>
 void print(const Body& b) {
-  pasl::util::atomic::msg(b);
+  if (shouldPrint) {
+    pasl::util::atomic::msg(b);
+  }
 }
 
 template <class FRONTIER, class HEURISTIC, class VERTEX>
@@ -68,27 +71,39 @@ std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
   };
 
   auto fork = [&] (FRONTIER& src, FRONTIER& dst) {
-    print([&] { std::cout << "splitting "; src.display(); std::cout << std::endl; });
+    print([&] { 
+      std::cout << "splitting "; src.display(); 
+      std::cout << std::endl; 
+    });
     src.split_at(src.total_weight() / 2, dst);
-    print([&] { std::cout << "produced "; src.display(); std::cout << "; "; dst.display(); std::cout << std::endl; });
+    print([&] { 
+      std::cout << "produced "; src.display(); std::cout << "; "; 
+      dst.display(); std::cout << std::endl; 
+    });
     work_since_split.mine() = 0;
   };
 
-  auto set_in_env = [&] (FRONTIER& f) {
-    ; // nothing to do
-  };
+  auto set_in_env = [&] (FRONTIER& f) {;};
 
   auto do_work = [&] (FRONTIER& frontier) {
-    print([&] { std::cout << "Frontier dump: "; frontier.display(); std::cout << std::endl; });
+    print([&] {
+      std::cout << "Frontier dump: "; frontier.display(); 
+      std::cout << std::endl;
+    });
 
     int work_this_round = 0;
     while (work_this_round < poll_cutoff && frontier.total_weight() > 0) {
       auto pair = frontier.delete_min();
       VertexPackage vpack = pair.second;
       long orig = -1l;
-      if (vpack.mustProcess || (finalized[vpack.vertexId].load() == -1 && finalized[vpack.vertexId].compare_exchange_strong(orig, vpack.distance))) {
+      if (vpack.mustProcess || 
+         (finalized[vpack.vertexId].load() == -1 && 
+          finalized[vpack.vertexId].compare_exchange_strong(orig, vpack.distance))) {
         if (vpack.vertexId == destination) {
-          print([&] { std::cout << "FOUND DESTINATION: distance " << finalized[destination].load() << std::endl; });
+          print([&] { 
+            std::cout << "Found destination: distance = " << 
+            finalized[destination].load() << std::endl; 
+          });
           return true;
         }
         if (work_this_round + vpack.weight() > poll_cutoff) {
@@ -96,7 +111,9 @@ std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
           VertexPackage other = VertexPackage();
           vpack.split_at(poll_cutoff - work_this_round, other);
           other.mustProcess = true;
-          if (other.weight() != 0) frontier.insert(pair.first, other);
+          if (other.weight() != 0) {
+            frontier.insert(pair.first, other);
+          }
         }
         // Have to process our vpack
         graph.apply_to_each_in_range(vpack, [&] (intT ngh, intT weight) {
@@ -104,7 +121,10 @@ std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
           int heur = heuristic(ngh) + vpack.distance + weight;
           frontier.insert(heur, nghpack);
 
-          print([&] { std::cout << "inserted pack "; nghpack.display(); std::cout << ": "; frontier.display(); std::cout << std::endl; });
+          print([&] { 
+            std::cout << "inserted pack "; nghpack.display(); 
+            std::cout << ": "; frontier.display(); std::cout << std::endl; 
+          });
         });
         work_this_round += vpack.weight();
       } else {
@@ -121,45 +141,50 @@ std::atomic<long>* pwsa(graph<VERTEX>& graph, const HEURISTIC& heuristic,
 }
 
 int main(int argc, char** argv) {
-  long n;
-  int split_cutoff;
-  int poll_cutoff;
+  int split_cutoff; // (K)
+  int poll_cutoff; // (D)
   std::string fname;
   int src;
   int dst;
 
   auto init = [&] {
-    n = (long)pasl::util::cmdline::parse_or_default_long("n", 24);
     split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 100);
     poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 100);
-    fname = pasl::util::cmdline::parse_or_default_string("graph", "simple_weighted.txt");
+    fname = pasl::util::cmdline::parse_or_default_string("graph", "graphs/simple_weighted.txt");
     src = (int)pasl::util::cmdline::parse_or_default_int("src", 0);
     dst = (int)pasl::util::cmdline::parse_or_default_int("dst", 0);
   };
 
   auto run = [&] (bool sequential) {
-    std::cout << n << std::endl;
 
-    //char const* fname = "simple_weighted.txt";
-    //char const* fname = "simple_weighted_2.txt";
     bool isSym = false;
     graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname.c_str(), isSym);
 
-    g.printGraph();
+    // g.printGraph();
     auto heuristic = [] (intT vtx) { return 0; };
-    std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, decltype(heuristic), asymmetricVertex>(g, heuristic, src, dst, split_cutoff, poll_cutoff);
+    std::atomic<long>* res = pwsa<Treap<intT, VertexPackage>, 
+                                  decltype(heuristic), 
+                                  asymmetricVertex>(g, heuristic, src, dst, 
+                                                    split_cutoff, poll_cutoff);
+
+
+    int numExpanded = 0;
     for (int i = 0; i < g.n; i++) {
-      std::cout << "res[" << i << "] = " << res[i].load() << std::endl;
+      if (res[i].load() != -1) {
+        numExpanded++;
+      }
     }
+    std::cout << "expanded : " << numExpanded << " many nodes out of " << g.n;
+    std::cout << "path lengh is : " << res[dst].load(); 
+
+//    for (int i = 0; i < g.n; i++) {
+//      std::cout << "res[" << i << "] = " << res[i].load() << std::endl;
+//    }
   };
 
-  auto output = [&] {
-    ;
-  };
+  auto output = [&] {;};
 
-  auto destroy = [&] {
-    ;
-  };
+  auto destroy = [&] {;};
 
   pasl::sched::launch(argc, argv, init, run, output, destroy);
   return 0;
