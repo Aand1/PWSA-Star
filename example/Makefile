@@ -32,7 +32,8 @@ PROGRAMS=\
 	hull.cpp \
 	bhut.cpp \
 	sequence.cpp \
-	pwsa.cpp
+	pwsa_map.cpp \
+	pwsa_main.cpp
 #       add reference to your cpp source here
 
 ####################################################################

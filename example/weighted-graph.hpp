@@ -153,7 +153,7 @@ struct graph {
   VertexPackage make_vertex_package(const intT& vertexId,
                                     const bool& mustProcess,
                                     const intT& distance) {
-    return VertexPackage(vertexId, 0, V[vertexId].outDegree,
+    return VertexPackage(vertexId, 0, V[vertexId].getOutDegree(),
                          mustProcess, distance);
   }
 
