@@ -27,6 +27,14 @@ struct pairFirstCmp {
   }
 };
 
+class state {
+  public:
+    int obs;
+    int x;
+    int y;
+    int id = -1;
+};
+
 class VertexPackage {
 public:
   intT vertexId;
@@ -67,6 +75,7 @@ public:
 struct symmetricVertex {
   intT* neighbors;
   uintT degree;
+  std::pair<int, int> gridValue;
   void del() { free(neighbors); }
   symmetricVertex(intT* n, uintT d) : neighbors(n), degree(d) {}
   //weights are stored in the entry after the neighbor ID
@@ -77,8 +86,10 @@ struct symmetricVertex {
   intT getOutWeight(intT j) { return neighbors[2*j+1]; }
   void setInNeighbors(intT* _i) { neighbors = _i; }
   void setOutNeighbors(intT* _i) { neighbors = _i; }
+  void setGridValue(std::pair<int, int> _gridValue) { gridValue = _gridValue; }
   uintT getInDegree() { return degree; }
   uintT getOutDegree() { return degree; }
+  std::pair<int, int> getGridValue() { return gridValue; }
   void setInDegree(uintT _d) { degree = _d; }
   void setOutDegree(uintT _d) { degree = _d; }
   void printOutNeighbors(intT vertexId) {
@@ -97,6 +108,7 @@ struct asymmetricVertex {
   intT* inNeighbors, *outNeighbors;
   uintT outDegree;
   uintT inDegree;
+  std::pair<int, int> gridValue;
   void del() {free(inNeighbors); free(outNeighbors);}
   asymmetricVertex(intT* iN, intT* oN, uintT id, uintT od)
     : inNeighbors(iN), outNeighbors(oN), inDegree(id), outDegree(od) {}
@@ -106,8 +118,10 @@ struct asymmetricVertex {
   intT getOutWeight(uintT j) { return outNeighbors[2*j+1]; }
   void setInNeighbors(intT* _i) { inNeighbors = _i; }
   void setOutNeighbors(intT* _i) { outNeighbors = _i; }
+  void setGridValue(std::pair<int, int> _gridValue) { gridValue = _gridValue; }
   uintT getInDegree() { return inDegree; }
   uintT getOutDegree() { return outDegree; }
+  std::pair<int, int> getGridValue() { return gridValue; }
   void setInDegree(uintT _d) { inDegree = _d; }
   void setOutDegree(uintT _d) { outDegree = _d; }
   void printOutNeighbors(intT vertexId) {
@@ -120,6 +134,143 @@ struct asymmetricVertex {
       }
     }
   }
+};
+
+struct gridGraph {
+  vector<vector<state> > grid;
+  vector<std::pair<int, int> > idToGrid; 
+  intT width;
+  intT height;
+  intT n;
+  gridGraph(vector<vector<state> > _grid) : grid(_grid) { }
+
+  intT number_vertices() {
+    return n;
+  }
+
+  void populateIndices() {
+    height = grid.size();
+    width = grid[0].size();
+    n = 0;
+    for_each(grid.begin(), grid.end(), [&] (vector<state>& inner) {
+      for_each(inner.begin(), inner.end(), [&] (state& elm) {
+        if (elm.obs == 0) {
+          // good state
+          elm.id = n;
+          n++;
+          idToGrid.push_back(std::make_pair(elm.x, elm.y));
+        }
+      });
+    });
+  }
+
+  std::pair<int, int> getHeuristic(intT vtx) {
+    return idToGrid[vtx];
+  }
+
+  int findVtxWithCoords(intT x, intT y) {
+    return grid[x][y].id;
+  }
+
+  template<class F>
+  void iterateNghs(intT x, intT y, F f) {
+    if (x > 0) {
+      if (y > 0) {
+        if (grid[x - 1][y - 1].obs == 0) {
+          f(x-1, y-1, 14142);
+        }
+      }
+      if (grid[x - 1][y].obs == 0) {
+        f(x-1, y, 10000);
+      }
+      if (y < width - 1) {
+        if (grid[x - 1][y + 1].obs == 0) {
+          f(x-1, y+1, 14142);
+        }
+      } 
+    }
+
+    if (y > 0) {
+      if (grid[x][y - 1].obs == 0) {
+        f(x, y-1, 10000);
+      }
+    }
+    if (y < width - 1) {
+      if (grid[x][y+1].obs == 0) {
+        f(x, y+1, 10000);
+      }
+    } 
+
+    if (x < height - 1)  {
+      if (y > 0) {
+        if(grid[x + 1][y - 1].obs == 0) {
+          f(x+1, y-1, 14142);
+        }
+      }
+      if (grid[x + 1][y].obs == 0) {
+        f(x+1, y, 10000);
+      }
+      if (y < width - 1) {
+        if (grid[x + 1][y + 1].obs == 0) {
+          f(x+1, y+1, 14142);
+        }
+      }
+    }
+  }
+
+  uintT outDegree(const intT& v) {
+    intT degree = 0;
+    auto f = [&] (intT x, intT y, intT weight) {
+      degree += 1;
+    };
+    // non-memoized, terrible. fix later
+    auto pair = idToGrid[v];
+    iterateNghs<decltype(f)>(pair.first, pair.second, f);
+    return degree;
+  }
+
+  VertexPackage make_vertex_package(const intT& vertexId,
+                                    const bool& mustProcess,
+                                    const intT& distance) {
+    return VertexPackage(vertexId, 0, outDegree(vertexId),
+                         mustProcess, distance);
+  }
+
+  template <class FUNC>
+  void apply_to_each_in_range(const VertexPackage& r, const FUNC& f) {
+    auto pair = idToGrid[r.vertexId];
+    auto innerF = [&] (intT x, intT y, intT weight) {
+      auto nghId = grid[x][y].id;
+      f(nghId, weight);
+    };
+    iterateNghs<decltype(innerF)>(pair.first, pair.second, innerF);
+  }
+
+
+  // f expects arguments (u, v, edge weight between u and v)
+//  template <class FUNC>
+//  void apply_to_each_in_range(const VertexPackage& r, const FUNC& f) {
+//    auto pair = idToGrid[r.vertexId];
+//    auto innerF = [&] (std::tuple<int, int, int> elm) {
+//      auto nghId = grid[std::get<0>(elm)][std::get<1>(elm)].id;
+//      f(nghId, std::get<2>(elm));
+//    };
+//    iterateNghs<decltype(innerF)>(pair.first, pair.second, innerF);
+//  }
+
+  void printGraph() {
+    for (intT i = 0; i < grid.size(); i++) {
+      for (intT j = 0; j < grid[i].size(); j++) {
+        if (grid[i][j].obs == 0) {
+          std::cout << '.';
+        } else {
+          std::cout << "@";
+        }
+      }
+      std::cout << std::endl;
+    }
+  }
+
 };
 
 template <class vertex>
@@ -146,8 +297,22 @@ struct graph {
     return n;
   }
 
+  std::pair<int, int> getHeuristic(intT vtx) {
+    return V[vtx].getGridValue();
+  }
+
+  int findVtxWithCoords(intT x, intT y) {
+    for (intT i = 0; i < n; i++) {
+      auto id = V[i].getGridValue();
+      if (id.first == x && id.second == y) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
   uintT outDegree(const intT& v) {
-    return V[v].outDegree;
+    return V[v].getOutDegree();
   }
 
   VertexPackage make_vertex_package(const intT& vertexId,
@@ -156,7 +321,6 @@ struct graph {
     return VertexPackage(vertexId, 0, V[vertexId].getOutDegree(),
                          mustProcess, distance);
   }
-
 
   // f expects arguments (u, v, edge weight between u and v)
   template <class FUNC>
@@ -175,8 +339,6 @@ struct graph {
   }
 
 };
-
-// TODO(lax): move this all out into graph-utils
 
 // A structure that keeps a sequence of strings all allocated from
 // the same block of memory
@@ -246,7 +408,9 @@ words stringToWords(char *Str, long n) {
 }
 
 template <class vertex>
-graph<vertex> readGraphFromFile(char const* fname, bool isSymmetric) {
+graph<vertex> readGraphFromFile(char const* fname, 
+                                bool isSymmetric,
+                                bool hasGrid) {
   pbbs::_seq<char> S = readStringFromFile(fname);
   words W = stringToWords(S.A, S.n);
   if (W.Strings[0] != (string) "WeightedAdjacencyGraph") {
@@ -254,11 +418,13 @@ graph<vertex> readGraphFromFile(char const* fname, bool isSymmetric) {
     abort();
   }
 
-  long len = W.m -1;
+  long len = W.m - 1;
   long n = atol(W.Strings[1]);
   long m = atol(W.Strings[2]);
-  if (len != n + 2*m + 2) {
-    cout << "Bad input file" << endl;
+  if ((!hasGrid && (len < n + 2*m + 2)) || (hasGrid && (len != 3*n + 2*m + 2))) {
+    std::cout << "Bad input file" << endl;
+    std::cout << (n + 2*m + 2) << " " << len << std::endl;
+    std::cout << (3*n + 2*m + 2) << " " << len << std::endl;
     abort();
   }
 
@@ -269,12 +435,19 @@ graph<vertex> readGraphFromFile(char const* fname, bool isSymmetric) {
     offsets[i] = atol(W.Strings[i + 3]);
   });
 
+  vertex* v = newA(vertex,n);
+
   pbbs::native::parallel_for(long(0), m, [&] (long i) {
     edges[2*i] = atol(W.Strings[i+n+3]);
     edges[2*i+1] = atol(W.Strings[i+n+m+3]);
   });
 
-  vertex* v = newA(vertex,n);
+  if (hasGrid) {
+    for (long i = 0; i < n; i++) {
+      v[i].setGridValue(std::make_pair(atol(W.Strings[2*i+n+m+m+3]), 
+                                       atol(W.Strings[2*i+n+m+m+4])));
+    }
+  }
 
   pbbs::native::parallel_for(long(0), n, [&] (long i) {
     uintT o = offsets[i];
@@ -333,5 +506,179 @@ graph<vertex> readGraphFromFile(char const* fname, bool isSymmetric) {
   }
 }
 
+vector<vector<state> > readMap(const char* fname) {
+  int size_x;
+  int size_y;
 
+  vector<vector<state> > grid;
+
+  FILE* fin = fopen(fname,"r");
+  fscanf(fin,"type octile\nheight %d\n",&size_x);
+  fscanf(fin,"width %d\n map\n",&size_y);
+  grid.clear();
+  grid.resize(size_x);
+  for(int i=0; i<grid.size(); i++) {
+    grid[i].resize(size_y);
+  }
+  for(int i=0; i<grid.size(); i++){
+    for(int j=0; j<grid[i].size(); j++){
+      char c;
+      fscanf(fin,"%c",&c);
+      if(c=='\n'){
+        j--;
+        continue;
+      }
+      else if(c == '.' || c=='G')
+        grid[i][j].obs = 0;
+      else if(c == '@' || c=='O' || c=='T' || c=='S' || c=='W')
+        grid[i][j].obs = 1;
+      else {
+        printf("Bad map character: ",c);
+      }
+      grid[i][j].x = i;
+      grid[i][j].y = j;
+    }
+  }
+  return grid;
+}
+
+//
+//template<class lam>
+//void processElm(const vector<vector<state > >& grid, 
+//                const std::pair<int, int>& elm, 
+//                lam f) {
+//  intT height = grid.size();
+//  intT width = grid[0].size();
+//
+//  int x = elm.first;
+//  int y = elm.second;
+//
+//  if (x > 0) {
+//    if (y > 0) {
+//      if (grid[x - 1][y - 1].obs == 0) {
+//        f(std::make_pair(x-1, y-1));
+//      }
+//    }
+//    if (grid[x - 1][y].obs == 0) {
+//      f(std::make_pair(x-1, y));
+//    }
+//    if (y < width - 1) {
+//      if (grid[x - 1][y + 1].obs == 0) {
+//        f(std::make_pair(x-1, y+1));
+//      }
+//    } 
+//  }
+//
+//  if (y > 0) {
+//    if (grid[x][y - 1].obs == 0) {
+//      f(std::make_pair(x, y-1));
+//    }
+//  }
+//  if (y < width - 1) {
+//    if (grid[x][y+1].obs == 0) {
+//      f(std::make_pair(x, y+1));
+//    }
+//  } 
+//
+//  if (x < height - 1)  {
+//    if (y > 0) {
+//      if(grid[x + 1][y - 1].obs == 0) {
+//        f(std::make_pair(x+1, y-1));
+//      }
+//    }
+//    if (grid[x + 1][y].obs == 0) {
+//      f(std::make_pair(x+1, y));
+//    }
+//    if (y < width - 1) {
+//      if (grid[x + 1][y + 1].obs == 0) {
+//        f(std::make_pair(x+1, y+1));
+//      }
+//    }
+//  }
+//}
+//
+//
+//graph<symmetricVertex> mapToGraph(
+//    vector<vector<state > >& grid,
+//    vector<std::pair<int, int> >& idToGrid) {
+//  // first assign [0, n) to the valid vertices
+//  long n = 0;
+//  map<std::pair<int, int>, int> gridToId;
+//
+//  intT height = grid.size();
+//  intT width = grid[0].size();
+//
+//  for_each(grid.begin(), grid.end(), [&] (vector<state>& inner) {
+//    for_each(inner.begin(), inner.end(), [&] (state& elm) {
+//      if (elm.obs == 0) {
+//        // good state - assign id 
+//        idToGrid.push_back(std::make_pair(elm.x, elm.y));
+//        gridToId.insert(std::pair<std::pair<int, int>, int>(
+//            std::make_pair(elm.x, elm.y), n));
+//        n++;
+//      }
+//    });
+//  });
+//
+//  uintT* offsets = newA(uintT,n);
+//  symmetricVertex* v = newA(symmetricVertex,n);
+//  long m = 0;
+//
+//  // iterate over n, check neighbors, add edges in <n>
+//  for (int i = 0; i < idToGrid.size(); i++) {
+//    auto gridId = idToGrid[i];
+//    int x = gridId.first;
+//    int y = gridId.second;
+//    // check all 8 poss for degree
+//    int degree = 0;
+//
+//    auto f = [&](std::pair<int, int> elm) {
+//      degree += 1;
+//    };
+//
+//    processElm<decltype(f)>(grid, gridId, f);
+//
+//    offsets[i+1] = degree;
+//    m += degree;
+//  }
+//  // m is really 2m
+//  m /= 2;
+//
+//  offsets[0] = 0;
+//  for (int i = 1; i < n + 1; i++) {
+//    offsets[i] += offsets[i-1];
+//  }
+//
+//  intT* edges = newA(intT,2*m);
+//
+//  for (int i = 0; i < idToGrid.size(); i++) {
+//    auto gridId = idToGrid[i];
+//    int x = gridId.first;
+//    int y = gridId.second;
+//    int edgeOffset = offsets[i];
+//
+//    auto f = [&](std::pair<int, int> elm) {
+//      auto res = gridToId.at(elm);
+//      edges[2*edgeOffset] = res;
+//      if (elm.first == x || elm.second == y) {
+//        edges[2*edgeOffset + 1] = 10000;
+//      } else {
+//        edges[2*edgeOffset + 1] = 14142;
+//      }
+//      edgeOffset++;
+//    };
+//    processElm<decltype(f)>(grid, gridId, f);
+//  }
+//
+//  pbbs::native::parallel_for(long(0), n, [&] (long i) {
+//    uintT o = offsets[i];
+//    uintT l = ((i == n-1) ? m : offsets[i+1])-offsets[i];
+//    v[i].setOutDegree(l);
+//    v[i].setOutNeighbors(edges+2*o);
+//  });
+//
+//  free(offsets);
+//  return graph<symmetricVertex>(v,n,m,edges);
+//}
+//
 #endif
