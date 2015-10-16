@@ -172,47 +172,22 @@ struct gridGraph {
     return grid[x][y].id;
   }
 
+
+  bool inbounds(intT x, intT y) {
+    return (x >= 0 && x < height) && (y >= 0 && y < width);
+  }
+
+
   template<class F>
   void iterateNghs(intT x, intT y, F f) {
-    if (x > 0) {
-      if (y > 0) {
-        if (grid[x - 1][y - 1].obs == 0) {
-          f(x-1, y-1, 14142);
-        }
-      }
-      if (grid[x - 1][y].obs == 0) {
-        f(x-1, y, 10000);
-      }
-      if (y < width - 1) {
-        if (grid[x - 1][y + 1].obs == 0) {
-          f(x-1, y+1, 14142);
-        }
-      } 
-    }
-
-    if (y > 0) {
-      if (grid[x][y - 1].obs == 0) {
-        f(x, y-1, 10000);
-      }
-    }
-    if (y < width - 1) {
-      if (grid[x][y+1].obs == 0) {
-        f(x, y+1, 10000);
-      }
-    } 
-
-    if (x < height - 1)  {
-      if (y > 0) {
-        if(grid[x + 1][y - 1].obs == 0) {
-          f(x+1, y-1, 14142);
-        }
-      }
-      if (grid[x + 1][y].obs == 0) {
-        f(x+1, y, 10000);
-      }
-      if (y < width - 1) {
-        if (grid[x + 1][y + 1].obs == 0) {
-          f(x+1, y+1, 14142);
+    for (intT i = -1; i < 2; i++) {
+      for (intT j = -1; j < 2; j++) {
+        if (inbounds(x + i, y + j) && !(i == 0 && j == 0)) {
+          if (abs(i) + abs(j) > 1) {
+            f(x+i, y+j, 14142);
+          } else {
+            f(x+i, y+j, 10000);
+          }
         }
       }
     }
