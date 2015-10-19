@@ -49,7 +49,6 @@ std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   FRONTIER initF = FRONTIER();
   int heur = heuristic(source);
   VertexPackage vtxPackage = graph.make_vertex_package(source, false, 0);
-  vtxPackage.display();
   initF.insert(heur, vtxPackage);
 
   pasl::data::perworker::array<int> work_since_split;
@@ -135,10 +134,6 @@ std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
     return false;
   };
 
-  std::cout << "calling par_while" << std::endl;
-
   pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
   return finalized;
 }
-
-

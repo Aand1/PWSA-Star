@@ -130,37 +130,17 @@ struct asymmetricVertex {
   }
 };
 
-struct AbstractGraph {
-  intT n;
-
-  AbstractGraph(intT _n) : n(_n) { }
-  AbstractGraph() { }
-
-  intT number_vertices() {
-    return n;
-  }
-
-  intT set_number_vertices(intT _n) {
-    n = _n;
-  }
-
-  virtual void populateIndices();
-  virtual std::pair<int, int> getHeuristic(intT vtx);
-  virtual int findVtxWithCoords(intT x, intT y);
-  virtual VertexPackage make_vertex_package(const intT& vertexId,
-                                            const bool& mustProcess,
-                                            const intT& distance);
-  virtual void printGraph();
-
-  void apply_to_each_in_range(const VertexPackage& r, std::function<void(intT, intT)> f);
-};
-
-struct gridGraph : public AbstractGraph {
+struct gridGraph {
   vector<vector<state> > grid;
   vector<std::pair<int, int> > idToGrid; 
   intT width;
   intT height;
+  intT n;
   gridGraph(vector<vector<state> > _grid) : grid(_grid) { }
+
+  intT number_vertices() {
+    return n;
+  }
 
   void populateIndices() {
     height = grid.size();
@@ -187,7 +167,7 @@ struct gridGraph : public AbstractGraph {
   }
 
 
-  bool inbounds(intT x, intT y) {
+  inline bool inbounds(intT x, intT y) {
     return (x >= 0 && x < height) && (y >= 0 && y < width);
   }
 
@@ -263,16 +243,21 @@ struct gridGraph : public AbstractGraph {
 
 
 template <class vertex>
-struct graph : public AbstractGraph {
+struct graph {
   vertex *V;
   intT m;
+  intT n;
   intT* edges;
   intT* inEdges;
   graph(vertex* _V, long _n, long _m, intT* _edges)
-  : V(_V), m(_m), edges(_edges), AbstractGraph(_n) { }
+  : V(_V), n(_n), m(_m), edges(_edges) { }
 
   graph(vertex* _V, long _n, long _m, intT* _edges, intT* _inEdges)
-  : V(_V), m(_m), edges(_edges), inEdges(_inEdges), AbstractGraph(_n) { }
+  : V(_V), n(_n), m(_m), edges(_edges), inEdges(_inEdges) { }
+
+  intT number_vertices() {
+    return n;
+  }
 
   void del() {
     for (long i=0; i < n; i++) V[i].del();

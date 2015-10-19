@@ -9,16 +9,16 @@
 
 
 template<class G>
-void printRes(G g) {
+void printRes(G g, std::atomic<long>* res, intT dst) {
   int numExpanded = 0;
   for (int i = 0; i < g.n; i++) {
     if (res[i].load() != -1) {
       numExpanded++;
     }
   }
+  std::cout << "expanded=" << numExpanded << std::endl;
+  std::cout << "path length=" << res[dst].load() <<std::endl; 
 }
- 
-
 
 int main(int argc, char** argv) {
   int split_cutoff; // (K)
@@ -61,65 +61,56 @@ int main(int argc, char** argv) {
       // use grid parsing functionalities 
       auto r = readMap(fname.c_str());
 
-      gridGraph grid = gridGraph(r);
-      grid.populateIndices();
+      gridGraph g = gridGraph(r);
+      g.populateIndices();
 
       if (srcX != -1) {
-        src = grid.findVtxWithCoords(srcX, srcY);
-        dst = grid.findVtxWithCoords(dstX, dstY);
-        std::cout << "src " << src << " " << dst << std::endl;
+        src = g.findVtxWithCoords(srcX, srcY);
+        dst = g.findVtxWithCoords(dstX, dstY);
         if (src == -1 || dst == -1) {
-          std::cout << "you're fucked" << std::endl;
+          std::cout << "Couldn't find node" << std::endl;
+          return -1;
         }
       }
 
-      std::cout << "n = " << grid.number_vertices();
+      std::cout << "n=" << g.number_vertices();
       std::cout << std::endl;
 
       if (useEuc) {
-        std::pair<int, int> dstCoords = grid.getHeuristic(dst);
-        std::cout << "dstCoords = " << dstCoords.first << " " << dstCoords.second;
+        std::pair<int, int> dstCoords = g.getHeuristic(dst);
 
         // can't express raw type of a lambda (uninitialized), so we have to
         // do mad hacks
         auto heuristic = [&] (intT vtx) {
-          auto vtxCoords = grid.getHeuristic(vtx);
+          auto vtxCoords = g.getHeuristic(vtx);
           auto h = (int) (sqrt(pow(vtxCoords.first - dstCoords.first, 2) + 
                       pow(vtxCoords.second - dstCoords.second, 2)) * 10000);
           return w * h;
         };
-
         res = pwsa<Treap<intT, VertexPackage>, 
                           decltype(heuristic),
                           gridGraph>(
-                              grid, heuristic, src, dst, 
+                              g, heuristic, src, dst, 
                               split_cutoff, poll_cutoff);
+        printRes(g, res, dst);
       } else {
         auto heuristic = [&] (intT vtx) { return 0; };
         res = pwsa<Treap<intT, VertexPackage>, 
                           decltype(heuristic),
                           gridGraph>(
-                              grid, heuristic, src, dst, 
+                              g, heuristic, src, dst, 
                               split_cutoff, poll_cutoff);
+        printRes(g, res, dst);
       }
-
     } else {
-      graph<asymmetricVertex> gr = readGraphFromFile<asymmetricVertex>(fname.c_str(), isSym);
+      graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname.c_str(), isSym);
       auto heuristic = [&] (intT vtx) { return 0; };
       res = pwsa<Treap<intT, VertexPackage>, 
                               decltype(heuristic), 
-                              graph<asymmetricVertex> >(gr, heuristic, src, dst, 
+                              graph<asymmetricVertex> >(g, heuristic, src, dst, 
                                              split_cutoff, poll_cutoff);
+      printRes(g, res, dst);
     }
-
-    int numExpanded = 0;
-    for (int i = 0; i < g.n; i++) {
-      if (res[i].load() != -1) {
-        numExpanded++;
-      }
-    }
-    std::cout << "expanded : " << numExpanded << " many nodes out of " << g.n << std::endl;
-    std::cout << "path length is : " << res[dst].load() <<std::endl; 
   };
 
   auto output = [&] {;};
