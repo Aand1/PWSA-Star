@@ -20,8 +20,8 @@ pathQuality = {}
 procs = [1,2,3,4,6,8,12,16,20,24,32]
 random.seed(42)
 
-D = 1000
-K = 1000
+D = 100
+K = 100
 
 def save(path, ext='png', close=True, verbose=True):
     directory = os.path.split(path)[0]
@@ -57,7 +57,7 @@ def runTest(map_name, srcX, srcY, dstX, dstY, p):
   if p not in runs[map_name]:
     runs[map_name][p] = []
 
-  queryStr = str(srcX) + str(srcY) + str(dstX) + str(dstY)
+  queryStr = str(srcX) + "|" +  str(srcY) + "|" + str(dstX) + "|" + str(dstY)
   if queryStr not in pathQuality[map_name]:
     pathQuality[map_name][queryStr] = []
   
@@ -75,7 +75,7 @@ def runTest(map_name, srcX, srcY, dstX, dstY, p):
 def runTests(map_name, srcX, srcY, dstX, dstY, dist):
   # Try a couple of variations of (D, K) with all proc specs
   # TODO: get rid of this hackiness
-  if (random.random() > 0.01 or dist < 400):
+  if (random.random() > 0.05):
     return
   for p in procs:
     # running through ~10k scenarios. Can sample a bit to cut-down time.
@@ -144,6 +144,11 @@ for map_name in runs:
   x = []
   y = []
 
+  maxDiv = 0.0
+  trueLength = 0.0
+  ourLength = 0.0
+  maxQuery = ""
+
   queryMap = {} 
   for p in procs:
     tups = runs[map_name][p]
@@ -154,21 +159,27 @@ for map_name in runs:
       if queryStr not in queryMap:
         # p == 1
         queryMap[queryStr] = pathLength
-        procDivergence += [0]
       else:
-        divergence = abs(pathLength - queryMap[queryStr])
+        divergence = (pathLength * 1.0) / queryMap[queryStr] # should always be >= 
+        if (divergence > maxDiv):
+          maxDiv = divergence
+          trueLength = queryMap[queryStr]
+          ourLength = pathLength
+          maxQuery = queryStr
         procDivergence += [divergence]
-    avgDivergence = (reduce(lambda x, y: x+y, procDivergence) * 1.0) / len(procDivergence)
-    x += [p]
-    y += [avgDivergence]
+    if (p > 1):
+      avgDivergence = (reduce(lambda x, y: x+y, procDivergence) * 1.0) / len(procDivergence)
+      x += [p]
+      y += [avgDivergence]
   print(x)
   print(y)
+
+  print("Max divergence on : " + maxQuery + " true=" + str(trueLength) + " ourLength = " + str(ourLength))
 
   plt.plot(x, y)
   plt.title('Average divergence : ' + mapName + " k = " + str(K) + " d = " + str(D))
   plt.ylabel('length')
   plt.xlabel('num_proc')
   plt.show()
-  save("divergence_" + mapName, ext="png", close=True, verbose=True)
-
+  save("divergence_" + str(K) + "_" + str(D) + "_" +  mapName, ext="png", close=True, verbose=True)
 
