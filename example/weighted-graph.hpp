@@ -138,6 +138,8 @@ struct gridGraph {
   intT n;
   gridGraph(vector<vector<state> > _grid) : grid(_grid) { }
 
+  gridGraph() { }
+
   intT number_vertices() {
     return n;
   }
@@ -254,6 +256,8 @@ struct graph {
 
   graph(vertex* _V, long _n, long _m, intT* _edges, intT* _inEdges)
   : V(_V), n(_n), m(_m), edges(_edges), inEdges(_inEdges) { }
+
+  graph() { }
 
   intT number_vertices() {
     return n;

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# Deprecated 
 
 import sys
 import os

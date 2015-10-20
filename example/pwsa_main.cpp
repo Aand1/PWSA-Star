@@ -34,6 +34,9 @@ int main(int argc, char** argv) {
   bool isGrid;
   bool useEuc;
 
+  gridGraph grid;
+  graph<asymmetricVertex> g;
+
   auto init = [&] {
     split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 10000);
     poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 10000);
@@ -50,39 +53,38 @@ int main(int argc, char** argv) {
     dstY = (int)pasl::util::cmdline::parse_or_default_int("dstX", -1);
     dstX = (int)pasl::util::cmdline::parse_or_default_int("dstY", -1);
     w = (int)pasl::util::cmdline::parse_or_default_int("w", 1);
-  };
-
-  auto run = [&] (bool sequential) {
-
-    bool isSym = false;
-
-    std::atomic<long>* res;
     if (isGrid == 1) {
-      // use grid parsing functionalities 
       auto r = readMap(fname.c_str());
 
-      gridGraph g = gridGraph(r);
-      g.populateIndices();
+      grid = gridGraph(r);
+      grid.populateIndices();
 
       if (srcX != -1) {
-        src = g.findVtxWithCoords(srcX, srcY);
-        dst = g.findVtxWithCoords(dstX, dstY);
+        src = grid.findVtxWithCoords(srcX, srcY);
+        dst = grid.findVtxWithCoords(dstX, dstY);
         if (src == -1 || dst == -1) {
           std::cout << "Couldn't find node" << std::endl;
           return -1;
         }
       }
+    } else {
+      bool isSym = false;
+      graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname.c_str(), isSym);
+    }
+  };
 
-      std::cout << "n=" << g.number_vertices();
-      std::cout << std::endl;
+  auto run = [&] (bool sequential) {
+
+    std::atomic<long>* res;
+    if (isGrid == 1) {
+      // use grid parsing functionalities 
+
+      std::cout << "n=" << grid.number_vertices() << std::endl;
 
       if (useEuc) {
-        std::pair<int, int> dstCoords = g.getHeuristic(dst);
-
-        // can't express raw type of a lambda (uninitialized), so we have to
-        // do mad hacks
+        std::pair<int, int> dstCoords = grid.getHeuristic(dst);
         auto heuristic = [&] (intT vtx) {
-          auto vtxCoords = g.getHeuristic(vtx);
+          auto vtxCoords = grid.getHeuristic(vtx);
           auto h = (int) (sqrt(pow(vtxCoords.first - dstCoords.first, 2) + 
                       pow(vtxCoords.second - dstCoords.second, 2)) * 10000);
           return w * h;
@@ -90,20 +92,20 @@ int main(int argc, char** argv) {
         res = pwsa<Treap<intT, VertexPackage>, 
                           decltype(heuristic),
                           gridGraph>(
-                              g, heuristic, src, dst, 
+                              grid, heuristic, src, dst, 
                               split_cutoff, poll_cutoff);
-        printRes(g, res, dst);
+        printRes(grid, res, dst);
       } else {
         auto heuristic = [&] (intT vtx) { return 0; };
         res = pwsa<Treap<intT, VertexPackage>, 
                           decltype(heuristic),
                           gridGraph>(
-                              g, heuristic, src, dst, 
+                              grid, heuristic, src, dst, 
                               split_cutoff, poll_cutoff);
-        printRes(g, res, dst);
+        printRes(grid, res, dst);
       }
     } else {
-      graph<asymmetricVertex> g = readGraphFromFile<asymmetricVertex>(fname.c_str(), isSym);
+      std::cout << "n=" << g.number_vertices() << std::endl;
       auto heuristic = [&] (intT vtx) { return 0; };
       res = pwsa<Treap<intT, VertexPackage>, 
                               decltype(heuristic), 
