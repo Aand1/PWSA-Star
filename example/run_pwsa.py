@@ -16,7 +16,12 @@ import matplotlib.pyplot as plt
 # scen files look like:   17 2 maps/mazes/maze512-4-0.map  512 512 112 168 108 162 8.24264
 
 runs = {}
-procs = [1,2,3,4,6,8,12,16,20,22]
+pathQuality = {}
+procs = [1,2,3,4,6,8,12,16,20,24,32]
+random.seed(42)
+
+D = 1000
+K = 1000
 
 def save(path, ext='png', close=True, verbose=True):
     directory = os.path.split(path)[0]
@@ -34,22 +39,28 @@ def save(path, ext='png', close=True, verbose=True):
     if verbose:
         print("Done")
 
-def runTest(map_name, srcX, srcY, dstX, dstY, D, K, p):
+def runTest(map_name, srcX, srcY, dstX, dstY, p):
   args = ("./pwsa_main.opt", "-D", str(D), "-K", str(K), 
           "-graph", map_name, "-srcX", str(srcX), 
           "-srcY", str(srcY), "-dstX", str(dstX),
           "-dstY", str(dstY), "-isGrid", str(1), 
           "-useEuc", str(1), '-proc', str(p))
+  print(' '.join(args))
   popen = subprocess.Popen(args, stdout=subprocess.PIPE)
   popen.wait()
   output = popen.stdout.read()
   output = output.split('\n')
   if map_name not in runs:
     runs[map_name] = {}
+    pathQuality[map_name] = {}
  
   if p not in runs[map_name]:
     runs[map_name][p] = []
 
+  queryStr = str(srcX) + str(srcY) + str(dstX) + str(dstY)
+  if queryStr not in pathQuality[map_name]:
+    pathQuality[map_name][queryStr] = []
+  
   print(args)
   print(output)
   n = int(output[0].split('=')[1])
@@ -59,18 +70,16 @@ def runTest(map_name, srcX, srcY, dstX, dstY, D, K, p):
   util = float(output[4].split()[1])
   print(p, util)
 
-  runs[map_name][p] += [(D, K, n, expanded, pathLength, execTime, util)]
+  runs[map_name][p] += [(n, expanded, pathLength, execTime, util, queryStr)]
 
-def runTests(map_name, srcX, srcY, dstX, dstY):
+def runTests(map_name, srcX, srcY, dstX, dstY, dist):
   # Try a couple of variations of (D, K) with all proc specs
-  D = 10000
-  K = 10000
   # TODO: get rid of this hackiness
-  if (random.random() > 0.03):
+  if (random.random() > 0.01 or dist < 400):
     return
   for p in procs:
     # running through ~10k scenarios. Can sample a bit to cut-down time.
-    runTest(map_name, srcX, srcY, dstX, dstY, D, K, p)
+    runTest(map_name, srcX, srcY, dstX, dstY, p)
 
 scen_name = sys.argv[1]
 with open(scen_name) as scen:
@@ -84,7 +93,8 @@ with open(scen_name) as scen:
     srcY = int(l[5])
     dstX = int(l[6])
     dstY = int(l[7])
-    runTests(map_name, srcX, srcY, dstX, dstY)
+    dist = float(l[8])
+    runTests(map_name, srcX, srcY, dstX, dstY, dist)
 
 def graph(formula, x_range):  
     x = np.array(x_range)  
@@ -95,20 +105,17 @@ def graph(formula, x_range):
 for map_name in runs:
   mapName = map_name.split('/')[2]
   print(runs[map_name])
-  procs = runs[map_name]
   p1Time = 0.0
   times = []
   for p in procs:
-    tups = procs[p]
+    tups = runs[map_name][p]
     tot = 0
     for tup in tups:
-      D = tup[0]
-      K = tup[1]
-      n = tup[2]
-      exp = tup[3]
-      pl = tup[4]
-      execTime = tup[5]
-      util = tup[6]
+      n = tup[0]
+      exp = tup[1]
+      pl = tup[2]
+      execTime = tup[3]
+      util = tup[4]
       tot += execTime
     tot /= len(tups)
     print("tot = ", len(tups))
@@ -122,30 +129,46 @@ for map_name in runs:
     x += [pair[0]]
     y += [p1Time / pair[1]]
   plt.plot(x, y)
-  graph(lambda x: x, range(0, 22))
+  graph(lambda x: x, range(0, 32))
   plt.title('Speedup : ' + mapName)
   plt.ylabel('Speedup')
   plt.xlabel('num_proc')
   plt.show()
   save("speedup_" + mapName, ext="png", close=True, verbose=True)
 
-print(runs)
+# path-quality plots
+for map_name in runs:
+  mapName = map_name.split('/')[2]
+  print(runs[map_name])
 
-#  tups = sorted(tups, key=lambda x: x[2])
-#  p1Time = tups[0][6]
-#  x = []
-#  y = []
-#  for tup in tups:
-#    D = tup[0]
-#    K = tup[1]
-#    p = tup[2]
-#    n = tup[3]
-#    exp = tup[4]
-#    pl = tup[5]
-#    execTime = tup[6]
-#    util = tup[7]
-#    x += [p]
-#    y += [p1Time / execTime]
-#  plt.plot(x, y)
-#  plt.show()
-#  save("foo", ext="png", close=True, verbose=True)
+  x = []
+  y = []
+
+  queryMap = {} 
+  for p in procs:
+    tups = runs[map_name][p]
+    procDivergence = []
+    for tup in tups:
+      pathLength = tup[2]
+      queryStr = tup[5]
+      if queryStr not in queryMap:
+        # p == 1
+        queryMap[queryStr] = pathLength
+        procDivergence += [0]
+      else:
+        divergence = abs(pathLength - queryMap[queryStr])
+        procDivergence += [divergence]
+    avgDivergence = (reduce(lambda x, y: x+y, procDivergence) * 1.0) / len(procDivergence)
+    x += [p]
+    y += [avgDivergence]
+  print(x)
+  print(y)
+
+  plt.plot(x, y)
+  plt.title('Average divergence : ' + mapName + " k = " + str(K) + " d = " + str(D))
+  plt.ylabel('length')
+  plt.xlabel('num_proc')
+  plt.show()
+  save("divergence_" + mapName, ext="png", close=True, verbose=True)
+
+
