@@ -23,6 +23,16 @@ T* my_malloc(long n) {
   return result;
 }
 
+template <class T>
+void display(T* xs, long n) {
+  std::cout << "[";
+  for (long i = 0; i < n; i++) {
+    std::cout << xs[i];
+    if (i != n-1) std::cout << " ";
+  }
+  std::cout << "]";
+}
+
 template <class LIFT, class T>
 class plus_up_sweep_contr {
 public:
@@ -113,6 +123,54 @@ std::pair<T*, long> filter(const PRED& pred, T* xs, long n) {
 
   free(offsets);
   return std::pair<T*, long>(out, final_len);
+}
+
+template <class T>
+class append_contr {
+public:
+  static loop_controller_type contr;
+};
+
+template <class T>
+loop_controller_type append_contr<T>::contr("append" + par::string_of_template_arg<T>());
+
+template <class T>
+T* append(T* xs, long n, T* ys, long m) {
+  T* out = my_malloc<T>(n + m);
+  par::parallel_for(append_contr<T>::contr, 0l, n+m, [&] (long i) {
+    if (i < n) out[i] = xs[i];
+    else out[i] = ys[i-n];
+  });
+  return out;
+}
+
+template <class T, class COMPARE_FUNC>
+T quickselect(const COMPARE_FUNC& cmp, long k, T* xs, long n) {
+  //std::cout << "find " << k << "th smallest of "; display(xs, n); std::cout << std::endl;
+  assert(0 <= k && k < n);
+
+  if (n == 1) return xs[0];
+
+  T& pivot = xs[0];
+
+  T result;
+
+  auto L = filter([&] (long i, T& other) { return cmp(other, pivot) < 0; }, xs, n);
+  auto G = filter([&] (long i, T& other) { return cmp(other, pivot) > 0; }, xs, n);
+
+  if (k < L.second) {
+    result = quickselect<T,COMPARE_FUNC>(cmp, k, L.first, L.second);
+  }
+  else if (k < (n - G.second)) {
+    result = pivot;
+  }
+  else {
+    result = quickselect<T,COMPARE_FUNC>(cmp, k - (n - G.second), G.first, G.second);
+  }
+
+  free(L.first);
+  free(G.first);
+  return result;
 }
 
 // template <class A, class B, class C, class D>
@@ -264,15 +322,6 @@ bool all(const LIFT& lift, ALPHA* xs, long lo, long hi) {
   return result;
 }
 
-template <class T>
-void display(T* xs, long n) {
-  std::cout << "[";
-  for (long i = 0; i < n; i++) {
-    std::cout << xs[i];
-    if (i != n-1) std::cout << " ";
-  }
-  std::cout << "]";
-}
 //
 // template <class A, class B>
 // class reduce_destroy_controller_type {

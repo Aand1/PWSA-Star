@@ -17,7 +17,7 @@ void printRes(G g, std::atomic<long>* res, intT dst) {
     }
   }
   std::cout << "expanded=" << numExpanded << std::endl;
-  std::cout << "path length=" << res[dst].load() <<std::endl; 
+  std::cout << "path length=" << res[dst].load() <<std::endl;
 }
 
 int main(int argc, char** argv) {
@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
   std::string fname;
   int src;
   int dst;
-  int srcX; 
+  int srcX;
   int srcY;
   int dstX;
   int dstY;
@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
     src = (int)pasl::util::cmdline::parse_or_default_int("src", 0);
     dst = (int)pasl::util::cmdline::parse_or_default_int("dst", 0);
     // These are passed as in x=col, y=row, so invert them
-    // if we get a srcX != -1, we ignore src,dst and replace them 
+    // if we get a srcX != -1, we ignore src,dst and replace them
     // by looking up in our grid
     srcY = (int)pasl::util::cmdline::parse_or_default_int("srcX", -1);
     srcX = (int)pasl::util::cmdline::parse_or_default_int("srcY", -1);
@@ -77,7 +77,7 @@ int main(int argc, char** argv) {
 
     std::atomic<long>* res;
     if (isGrid == 1) {
-      // use grid parsing functionalities 
+      // use grid parsing functionalities
 
       std::cout << "n=" << grid.number_vertices() << std::endl;
 
@@ -85,31 +85,31 @@ int main(int argc, char** argv) {
         std::pair<int, int> dstCoords = grid.getHeuristic(dst);
         auto heuristic = [&] (intT vtx) {
           auto vtxCoords = grid.getHeuristic(vtx);
-          auto h = (int) (sqrt(pow(vtxCoords.first - dstCoords.first, 2) + 
+          auto h = (int) (sqrt(pow(vtxCoords.first - dstCoords.first, 2) +
                       pow(vtxCoords.second - dstCoords.second, 2)) * 10000);
           return w * h;
         };
-        res = pwsa<Heap<VertexPackage>, 
+        res = pwsa<Heap<VertexPackage>,
                           decltype(heuristic),
                           gridGraph>(
-                              grid, heuristic, src, dst, 
+                              grid, heuristic, src, dst,
                               split_cutoff, poll_cutoff);
         printRes(grid, res, dst);
       } else {
         auto heuristic = [&] (intT vtx) { return 0; };
-        res = pwsa<Heap<VertexPackage>, 
+        res = pwsa<Heap<VertexPackage>,
                           decltype(heuristic),
                           gridGraph>(
-                              grid, heuristic, src, dst, 
+                              grid, heuristic, src, dst,
                               split_cutoff, poll_cutoff);
         printRes(grid, res, dst);
       }
     } else {
       std::cout << "n=" << g.number_vertices() << std::endl;
       auto heuristic = [&] (intT vtx) { return 0; };
-      res = pwsa<Heap<VertexPackage>, 
-                              decltype(heuristic), 
-                              graph<asymmetricVertex> >(g, heuristic, src, dst, 
+      res = pwsa<Heap<VertexPackage>,
+                              decltype(heuristic),
+                              graph<asymmetricVertex> >(g, heuristic, src, dst,
                                              split_cutoff, poll_cutoff);
       printRes(g, res, dst);
     }

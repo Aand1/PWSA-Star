@@ -65,6 +65,29 @@ private:
     }
   }
 
+  void check_node(Node* X, KEY* upper_bound) {
+    if (X == nullptr) {
+      return;
+    }
+    else {
+      assert(upper_bound == nullptr || X->key >= (*upper_bound));
+      for (Node* child = X->child; child != nullptr; child = child->sibling) {
+        check_node(child, &(X->key));
+      }
+    }
+  }
+
+  long size_node(Node* X) {
+    if (X == nullptr) {
+      return 0;
+    }
+    long size = 1;
+    for (Node* child = X->child; child != nullptr; child = child->sibling) {
+      size += size_node(child);
+    }
+    return size;
+  }
+
 public:
 
   Heap() {
@@ -95,11 +118,14 @@ public:
   }
 
   std::pair<KEY,VALUE> delete_min() {
+    //std::cout << "deleting min..." << std::endl;
     assert(root != nullptr);
     Node* oldroot = root;
+    //std::cout << "merging children of root... " << std::endl;
     root = merge_pairs_node(oldroot->child);
 
     auto result = std::pair<KEY,VALUE>(oldroot->key, oldroot->value);
+    //std::cout << "returning... " << result.first << std::endl;
     free(oldroot);
     return result;
   }
@@ -110,6 +136,14 @@ public:
 
   void display() {
     display_node(root);
+  }
+
+  void check() {
+    check_node(root, nullptr);
+  }
+
+  long size() {
+    return size_node(root);
   }
 };
 

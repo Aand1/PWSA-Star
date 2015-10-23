@@ -16,13 +16,12 @@ void printRes(G g, long* res, intT dst) {
       numExpanded++;
     }
   }
-  std::cout << "expanded=" << numExpanded << std::endl;
-  std::cout << "path length=" << res[dst] << std::endl;
+//  std::cout << "expanded=" << numExpanded << std::endl;
+//  std::cout << "path length=" << res[dst] << std::endl;
 }
 
 int main(int argc, char** argv) {
-  // int split_cutoff; // (K)
-  // int poll_cutoff; // (D)
+  long K;
   std::string fname;
   int src;
   int dst;
@@ -53,6 +52,7 @@ int main(int argc, char** argv) {
     dstY = (int)pasl::util::cmdline::parse_or_default_int("dstX", -1);
     dstX = (int)pasl::util::cmdline::parse_or_default_int("dstY", -1);
     w = (int)pasl::util::cmdline::parse_or_default_int("w", 1);
+    K = (long)pasl::util::cmdline::parse_or_default_long("K", 100);
     if (isGrid == 1) {
       auto r = readMap(fname.c_str());
 
@@ -79,16 +79,16 @@ int main(int argc, char** argv) {
     if (isGrid == 1) {
       // use grid parsing functionalities
 
-      std::cout << "n=" << grid.number_vertices() << std::endl;
+//      std::cout << "n=" << grid.number_vertices() << std::endl;
 
       if (useEuc) {
-        // std::pair<int, int> dstCoords = grid.getHeuristic(dst);
-        // auto heuristic = [&] (intT vtx) {
-        //   auto vtxCoords = grid.getHeuristic(vtx);
-        //   auto h = (int) (sqrt(pow(vtxCoords.first - dstCoords.first, 2) +
-        //               pow(vtxCoords.second - dstCoords.second, 2)) * 10000);
-        //   return w * h;
-        // };
+        std::pair<int, int> dstCoords = grid.getHeuristic(dst);
+        auto heur = [&] (intT vtx) {
+          auto vtxCoords = grid.getHeuristic(vtx);
+          auto h = (int) (sqrt(pow(vtxCoords.first - dstCoords.first, 2) +
+                      pow(vtxCoords.second - dstCoords.second, 2)) * 10000);
+          return w * h;
+        };
         auto pair_heur = [&] (intT v1, intT v2) {
           auto v1Coords = grid.getHeuristic(v1);
           auto v2Coords = grid.getHeuristic(v2);
@@ -96,7 +96,7 @@ int main(int argc, char** argv) {
                       pow(v1Coords.second - v2Coords.second, 2)) * 10000);
           return w * h;
         };
-        res = pars<decltype(pair_heur),gridGraph>(grid, pair_heur, src, dst);
+        res = pars<decltype(heur),decltype(pair_heur),gridGraph>(grid, heur, pair_heur, src, dst, K);
         // res = pwsa<Treap<intT, VertexPackage>,
         //                   decltype(heuristic),
         //                   gridGraph>(
@@ -104,8 +104,9 @@ int main(int argc, char** argv) {
         //                       split_cutoff, poll_cutoff);
         printRes(grid, res, dst);
       } else {
+        auto heur = [&] (intT v) { return 0l; };
         auto pair_heur = [&] (intT v1, intT v2) { return 0l; };
-        res = pars<decltype(pair_heur),gridGraph>(grid, pair_heur, src, dst);
+        res = pars<decltype(heur),decltype(pair_heur),gridGraph>(grid, heur, pair_heur, src, dst, K);
         // res = pwsa<Treap<intT, VertexPackage>,
         //                   decltype(heuristic),
         //                   gridGraph>(

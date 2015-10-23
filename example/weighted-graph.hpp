@@ -77,6 +77,11 @@ public:
   }
 };
 
+std::ostream& operator<<(std::ostream& os, const VertexPackage& pack) {
+  os << "{vertexId=" << pack.vertexId << ",low=" << pack.low << ",high=" << pack.high << ",mustProcess=" << pack.mustProcess << ",distance=" << pack.distance << "}";
+  return os;
+}
+
 struct symmetricVertex {
   intT* neighbors;
   uintT degree;
@@ -137,7 +142,7 @@ struct asymmetricVertex {
 
 struct gridGraph {
   vector<vector<state> > grid;
-  vector<std::pair<int, int> > idToGrid; 
+  vector<std::pair<int, int> > idToGrid;
   intT width;
   intT height;
   intT n;
@@ -211,6 +216,23 @@ struct gridGraph {
                          mustProcess, distance);
   }
 
+  // intT dx[8] = {-1,  0,  1, -1, 1, -1, 0, 1};
+  // intT dy[8] = {-1, -1, -1,  0, 0,  1, 1, 1};
+  // long dist[8] = {14142, 10000, 14142, 10000, 10000, 14142, 10000, 14142};
+  //
+  // VertexPackage expand_ith_neighbor(i, const VertexPackage& r) {
+  //   auto pair = idToGrid[r.vertexId];
+  //   return make_vertex_package(grid[pair.first + dx[i]][pair.second + dy[i]].id, false, r.distance + dist[i]);
+  // }
+
+  void apply_to_each_in_range(const intT& r, std::function<void(intT, intT)> f) {
+    auto pair = idToGrid[r];
+    auto innerF = [&] (intT x, intT y, intT weight) {
+      auto nghId = grid[x][y].id;
+      f(nghId, weight);
+    };
+    iterateNghs<decltype(innerF)>(pair.first, pair.second, innerF);
+  }
 
   void apply_to_each_in_range(const VertexPackage& r, std::function<void(intT, intT)> f) {
     auto pair = idToGrid[r.vertexId];
@@ -379,7 +401,7 @@ words stringToWords(char *Str, long n) {
 }
 
 template <class vertex>
-graph<vertex> readGraphFromFile(char const* fname, 
+graph<vertex> readGraphFromFile(char const* fname,
                                 bool isSymmetric) {
   pbbs::_seq<char> S = readStringFromFile(fname);
   words W = stringToWords(S.A, S.n);

@@ -17,7 +17,7 @@ USE_MATH=1
 ####################################################################
 # Default options
 
-USE_ALLOCATOR=
+USE_ALLOCATOR=tcmalloc
 USE_HWLOC=0
 USE_NUMA=0
 
@@ -33,7 +33,8 @@ PROGRAMS=\
 	bhut.cpp \
 	sequence.cpp \
 	pwsa_main.cpp \
-	treap_main.cpp 
+	treap_main.cpp \
+	pars_main.cpp
 #       add reference to your cpp source here
 
 ####################################################################
@@ -58,7 +59,7 @@ include $(TOOLS_BUILD_FOLDER)/Makefile_options
 # (If extending the list, need to add cases for the definition
 # of COMPILE_OPTIONS_FOR further below, and also for "clean".
 
-MODES=dbg log sta opt seq cilk
+MODES=dbg opt #log sta opt seq cilk
 
 # Compilation options for each mode
 
