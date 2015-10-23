@@ -79,7 +79,6 @@ private:
       }
       numPushed++;
     }
-    cout << "done" << endl << endl;
     return numPushed;
   }
 
@@ -165,7 +164,6 @@ public:
     other.size = otherSize;
     size = shiftDown(1, values);
     insert(frontKey, frontValue);
-    cout << "ourSize = " << size << endl;
   }
 
   void swap(Heap<VALUE>& other) {

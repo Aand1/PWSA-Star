@@ -3,8 +3,7 @@
 import sys
 import os
 import subprocess
-import random
-
+import random 
 import numpy as np
 import matplotlib as mpl
 mpl.use('Agg')
@@ -20,8 +19,8 @@ pathQuality = {}
 procs = [1,2,3,4,6,8,12,16,20,24,32]
 random.seed(42)
 
-D = 100
-K = 100
+D = 1000
+K = 1000
 
 def save(path, ext='png', close=True, verbose=True):
     directory = os.path.split(path)[0]
@@ -45,7 +44,6 @@ def runTest(map_name, srcX, srcY, dstX, dstY, p):
           "-srcY", str(srcY), "-dstX", str(dstX),
           "-dstY", str(dstY), "-isGrid", str(1), 
           "-useEuc", str(1), '-proc', str(p))
-  print(' '.join(args))
   popen = subprocess.Popen(args, stdout=subprocess.PIPE)
   popen.wait()
   output = popen.stdout.read()
@@ -60,22 +58,20 @@ def runTest(map_name, srcX, srcY, dstX, dstY, p):
   queryStr = str(srcX) + "|" +  str(srcY) + "|" + str(dstX) + "|" + str(dstY)
   if queryStr not in pathQuality[map_name]:
     pathQuality[map_name][queryStr] = []
-  
-  print(args)
-  print(output)
+ 
+  print(output) 
   n = int(output[0].split('=')[1])
   expanded = int(output[1].split('=')[1])
   pathLength = int(output[2].split('=')[1])
   execTime = float(output[3].split()[1])
   util = float(output[4].split()[1])
-  print(p, util)
 
   runs[map_name][p] += [(n, expanded, pathLength, execTime, util, queryStr)]
 
 def runTests(map_name, srcX, srcY, dstX, dstY, dist):
   # Try a couple of variations of (D, K) with all proc specs
   # TODO: get rid of this hackiness
-  if (random.random() > 0.05):
+  if (random.random() > 0.1 or dist < 600):
     return
   for p in procs:
     # running through ~10k scenarios. Can sample a bit to cut-down time.
@@ -134,7 +130,7 @@ for map_name in runs:
   plt.ylabel('Speedup')
   plt.xlabel('num_proc')
   plt.show()
-  save("speedup_" + mapName, ext="png", close=True, verbose=True)
+  save("images/speedup_" + mapName, ext="png", close=True, verbose=True)
 
 # path-quality plots
 for map_name in runs:
@@ -161,6 +157,9 @@ for map_name in runs:
         queryMap[queryStr] = pathLength
       else:
         divergence = (pathLength * 1.0) / queryMap[queryStr] # should always be >= 
+        if (pathLength < queryMap[queryStr]):
+          print("you got serious problems. Truelen = ", queryMap[queryStr], "queryStr = ", queryStr, " you got ", pathLength)
+          sys.exit(-1)
         if (divergence > maxDiv):
           maxDiv = divergence
           trueLength = queryMap[queryStr]
@@ -181,5 +180,4 @@ for map_name in runs:
   plt.ylabel('length')
   plt.xlabel('num_proc')
   plt.show()
-  save("divergence_" + str(K) + "_" + str(D) + "_" +  mapName, ext="png", close=True, verbose=True)
-
+  save("images/divergence_" + str(K) + "_" + str(D) + "_" +  mapName, ext="png", close=True, verbose=True)
