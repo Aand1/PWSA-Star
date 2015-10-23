@@ -16,8 +16,8 @@ void printRes(G g, std::atomic<long>* res, intT dst) {
       numExpanded++;
     }
   }
-  std::cout << "expanded=" << numExpanded << std::endl;
-  std::cout << "path length=" << res[dst].load() <<std::endl;
+//  std::cout << "expanded=" << numExpanded << std::endl;
+//  std::cout << "path length=" << res[dst].load() <<std::endl;
 }
 
 int main(int argc, char** argv) {
@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
     if (isGrid == 1) {
       // use grid parsing functionalities
 
-      std::cout << "n=" << grid.number_vertices() << std::endl;
+//      std::cout << "n=" << grid.number_vertices() << std::endl;
 
       if (useEuc) {
         std::pair<int, int> dstCoords = grid.getHeuristic(dst);
@@ -105,7 +105,7 @@ int main(int argc, char** argv) {
         printRes(grid, res, dst);
       }
     } else {
-      std::cout << "n=" << g.number_vertices() << std::endl;
+//      std::cout << "n=" << g.number_vertices() << std::endl;
       auto heuristic = [&] (intT vtx) { return 0; };
       res = pwsa<Heap<VertexPackage>,
                               decltype(heuristic),
