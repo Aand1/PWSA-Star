@@ -5,8 +5,8 @@
  * \file pwsa.cpp
  */
 #include "pwsa.hpp"
+#include "bin_heap.hpp"
 #include <math.h>
-
 
 template<class G>
 void printRes(G g, std::atomic<long>* res, intT dst) {
@@ -89,7 +89,7 @@ int main(int argc, char** argv) {
                       pow(vtxCoords.second - dstCoords.second, 2)) * 10000);
           return w * h;
         };
-        res = pwsa<Treap<intT, VertexPackage>, 
+        res = pwsa<Heap<VertexPackage>, 
                           decltype(heuristic),
                           gridGraph>(
                               grid, heuristic, src, dst, 
@@ -97,7 +97,7 @@ int main(int argc, char** argv) {
         printRes(grid, res, dst);
       } else {
         auto heuristic = [&] (intT vtx) { return 0; };
-        res = pwsa<Treap<intT, VertexPackage>, 
+        res = pwsa<Heap<VertexPackage>, 
                           decltype(heuristic),
                           gridGraph>(
                               grid, heuristic, src, dst, 
@@ -107,7 +107,7 @@ int main(int argc, char** argv) {
     } else {
       std::cout << "n=" << g.number_vertices() << std::endl;
       auto heuristic = [&] (intT vtx) { return 0; };
-      res = pwsa<Treap<intT, VertexPackage>, 
+      res = pwsa<Heap<VertexPackage>, 
                               decltype(heuristic), 
                               graph<asymmetricVertex> >(g, heuristic, src, dst, 
                                              split_cutoff, poll_cutoff);

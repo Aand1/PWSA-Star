@@ -50,6 +50,11 @@ public:
     : vertexId(vertexId), low(low), high(high), mustProcess(mustProcess),
        distance(distance){ }
 
+  // TODO: check copy constructor correctness
+  VertexPackage(const VertexPackage& other) : 
+    vertexId(other.vertexId), low(other.low), high(other.high), mustProcess(other.mustProcess),
+    distance(other.distance) { }
+
   long weight() {
     return std::max(1, high - low);
   }

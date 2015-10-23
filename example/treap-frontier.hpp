@@ -192,7 +192,6 @@ private:
 public:
 
   using self_type = Treap<KEY,VALUE>;
-
   Treap() : root(nullptr) { }
 
   void insert(KEY& key, VALUE& value) {
@@ -227,6 +226,10 @@ public:
 
   void check() {
     node_check(root, nullptr, nullptr, nullptr);
+  }
+
+  bool isEmpty() {
+    return root == nullptr;
   }
 
 };

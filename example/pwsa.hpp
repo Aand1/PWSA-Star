@@ -6,6 +6,7 @@
  */
 #include "benchmark.hpp"
 #include "treap-frontier.hpp"
+#include "bin_heap.hpp"
 #include "weighted-graph.hpp"
 #include "native.hpp"
 #include "defaults.hpp"
@@ -119,7 +120,7 @@ std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
           int heur = heuristic(ngh) + vpack.distance + weight;
           frontier.insert(heur, nghpack);
 
-          print([&] { 
+          print([&] {
             std::cout << "inserted pack "; nghpack.display(); 
             std::cout << ": "; frontier.display(); std::cout << std::endl; 
           });
