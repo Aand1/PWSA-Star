@@ -51,6 +51,10 @@ long* pars(GRAPH& graph, const HEURISTIC& heur, const PAIR_HEURISTIC& pair_heur,
       return (distance[x].load() + heur(x)) - (distance[y].load() + heur(y));
     };
 
+    auto lt = [&] (intT x, intT y) {
+      return (distance[x].load() + heur(x)) < (distance[y].load() + heur(y));
+    };
+
     // std::pair<intT*,long> Kfront;
     // if (K < frontier_size) {
     //   intT pivot = array_util::quickselect(cmp, K, frontier, frontier_size);
@@ -61,7 +65,7 @@ long* pars(GRAPH& graph, const HEURISTIC& heur, const PAIR_HEURISTIC& pair_heur,
     //   temp = array_util::append(frontier, frontier_size, temp, 0);
     //   Kfront = std::make_pair(temp, frontier_size);
     // }
-    //
+
     // par::parallel_for(pars_independence_controller,
     //                   [&] (long lo, long hi) { return Kfront.second * (hi - lo); },
     //                   0l, Kfront.second, [&] (long i) {
@@ -72,15 +76,33 @@ long* pars(GRAPH& graph, const HEURISTIC& heur, const PAIR_HEURISTIC& pair_heur,
     //   bool right = array_util::all(indep_check, Kfront.first, i+1, Kfront.second);
     //   independent[i] = left && right;
     // });
-
+    //
     // auto independents = array_util::filter([&] (long i, intT ignore) { return independent[i]; },
     //                                             Kfront.first, Kfront.second);
+
+    // if (K < frontier_size) {
+    //   std::nth_element(frontier, frontier + K, frontier + frontier_size, lt);
+    // }
+    //
+    // par::parallel_for(pars_independence_controller,
+    //                   [&] (long lo, long hi) { return std::min(frontier_size, K) * (hi - lo); },
+    //                   0l, std::min(frontier_size, K), [&] (long i) {
+    //   auto indep_check = [&] (intT other) {
+    //     return distance[frontier[i]].load() <= distance[other].load() + pair_heur(frontier[i], other);
+    //   };
+    //   bool left = array_util::all(indep_check, frontier, 0, i);
+    //   bool right = array_util::all(indep_check, frontier, i+1, std::min(frontier_size, K));
+    //   independent[i] = left && right;
+    // });
+    //
+    // auto independents = array_util::filter([&] (long i, intT ignore) { return independent[i]; },
+    //                                             frontier, std::min(frontier_size, K));
 
     par::parallel_for(pars_independence_controller,
                       [&] (long lo, long hi) { return frontier_size * (hi - lo); },
                       0l, frontier_size, [&] (long i) {
       auto indep_check = [&] (intT other) {
-        return distance[frontier[i]].load() <= distance[other].load() + pair_heur(frontier[i], other);
+        return distance[frontier[i]].load(std::memory_order_relaxed) <= distance[other].load(std::memory_order_relaxed) + pair_heur(frontier[i], other);
       };
       bool left = array_util::all(indep_check, frontier, 0, i);
       bool right = array_util::all(indep_check, frontier, i+1, frontier_size);
@@ -148,7 +170,7 @@ long* pars(GRAPH& graph, const HEURISTIC& heur, const PAIR_HEURISTIC& pair_heur,
     free(offsets);
     free(independents.first);
 //    free(independent);
-//    free(Kfront.first);
+//   free(Kfront.first);
 
     auto newfrontier = array_util::filter([&] (long i, intT v) { return v != NOT_A_VERTEX_ID && finalized[v] == INFINITE; }, all, frontier_size + successors_len);
 

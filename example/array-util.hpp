@@ -151,7 +151,7 @@ T quickselect(const COMPARE_FUNC& cmp, long k, T* xs, long n) {
 
   if (n == 1) return xs[0];
 
-  T& pivot = xs[0];
+  T& pivot = xs[rand() % n];
 
   T result;
 

@@ -102,7 +102,7 @@ int main(int argc, char** argv) {
         //                   gridGraph>(
         //                       grid, heuristic, src, dst,
         //                       split_cutoff, poll_cutoff);
-        printRes(grid, res, dst);
+//        printRes(grid, res, dst);
       } else {
         auto heur = [&] (intT v) { return 0l; };
         auto pair_heur = [&] (intT v1, intT v2) { return 0l; };
@@ -112,7 +112,7 @@ int main(int argc, char** argv) {
         //                   gridGraph>(
         //                       grid, heuristic, src, dst,
         //                       split_cutoff, poll_cutoff);
-        printRes(grid, res, dst);
+//        printRes(grid, res, dst);
       }
     } else {
       // std::cout << "n=" << g.number_vertices() << std::endl;
