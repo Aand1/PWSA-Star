@@ -30,9 +30,13 @@ int main(int argc, char** argv) {
   int srcY;
   int dstX;
   int dstY;
-  int w;
+  double w;
   bool isGrid;
   bool useEuc;
+
+  std::atomic<long>* res;
+
+//  long result;
 
   gridGraph grid;
   graph<asymmetricVertex> g;
@@ -41,7 +45,7 @@ int main(int argc, char** argv) {
     split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 10000);
     poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 10000);
     fname = pasl::util::cmdline::parse_or_default_string("graph", "graphs/simple_weighted.txt");
-    isGrid = pasl::util::cmdline::parse_or_default_bool("isGrid", false);
+    isGrid = pasl::util::cmdline::parse_or_default_bool("isGrid", true);
     useEuc = pasl::util::cmdline::parse_or_default_bool("useEuc", true);
     src = (int)pasl::util::cmdline::parse_or_default_int("src", 0);
     dst = (int)pasl::util::cmdline::parse_or_default_int("dst", 0);
@@ -52,7 +56,7 @@ int main(int argc, char** argv) {
     srcX = (int)pasl::util::cmdline::parse_or_default_int("srcY", -1);
     dstY = (int)pasl::util::cmdline::parse_or_default_int("dstX", -1);
     dstX = (int)pasl::util::cmdline::parse_or_default_int("dstY", -1);
-    w = (int)pasl::util::cmdline::parse_or_default_int("w", 1);
+    w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     if (isGrid == 1) {
       auto r = readMap(fname.c_str());
 
@@ -75,7 +79,6 @@ int main(int argc, char** argv) {
 
   auto run = [&] (bool sequential) {
 
-    std::atomic<long>* res;
     if (isGrid == 1) {
       // use grid parsing functionalities
 
@@ -85,16 +88,16 @@ int main(int argc, char** argv) {
         std::pair<int, int> dstCoords = grid.getHeuristic(dst);
         auto heuristic = [&] (intT vtx) {
           auto vtxCoords = grid.getHeuristic(vtx);
-          auto h = (int) (sqrt(pow(vtxCoords.first - dstCoords.first, 2) +
-                      pow(vtxCoords.second - dstCoords.second, 2)) * 10000);
-          return w * h;
+          auto h = (int) (w * (sqrt(pow(vtxCoords.first - dstCoords.first, 2) +
+                      pow(vtxCoords.second - dstCoords.second, 2)) * 10000));
+          return h;
         };
         res = pwsa<Heap<VertexPackage>,
                           decltype(heuristic),
                           gridGraph>(
                               grid, heuristic, src, dst,
                               split_cutoff, poll_cutoff);
-        printRes(grid, res, dst);
+//        printRes(grid, res, dst);
       } else {
         auto heuristic = [&] (intT vtx) { return 0; };
         res = pwsa<Heap<VertexPackage>,
@@ -102,7 +105,7 @@ int main(int argc, char** argv) {
                           gridGraph>(
                               grid, heuristic, src, dst,
                               split_cutoff, poll_cutoff);
-        printRes(grid, res, dst);
+//        printRes(grid, res, dst);
       }
     } else {
 //      std::cout << "n=" << g.number_vertices() << std::endl;
@@ -111,11 +114,13 @@ int main(int argc, char** argv) {
                               decltype(heuristic),
                               graph<asymmetricVertex> >(g, heuristic, src, dst,
                                              split_cutoff, poll_cutoff);
-      printRes(g, res, dst);
+//      printRes(g, res, dst);
     }
   };
 
-  auto output = [&] {;};
+  auto output = [&] {
+    std::cout << "pathlen " << double(res[dst].load())/10000.0 << std::endl;
+  };
 
   auto destroy = [&] {;};
 
