@@ -114,7 +114,7 @@ private:
     }
   }
 
-public: 
+public:
 
   Heap() : size(0) { }
 
@@ -145,15 +145,23 @@ public:
   }
 
   void display() {
-
+    std::cout << "{";
+    for (long i = 0; i < size; i++) {
+      std::cout << "(" << values[i].key << "," << values[i].value << ")";
+      if (i != size - 1) {
+        std::cout << ",";
+      }
+    }
+    std::cout << "}";
   }
 
   // TODO: we're callously ignoring 'w'. Let' fix later
   void split_at(long w, Heap<VALUE>& other) {
-    // have size, will split by giving essentially the left child 
+    // have size, will split by giving essentially the left child
     // plus the root to us, and the right-child to them
     if (size < 2) {
       other.size = 0;
+      return;
     }
     int halfHeap = largestPowTwo(size);
     halfHeap /= 2; // giving half to each side (upper bound)

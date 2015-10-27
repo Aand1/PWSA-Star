@@ -5,12 +5,14 @@
  * \file pwsa.hpp
  */
 #include "benchmark.hpp"
-#include "treap-frontier.hpp"
-#include "bin_heap.hpp"
+//include "treap-frontier.hpp"
+//include "bin_heap.hpp"
+#include "container.hpp"
 #include "weighted-graph.hpp"
 #include "native.hpp"
 #include "defaults.hpp"
 #include <cstring>
+#include <sys/time.h>
 
 static inline void pmemset(char * ptr, int value, size_t num) {
   const size_t cutoff = 100000;
@@ -39,10 +41,16 @@ void print(const Body& b) {
   }
 }
 
+uint64_t GetTimeStamp() {
+  struct timeval tv;
+  gettimeofday(&tv,NULL);
+  return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
+}
+
 template <class FRONTIER, class HEURISTIC, class GRAPH>
 std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
                         const intT& source, const intT& destination,
-                        int split_cutoff, int poll_cutoff) {
+                        int split_cutoff, int poll_cutoff, double exptime) {
   intT N = graph.number_vertices();
   std::atomic<long>* finalized = pasl::data::mynew_array<std::atomic<long>>(N);
   fill_array_par(finalized, N, -1l);
@@ -51,6 +59,8 @@ std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   int heur = heuristic(source);
   VertexPackage vtxPackage = graph.make_vertex_package(source, false, 0);
   initF.insert(heur, vtxPackage);
+
+//  std::cout << "initF: " << std::flush; initF.display(); std::cout << std::endl;
 
   pasl::data::perworker::array<int> work_since_split;
   work_since_split.init(0);
@@ -70,61 +80,75 @@ std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   };
 
   auto fork = [&] (FRONTIER& src, FRONTIER& dst) {
-    print([&] { 
-      std::cout << "splitting "; src.display(); 
-      std::cout << std::endl; 
-    });
+    // print([&] {
+    //   std::cout << "splitting "; src.display();
+    //   std::cout << std::endl;
+    // });
     src.split_at(src.total_weight() / 2, dst);
-    print([&] { 
-      std::cout << "produced "; src.display(); std::cout << "; "; 
-      dst.display(); std::cout << std::endl; 
-    });
+    // print([&] {
+    //   std::cout << "produced "; src.display(); std::cout << "; ";
+    //   dst.display(); std::cout << std::endl;
+    // });
     work_since_split.mine() = 0;
   };
 
   auto set_in_env = [&] (FRONTIER& f) {;};
 
   auto do_work = [&] (FRONTIER& frontier) {
-    print([&] {
-      std::cout << "Frontier dump: "; frontier.display(); 
-      std::cout << std::endl;
-    });
+    // print([&] {
+    //   std::cout << "Frontier dump: "; frontier.display();
+    //   std::cout << std::endl;
+    // });
 
     int work_this_round = 0;
     while (work_this_round < poll_cutoff && frontier.total_weight() > 0) {
       auto pair = frontier.delete_min();
       VertexPackage vpack = pair.second;
+      // print([&] {
+      //   std::cout << "Popped " << vpack << std::endl;
+      //   if (finalized[vpack.vertexId].load() != -1) std::cout << "Already visited " << vpack << std::endl;
+      // });
       long orig = -1l;
-      if (vpack.mustProcess || 
-         (finalized[vpack.vertexId].load() == -1 && 
+      if (vpack.mustProcess ||
+         (finalized[vpack.vertexId].load() == -1 &&
           finalized[vpack.vertexId].compare_exchange_strong(orig, vpack.distance))) {
         if (vpack.vertexId == destination) {
-          print([&] { 
-            std::cout << "Found destination: distance = " << 
-            finalized[destination].load() << std::endl; 
-          });
+          // print([&] {
+          //   std::cout << "Found destination: distance = " <<
+          //   finalized[destination].load() << std::endl;
+          // });
           return true;
         }
-        if (work_this_round + vpack.weight() > poll_cutoff) {
-          // need to split vpack
-          VertexPackage other = VertexPackage();
-          vpack.split_at(poll_cutoff - work_this_round, other);
-          other.mustProcess = true;
-          if (other.weight() != 0) {
-            frontier.insert(pair.first, other);
-          }
-        }
+        // if (work_this_round + vpack.weight() > poll_cutoff) {
+        //   // need to split vpack
+        //   VertexPackage other = VertexPackage();
+        //   vpack.split_at(poll_cutoff - work_this_round, other);
+        //   other.mustProcess = true;
+        //   if (other.weight() != 0) {
+        //     frontier.insert(pair.first, other);
+        //   }
+        // }
         // Have to process our vpack
+//        print([&] { std::cout << "NEIGHBORS OF " << vpack.vertexId << std::endl; });
         graph.apply_to_each_in_range(vpack, [&] (intT ngh, intT weight) {
           VertexPackage nghpack = graph.make_vertex_package(ngh, false, vpack.distance + weight);
           int heur = heuristic(ngh) + vpack.distance + weight;
           frontier.insert(heur, nghpack);
 
-          print([&] {
-            std::cout << "inserted pack "; nghpack.display(); 
-            std::cout << ": "; frontier.display(); std::cout << std::endl; 
-          });
+          //pasl::util::ticks::microseconds_sleep(exptime * 1000000.0);
+          uint64_t t0 = GetTimeStamp();
+          uint64_t t1;
+          uint64_t dt;
+          do{
+            t1 = GetTimeStamp();
+            dt = t1-t0;
+          } while(dt < /*EXP_TIME*/ (exptime*1000000.0));
+          // print([&] {
+          //   std::cout << "inserted pack "; nghpack.display();
+          //   std::cout << ": "; frontier.display(); std::cout << std::endl;
+          // });
         });
+//        print([&] { std::cout << "END NEIGHBORS OF " << vpack.vertexId << std::endl; });
         work_this_round += vpack.weight();
       } else {
         // Account 1 for popping.

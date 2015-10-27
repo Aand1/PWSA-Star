@@ -5,7 +5,9 @@
  * \file pwsa.cpp
  */
 #include "pwsa.hpp"
-#include "bin_heap.hpp"
+#include "sam_bin_heap.hpp"
+//include "bin_heap.hpp"
+#include "treap-frontier.hpp"
 #include <math.h>
 
 template<class G>
@@ -31,6 +33,7 @@ int main(int argc, char** argv) {
   int dstX;
   int dstY;
   double w;
+  double exptime;
   bool isGrid;
   bool useEuc;
 
@@ -57,6 +60,7 @@ int main(int argc, char** argv) {
     dstY = (int)pasl::util::cmdline::parse_or_default_int("dstX", -1);
     dstX = (int)pasl::util::cmdline::parse_or_default_int("dstY", -1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
+    exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0000000001);
     if (isGrid == 1) {
       auto r = readMap(fname.c_str());
 
@@ -92,11 +96,11 @@ int main(int argc, char** argv) {
                       pow(vtxCoords.second - dstCoords.second, 2)) * 10000));
           return h;
         };
-        res = pwsa<Heap<VertexPackage>,
+        res = pwsa<Heap<VertexPackage>/*Treap<int,VertexPackage>*/,
                           decltype(heuristic),
                           gridGraph>(
                               grid, heuristic, src, dst,
-                              split_cutoff, poll_cutoff);
+                              split_cutoff, poll_cutoff, exptime);
 //        printRes(grid, res, dst);
       } else {
         auto heuristic = [&] (intT vtx) { return 0; };
@@ -104,7 +108,7 @@ int main(int argc, char** argv) {
                           decltype(heuristic),
                           gridGraph>(
                               grid, heuristic, src, dst,
-                              split_cutoff, poll_cutoff);
+                              split_cutoff, poll_cutoff, exptime);
 //        printRes(grid, res, dst);
       }
     } else {
@@ -113,7 +117,7 @@ int main(int argc, char** argv) {
       res = pwsa<Heap<VertexPackage>,
                               decltype(heuristic),
                               graph<asymmetricVertex> >(g, heuristic, src, dst,
-                                             split_cutoff, poll_cutoff);
+                                             split_cutoff, poll_cutoff, exptime);
 //      printRes(g, res, dst);
     }
   };

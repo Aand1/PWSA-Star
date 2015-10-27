@@ -51,7 +51,7 @@ public:
        distance(distance){ }
 
   // TODO: check copy constructor correctness
-  VertexPackage(const VertexPackage& other) : 
+  VertexPackage(const VertexPackage& other) :
     vertexId(other.vertexId), low(other.low), high(other.high), mustProcess(other.mustProcess),
     distance(other.distance) { }
 
@@ -73,12 +73,12 @@ public:
   }
 
   void display() {
-    std::cout << "{vertexId=" << vertexId << ",low=" << low << ",high=" << high << ",mustProcess=" << mustProcess << ",distance=" << distance << "}" << std::endl;
+    std::cout << "{vertexId=" << vertexId /*<< ",low=" << low << ",high=" << high << ",mustProcess=" << mustProcess*/ << ",distance=" << distance << "}" << std::endl;
   }
 };
 
 std::ostream& operator<<(std::ostream& os, const VertexPackage& pack) {
-  os << "{vertexId=" << pack.vertexId << ",low=" << pack.low << ",high=" << pack.high << ",mustProcess=" << pack.mustProcess << ",distance=" << pack.distance << "}";
+  os << "{vertexId=" << pack.vertexId /*<< ",low=" << pack.low << ",high=" << pack.high << ",mustProcess=" << pack.mustProcess*/ << ",distance=" << pack.distance << "}";
   return os;
 }
 
@@ -184,7 +184,7 @@ struct gridGraph {
   }
 
   template<class F>
-  void iterateNghs(intT x, intT y, F f) {
+  void iterateNghs(intT x, intT y, const F& f) {
     for (intT i = -1; i < 2; i++) {
       for (intT j = -1; j < 2; j++) {
         if (inbounds(x + i, y + j) && !(i == 0 && j == 0)) {
@@ -234,11 +234,15 @@ struct gridGraph {
     iterateNghs<decltype(innerF)>(pair.first, pair.second, innerF);
   }
 
-  void apply_to_each_in_range(const VertexPackage& r, std::function<void(intT, intT)> f) {
+  template <class F>
+  void apply_to_each_in_range(const VertexPackage& r, const F& f /*std::function<void(intT, intT)> f*/) {
     auto pair = idToGrid[r.vertexId];
     auto innerF = [&] (intT x, intT y, intT weight) {
-      auto nghId = grid[x][y].id;
-      f(nghId, weight);
+      if (!grid[x][y].obs) {
+        auto nghId = grid[x][y].id;
+        //std::cout << std::endl << "APPLYING TO " << nghId << std::endl;
+        f(nghId, weight);
+      }
     };
     iterateNghs<decltype(innerF)>(pair.first, pair.second, innerF);
   }
@@ -309,10 +313,11 @@ struct graph {
   }
 
   void apply_to_each_in_range(const VertexPackage& r, std::function<void(intT, intT)> f) {
-    vertex v = V[r.vertexId];
-    for (intT i = r.low; i < r.high; i++) {
-      f(v.getOutNeighbor(i), v.getOutWeight(i));
-    }
+    std::cout << std::endl << "I HOPE WE'RE NEVER IN HERE." << std::endl;
+    // vertex v = V[r.vertexId];
+    // for (intT i = r.low; i < r.high; i++) {
+    //   f(v.getOutNeighbor(i), v.getOutWeight(i));
+    // }
   }
 
 //  // f expects arguments (u, v, edge weight between u and v)
