@@ -399,17 +399,17 @@ int main(int argc, char** argv){
   pthread_cond_init(&cond,NULL);
 
   // ************************************************************************
-  start_y = parse_or_default_int(argc, argv, "-srcX", -1); //e.GetStartX();
-  start_x = parse_or_default_int(argc, argv, "-srcY", -1); //e.GetStartY();
-  goal_y = parse_or_default_int(argc, argv, "-dstX", -1); //e.GetGoalX();
-  goal_x = parse_or_default_int(argc, argv, "-dstY", -1); //e.GetGoalY();
+  start_y = parse_or_default_int(argc, argv, "-sr", 1); //e.GetStartX();
+  start_x = parse_or_default_int(argc, argv, "-sc", 1); //e.GetStartY();
+  goal_y = parse_or_default_int(argc, argv, "-dr", 1); //e.GetGoalX();
+  goal_x = parse_or_default_int(argc, argv, "-dc", 1); //e.GetGoalY();
 
   num_threads = parse_or_default_int(argc, argv, "-proc", 1);
   wA_eps = parse_or_default_double(argc, argv, "-w", 1.0);
   pA_eps = parse_or_default_double(argc, argv, "-eps", wA_eps);
   SEC_PER_EXPAND = parse_or_default_double(argc, argv, "-exptime", 0.0000000001);
 
-  const char* map_filename = parse_or_default_string(argc, argv, "-graph", "maps/simple_map.map");
+  const char* map_filename = parse_or_default_string(argc, argv, "-map", "maps/simple_map.map");
   //printf("load %s\n",map_filename);
   FILE* fin = fopen(map_filename,"r");
   fscanf(fin,"type octile\nheight %d\n",&size_x);
@@ -448,6 +448,7 @@ int main(int argc, char** argv){
 
   double dt = double(t1-t0)/1000000.0;
   printf("exectime %f\n", dt);
+  printf("expanded %d\n", num_expands);
   printf("pathlen %f\n", double(path_length)/10000.0);
 
   //loop over maps

@@ -4,13 +4,11 @@
  *
  * \file pwsa.hpp
  */
-#include "benchmark.hpp"
-//include "treap-frontier.hpp"
-//include "bin_heap.hpp"
+//include "benchmark.hpp"
 #include "container.hpp"
-#include "weighted-graph.hpp"
+//include "weighted-graph.hpp"
 #include "native.hpp"
-#include "defaults.hpp"
+//include "defaults.hpp"
 #include <cstring>
 #include <sys/time.h>
 
@@ -33,10 +31,9 @@ void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
   pmemset((char*)array, val, sz*sizeof(Number));
 }
 
-bool shouldPrint = false;
 template <class Body>
-void print(const Body& b) {
-  if (shouldPrint) {
+void print(bool debug, const Body& b) {
+  if (debug) {
     pasl::util::atomic::msg(b);
   }
 }
@@ -47,26 +44,24 @@ uint64_t GetTimeStamp() {
   return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
 }
 
-template <class FRONTIER, class HEURISTIC, class GRAPH>
-std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
-                        const intT& source, const intT& destination,
-                        int split_cutoff, int poll_cutoff, double exptime) {
-  intT N = graph.number_vertices();
-  std::atomic<long>* finalized = pasl::data::mynew_array<std::atomic<long>>(N);
-  fill_array_par(finalized, N, -1l);
+template <class GRAPH, class HEAP, class HEURISTIC>
+std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
+                        const int& source, const int& destination,
+                        int split_cutoff, int poll_cutoff, double exptime,
+                        bool debug = false) {
+  int N = graph.number_vertices();
+  std::atomic<int>* finalized = pasl::data::mynew_array<std::atomic<int>>(N);
+  fill_array_par(finalized, N, -1);
 
-  FRONTIER initF = FRONTIER();
+  HEAP initF = HEAP();
   int heur = heuristic(source);
-  VertexPackage vtxPackage = graph.make_vertex_package(source, false, 0);
-  initF.insert(heur, vtxPackage);
-
-//  std::cout << "initF: " << std::flush; initF.display(); std::cout << std::endl;
+  initF.insert(heur, std::make_pair(source, 0));
 
   pasl::data::perworker::array<int> work_since_split;
   work_since_split.init(0);
 
-  auto size = [&] (FRONTIER& frontier) {
-    auto sz = frontier.total_weight();
+  auto size = [&] (HEAP& frontier) {
+    auto sz = frontier.size();
     if (sz == 0) {
       work_since_split.mine() = 0;
       return 0; // no work left
@@ -79,81 +74,39 @@ std::atomic<long>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
     }
   };
 
-  auto fork = [&] (FRONTIER& src, FRONTIER& dst) {
-    // print([&] {
-    //   std::cout << "splitting "; src.display();
-    //   std::cout << std::endl;
-    // });
-    src.split_at(src.total_weight() / 2, dst);
-    // print([&] {
-    //   std::cout << "produced "; src.display(); std::cout << "; ";
-    //   dst.display(); std::cout << std::endl;
-    // });
+  auto fork = [&] (HEAP& src, HEAP& dst) {
+    src.split(dst);
     work_since_split.mine() = 0;
   };
 
-  auto set_in_env = [&] (FRONTIER& f) {;};
+  auto set_in_env = [&] (HEAP& f) {;};
 
-  auto do_work = [&] (FRONTIER& frontier) {
-    // print([&] {
-    //   std::cout << "Frontier dump: "; frontier.display();
-    //   std::cout << std::endl;
-    // });
-
+  auto do_work = [&] (HEAP& frontier) {
     int work_this_round = 0;
-    while (work_this_round < poll_cutoff && frontier.total_weight() > 0) {
+    while (work_this_round < poll_cutoff && frontier.size() > 0) {
       auto pair = frontier.delete_min();
-      VertexPackage vpack = pair.second;
-      // print([&] {
-      //   std::cout << "Popped " << vpack << std::endl;
-      //   if (finalized[vpack.vertexId].load() != -1) std::cout << "Already visited " << vpack << std::endl;
-      // });
-      long orig = -1l;
-      if (vpack.mustProcess ||
-         (finalized[vpack.vertexId].load() == -1 &&
-          finalized[vpack.vertexId].compare_exchange_strong(orig, vpack.distance))) {
-        if (vpack.vertexId == destination) {
-          // print([&] {
-          //   std::cout << "Found destination: distance = " <<
-          //   finalized[destination].load() << std::endl;
-          // });
+      int v = pair.first;
+      int vdist = pair.second;
+      int orig = -1;
+      if (finalized[v].load() == -1 && finalized[v].compare_exchange_strong(orig, vdist)) {
+        if (v == destination) {
           return true;
         }
-        // if (work_this_round + vpack.weight() > poll_cutoff) {
-        //   // need to split vpack
-        //   VertexPackage other = VertexPackage();
-        //   vpack.split_at(poll_cutoff - work_this_round, other);
-        //   other.mustProcess = true;
-        //   if (other.weight() != 0) {
-        //     frontier.insert(pair.first, other);
-        //   }
-        // }
-        // Have to process our vpack
-//        print([&] { std::cout << "NEIGHBORS OF " << vpack.vertexId << std::endl; });
-        graph.apply_to_each_in_range(vpack, [&] (intT ngh, intT weight) {
-          VertexPackage nghpack = graph.make_vertex_package(ngh, false, vpack.distance + weight);
-          int heur = heuristic(ngh) + vpack.distance + weight;
-          frontier.insert(heur, nghpack);
+        graph.for_each_neighbor_of(v, [&] (int ngh, int weight) {
+          int nghdist = vdist + weight;
+          frontier.insert(heuristic(ngh) + nghdist, std::make_pair(ngh, nghdist));
 
-          //pasl::util::ticks::microseconds_sleep(exptime * 1000000.0);
+          // SIMULATE EXPANSION TIME
           uint64_t t0 = GetTimeStamp();
           uint64_t t1;
           uint64_t dt;
           do{
             t1 = GetTimeStamp();
             dt = t1-t0;
-          } while(dt < /*EXP_TIME*/ (exptime*1000000.0));
-          // print([&] {
-          //   std::cout << "inserted pack "; nghpack.display();
-          //   std::cout << ": "; frontier.display(); std::cout << std::endl;
-          // });
+          } while(dt < (exptime*1000000.0));
         });
-//        print([&] { std::cout << "END NEIGHBORS OF " << vpack.vertexId << std::endl; });
-        work_this_round += vpack.weight();
-      } else {
-        // Account 1 for popping.
-        work_this_round += 1;
       }
+      work_this_round++;
     }
     work_since_split.mine() += work_this_round;
     return false;

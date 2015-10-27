@@ -28,13 +28,7 @@ VERBOSE_MAKE=0
 VERBOSE_DEPENDENCIES=0
 
 PROGRAMS=\
-	fib.cpp \
-	hull.cpp \
-	bhut.cpp \
-	sequence.cpp \
-	pwsa_main.cpp \
-	treap_main.cpp \
-	pars_main.cpp
+	pwsa_main.cpp
 #       add reference to your cpp source here
 
 ####################################################################
