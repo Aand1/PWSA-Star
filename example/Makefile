@@ -28,7 +28,8 @@ VERBOSE_MAKE=0
 VERBOSE_DEPENDENCIES=0
 
 PROGRAMS=\
-	pwsa_main.cpp
+	pwsa_main.cpp \
+	astar_main.cpp
 #       add reference to your cpp source here
 
 ####################################################################
@@ -53,7 +54,7 @@ include $(TOOLS_BUILD_FOLDER)/Makefile_options
 # (If extending the list, need to add cases for the definition
 # of COMPILE_OPTIONS_FOR further below, and also for "clean".
 
-MODES=dbg opt #log sta opt seq cilk
+MODES=dbg opt log #sta opt seq cilk
 
 # Compilation options for each mode
 
