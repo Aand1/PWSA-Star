@@ -6,11 +6,8 @@
  */
 #include "benchmark.hpp"
 #include "pwsa.hpp"
-#include "sam_bin_heap.hpp"
+#include "bin_heap.hpp"
 #include "weighted_graph.hpp"
-//include "bin_heap.hpp"
-//include "treap-frontier.hpp"
-//include <math.h>
 
 int main(int argc, char** argv) {
   int split_cutoff; // (K)
