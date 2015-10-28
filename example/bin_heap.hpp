@@ -1,189 +1,199 @@
-/* COPYRIGHT (c) 2015 Sam Westrick and Laxman Dhulipala
- * All rights reserved.
- *
- * \file treap-frontier.hpp
- *
- */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <vector>
-#include <math.h>
-#include <queue>
+#include <climits>
+#include "array-util.hpp"
 
 #ifndef _PWSA_BIN_HEAP_H_
 #define _PWSA_BIN_HEAP_H_
 
-using namespace std;
-
-#define NONE -1
-
-int largestPowTwo(int x) {
-  return (int)pow(2, ceil(log(x) / log(2)));
-}
-
 template <class VALUE>
 class Heap {
-
 private:
 
   struct KV {
-    public:
-      int key;
-      VALUE value;
+    long priority;
+    VALUE value;
   };
 
-  vector<KV> values;
-  int size;
+  long n;
+  long capacity;
+  KV* values;
 
-  int parent(int index) {
-    return (index - 1)>>1;
+  inline long parent(long i) {
+    return (i - 1) / 2;
   }
 
-  int leftChild(int index) {
-    int ch = (index<<1)+1;
-    return size <= ch ? NONE : ch;
+  inline long left_child(long i) {
+    return 2*i + 1;
   }
 
-  int rightChild(int index) {
-    int ch = (index<<1)+2;
-    return size <= ch ? NONE : ch;
+  inline long right_child(long i) {
+    return 2*i + 2;
   }
 
-  void swap(int a, int b) {
-    KV tmp = values[a];
-    values[a].key = values[b].key;
-    values[a].value = values[b].value;
-    values[b].key = tmp.key;
-    values[b].value = tmp.value;
+  inline bool has_parent(long i) {
+    return i > 0;
   }
 
-  int shiftDown(int startNode, vector<KV>& ov) {
-    std::queue<int> frontier;
-    frontier.push(startNode);
-    int numPushed = 0;
-
-    while (!frontier.empty()) {
-      int index = frontier.front();
-      frontier.pop();
-      ov[numPushed].key = values[index].key;
-      ov[numPushed].value = values[index].value;
-      int lc = leftChild(index);
-      int rc = rightChild(index);
-      if (lc != NONE) {
-        frontier.push(lc);
-      }
-      if (rc != NONE) {
-        frontier.push(rc);
-      }
-      numPushed++;
-    }
-    return numPushed;
+  inline bool has_left_child(long i) {
+    return left_child(i) < n;
   }
 
-  void heapifyDown() {
-    int index = 0;
-    while (index != size-1) {
-      int lIndex = leftChild(index);
-      int rIndex = rightChild(index);
-      if (lIndex == NONE) return;
-      int childIndex = lIndex;
-      if (rIndex == NONE) {
-        childIndex = lIndex;
-      } else if(values[lIndex].key > values[rIndex].key) {
-        childIndex = rIndex;
-      }
-      if (values[index].key <= values[childIndex].key) {
-        break;
-      }
-      swap(index,childIndex);
-      index = childIndex;
+  inline bool has_right_child(long i) {
+    return right_child(i) < n;
+  }
+
+  inline long priority(long i) {
+    return i >= n ? LONG_MAX : values[i].priority;
+  }
+
+  // inline void swap(long i, long j) {
+  //   std::swap(values[i], values[j]);
+  // }
+
+  inline long min_child(long i) {
+    return priority(left_child(i)) < priority(right_child(i)) ?
+           left_child(i) : right_child(i);
+  }
+
+  void heapify_down_from(long i) {
+    long curr = i;
+    while ((priority(curr) > priority(left_child(curr)))
+        || (priority(curr) > priority(right_child(curr)))) {
+      long next = min_child(curr);
+      std::swap(values[curr], values[next]);
+      curr = next;
     }
   }
 
-  void heapifyUp(int index) {
-    while (index) {
-      int pIndex = parent(index);
-      if (values[index].key < values[pIndex].key) {
-        swap(index,pIndex);
-        index = pIndex;
-      } else {
-        break;
-      }
+  void heapify_up_from(long i) {
+    long curr = i;
+    while (has_parent(curr) && (priority(curr) < priority(parent(curr)))) {
+      std::swap(values[curr], values[parent(curr)]);
+      curr = parent(curr);
     }
   }
+
+  // void resize_bigger() {
+  //   assert(n == capacity);
+  // 
+  //   capacity *= 2;
+  //   KV* old_values = values;
+  //   values = array_util::my_malloc<KV>(capacity);
+  //
+  //   for (long i = 0; i < n; i++) {
+  //     values[i] = old_values[i];
+  //   }
+  //
+  //   free(old_values);
+  // }
 
 public:
 
-  Heap() : size(0) { }
+  void resize_bigger(long new_cap) {
+    assert(n <= new_cap);
 
-  void insert(const int& key, const VALUE& value) {
-    if (size == values.capacity()) {
-//      std::cout << "resizing to " << ((size + 1) * 2) << endl;
-      values.resize((size + 1) * 2);
+    capacity = new_cap;
+    KV* old_values = values;
+    values = array_util::my_malloc<KV>(capacity);
+
+    for (long i = 0; i < n; i++) {
+      values[i] = old_values[i];
     }
-    int newindex = size++;
-    values[newindex].key = key;
-    values[newindex].value = value;
-    heapifyUp(size-1);
+
+    free(old_values);
   }
 
-  std::pair<int, VALUE> delete_min() {
-    std::pair<int, VALUE> res = std::make_pair(values[0].key, values[0].value);
-    values[0] = values[--size];
-    heapifyDown();
-    return res;
+  Heap() {
+    n = 0;
+    capacity = 2;
+    values = array_util::my_malloc<KV>(2);
   }
 
-  bool isEmpty() {
-    return size == 0;
+  void insert(long priority, const VALUE& value) {
+    if (n == capacity) resize_bigger(capacity * 2);
+
+    values[n].priority = priority;
+    values[n].value = value;
+    n++;
+    heapify_up_from(n-1);
   }
 
-  int total_weight() {
-    return size;
+  VALUE delete_min() {
+    assert(n > 0);
+    VALUE result = values[0].value;
+    values[0] = values[n-1];
+    n--;
+    heapify_down_from(0);
+    return result;
+  }
+
+  // bool isEmpty() {
+  //   return n == 0;
+  // }
+
+  long size() {
+    return n;
+  }
+
+  void split(Heap<VALUE>& other) {
+    if (n < 2) {
+      return;
+    }
+
+    long m = n;
+    n = 0;
+
+    KV root = values[0];
+    other.resize_bigger(m / 2);
+    other.n = 0;
+
+    long write_this_idx = 0;
+    long write_other_idx = 0;
+    long read_idx = 1;
+
+    for (long level = 2; read_idx < m; level *= 2) {
+      for (long i = 0; read_idx < m && i < level / 2; i++) {
+        values[write_this_idx] = values[read_idx];
+        write_this_idx++;
+        read_idx++;
+        n++;
+      }
+      for (long i = 0; read_idx < m && i < level / 2; i++) {
+        other.values[write_other_idx] = values[read_idx];
+        write_other_idx++;
+        read_idx++;
+        other.n++;
+      }
+    }
+
+    other.insert(root.priority, root.value);
+  }
+
+  // friend std::ostream& operator<< (std::ostream& stream, const Heap<VALUE>& H) {
+  //   stream << "{" << std::flush;
+  //   for (long i = 0; i < H.size; i++) {
+  //     stream << "(" << std::flush << H.values[i].priority << "," << std::flush << H.values[i].value << ")" << std::flush;
+  //     if (i != H.size - 1) {
+  //       stream << "," << std::flush;
+  //     }
+  //   }
+  //   stream << "}" << std::flush;
+  // }
+
+  void swap(Heap<VALUE>& other) {
+    std::swap(n, other.n);
+    std::swap(capacity, other.capacity);
+    std::swap(values, other.values);
   }
 
   void display() {
-    std::cout << "{";
-    for (long i = 0; i < size; i++) {
-      std::cout << "(" << values[i].key << "," << values[i].value << ")";
-      if (i != size - 1) {
-        std::cout << ",";
+    std::cout << "{" << std::flush;
+    for (long i = 0; i < n; i++) {
+      std::cout << "(" << std::flush << values[i].priority << "," << std::flush << values[i].value << ")" << std::flush;
+      if (i != n - 1) {
+        std::cout << "," << std::flush;
       }
     }
-    std::cout << "}";
-  }
-
-  // TODO: we're callously ignoring 'w'. Let' fix later
-  void split_at(long w, Heap<VALUE>& other) {
-    // have size, will split by giving essentially the left child
-    // plus the root to us, and the right-child to them
-    if (size < 2) {
-      other.size = 0;
-      return;
-    }
-    int halfHeap = largestPowTwo(size);
-    halfHeap /= 2; // giving half to each side (upper bound)
-    other.values.resize(halfHeap);
-    int frontKey = values[0].key;
-    VALUE frontValue = values[0].value; // TODO: have to make sure copy constructor works on values
-    int otherSize = shiftDown(2, other.values);
-    other.size = otherSize;
-    size = shiftDown(1, values);
-    insert(frontKey, frontValue);
-  }
-
-  void swap(Heap<VALUE>& other) {
-    std::swap(values, other.values);
-    std::swap(size, other.size);
-  }
-
-  void print () {
-    for (int i = 0; i < size; ++i) {
-      cout << values[i].key << " " << values[i].value << endl;
-    }
-    cout << endl;
+    std::cout << "}" << std::flush;
   }
 };
 
