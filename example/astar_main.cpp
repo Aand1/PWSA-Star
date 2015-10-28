@@ -30,8 +30,9 @@ int* astar(GRAPH& graph, const HEURISTIC& heuristic,
 
       graph.for_each_neighbor_of(v, [&] (int ngh, int weight) {
         int nghdist = vdist + weight;
-        if (dist[ngh] == -1);
+        if (dist[ngh] == -1) {
           frontier.insert(heuristic(ngh) + nghdist, std::make_pair(ngh, nghdist));
+        }
 
         // SIMULATE EXPANSION TIME
         uint64_t t0 = GetTimeStamp();
