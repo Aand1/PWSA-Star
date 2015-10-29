@@ -20,12 +20,16 @@ int main(int argc, char** argv) {
   double w;
   double exptime;
   bool debug;
+  bool pebble;
+  std::string pebblefile;
+  double opt;
 
   Graph G;
   int src;
   int dst;
 
   std::atomic<int>* res;
+  int* pebbles;
 
   auto init = [&] {
     split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 10000);
@@ -37,19 +41,29 @@ int main(int argc, char** argv) {
     dcol = (int)pasl::util::cmdline::parse_or_default_int("dc", 1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0000000001);
+    opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
     debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
+    pebble = pasl::util::cmdline::parse_or_default_bool("pebble", false);
+    pebblefile = pasl::util::cmdline::parse_or_default_string("pebblefile", "pebbling");
 
     G = Graph(fname.c_str());
 
     src = G.vertex_at(srow, scol);
     dst = G.vertex_at(drow, dcol);
+
+    if (pebble) {
+      pebbles = pasl::data::mynew_array<int>(G.number_vertices());
+      for (int i = 0; i < G.number_vertices(); i++) {
+        pebbles[i] = -1;
+      }
+    }
   };
 
   auto run = [&] (bool sequential) {
     auto heuristic = [&] (int v) {
       return G.weighted_euclidean(w, v, dst);
     };
-    res = pwsa<Graph, Heap<std::pair<int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, debug);
+    res = pwsa<Graph, Heap<std::pair<int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, debug, pebbles);
   };
 
   auto output = [&] {
@@ -57,8 +71,12 @@ int main(int argc, char** argv) {
     for (int i = 0; i < G.number_vertices(); i++) {
       if (res[i].load() != -1) num_expanded++;
     }
+    double pathlen = double(res[dst].load())/10000.0;
     std::cout << "expanded " << num_expanded << std::endl;
-    std::cout << "pathlen " << double(res[dst].load())/10000.0 << std::endl;
+    std::cout << "pathlen " << pathlen << std::endl;
+    std::cout << "deviation " << (pathlen / opt) << std::endl;
+
+    if (pebble) G.pebble_dump(pebbles, src, dst, pebblefile.c_str());
   };
 
   auto destroy = [&] {;};

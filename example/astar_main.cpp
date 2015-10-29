@@ -59,6 +59,7 @@ int main(int argc, char** argv) {
   double w;
   double exptime;
   bool debug;
+  double opt;
 
   Graph G;
   int src;
@@ -74,6 +75,7 @@ int main(int argc, char** argv) {
     dcol = (int)pasl::util::cmdline::parse_or_default_int("dc", 1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0000000001);
+    opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
     debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
 
     G = Graph(fname.c_str());
@@ -94,8 +96,10 @@ int main(int argc, char** argv) {
     for (int i = 0; i < G.number_vertices(); i++) {
       if (res[i] != -1) num_expanded++;
     }
+    double pathlen = double(res[dst])/10000.0;
     std::cout << "expanded " << num_expanded << std::endl;
-    std::cout << "pathlen " << double(res[dst])/10000.0 << std::endl;
+    std::cout << "pathlen " << pathlen << std::endl;
+    std::cout << "deviation " << (pathlen / opt) << std::endl;
   };
 
   auto destroy = [&] {

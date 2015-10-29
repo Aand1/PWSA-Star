@@ -48,7 +48,7 @@ template <class GRAPH, class HEAP, class HEURISTIC>
 std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
                         const int& source, const int& destination,
                         int split_cutoff, int poll_cutoff, double exptime,
-                        bool debug = false) {
+                        bool debug = false, int* pebbles = nullptr) {
   int N = graph.number_vertices();
   std::atomic<int>* finalized = pasl::data::mynew_array<std::atomic<int>>(N);
   fill_array_par(finalized, N, -1);
@@ -89,6 +89,7 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
       int vdist = pair.second;
       int orig = -1;
       if (finalized[v].load() == -1 && finalized[v].compare_exchange_strong(orig, vdist)) {
+        if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
         if (v == destination) {
           return true;
         }

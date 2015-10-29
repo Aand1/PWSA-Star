@@ -76,6 +76,24 @@ public:
     fclose(fin);
   }
 
+  void pebble_dump(int* pebbles, int src, int dst, const char* fname) {
+    FILE* fout = fopen(fname,"w");
+    fprintf(fout, "width %d\nheight %d\n", width, height);
+    for (int row = 0; row < height; row++) {
+      for (int col = 0; col < width; col++) {
+        if (grid[row][col] == OBSTACLE) fprintf(fout, "@");
+        else if (grid[row][col] == src) fprintf(fout, "s");
+        else if (grid[row][col] == dst) fprintf(fout, "t");
+        else if (pebbles[grid[row][col]] == -1) fprintf(fout, ".");
+        else fprintf(fout, "%d", pebbles[grid[row][col]]);
+
+        if (col != width - 1) fprintf(fout, " ");
+      }
+      fprintf(fout, "\n");
+    }
+    fclose(fout);
+  }
+
   int number_vertices() {
     return vertices.size();
   }

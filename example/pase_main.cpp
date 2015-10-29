@@ -408,6 +408,7 @@ int main(int argc, char** argv){
   wA_eps = parse_or_default_double(argc, argv, "-w", 1.0);
   pA_eps = parse_or_default_double(argc, argv, "-eps", wA_eps);
   SEC_PER_EXPAND = parse_or_default_double(argc, argv, "-exptime", 0.0000000001);
+  double opt = parse_or_default_double(argc, argv, "-opt", 1.0);
 
   const char* map_filename = parse_or_default_string(argc, argv, "-map", "maps/simple_map.map");
   //printf("load %s\n",map_filename);
@@ -449,7 +450,9 @@ int main(int argc, char** argv){
   double dt = double(t1-t0)/1000000.0;
   printf("exectime %f\n", dt);
   printf("expanded %d\n", num_expands);
-  printf("pathlen %f\n", double(path_length)/10000.0);
+  double pathlen = double(path_length)/10000.0;
+  printf("pathlen %f\n", pathlen);
+  printf("deviation %f\n", pathlen / opt);
 
   //loop over maps
   // for(int i=1; i<argc; i++){
