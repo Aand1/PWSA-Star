@@ -21,7 +21,9 @@ int main(int argc, char** argv) {
   double exptime;
   bool debug;
   bool pebble;
+  bool output_sol;
   std::string pebblefile;
+  std::string solutionfile;
   double opt;
 
   Graph G;
@@ -30,6 +32,7 @@ int main(int argc, char** argv) {
 
   std::atomic<int>* res;
   int* pebbles;
+  int* predecessors; 
 
   auto init = [&] {
     split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 10000);
@@ -43,18 +46,24 @@ int main(int argc, char** argv) {
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0000000001);
     opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
     debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
-    pebble = pasl::util::cmdline::parse_or_default_bool("pebble", false);
-    pebblefile = pasl::util::cmdline::parse_or_default_string("pebblefile", "pebbling");
+    pebblefile = pasl::util::cmdline::parse_or_default_string("pebblefile", "");
+    solutionfile = pasl::util::cmdline::parse_or_default_string("solutionfile", "");
 
     G = Graph(fname.c_str());
 
     src = G.vertex_at(srow, scol);
     dst = G.vertex_at(drow, dcol);
 
-    if (pebble) {
+    if (!pebblefile.empty()) {
       pebbles = pasl::data::mynew_array<int>(G.number_vertices());
       for (int i = 0; i < G.number_vertices(); i++) {
         pebbles[i] = -1;
+      }
+    }
+    if (!solutionfile.empty()) {
+      predecessors = pasl::data::mynew_array<int>(G.number_vertices());
+      for (int i = 0; i < G.number_vertices(); i++) {
+        predecessors[i] = -1;
       }
     }
   };
@@ -63,7 +72,7 @@ int main(int argc, char** argv) {
     auto heuristic = [&] (int v) {
       return G.weighted_euclidean(w, v, dst);
     };
-    res = pwsa<Graph, Heap<std::pair<int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, debug, pebbles);
+    res = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, debug, pebbles, predecessors);
   };
 
   auto output = [&] {
@@ -77,6 +86,7 @@ int main(int argc, char** argv) {
     std::cout << "deviation " << (pathlen / opt) << std::endl;
 
     if (pebble) G.pebble_dump(pebbles, src, dst, pebblefile.c_str());
+    if (predecessors) G.path_dump(predecessors, src, dst, solutionfile.c_str());
   };
 
   auto destroy = [&] {;};

@@ -48,14 +48,15 @@ template <class GRAPH, class HEAP, class HEURISTIC>
 std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
                         const int& source, const int& destination,
                         int split_cutoff, int poll_cutoff, double exptime,
-                        bool debug = false, int* pebbles = nullptr) {
+                        bool debug = false, int* pebbles = nullptr,
+                        int* predecessors = nullptr) {
   int N = graph.number_vertices();
   std::atomic<int>* finalized = pasl::data::mynew_array<std::atomic<int>>(N);
   fill_array_par(finalized, N, -1);
 
   HEAP initF = HEAP();
   int heur = heuristic(source);
-  initF.insert(heur, std::make_pair(source, 0));
+  initF.insert(heur, std::make_tuple(source, 0, 0));
 
   pasl::data::perworker::array<int> work_since_split;
   work_since_split.init(0);
@@ -84,18 +85,20 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   auto do_work = [&] (HEAP& frontier) {
     int work_this_round = 0;
     while (work_this_round < poll_cutoff && frontier.size() > 0) {
-      auto pair = frontier.delete_min();
-      int v = pair.first;
-      int vdist = pair.second;
+      auto tup = frontier.delete_min();
+      int v = std::get<0>(tup);
+      int vdist = std::get<1>(tup);
+      int pred = std::get<2>(tup);
       int orig = -1;
       if (finalized[v].load() == -1 && finalized[v].compare_exchange_strong(orig, vdist)) {
         if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
+        if (predecessors) predecessors[v] = pred;
         if (v == destination) {
           return true;
         }
         graph.for_each_neighbor_of(v, [&] (int ngh, int weight) {
           int nghdist = vdist + weight;
-          frontier.insert(heuristic(ngh) + nghdist, std::make_pair(ngh, nghdist));
+          frontier.insert(heuristic(ngh) + nghdist, std::make_tuple(ngh, nghdist, v));
 
           // SIMULATE EXPANSION TIME
           uint64_t t0 = GetTimeStamp();
