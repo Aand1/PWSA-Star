@@ -20,8 +20,6 @@ int main(int argc, char** argv) {
   double w;
   double exptime;
   bool debug;
-  bool pebble;
-  bool output_sol;
   std::string pebblefile;
   std::string solutionfile;
   double opt;
@@ -31,8 +29,8 @@ int main(int argc, char** argv) {
   int dst;
 
   std::atomic<int>* res;
-  int* pebbles;
-  int* predecessors; 
+  int* pebbles = nullptr;
+  int* predecessors = nullptr;
 
   auto init = [&] {
     split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 10000);
@@ -85,7 +83,7 @@ int main(int argc, char** argv) {
     std::cout << "pathlen " << pathlen << std::endl;
     std::cout << "deviation " << (pathlen / opt) << std::endl;
 
-    if (pebble) G.pebble_dump(pebbles, src, dst, pebblefile.c_str());
+    if (pebbles) G.pebble_dump(pebbles, src, dst, pebblefile.c_str());
     if (predecessors) G.path_dump(predecessors, src, dst, solutionfile.c_str());
   };
 
