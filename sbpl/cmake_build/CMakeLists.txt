@@ -57,4 +57,4 @@ target_link_libraries(test_pwsa
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_THREAD_LIBRARY}
 )
-set(CMAKE_CXX_FLAGS "-pthread")
+set(CMAKE_CXX_FLAGS "-pthread -std=c++0x")
