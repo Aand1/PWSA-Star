@@ -1,0 +1,1 @@
+/usr/bin/c++    -I /usr/local/include -lboost_thread-mt -pthread -O3 -DNDEBUG    CMakeFiles/test_sbpl.dir/usr2/home/ldhulipa/parallel_astar/sbpl/src/test/main.o  -o bin/test_sbpl -rdynamic libsbpl.a 

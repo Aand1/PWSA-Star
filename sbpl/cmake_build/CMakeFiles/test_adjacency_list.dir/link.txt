@@ -1,0 +1,1 @@
+/usr/bin/c++    -I /usr/local/include -lboost_thread-mt -pthread -O3 -DNDEBUG    CMakeFiles/test_adjacency_list.dir/usr2/home/ldhulipa/parallel_astar/sbpl/src/test/test_adjacency_list.o  -o bin/test_adjacency_list -rdynamic libsbpl.a 
