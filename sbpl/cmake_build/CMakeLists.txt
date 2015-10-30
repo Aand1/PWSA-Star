@@ -45,10 +45,8 @@ target_link_libraries(test_para sbpl)
 SET(Boost_USE_STATIC_LIBS ON)
 find_package(Boost COMPONENTS thread regex system filesystem REQUIRED)
 target_link_libraries(test_para
-  ${Boost_FILESYSTEM_LIBRARY}
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_THREAD_LIBRARY}
-  ${Boost_REGEX_LIBRARY}
 )
 
 add_executable(test_pwsa ../src/test/run.cpp)
@@ -56,9 +54,7 @@ target_link_libraries(test_pwsa sbpl)
 SET(Boost_USE_STATIC_LIBS ON)
 find_package(Boost COMPONENTS thread regex system filesystem REQUIRED)
 target_link_libraries(test_pwsa
-  ${Boost_FILESYSTEM_LIBRARY}
   ${Boost_SYSTEM_LIBRARY}
   ${Boost_THREAD_LIBRARY}
-  ${Boost_REGEX_LIBRARY}
 )
 set(CMAKE_CXX_FLAGS "-pthread")
