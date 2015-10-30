@@ -1,3 +1,0 @@
-/usr2/home/ldhulipa/parallel_astar/sbpl/cmake_build/CMakeFiles/sbpl.dir
-/usr2/home/ldhulipa/parallel_astar/sbpl/cmake_build/CMakeFiles/test_para.dir
-/usr2/home/ldhulipa/parallel_astar/sbpl/cmake_build/CMakeFiles/test_pwsa.dir

@@ -1,1 +1,0 @@
-/usr/bin/c++   -pthread -O3 -DNDEBUG    CMakeFiles/test_pwsa.dir/usr2/home/ldhulipa/parallel_astar/sbpl/src/test/run.o  -o bin/test_pwsa -rdynamic libsbpl.a -Wl,-Bstatic -lboost_filesystem-mt -lboost_system-mt -lboost_thread-mt -lboost_regex-mt -Wl,-Bdynamic 
