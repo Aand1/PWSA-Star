@@ -1,5 +1,5 @@
 #include <climits>
-#include "array-util.hpp"
+#include "array_util.hpp"
 
 #ifndef _PWSA_BIN_HEAP_H_
 #define _PWSA_BIN_HEAP_H_
@@ -74,7 +74,7 @@ private:
 
   // void resize_bigger() {
   //   assert(n == capacity);
-  // 
+  //
   //   capacity *= 2;
   //   KV* old_values = values;
   //   values = array_util::my_malloc<KV>(capacity);

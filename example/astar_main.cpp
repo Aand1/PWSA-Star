@@ -1,7 +1,7 @@
 #include "benchmark.hpp"
 #include "weighted_graph.hpp"
 #include "bin_heap.hpp"
-#include "array-util.hpp"
+#include "array_util.hpp"
 #include <sys/time.h>
 
 uint64_t GetTimeStamp() {

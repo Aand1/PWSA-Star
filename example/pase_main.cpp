@@ -7,9 +7,10 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <stdint.h>
-#include <sys/time.h>
+//include <sys/time.h>
 #include <math.h>
 
+#include "timing.hpp"
 //include "constants.h"
 //include "ScenarioLoader.h"
 
@@ -228,13 +229,14 @@ void astar_thread( void *ptr ){
       //artificial collision checking time
 
       //usleep(1);
-      uint64_t t0 = GetTimeStamp();
-      uint64_t t1;
-      uint64_t dt;
-      do{
-        t1 = GetTimeStamp();
-        dt = t1-t0;
-      } while(dt < /*EXP_TIME*/ (SEC_PER_EXPAND*1000000.0));
+      timing::busy_loop_secs(SEC_PER_EXPAND);
+      // uint64_t t0 = GetTimeStamp();
+      // uint64_t t1;
+      // uint64_t dt;
+      // do{
+      //   t1 = GetTimeStamp();
+      //   dt = t1-t0;
+      // } while(dt < /*EXP_TIME*/ (SEC_PER_EXPAND*1000000.0));
 
       if(newX<0 || newX==size_x || newY<0 || newY==size_y || t->obs)
         continue;
@@ -407,7 +409,7 @@ int main(int argc, char** argv){
   num_threads = parse_or_default_int(argc, argv, "-proc", 1);
   wA_eps = parse_or_default_double(argc, argv, "-w", 1.0);
   pA_eps = parse_or_default_double(argc, argv, "-eps", wA_eps);
-  SEC_PER_EXPAND = parse_or_default_double(argc, argv, "-exptime", 0.0000000001);
+  SEC_PER_EXPAND = parse_or_default_double(argc, argv, "-exptime", 0.0);
   double opt = parse_or_default_double(argc, argv, "-opt", 1.0);
 
   const char* map_filename = parse_or_default_string(argc, argv, "-map", "maps/simple_map.map");
@@ -443,9 +445,9 @@ int main(int argc, char** argv){
   }
   // ************************************************************************
 
-  uint64_t t0 = GetTimeStamp();
+  uint64_t t0 = timing::now();
   solveMaze(path_length, num_discovered, num_expands);
-  uint64_t t1 = GetTimeStamp();
+  uint64_t t1 = timing::now();
 
   double dt = double(t1-t0)/1000000.0;
   printf("exectime %f\n", dt);

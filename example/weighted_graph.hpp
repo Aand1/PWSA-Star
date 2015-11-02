@@ -71,7 +71,7 @@ public:
     fclose(fin);
   }
 
-  void pebble_dump(int* pebbles, int src, int dst, const char* fname) {
+  void pebble_dump(int* pebbles, int* predecessors, int src, int dst, const char* fname) {
     FILE* fout = fopen(fname,"w");
     fprintf(fout, "width %d\nheight %d\n", width, height);
     for (int row = 0; row < height; row++) {
@@ -86,11 +86,7 @@ public:
       }
       fprintf(fout, "\n");
     }
-    fclose(fout);
-  }
 
-  void path_dump(int* predecessors, int src, int dst, const char* fname) {
-    FILE* fout = fopen(fname,"w");
     int cur_vtx = dst;
     vector<coords> path;
     while (cur_vtx != src) {
@@ -99,12 +95,13 @@ public:
       cur_vtx = predecessors[cur_vtx];
     }
     path.push_back(vertices[cur_vtx]);
-    std::reverse(path.begin(),path.end()); 
+    std::reverse(path.begin(),path.end());
 
     for (std::vector<coords>::iterator it=path.begin(); it!=path.end(); ++it) {
       auto r = *it;
       fprintf(fout, "%d %d\n", r.row, r.col);
     }
+    
     fclose(fout);
   }
 

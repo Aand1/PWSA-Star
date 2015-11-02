@@ -8,9 +8,10 @@
 #include "container.hpp"
 //include "weighted-graph.hpp"
 #include "native.hpp"
+#include "timing.hpp"
 //include "defaults.hpp"
 #include <cstring>
-#include <sys/time.h>
+//include <sys/time.h>
 
 static inline void pmemset(char * ptr, int value, size_t num) {
   const size_t cutoff = 100000;
@@ -38,18 +39,61 @@ void print(bool debug, const Body& b) {
   }
 }
 
-uint64_t GetTimeStamp() {
-  struct timeval tv;
-  gettimeofday(&tv,NULL);
-  return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
+// uint64_t GetTimeStamp() {
+//   struct timeval tv;
+//   gettimeofday(&tv,NULL);
+//   return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
+// }
+
+// we use std::atomic only to interface nicely with pwsa
+template <class GRAPH, class HEAP, class HEURISTIC>
+std::atomic<int>* astar(GRAPH& graph, const HEURISTIC& heuristic,
+                        const int& source, const int& destination,
+                        double exptime,
+                        int* pebbles = nullptr, int* predecessors = nullptr) {
+  int N = graph.number_vertices();
+  std::atomic<int>* dist = pasl::data::mynew_array<std::atomic<int>>(N);
+  for (int i = 0; i < N; i++) {
+    dist[i].store(-1);
+  }
+  HEAP frontier = HEAP();
+  frontier.insert(heuristic(source), std::make_tuple(source, 0, 0));
+  while (dist[destination].load() == -1) {
+    auto tup = frontier.delete_min();
+    int v = std::get<0>(tup);
+    int vdist = std::get<1>(tup);
+    int pred = std::get<2>(tup);
+    if (dist[v].load() == -1) {
+      dist[v].store(vdist);
+      if (pebbles) pebbles[v] = 0; // normally would write processor ID, but only one proc in this case
+      if (predecessors) predecessors[v] = pred;
+
+      graph.for_each_neighbor_of(v, [&] (int ngh, int weight) {
+        int nghdist = vdist + weight;
+        if (dist[ngh].load() == -1) {
+          frontier.insert(heuristic(ngh) + nghdist, std::make_tuple(ngh, nghdist, v));
+        }
+
+        // SIMULATE EXPANSION TIME
+        timing::busy_loop_secs(exptime);
+        // uint64_t t0 = GetTimeStamp();
+        // uint64_t t1;
+        // uint64_t dt;
+        // do{
+        //   t1 = GetTimeStamp();
+        //   dt = t1-t0;
+        // } while(dt < (exptime*1000000.0));
+      });
+    }
+  }
+  return dist;
 }
 
 template <class GRAPH, class HEAP, class HEURISTIC>
 std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
                         const int& source, const int& destination,
                         int split_cutoff, int poll_cutoff, double exptime,
-                        bool debug = false, int* pebbles = nullptr,
-                        int* predecessors = nullptr) {
+                        int* pebbles = nullptr, int* predecessors = nullptr) {
   int N = graph.number_vertices();
   std::atomic<int>* finalized = pasl::data::mynew_array<std::atomic<int>>(N);
   fill_array_par(finalized, N, -1);
@@ -101,13 +145,14 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
           frontier.insert(heuristic(ngh) + nghdist, std::make_tuple(ngh, nghdist, v));
 
           // SIMULATE EXPANSION TIME
-          uint64_t t0 = GetTimeStamp();
-          uint64_t t1;
-          uint64_t dt;
-          do{
-            t1 = GetTimeStamp();
-            dt = t1-t0;
-          } while(dt < (exptime*1000000.0));
+          timing::busy_loop_secs(exptime);
+          // uint64_t t0 = GetTimeStamp();
+          // uint64_t t1;
+          // uint64_t dt;
+          // do{
+          //   t1 = GetTimeStamp();
+          //   dt = t1-t0;
+          // } while(dt < (exptime*1000000.0));
         });
       }
       work_this_round++;
