@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
   int dcol;
   double w;
   double exptime;
-  double opt;
+  // double opt;
   std::string visualize;
 
   Graph G;
@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
     dcol = (int)pasl::util::cmdline::parse_or_default_int("dc", 1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0);
-    opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
+    // opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
 //    checkdev = pasl::util::cmdline::parse_or_default_bool("checkdev", false);
 //    debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
     visualize = pasl::util::cmdline::parse_or_default_string("visualize", "");
@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
     double pathlen = double(res[dst].load())/10000.0;
     std::cout << "expanded " << num_expanded << std::endl;
     std::cout << "pathlen " << pathlen << std::endl;
-    std::cout << "deviation " << (pathlen / opt) << std::endl;
+    // std::cout << "deviation " << (pathlen / opt) << std::endl;
 
     if (pebbles && predecessors) {
       G.pebble_dump(pebbles, predecessors, src, dst, visualize.c_str());

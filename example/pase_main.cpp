@@ -94,12 +94,13 @@ class myQueue{
       state* local_being_expanded[num_threads];
       multimap<int,state*>::iterator it;
       while(!search_done){
-        //printf("start of remove\n");
+        // printf("start of remove\n");
         //make a local copy of BE to avoid race conditions
         for(int i=0; i<num_threads; i++)
           local_being_expanded[i] = being_expanded[i];
         //loop over open list to find a state we can expand
         for(it=m.begin(); it!=m.end(); it++){
+          // printf("in loop\n");
           //if the being_expanded changed (some state is done being expanded) start over
           bool changed = false;
           bool valid = true;
@@ -112,12 +113,13 @@ class myQueue{
             //check if the state in BE passes the independence check
             if(local_being_expanded[i] &&
                it->second->g - local_being_expanded[i]->g > pA_eps*p2pH(it->second,local_being_expanded[i])){
+              // printf("invalid 1\n");
               valid = false;
               break;
             }
           }
           if(changed){
-            //printf("being expanded changed!\n");
+            // printf("being expanded changed!\n");
             break;
           }
 
@@ -125,6 +127,7 @@ class myQueue{
             //loop over states in open ahead of this state and run independence checks
             for(multimap<int,state*>::iterator it2=m.begin(); it2!=it; it2++){
               if(it->second->g - it2->second->g > pA_eps*p2pH(it->second, it2->second)){
+                // printf("invalid 2\n");
                 valid = false;
                 break;
               }
@@ -139,12 +142,12 @@ class myQueue{
             return s;
           }
           else{
-            //printf("invalid!");
+            // printf("invalid!");
           }
 
         }
         pthread_mutex_unlock(&mutex);
-        //printf("crappy spin\n");
+        // printf("crappy spin\n");
         pthread_mutex_lock(&mutex);
       }
       return NULL;
@@ -187,18 +190,18 @@ void readMaze(char* filename){
 }
 */
 
-uint64_t GetTimeStamp() {
-  struct timeval tv;
-  gettimeofday(&tv,NULL);
-  return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
-}
+// uint64_t GetTimeStamp() {
+//   struct timeval tv;
+//   gettimeofday(&tv,NULL);
+//   return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
+// }
 
 void astar_thread( void *ptr ){
   pthread_mutex_lock(&mutex);
   int thread_id = ids;
   ids++;
   while(!search_done){
-    //printf("thread %d get state\n",thread_id);
+    // printf("thread %d get state\n",thread_id);
 
     //get a state to expand
     state* s = q.remove();
@@ -208,10 +211,10 @@ void astar_thread( void *ptr ){
       break;
     }
     being_expanded[thread_id] = s;
-    //printf("thread %d is expanding (%d %d)\n",thread_id,s->x,s->y);
+    // printf("thread %d is expanding (%d %d). obs? %d\n",thread_id,s->x,s->y,s->obs);
     num_expands++;
     if(s->closed)
-      printf("Uh oh! already closed!\n");
+      // printf("Uh oh! already closed!\n");
     s->closed = true;
 
     if(s->x==goal_x && s->y==goal_y){
@@ -223,6 +226,7 @@ void astar_thread( void *ptr ){
 
 
     for(int i=0; i<8; i++){
+    //  printf("neighbor %d\n", i);
       int newX = s->x+dx[i];
       int newY = s->y+dy[i];
       state* t = &(grid[newX][newY]);
@@ -253,12 +257,13 @@ void astar_thread( void *ptr ){
       pthread_mutex_unlock(&mutex);
       //printf("thread %d done adding successor\n",thread_id);
     }
+    //printf("done with neighbors\n");
 
     //lock for the start of the next iteration
     being_expanded[thread_id] = NULL;
-    //printf("thread %d post expand get lock\n",thread_id);
+    // printf("thread %d post expand get lock\n",thread_id);
     pthread_mutex_lock(&mutex);
-    //printf("thread %d post expand locked\n",thread_id);
+    // printf("thread %d post expand locked\n",thread_id);
   }
   //printf("thread %d exit\n",thread_id);
   ids--;
@@ -401,19 +406,23 @@ int main(int argc, char** argv){
   pthread_cond_init(&cond,NULL);
 
   // ************************************************************************
-  start_y = parse_or_default_int(argc, argv, "-sr", 1); //e.GetStartX();
-  start_x = parse_or_default_int(argc, argv, "-sc", 1); //e.GetStartY();
-  goal_y = parse_or_default_int(argc, argv, "-dr", 1); //e.GetGoalX();
-  goal_x = parse_or_default_int(argc, argv, "-dc", 1); //e.GetGoalY();
+  start_y = parse_or_default_int(argc, argv, "-sc", 1); //e.GetStartX();
+  start_x = parse_or_default_int(argc, argv, "-sr", 1); //e.GetStartY();
+  goal_y = parse_or_default_int(argc, argv, "-dc", 1); //e.GetGoalX();
+  goal_x = parse_or_default_int(argc, argv, "-dr", 1); //e.GetGoalY();
+
+  // printf("%d %d %d %d\n", start_x, start_y, goal_x, goal_y);
 
   num_threads = parse_or_default_int(argc, argv, "-proc", 1);
   wA_eps = parse_or_default_double(argc, argv, "-w", 1.0);
   pA_eps = parse_or_default_double(argc, argv, "-eps", wA_eps);
   SEC_PER_EXPAND = parse_or_default_double(argc, argv, "-exptime", 0.0);
-  double opt = parse_or_default_double(argc, argv, "-opt", 1.0);
+//  double opt = parse_or_default_double(argc, argv, "-opt", 1.0);
+
+  // printf("proc %d\n", num_threads);
 
   const char* map_filename = parse_or_default_string(argc, argv, "-map", "maps/simple_map.map");
-  //printf("load %s\n",map_filename);
+  // printf("load %s\n",map_filename);
   FILE* fin = fopen(map_filename,"r");
   fscanf(fin,"type octile\nheight %d\n",&size_x);
   fscanf(fin,"width %d\n map\n",&size_y);
@@ -454,7 +463,7 @@ int main(int argc, char** argv){
   printf("expanded %d\n", num_expands);
   double pathlen = double(path_length)/10000.0;
   printf("pathlen %f\n", pathlen);
-  printf("deviation %f\n", pathlen / opt);
+//  printf("deviation %f\n", pathlen / opt);
 
   //loop over maps
   // for(int i=1; i<argc; i++){
