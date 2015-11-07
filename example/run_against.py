@@ -4,12 +4,15 @@ import sys
 import tempfile
 import subprocess
 import itertools
+import os
 
 # def errorUnknown(name):
 #   raise Exception("Unrecognized name: " + name)
 #   return ""
 
 pwsa = "./pwsa_main.opt"
+
+serial = ["./astar_main.opt"]
 
 args = sys.argv[1:]
 
@@ -32,9 +35,9 @@ outputIdx = args.index("-output")
 outputfile = args[1 + outputIdx]
 args = args[:outputIdx] + args[(outputIdx+2):]
 
-runsIdx = args.index("-runs")
-runs = args[1 + runsIdx]
-args = args[:runsIdx] + args[(runsIdx+2):]
+# runsIdx = args.index("-runs")
+# runs = args[1 + runsIdx]
+# args = args[:runsIdx] + args[(runsIdx+2):]
 
 # speedupIdx = args.index("-speedup")
 # speedupfile = args[1 + speedupIdx]
@@ -60,9 +63,54 @@ def readOutputOf(cmd):
         out[key] = value
       except:
         print "Had trouble parsing this line: " + line
+        raise Exception("Error when reading output of " + cmd)
   return out
 
-for algo in algos:
+memories = {}
+def readMemoizedOutputOfSerial(cmd):
+  x = cmd.split()
+  noProcCmd = ' '.join(x[:x.index("-proc")] + x[(x.index("-proc") + 2):])
+  if noProcCmd not in memories:
+    out = readOutputOf(cmd)
+    print "SAVING: %s" % cmd
+    memories[noProcCmd] = out
+  return memories[noProcCmd]
+
+def runEachAlgo(theseArgs, fresults, maxRetry):
+  try:
+    pwsaCmd = ' '.join([pwsa, theseArgs])
+    pwsaOut = readOutputOf(pwsaCmd)
+    pwsaExectime = float(pwsaOut["exectime"])
+    pwsaPathlen = float(pwsaOut["pathlen"])
+    pwsaExpanded = float(pwsaOut["expanded"])
+    for algo in algos:
+      baseCmd = ' '.join([algo, theseArgs])
+      baseOut = readOutputOf(baseCmd) if algo not in serial else readMemoizedOutputOfSerial(baseCmd)
+
+      speedup = float(baseOut["exectime"]) / pwsaExectime
+      deviation = pwsaPathlen / float(baseOut["pathlen"])
+      expansions = pwsaExpanded / float(baseOut["expanded"])
+
+      fresults.write("algo %s\n" % algo)
+      fresults.write("scen %s\n" % scenfile)
+      for (k,v) in argTuple:
+        fresults.write("%s %s\n" % (k, v))
+      fresults.write("---\n")
+      fresults.write("speedup %s\n" % str(speedup))
+      fresults.write("deviation %s\n" % str(deviation))
+      fresults.write("expansions %s\n" % str(expansions))
+      fresults.write("==========\n")
+      fresults.flush()
+      return
+  except:
+    if maxRetry == 0:
+      print "Skipping..."
+      return
+    else:
+      runEachAlgo(theseArgs, fresults, maxRetry - 1)
+
+
+with open(outputfile, "a") as fresults:
   for scenfile in scenfiles:
     for scenario in fileGetLines(scenfile)[1:]:
       [scenNum, mapName, width, height, sc, sr, dc, dr, opt] = scenario.split()
@@ -74,31 +122,32 @@ for algo in algos:
         paramValues = args[i+1].split(',')
         allParams.append([(paramName, value) for value in paramValues])
 
-      #resultsFile = "results" + mapName[4:] + "_vs_" + baselineName + ".txt"
-      #with open(speedupfile, "a") as fspeedup:
-      with open(outputfile, "a") as fresults:
-        for argTuple in itertools.product(*allParams):
-          theseArgs = ' '.join(map(lambda (x,y): "-" + x + " " + y, argTuple))
-          pwsaCmd = ' '.join([pwsa, theseArgs, mapArgs])
-          baseCmd = ' '.join([algo, theseArgs, mapArgs])
-          for i in xrange(0,int(runs)):
-            try:
-              pwsaOut = readOutputOf(pwsaCmd)
-              baseOut = readOutputOf(baseCmd)
+      for argTuple in itertools.product(*allParams):
+        theseArgs = ' '.join(map(lambda (x,y): "-" + x + " " + y, argTuple))
+        runEachAlgo(' '.join([theseArgs, mapArgs]), fresults, 2)
 
-              speedup = float(baseOut["exectime"]) / float(pwsaOut["exectime"])
-              deviation = float(pwsaOut["pathlen"]) / float(baseOut["pathlen"])
-              expansions = float(pwsaOut["expanded"]) / float(baseOut["expanded"])
+    os.fsync(fresults.fileno()) # force write to file in case something bad happens
 
-              # fresults.write("map " + mapName + "\n")
-              fresults.write("algo %s\n" % algo)
-              fresults.write("scen %s\n" % scenfile)
-              for (k,v) in argTuple:
-                fresults.write("%s %s\n" % (k, v))
-              fresults.write("---\n")
-              fresults.write("speedup %s\n" % str(speedup))
-              fresults.write("deviation %s\n" % str(deviation))
-              fresults.write("expansions %s\n" % str(expansions))
-              fresults.write("==========\n")
-            except:
-              print "Skipping..."
+        # for algo in algos:
+        #   baseCmd = ' '.join([algo, theseArgs, mapArgs])
+        #
+        #   try:
+        #     pwsaOut = readOutputOf(pwsaCmd)
+        #     baseOut = readOutputOf(baseCmd)
+        #
+        #     speedup = float(baseOut["exectime"]) / float(pwsaOut["exectime"])
+        #     deviation = float(pwsaOut["pathlen"]) / float(baseOut["pathlen"])
+        #     expansions = float(pwsaOut["expanded"]) / float(baseOut["expanded"])
+        #
+        #     # fresults.write("map " + mapName + "\n")
+        #     fresults.write("algo %s\n" % algo)
+        #     fresults.write("scen %s\n" % scenfile)
+        #     for (k,v) in argTuple:
+        #       fresults.write("%s %s\n" % (k, v))
+        #     fresults.write("---\n")
+        #     fresults.write("speedup %s\n" % str(speedup))
+        #     fresults.write("deviation %s\n" % str(deviation))
+        #     fresults.write("expansions %s\n" % str(expansions))
+        #     fresults.write("==========\n")
+        #   except:
+        #     print "Skipping..."
