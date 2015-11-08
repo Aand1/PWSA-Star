@@ -7,7 +7,7 @@ using namespace std;
 #include "../sbpl/headers.h"
 #include "../planners/pARAStar/pARA.h"
 
-int plan2d(char* envCfgFilename, bool forwardSearch)
+int plan2d(char* envCfgFilename, bool forwardSearch, int weight, int num_threads)
 {
   MDPConfig MDPCfg;
 	// Initialize Environment (should be called before initializing anything else)
@@ -27,7 +27,7 @@ int plan2d(char* envCfgFilename, bool forwardSearch)
 	vector<int> solution_stateIDs_V;
   int cost;
 
-  pARAPlanner* planner = new pARAPlanner(&environment_nav2D, forwardSearch);
+  pARAPlanner* planner = new pARAPlanner(&environment_nav2D, forwardSearch, weight, num_threads);
   ReplanParams params(20.0);
   params.initial_eps = 10.0;
   params.dec_eps = 0.2;
@@ -54,7 +54,7 @@ int plan2d(char* envCfgFilename, bool forwardSearch)
 
 /*******************************************************************************
  *******************************************************************************/
-int planxythetalat(char* envCfgFilename, char* motPrimFilename, bool forwardSearch){
+int planxythetalat(char* envCfgFilename, char* motPrimFilename, int weight, int num_threads, bool forwardSearch){
   MDPConfig MDPCfg;
   vector<sbpl_2Dpt_t> perimeterptsV;
 
@@ -76,9 +76,9 @@ int planxythetalat(char* envCfgFilename, char* motPrimFilename, bool forwardSear
 	vector<int> solution_stateIDs_V;
   int cost;
 
-  pARAPlanner* planner = new pARAPlanner(&environment_navxythetalat, forwardSearch);
+  pARAPlanner* planner = new pARAPlanner(&environment_navxythetalat, forwardSearch, weight, num_threads);
   ReplanParams params(20.0);
-  params.initial_eps = 10.0;
+  params.initial_eps = weight;
   params.dec_eps = 0.2;
   params.return_first_solution = true;
 	printf("start planning...\n");
@@ -102,6 +102,7 @@ int planxythetalat(char* envCfgFilename, char* motPrimFilename, bool forwardSear
 }
 
 int main(int argc, char *argv[]){
-  planxythetalat(argv[1], argv[2], true);
+  // env, matlab, weight, num-threads
+  planxythetalat(argv[1], argv[2], std::stoi(argv[3]), std::stoi(argv[4]), true);
   //plan2d(argv[1], true);
 }

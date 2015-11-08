@@ -48,7 +48,7 @@ class pARAState{
 
 class myHeap{
   public:
-    myHeap(vector<pARAState*>* expanding, bool* done_flag, DiscreteSpaceInformation* e);
+    myHeap(vector<pARAState*>* expanding, bool* done_flag, DiscreteSpaceInformation* e, int num_threads_);
     void clear();
     void setEps(double e);
     bool empty();
@@ -63,6 +63,7 @@ class myHeap{
     vector<pARAState*>* being_expanded;
     bool* done;
     DiscreteSpaceInformation* env;
+    int num_threads;
     double eps;
 };
 
@@ -102,7 +103,7 @@ public:
     printf("Not supported. Use ReplanParams");
   };
 
-  pARAPlanner(DiscreteSpaceInformation* environment, bool bforwardsearch);
+  pARAPlanner(DiscreteSpaceInformation* environment, bool bforwardsearch, int weight, int num_threads_);
   ~pARAPlanner();
 
   virtual void get_search_stats(vector<PlannerStats>* s);
@@ -141,6 +142,7 @@ protected:
 
   //search member variables
 	double eps;
+	int num_threads;
   double eps_satisfied;
   int search_expands;
 	uint64_t TimeStarted;

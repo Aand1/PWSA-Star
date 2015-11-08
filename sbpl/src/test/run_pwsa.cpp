@@ -125,23 +125,11 @@ int planxythetalat(char* envCfgFilename, char* motPrimFilename){
 }
 
 int main(int argc, char *argv[]){
-//  int n = 0;
-//  long result = 0;
-//  auto init = [&] {
-//    n = 24;
-//  };
-//  auto run = [&] (bool sequential) {
-//    result = par_fib(n);
-//  };
-//  auto output = [&] {
-//    std::cout << "result " << result << std::endl;
-//  };
-//  auto destroy = [&] {
-//    ;
-//  };
-//  pasl::sched::launch(argc, argv, init, run, output, destroy);
   char* s1 = "../../env_examples/nav3d/env1.cfg";
   char* s2 = "../../matlab/mprim/pr2.mprim";
+//  char* fake_argv[2];
+//  fake_argv[0] = "-p"; 
+//  fake_argv[1] = "-p"; 
   pasl::util::cmdline::set(argc,argv);
   planxythetalat(s1, s2);
 }

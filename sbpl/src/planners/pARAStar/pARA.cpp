@@ -41,10 +41,11 @@ uint64_t GetTimeStamp() {
 //-------------------------------------------------------------------------------------------
 //OPEN list
 
-myHeap::myHeap(vector<pARAState*>* expanding, bool* done_flag, DiscreteSpaceInformation* e){
+myHeap::myHeap(vector<pARAState*>* expanding, bool* done_flag, DiscreteSpaceInformation* e, int num_threads_){
   being_expanded = expanding;
   done = done_flag;
   env = e;
+  num_threads = num_threads_;
 }
 void myHeap::setEps(double e){
   eps = e;
@@ -118,12 +119,12 @@ void myHeap::analyze(){
 }
 pARAState* myHeap::remove(boost::unique_lock<boost::mutex>* lock, int* fval, int thread_id){
   //analyze();
-  pARAState* local_being_expanded[NUM_THREADS];
+  pARAState* local_being_expanded[num_threads];
   multimap<int,pARAState*>::iterator it;
   while(!(*done)){
     //printf("thread %d: start of remove\n",thread_id);
     bool nothing_expanding = true;
-    for(int i=0; i<NUM_THREADS; i++){
+    for(int i=0; i<num_threads; i++){
       local_being_expanded[i] = being_expanded->at(i);
       if(local_being_expanded[i])
         nothing_expanding = false;
@@ -139,14 +140,14 @@ pARAState* myHeap::remove(boost::unique_lock<boost::mutex>* lock, int* fval, int
     int cnt = 0;
     for(it=m.begin(); it!=m.end(); it++){
       //if the min key is infinite, start over
-      //if(it->first >= INFINITECOST || cnt >= 2*NUM_THREADS)
+      //if(it->first >= INFINITECOST || cnt >= 2*num_threads)
       if(it->first >= INFINITECOST)
         break;
 
       //if the being_expanded changed (some state is done being expanded) start over 
       bool changed = false;
       bool valid = true;
-      for(int i=0; i<NUM_THREADS; i++){
+      for(int i=0; i<num_threads; i++){
         if(local_being_expanded[i] != being_expanded->at(i)){
           changed = true;
           break;
@@ -206,12 +207,13 @@ pARAState* myHeap::remove(boost::unique_lock<boost::mutex>* lock, int* fval, int
 
 //-------------------------------------------------------------------------------------------
 
-pARAPlanner::pARAPlanner(DiscreteSpaceInformation* environment, bool bSearchForward) :
-  heap(&being_expanded, &iteration_done, environment), params(0.0) {
+pARAPlanner::pARAPlanner(DiscreteSpaceInformation* environment, bool bSearchForward, int weight, int num_threads_) :
+  heap(&being_expanded, &iteration_done, environment, num_threads_), params(0.0) {
   bforwardsearch = bSearchForward;
   environment_ = environment;
+  eps = weight;
+  num_threads = num_threads_;
   replan_number = 0;
-  //reconstructTime = 0.0;
 
   fout = fopen("stats.txt","w");
 
@@ -224,7 +226,7 @@ pARAPlanner::pARAPlanner(DiscreteSpaceInformation* environment, bool bSearchForw
   planner_ok = true;
   sleeping_threads = 0;
   thread_ids = 0;
-  for(int i=0; i<NUM_THREADS; i++){
+  for(int i=0; i<num_threads; i++){
     boost::thread* thread = new boost::thread(boost::bind(&pARAPlanner::astarThread, this));
     threads.push_back(thread);
     being_expanded.push_back(NULL);
@@ -240,7 +242,7 @@ pARAPlanner::~pARAPlanner(){
   worker_cond.notify_all();
   lock.unlock();
 
-  for(int i=0; i<NUM_THREADS; i++)
+  for(int i=0; i<num_threads; i++)
     threads[i]->join();
 }
 
@@ -252,7 +254,7 @@ void pARAPlanner::astarThread(){
   while(1){
     //the mutex is locked
     sleeping_threads++;
-    if(sleeping_threads==NUM_THREADS)
+    if(sleeping_threads==num_threads)
       main_cond.notify_one();
     worker_cond.wait(lock);
     sleeping_threads--;
@@ -465,7 +467,7 @@ int pARAPlanner::ImprovePath(int thread_id){
 
     /*
     int min_fval = fval;
-    for(int i=0; i<NUM_THREADS; i++){
+    for(int i=0; i<num_threads; i++){
       if(being_expanded[i] && being_expanded_fval[i] < min_fval)
         min_fval = being_expanded_fval[i];
     }
@@ -487,7 +489,7 @@ int pARAPlanner::ImprovePath(int thread_id){
     state->iteration_closed = search_iteration;
     search_expands++;
     int cnt = 1;
-    for(int i=0; i<NUM_THREADS; i++)
+    for(int i=0; i<num_threads; i++)
       cnt += being_expanded[i]!=NULL;
     //printf("thread %d: expanding with %d other threads\n",thread_id,cnt);
     //environment_->PrintState(state->id,true);
@@ -787,7 +789,7 @@ int pARAPlanner::replan(vector<int>* solution_stateIDs_V, ReplanParams p, int* s
   printf("total expands=%d planning time=%.3f reconstruct path time=%.3f total time=%.3f solution cost=%d\n", 
       totalExpands, totalPlanTime, reconstructTime, totalTime, goal_state->g);
 
-  fprintf(fout, "%d %f %f %d %d\n", NUM_THREADS, params.initial_eps, totalPlanTime, totalExpands, goal_state->g);
+  fprintf(fout, "%d %f %f %d %d\n", num_threads, params.initial_eps, totalPlanTime, totalExpands, goal_state->g);
 
   //copy the solution
   *solution_stateIDs_V = pathIds;
