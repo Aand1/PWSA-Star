@@ -34,10 +34,10 @@ add_library(sbpl
 # Build executables in the bin directory
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 # rosbuild_add_executable(test_sbpl src/test/main.cpp)
-SET(Boost_USE_STATIC_LIBS ON)
-find_package(Boost COMPONENTS thread regex system filesystem REQUIRED)
-add_executable(test_sbpl ../src/test/main.cpp)
-target_link_libraries(test_sbpl sbpl ${Boost_THREAD_LIBRARY} ${Boost_SYSTEM_LIBRARY})
+#SET(Boost_USE_STATIC_LIBS ON)
+#find_package(Boost COMPONENTS thread regex system filesystem REQUIRED)
+#add_executable(test_sbpl ../src/test/main.cpp)
+#target_link_libraries(test_sbpl sbpl ${Boost_THREAD_LIBRARY} ${Boost_SYSTEM_LIBRARY})
 
 ## rosbuild_add_executable(test_adjacency_list src/test/test_adjacency_list.cpp)
 #add_executable(test_adjacency_list ../src/test/test_adjacency_list.cpp)
