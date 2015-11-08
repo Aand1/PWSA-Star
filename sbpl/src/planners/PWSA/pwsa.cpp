@@ -22,7 +22,6 @@ pwsaState* pwsaPlanner::GetState(int id) {
     throw std::runtime_error("reached MAX_N. Impl a ub vector of states");
   }
   int orig = -1;
-//  printf("for state = %d initialized = %d\n", id, initialized[id].load());
   if(initialized[id].load() == -1 && initialized[id].compare_exchange_strong(orig, 0)) {
     states[id] = new pwsaState();
     states[id]->id = id;
@@ -74,7 +73,7 @@ void pwsaPlanner::for_each_neighbor_of(int v, const FUNC& f) {
 void pwsaPlanner::run_pwsa() {
   int split_cutoff = 10; // k
   int poll_cutoff = 5; // d
-  double w = 10.0;
+  double w = 1.0;
 
   int src = start_state->id;
   int dst = goal_state->id;
