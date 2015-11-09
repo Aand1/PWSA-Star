@@ -16,6 +16,6 @@ for scenario in fileGetLines(scenfile)[1:]:
   [_, mapfile, w, h, sc, sr, dc, dr, _] = scenario.split()
   mapArgs = ["-map", mapfile, "-sr", sr, "-sc", sc, "-dr", dr, "-dc", dc]
   # theseArgs = '"' + ' '.join(mapArgs + args) + '"'
-  cmd = ' '.join(["prun"] + mapArgs + args)
+  cmd = ' '.join(["prun --append"] + mapArgs + args)
   print cmd
   subprocess.call(cmd, shell=True)

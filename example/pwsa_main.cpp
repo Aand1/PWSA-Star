@@ -19,6 +19,7 @@ int main(int argc, char** argv) {
   int dcol;
   double w;
   double exptime;
+  bool pathcorrect;
   // double opt;
   std::string visualize;
 
@@ -26,7 +27,8 @@ int main(int argc, char** argv) {
   int src;
   int dst;
 
-  std::atomic<int>* res;
+  std::atomic<int>* res_normal;
+  std::atomic<vertpack>* res_pathcorrect;
   int* pebbles = nullptr;
   int* predecessors = nullptr;
 
@@ -40,6 +42,7 @@ int main(int argc, char** argv) {
     dcol = (int)pasl::util::cmdline::parse_or_default_int("dc", 1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0);
+    pathcorrect = pasl::util::cmdline::parse_or_default_bool("pathcorrect", false);
     // opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
 //    checkdev = pasl::util::cmdline::parse_or_default_bool("checkdev", false);
 //    debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
@@ -67,23 +70,32 @@ int main(int argc, char** argv) {
       return G.weighted_euclidean(w, v, dst);
     };
 
-    if (sequential) {
-      res = astar<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, exptime, pebbles, predecessors);
+    if (pathcorrect) {
+      res_pathcorrect = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
     }
     else {
-      res = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+      res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
     }
   };
 
   auto output = [&] {
+    int* res = pasl::data::mynew_array<int>(G.number_vertices());
     int num_expanded = 0;
     for (int i = 0; i < G.number_vertices(); i++) {
-      if (res[i].load() != -1) num_expanded++;
+      if (!pathcorrect) {
+        res[i] = res_normal[i].load();
+      }
+      else {
+        res[i] = res_pathcorrect[i].load().first;
+        if (predecessors) {
+          predecessors[i] = res_pathcorrect[i].load().second;
+        }
+      }
+      if (res[i] != -1) num_expanded++;
     }
-    double pathlen = double(res[dst].load())/10000.0;
+    double pathlen = double(res[dst])/10000.0;
     std::cout << "expanded " << num_expanded << std::endl;
     std::cout << "pathlen " << pathlen << std::endl;
-    // std::cout << "deviation " << (pathlen / opt) << std::endl;
 
     if (pebbles && predecessors) {
       G.pebble_dump(pebbles, predecessors, src, dst, visualize.c_str());

@@ -18,8 +18,11 @@ yellow = (255,255,0)
 magenta = (255,0,255)
 orange = (255,140,0)
 pink = (255,105,180)
+navy = (0,0,128)
+darkgreen = (0,128,0)
+darkred = (128,0,0)
 
-colors = [green, red, blue, cyan, yellow, magenta, orange, pink]
+colors = [green, red, blue, cyan, yellow, magenta, orange, pink, navy, darkgreen, darkred]
 
 
 def fileGetLines(filename):
