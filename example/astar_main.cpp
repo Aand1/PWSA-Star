@@ -5,7 +5,7 @@
  * \file pwsa.cpp
  */
 #include "benchmark.hpp"
-#include "pwsa.hpp"
+#include "astar.hpp"
 #include "bin_heap.hpp"
 #include "weighted_graph.hpp"
 
@@ -20,15 +20,16 @@ int main(int argc, char** argv) {
   double w;
   double exptime;
 //  double opt;
-  std::string visualize;
+//  std::string visualize;
 
   Graph G;
   int src;
   int dst;
 
-  std::atomic<int>* res;
-  int* pebbles = nullptr;
-  int* predecessors = nullptr;
+  int* res;
+  // std::atomic<int>* res;
+  // int* pebbles = nullptr;
+  // int* predecessors = nullptr;
 
   auto init = [&] {
     // split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 80);
@@ -43,23 +44,23 @@ int main(int argc, char** argv) {
     // opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
 //    checkdev = pasl::util::cmdline::parse_or_default_bool("checkdev", false);
 //    debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
-    visualize = pasl::util::cmdline::parse_or_default_string("visualize", "");
+//    visualize = pasl::util::cmdline::parse_or_default_string("visualize", "");
 
     G = Graph(fname.c_str());
 
     src = G.vertex_at(srow, scol);
     dst = G.vertex_at(drow, dcol);
 
-    if (!visualize.empty()) {
-      pebbles = pasl::data::mynew_array<int>(G.number_vertices());
-      for (int i = 0; i < G.number_vertices(); i++) {
-        pebbles[i] = -1;
-      }
-      predecessors = pasl::data::mynew_array<int>(G.number_vertices());
-      for (int i = 0; i < G.number_vertices(); i++) {
-        predecessors[i] = -1;
-      }
-    }
+    // if (!visualize.empty()) {
+    //   pebbles = pasl::data::mynew_array<int>(G.number_vertices());
+    //   for (int i = 0; i < G.number_vertices(); i++) {
+    //     pebbles[i] = -1;
+    //   }
+    //   predecessors = pasl::data::mynew_array<int>(G.number_vertices());
+    //   for (int i = 0; i < G.number_vertices(); i++) {
+    //     predecessors[i] = -1;
+    //   }
+    // }
   };
 
   auto run = [&] (bool sequential) {
@@ -68,7 +69,7 @@ int main(int argc, char** argv) {
     };
 
     // if (sequential) {
-      res = astar<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, exptime, pebbles, predecessors);
+      res = astar<Graph, Heap<std::pair<int,int>>, decltype(heuristic)>(G, heuristic, src, dst, exptime);
     // }
     // else {
     //   res = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
@@ -78,16 +79,16 @@ int main(int argc, char** argv) {
   auto output = [&] {
     int num_expanded = 0;
     for (int i = 0; i < G.number_vertices(); i++) {
-      if (res[i].load() != -1) num_expanded++;
+      if (res[i] != -1) num_expanded++;
     }
-    double pathlen = double(res[dst].load())/10000.0;
+    double pathlen = double(res[dst])/10000.0;
     std::cout << "expanded " << num_expanded << std::endl;
     std::cout << "pathlen " << pathlen << std::endl;
     // std::cout << "deviation " << (pathlen / opt) << std::endl;
 
-    if (pebbles && predecessors) {
-      G.pebble_dump(pebbles, predecessors, src, dst, visualize.c_str());
-    }
+    // if (pebbles && predecessors) {
+    //   G.pebble_dump(pebbles, predecessors, src, dst, visualize.c_str());
+    // }
 
   };
 
