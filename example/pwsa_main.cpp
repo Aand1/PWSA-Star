@@ -86,9 +86,9 @@ int main(int argc, char** argv) {
         res[i] = res_normal[i].load();
       }
       else {
-        res[i] = res_pathcorrect[i].load().first;
+        res[i] = res_pathcorrect[i].load().distance;
         if (predecessors) {
-          predecessors[i] = res_pathcorrect[i].load().second;
+          predecessors[i] = res_pathcorrect[i].load().pred;
         }
       }
       if (res[i] != -1) num_expanded++;

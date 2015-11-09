@@ -176,8 +176,8 @@ inline bool dist_greater(int d1, int d2) {
 }
 
 struct vertpack {
-  int first;
-  int second;
+  int distance;
+  int pred;
 };
 
 template <class GRAPH, class HEAP, class HEURISTIC>
@@ -195,10 +195,15 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
 //  pmemset((char*)gpred, -1, 2*N*sizeof(int)); // this could be super broken
   pasl::sched::native::parallel_for(0, N, [&] (int i) {
     vertpack ith;
-    ith.first = -1;
-    ith.second = -1;
+    ith.distance = -1;
+    ith.pred = -1;
     gpred[i].store(ith);
   });
+
+  vertpack src;
+  src.distance = 0;
+  src.pred = source;
+  gpred[source].store(src);
 
   HEAP initF = HEAP();
   int heur = heuristic(source);
@@ -248,14 +253,13 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
           while (true) {
             vertpack gpred_v = gpred[v].load();
             vertpack gpred_nbr = gpred[nbr].load();
-            if (dist_greater(gpred_nbr.first, gpred_v.first + weight)) {
-              //std::pair<int,int> mine = std::make_tuple(gpred_v.first + weight, v);
+            if (dist_greater(gpred_nbr.distance, gpred_v.distance + weight)) {
               vertpack mine;
-              mine.first = gpred_v.first + weight;
-              mine.second = v;
+              mine.distance = gpred_v.distance + weight;
+              mine.pred = v;
               if (gpred[nbr].compare_exchange_weak(gpred_nbr, mine)) {
                 if (!is_expanded[nbr].load()) {
-                  frontier.insert(gpred_v.first + weight + heuristic(nbr), nbr);
+                  frontier.insert(gpred_v.distance + weight + heuristic(nbr), nbr);
                 }
                 break;
               }
