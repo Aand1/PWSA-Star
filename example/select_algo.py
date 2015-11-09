@@ -17,4 +17,4 @@ executable = algos[algo]
 
 cmd = ' '.join([executable] + newargs)
 #print cmd
-subprocess.call(cmd, shell=True)
+sys.exit(subprocess.call(cmd, shell=True))
