@@ -8,40 +8,33 @@ import itertools
 
 # STEPS:
 #  1. Filter out entries which we don't care about for this comparison
-#     (for example, if we're comparing wPWSA* against wPA*SE on bgmaps,
-#     then get rid of every entry which ran wA* ...)
-#
 #     ** Runs kept defined by function `keep` below
 #
 #  2. Map results of remaining runs to a non string format
-#
 #     ** Performed by function `simplifyResults` below
 #
-#  3. Combine identical runs with average (perhaps we ran every trial
-#     10 times...)
+#  3. Combine identical runs with average
 #
 #  4. Compute pairwise comparison
-#
 #     ** Performed by function `combineResults` below
 #
 #  5. Simplify params for each comparison to ignore some info (for example,
 #     forget specific path info)
-#
 #     ** Performed by function `simplifyParams` below
 #
 #  6. Combine identical simplified runs with average
 
-def keep(algo, params):
-  return params["prog"] == "./pwsa_main.opt" or params["prog"] == algo
+def keep(algo1, algo2, params):
+  return params["algo"] == algo1 or params["algo"] == algo2
 
 def simplifyResults(results):
   floatyKeys = ["exectime", "pathlen", "expanded"]
   return { k : float(results[k]) for k,v in results.iteritems() if k in floatyKeys }
 
 def combineResults(rs1, rs2):
-  return { "speedup" : rs2["exectime"] / rs1["exectime"] # this is backwards from others but is correct...
-         , "deviation" : rs1["pathlen"] / rs2["pathlen"]
-         , "expansion" : rs1["expanded"] / rs2["expanded"]
+  return { "speedup" : rs2["exectime"] / rs1["exectime"]
+         , "pathlen-improvement" : rs2["pathlen"] / rs1["pathlen"]
+         , "expansion-improvement" : rs2["expanded"] / rs1["expanded"]
          }
 
 def simplifyParams(params):
@@ -53,16 +46,11 @@ def simplifyParams(params):
 
 # here's a crappy lexicographic ordering over assumed parameters
 def cmpForSortedOutput ((ps1,rs1),(ps2,rs2)):
-#  print "comparing " + str(ps1) + " , " + str(ps2)
   for key in ["proc", "w", "exptime", "map"]:
-#    print "comparing %s" % key
     if ps1[key] < ps2[key]:
-#      print "less than"
       return -1
     if ps1[key] > ps2[key]:
-#      print "greater than"
       return 1
-#  print "equal"
   return 0
 
 # ===========================================================================
@@ -111,8 +99,8 @@ def keywiseAverages(vs):
 # ===========================================================================
 # ===========================================================================
 
-def step1(algo, runslist):
-  return [ (ps, rs) for ps, rs in runslist if keep(algo, ps) ]
+def step1(algo1, algo2, runslist):
+  return [ (ps, rs) for ps, rs in runslist if keep(algo1, algo2, ps) ]
 
 def step2(runslist):
   return [ (ps, simplifyResults(rs)) for ps, rs in runslist ]
@@ -121,14 +109,12 @@ def step3(runslist):
   frozenkeys = [ (frozenset(k.items()), v) for k,v in runslist ]
   return collectWith(keywiseAverages)(frozenkeys)
 
-def step4(algo, runsdict):
-  def noprog(frozen):
-    return frozenset([ (k,v) for k,v in frozen if k != "prog" ])
-  pwsaRuns = { noprog(ps) : rs for ps,rs in runsdict.iteritems() if ("prog", "./pwsa_main.opt") in ps }
-  algoRuns = { noprog(ps) : rs for ps,rs in runsdict.iteritems() if ("prog", algo) in ps }
-#  print "PWSA*: " + str(pwsaRuns)
-#  print "ALGO : " + str(algoRuns)
-  return intersectDictsWith(combineResults)(pwsaRuns, algoRuns)
+def step4(algo1, algo2, runsdict):
+  def noalgo(frozen):
+    return frozenset([ (k,v) for k,v in frozen if k != "algo" ])
+  algoRuns1 = { noalgo(ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo1) in ps }
+  algoRuns2 = { noalgo(ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo2) in ps }
+  return intersectDictsWith(combineResults)(algoRuns1, algoRuns2)
 
 def step5(runsdict):
   return [ (simplifyParams(dict(ps)), rs) for ps, rs in runsdict.iteritems() ]
@@ -149,8 +135,12 @@ args = sys.argv[1:]
 # mode = args[i+1]
 # args = args[:i] + args[(i+2):]
 
-i = args.index("-algo")
-algo = args[i+1]
+i = args.index("-algo1")
+algo1 = args[i+1]
+args = args[:i] + args[(i+2):]
+
+i = args.index("-algo2")
+algo2 = args[i+1]
 args = args[:i] + args[(i+2):]
 
 i = args.index("-input")
@@ -178,7 +168,7 @@ def dictifyOneRun(lines):
   return (dictify(lines[:i]), dictify(lines[(i+2):]))
 runs = [ dictifyOneRun(group) for group in splitAt(fileGetLines(inputfile), isOuterDelim) ]
 
-final = step6(step5(step4(algo,step3(step2(step1(algo,runs))))))
+final = step6(step5(step4(algo1,algo2,step3(step2(step1(algo1,algo2,runs))))))
 
 with open(outputfile, 'w') as fout:
 #  print final
