@@ -207,11 +207,11 @@ pARAState* myHeap::remove(boost::unique_lock<boost::mutex>* lock, int* fval, int
 
 //-------------------------------------------------------------------------------------------
 
-pARAPlanner::pARAPlanner(DiscreteSpaceInformation* environment, bool bSearchForward, int weight, int num_threads_) :
+pARAPlanner::pARAPlanner(DiscreteSpaceInformation* environment, bool bSearchForward, int eps_, int num_threads_) :
   heap(&being_expanded, &iteration_done, environment, num_threads_), params(0.0) {
   bforwardsearch = bSearchForward;
   environment_ = environment;
-  eps = weight;
+  eps = eps_;
   num_threads = num_threads_;
   replan_number = 0;
 

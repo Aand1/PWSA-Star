@@ -51,7 +51,7 @@ class pwsaState {
 class pwsaPlanner : public SBPLPlanner{
 
 public:
-  pwsaPlanner(DiscreteSpaceInformation* environment);
+  pwsaPlanner(DiscreteSpaceInformation* environment, int eps_);
   ~pwsaPlanner();
 
   virtual int replan(int start, int goal, vector<int>* solution_stateIDs_V, ReplanParams params, int* solcost);

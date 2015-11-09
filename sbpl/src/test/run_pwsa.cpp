@@ -30,7 +30,7 @@ using namespace std;
 
 
 
-int plan2d(char* envCfgFilename)
+int plan2d(char* envCfgFilename, int eps)
 {
   MDPConfig MDPCfg;
 	// Initialize Environment (should be called before initializing anything else)
@@ -50,7 +50,7 @@ int plan2d(char* envCfgFilename)
 	vector<int> solution_stateIDs_V;
   int cost;
 
-  pwsaPlanner* planner = new pwsaPlanner(&environment_nav2D);
+  pwsaPlanner* planner = new pwsaPlanner(&environment_nav2D, eps);
   ReplanParams params(20.0);
   params.initial_eps = 10.0;
   params.dec_eps = 0.2;
@@ -77,7 +77,7 @@ int plan2d(char* envCfgFilename)
 
 /*******************************************************************************
  *******************************************************************************/
-int planxythetalat(char* envCfgFilename, char* motPrimFilename){
+int planxythetalat(char* envCfgFilename, char* motPrimFilename, int eps){
   MDPConfig MDPCfg;
   vector<sbpl_2Dpt_t> perimeterptsV;
 
@@ -99,7 +99,7 @@ int planxythetalat(char* envCfgFilename, char* motPrimFilename){
 	vector<int> solution_stateIDs_V;
   int cost;
 
-  pwsaPlanner* planner = new pwsaPlanner(&environment_navxythetalat);
+  pwsaPlanner* planner = new pwsaPlanner(&environment_navxythetalat, eps);
   ReplanParams params(20.0);
   params.initial_eps = 10.0;
   params.dec_eps = 0.2;
@@ -131,5 +131,5 @@ int main(int argc, char *argv[]){
 //  fake_argv[0] = "-p"; 
 //  fake_argv[1] = "-p"; 
   pasl::util::cmdline::set(argc,argv);
-  planxythetalat(s1, s2);
+  planxythetalat(s1, s2, 10);
 }

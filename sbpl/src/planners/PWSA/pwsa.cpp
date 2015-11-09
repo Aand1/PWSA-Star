@@ -73,7 +73,6 @@ void pwsaPlanner::for_each_neighbor_of(int v, const FUNC& f) {
 void pwsaPlanner::run_pwsa() {
   int split_cutoff = 10; // k
   int poll_cutoff = 5; // d
-  double w = 1.0;
 
   int src = start_state->id;
   int dst = goal_state->id;
@@ -86,7 +85,7 @@ void pwsaPlanner::run_pwsa() {
 
   auto run = [&] (bool sequential) {
     auto heuristic = [&] (int v) {
-      return w * states[v]->h;
+      return eps * states[v]->h;
     };
     res = pwsa<pwsaPlanner, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(self(), heuristic, src, dst, split_cutoff, poll_cutoff, pebbles, predecessors);
   };
@@ -99,9 +98,11 @@ void pwsaPlanner::run_pwsa() {
   pasl::sched::launch(init, run, output, destroy);
 }
 
-pwsaPlanner::pwsaPlanner(DiscreteSpaceInformation* environment) :
+pwsaPlanner::pwsaPlanner(DiscreteSpaceInformation* environment, int eps_) :
   params(0.0) {
   environment_ = environment;
+
+  eps = eps_;
 
   fout = fopen("stats.txt","w");
 
@@ -237,7 +238,14 @@ int pwsaPlanner::replan(int start, int goal, vector<int>* solution_stateIDs_V, R
   int PathCost;
   bool solnFound = Search(pathIds, PathCost);
 
-//  for (int i = 0; i < 
+  for (int i = 0; i < MAX_N; i++) {
+    pwsaState* state = states[i];
+    if (state != NULL) {
+      if (state->v != INFINITECOST) {
+        totalExpands++;
+      }
+    }
+  }
 
   printf("total expands=%d planning time=%.3f reconstruct path time=%.3f total time=%.3f solution cost=%d\n", 
       totalExpands, totalPlanTime, reconstructTime, totalTime, goal_state->g);
