@@ -16,5 +16,5 @@ algos = { "wPWSA*"   : "./pwsa_main.opt -pathcorrect 0"
 executable = algos[algo]
 
 cmd = ' '.join([executable] + newargs)
-print cmd
+#print cmd
 subprocess.call(cmd, shell=True)
