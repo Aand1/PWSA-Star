@@ -29,7 +29,7 @@ def simplifyParams(params):
 
 # here's a crappy lexicographic ordering over assumed parameters
 def cmpForSortedOutput ((ps1,rs1),(ps2,rs2)):
-  for key in ["proc", "w", "exptime", "map"]:
+  for key in ["map", "proc", "w", "exptime"]:
     if ps1[key] < ps2[key]:
       return -1
     if ps1[key] > ps2[key]:

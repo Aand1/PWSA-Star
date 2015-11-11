@@ -9,13 +9,14 @@ def fileGetLines(filename):
 
 args = sys.argv[1:]
 i = args.index("-scen")
-scenfile = args[i+1]
+scenfiles = args[i+1].split(",")
 args = args[0:i] + args[(i+2):]
 
-for scenario in fileGetLines(scenfile)[1:]:
-  [_, mapfile, w, h, sc, sr, dc, dr, opt] = scenario.split()
-  mapArgs = ["-map", mapfile, "-sr", sr, "-sc", sc, "-dr", dr, "-dc", dc, "-opt", opt]
-  # theseArgs = '"' + ' '.join(mapArgs + args) + '"'
-  cmd = ' '.join(["prun --append"] + mapArgs + args)
-  print cmd
-  subprocess.call(cmd, shell=True)
+for scenfile in scenfiles:
+  for scenario in fileGetLines(scenfile)[1:]:
+    [_, mapfile, w, h, sc, sr, dc, dr, opt] = scenario.split()
+    mapArgs = ["-map", mapfile, "-sr", sr, "-sc", sc, "-dr", dr, "-dc", dc, "-opt", opt]
+    # theseArgs = '"' + ' '.join(mapArgs + args) + '"'
+    cmd = ' '.join(["prun --append"] + mapArgs + args)
+    print cmd
+    subprocess.call(cmd, shell=True)
