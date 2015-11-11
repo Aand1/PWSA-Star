@@ -101,7 +101,7 @@ public:
       auto r = *it;
       fprintf(fout, "%d %d\n", r.row, r.col);
     }
-    
+
     fclose(fout);
   }
 
@@ -132,6 +132,31 @@ public:
         f(grid[nghrow][nghcol], dist[i]);
       }
     }
+  }
+
+  int weight_between(int u, int v) {
+    int u_row = vertices[u].row;
+    int u_col = vertices[u].col;
+
+    int v_row = vertices[v].row;
+    int v_col = vertices[v].col;
+
+    int diff = abs(u_row - v_row) + abs(u_col - v_col);
+    if (diff == 0) return 0;
+    else if (diff == 1) return 10000;
+    else if (diff == 2) return 14142;
+    else {
+      std::cerr << "ERROR (weight_between): vertices not adjacent." << std::endl;
+      std::exit(EXIT_FAILURE);
+    }
+  }
+
+  int pathlen(int* predecessors, int src, int dst) {
+    int len = 0;
+    for (int curr = dst; curr != src; curr = predecessors[curr]) {
+      len += weight_between(curr, predecessors[curr]);
+    }
+    return len;
   }
 
   int weighted_euclidean(double w, int u, int v) {

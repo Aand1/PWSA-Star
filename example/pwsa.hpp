@@ -250,16 +250,18 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
           // SIMULATE EXPANSION TIME
           timing::busy_loop_secs(exptime);
 
+          vertpack gpred_v = gpred[v].load();
+
+          vertpack mine;
+          mine.distance = gpred_v.distance + weight;
+          mine.pred = v;
+
           while (true) {
-            vertpack gpred_v = gpred[v].load();
             vertpack gpred_nbr = gpred[nbr].load();
-            if (dist_greater(gpred_nbr.distance, gpred_v.distance + weight)) {
-              vertpack mine;
-              mine.distance = gpred_v.distance + weight;
-              mine.pred = v;
+            if (dist_greater(gpred_nbr.distance, mine.distance)) {
               if (gpred[nbr].compare_exchange_weak(gpred_nbr, mine)) {
                 if (!is_expanded[nbr].load()) {
-                  frontier.insert(gpred_v.distance + weight + heuristic(nbr), nbr);
+                  frontier.insert(mine.distance + heuristic(nbr), nbr);
                 }
                 break;
               }
@@ -278,4 +280,93 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
 
   pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
   return gpred;
+}
+
+template <class GRAPH, class HEAP, class HEURISTIC>
+std::atomic<vertpack>*
+pwsa_simple_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
+                        const int& source, const int& destination,
+                        int split_cutoff, int poll_cutoff, double exptime,
+                        int* pebbles = nullptr) {
+  int N = graph.number_vertices();
+  std::atomic<vertpack>* finalized = pasl::data::mynew_array<std::atomic<vertpack>>(N);
+  //fill_array_par(finalized, N, -1);
+  pasl::sched::native::parallel_for(0, N, [&] (int i) {
+    vertpack ith;
+    ith.distance = -1;
+    ith.pred = -1;
+    finalized[i].store(ith);
+  });
+
+  HEAP initF = HEAP();
+  int heur = heuristic(source);
+  initF.insert(heur, std::make_tuple(source, 0, source));
+
+  pasl::data::perworker::array<int> work_since_split;
+  work_since_split.init(0);
+
+  auto size = [&] (HEAP& frontier) {
+    auto sz = frontier.size();
+    if (sz == 0) {
+      work_since_split.mine() = 0;
+      return 0; // no work left
+    }
+    if (sz > split_cutoff || (work_since_split.mine() > split_cutoff && sz > 1)) {
+      return 2; // split
+    }
+    else {
+      return 1; // don't split
+    }
+  };
+
+  auto fork = [&] (HEAP& src, HEAP& dst) {
+    src.split(dst);
+    work_since_split.mine() = 0;
+  };
+
+  auto set_in_env = [&] (HEAP& f) {;};
+
+  auto do_work = [&] (HEAP& frontier) {
+    int work_this_round = 0;
+    while (work_this_round < poll_cutoff && frontier.size() > 0) {
+      auto tup = frontier.delete_min();
+      int v = std::get<0>(tup);
+
+      vertpack mine;
+      mine.distance = std::get<1>(tup);
+      mine.pred = std::get<2>(tup);
+
+      vertpack theirs = finalized[v].load();
+      if (theirs.distance == -1) {
+        if (finalized[v].compare_exchange_strong(theirs, mine)) {
+          if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
+          if (v == destination) {
+            return true;
+          }
+          graph.for_each_neighbor_of(v, [&] (int nbr, int weight) {
+            // SIMULATE EXPANSION TIME
+            timing::busy_loop_secs(exptime);
+
+            int nbrdist = mine.distance + weight;
+            frontier.insert(heuristic(nbr) + nbrdist, std::make_tuple(nbr, nbrdist, v));
+          });
+        }
+      }
+      else {
+        // vertex has already been expanded by someone else, but we could still
+        // claim ourselves as having a better distance to this vertex.
+        while (theirs.distance > mine.distance) {
+          if (finalized[v].compare_exchange_weak(theirs, mine)) break;
+          theirs = finalized[v].load();
+        }
+      }
+
+      work_this_round++;
+    }
+    work_since_split.mine() += work_this_round;
+    return false;
+  };
+
+  pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  return finalized;
 }
