@@ -7,7 +7,7 @@ import itertools
 # ===========================================================================
 
 def keep(algo1, algo2, params):
-  return params["algo"] == algo1 or params["algo"] == algo2
+  return (params["algo"] == algo1 or params["algo"] == algo2)
 
 def simplifyResults(results):
   floatyKeys = ["exectime", "pathlen", "expanded", "deviation"]
@@ -29,7 +29,7 @@ def simplifyParams(params):
 
 # here's a crappy lexicographic ordering over assumed parameters
 def cmpForSortedOutput ((ps1,rs1),(ps2,rs2)):
-  for key in ["map", "proc", "w", "exptime"]:
+  for key in ["map", "algo", "proc", "w", "exptime"]:
     if ps1[key] < ps2[key]:
       return -1
     if ps1[key] > ps2[key]:

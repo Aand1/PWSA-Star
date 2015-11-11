@@ -303,6 +303,7 @@ void solveMaze(int& path_length, int& num_discovered, int& num_expands){
 
   if(grid[goal_x][goal_y].g==INFINITE || q.contains(grid[goal_x][goal_y])){
     printf("Queue is empty....failed to find goal!\n");
+    std::exit(EXIT_FAILURE);
   }
   path_length = grid[goal_x][goal_y].g;
 }
@@ -417,7 +418,7 @@ int main(int argc, char** argv){
   wA_eps = parse_or_default_double(argc, argv, "-w", 1.0);
   pA_eps = parse_or_default_double(argc, argv, "-eps", wA_eps);
   SEC_PER_EXPAND = parse_or_default_double(argc, argv, "-exptime", 0.0);
-//  double opt = parse_or_default_double(argc, argv, "-opt", 1.0);
+  double opt = parse_or_default_double(argc, argv, "-opt", 1.0);
 
   // printf("proc %d\n", num_threads);
 
@@ -463,7 +464,7 @@ int main(int argc, char** argv){
   printf("expanded %d\n", num_expands);
   double pathlen = double(path_length)/10000.0;
   printf("pathlen %f\n", pathlen);
-//  printf("deviation %f\n", pathlen / opt);
+  printf("deviation %f\n", pathlen / opt);
 
   //loop over maps
   // for(int i=1; i<argc; i++){
