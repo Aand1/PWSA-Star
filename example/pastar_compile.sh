@@ -1,3 +1,3 @@
 #!/bin/bash
 
-g++ pastar_main.cpp -lpthread -o pastar_main.opt
+g++ src/pastar_main.cpp -lpthread -o pastar_main.opt
