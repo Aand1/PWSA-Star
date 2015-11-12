@@ -1,0 +1,8 @@
+* Fix a reference leak in the prio. queue
+  - Using the PREV pointer seems to exasterbate this problem
+
+* Do Makefile dependencies properly
+
+* Make the prio_queue random number generator thread safe.
+
+* Implement an _extentable_ lock-free hash table.
