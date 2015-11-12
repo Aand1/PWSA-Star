@@ -116,8 +116,8 @@ def keep(keepdict, params):
 def refreezeAfter(f):
   return (lambda d: frozenset(f(dict(d)).items()))
 
-def noalgo(frozen):
-  return frozenset([ (k,v) for k,v in frozen if k != "algo" ])
+def combineAlgoParam(algo1, algo2, frozen):
+  return frozenset([ ((k,v) if k != "algo" else (k, algo1 + "-vs-" + algo2)) for k,v in frozen ])
 
 # ============================================================================
 # ============================================================================
@@ -139,8 +139,8 @@ if __name__ == "__main__":
 
   def doComparison(runsdict):
     [algo1, algo2] = args["-compare"].split(",")
-    algoRuns1 = { noalgo(ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo1) in ps }
-    algoRuns2 = { noalgo(ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo2) in ps }
+    algoRuns1 = { combineAlgoParam(algo1, algo2, ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo1) in ps }
+    algoRuns2 = { combineAlgoParam(algo1, algo2, ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo2) in ps }
     return intersectDictsWith(combineResults)(algoRuns1, algoRuns2)
 
   beforeSimplify = doComparison(averaged1) if args["-compare"] else averaged1
