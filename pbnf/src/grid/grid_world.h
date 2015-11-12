@@ -28,7 +28,6 @@ class GridState;
 using namespace std;
 
 
-
 class GridWorld : public SearchDomain {
 public:
 	enum cost_type { UNIT_COST, LIFE_COST };

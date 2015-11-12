@@ -102,6 +102,9 @@ GridWorld::GridWorld(istream &s)
 	s >> goal_y;
 	goal_y = height - 1 - goal_y;
 
+  cout << "start_x = " << start_x << " start_y = " << start_y << "\n";
+  cout << "goal_x = " << goal_x << " goal_y = " << goal_y << "\n";
+
 #if defined(ENABLE_IMAGES)
 	states.resize(width * height, AtomicInt(0));
 #endif	// ENABLE_IMAGES
