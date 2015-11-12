@@ -17,6 +17,6 @@ for scenfile in scenfiles:
     [_, mapfile, w, h, sc, sr, dc, dr, opt] = scenario.split()
     mapArgs = ["-map", mapfile, "-sr", sr, "-sc", sc, "-dr", dr, "-dc", dc, "-opt", opt]
     # theseArgs = '"' + ' '.join(mapArgs + args) + '"'
-    cmd = ' '.join(["prun --append"] + mapArgs + args)
+    cmd = ' '.join(["prun --append -prog ./scripts/select_algo.py"] + mapArgs + args)
     print cmd
     subprocess.call(cmd, shell=True)
