@@ -117,7 +117,7 @@ def refreezeAfter(f):
   return (lambda d: frozenset(f(dict(d)).items()))
 
 def combineAlgoParam(algo1, algo2, frozen):
-  return frozenset([ ((k,v) if k != "algo" else (k, algo1 + "-vs-" + algo2)) for k,v in frozen ])
+  return frozenset([ ((k,v) if k != "algo" else (k, algo1 + "_vs_" + algo2)) for k,v in frozen ])
 
 # ============================================================================
 # ============================================================================

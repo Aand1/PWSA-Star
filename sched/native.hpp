@@ -587,9 +587,7 @@ void parallel_while_pwsa(Input& input, const Size_input& size_input, const Fork_
           break;
         } else { // have some work to do
           // TODO: should communicate first, before working
-          if (body(my_frontier)) {
-            is_done.store(true);
-          }
+          body(is_done, my_frontier);
           // communicate
           msg([&] { std::cout << "communicate my_id=" << my_id << std::endl; });
           request_type req = request[my_id].load();

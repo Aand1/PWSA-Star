@@ -21,12 +21,48 @@ public:
       int col;
   };
 
+  class neighbor {
+    public:
+      int vertex;
+      int weight;
+  };
+
   vector<vector<int>> grid; // holds vertex id, or -1 if obstacle
   vector<coords> vertices;
   int height;
   int width;
 
+  vector<int> neighbor_offsets;
+  vector<neighbor> neighbors;
+
   static const int OBSTACLE = -1;
+
+  int drow[8] = {   -1,    -1,    -1,     0,     0,     1,     1,     1};
+  int dcol[8] = {   -1,     0,     1,    -1,     1,    -1,     0,     1};
+  int dist[8] = {14142, 10000, 14142, 10000, 10000, 14142, 10000, 14142};
+
+  // assume `grid` and `vertices` have already been populated
+  void populate_neighbors() {
+    int curr_offset = 0;
+    neighbor_offsets.resize(vertices.size() + 1);
+    for (int v = 0; v < vertices.size(); v++) {
+      neighbor_offsets[v] = curr_offset;
+      for (int i = 0; i < 8; i++) {
+        int nghrow = vertices[v].row + drow[i];
+        int nghcol = vertices[v].col + dcol[i];
+        if (0 <= nghrow && nghrow < height &&
+            0 <= nghcol && nghcol < width &&
+            grid[nghrow][nghcol] != OBSTACLE) {
+          neighbor u;
+          u.vertex = grid[nghrow][nghcol];
+          u.weight = dist[i];
+          neighbors.push_back(u);
+          curr_offset++;
+        }
+      }
+    }
+    neighbor_offsets[vertices.size()] = curr_offset; // number of edges
+  }
 
   Graph() {
     height = 0;
@@ -69,6 +105,8 @@ public:
     }
     vertices.resize(next_id);
     fclose(fin);
+
+    populate_neighbors();
   }
 
   void pebble_dump(int* pebbles, int* predecessors, int src, int dst, const char* fname) {
@@ -117,21 +155,54 @@ public:
     return grid[row][col];
   }
 
-  int drow[8] = {   -1,    -1,    -1,     0,     0,     1,     1,     1};
-  int dcol[8] = {   -1,     0,     1,    -1,     1,    -1,     0,     1};
-  int dist[8] = {14142, 10000, 14142, 10000, 10000, 14142, 10000, 14142};
+  int degree(int v) {
+    return neighbor_offsets[v+1] - neighbor_offsets[v];
+    // int deg = 0;
+    // for (int i = 0; i < 8; i++) {
+    //   int nghrow = vertices[v].row + drow[i];
+    //   int nghcol = vertices[v].col + dcol[i];
+    //   if (0 <= nghrow && nghrow < height &&
+    //       0 <= nghcol && nghcol < width &&
+    //       grid[nghrow][nghcol] != OBSTACLE) {
+    //     deg++;
+    //   }
+    // }
+    // return deg;
+  }
+
+  template <class FUNC>
+  void for_each_neighbor_in_range(int v, int start, int end, const FUNC& f) {
+    for (int i = start; i < end; i++) {
+      neighbor u = neighbors[neighbor_offsets[v] + i];
+      f(u.vertex, u.weight);
+    }
+    // for (int i = start; i < end; i++) {
+    //   int nghrow = vertices[v].row + drow[i];
+    //   int nghcol = vertices[v].col + dcol[i];
+    //   if (0 <= nghrow && nghrow < height &&
+    //       0 <= nghcol && nghcol < width &&
+    //       grid[nghrow][nghcol] != OBSTACLE) {
+    //     f(grid[nghrow][nghcol], dist[i]);
+    //   }
+    // }
+  }
 
   template <class FUNC>
   void for_each_neighbor_of(int v, const FUNC& f) {
-    for (int i = 0; i < 8; i++) {
-      int nghrow = vertices[v].row + drow[i];
-      int nghcol = vertices[v].col + dcol[i];
-      if (0 <= nghrow && nghrow < height &&
-          0 <= nghcol && nghcol < width &&
-          grid[nghrow][nghcol] != OBSTACLE) {
-        f(grid[nghrow][nghcol], dist[i]);
-      }
+    int degv = degree(v);
+    for (int i = 0; i < degv; i++) {
+      neighbor u = neighbors[neighbor_offsets[v] + i];
+      f(u.vertex, u.weight);
     }
+    // for (int i = 0; i < 8; i++) {
+    //   int nghrow = vertices[v].row + drow[i];
+    //   int nghcol = vertices[v].col + dcol[i];
+    //   if (0 <= nghrow && nghrow < height &&
+    //       0 <= nghcol && nghcol < width &&
+    //       grid[nghrow][nghcol] != OBSTACLE) {
+    //     f(grid[nghrow][nghcol], dist[i]);
+    //   }
+    // }
   }
 
   int weight_between(int u, int v) {
