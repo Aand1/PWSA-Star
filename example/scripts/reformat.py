@@ -129,10 +129,10 @@ if __name__ == "__main__":
                 , "-compare" : None }
   args = parseArgs(argdefaults)
   keepdict = ast.literal_eval(args["-keep"])
-  inputfile = args["-input"]
+  inputfiles = args["-input"]
   outputfile = args["-output"]
 
-  runs = readResultsFile(inputfile)
+  runs = [ x for fin in inputfiles.split(",") for x in readResultsFile(fin) ]
   filtered = [ (frozenset(ps.items()), simplifyResults(rs))
                for ps, rs in runs if keep(keepdict, ps) ]
   averaged1 = collectWith(keywiseAverages)(filtered)

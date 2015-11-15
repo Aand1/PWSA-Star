@@ -33,6 +33,8 @@ double wA_eps;
 double pA_eps;
 double SEC_PER_EXPAND;
 
+bool error_during_run = false;
+
 int start_x;
 int start_y;
 int goal_x;
@@ -59,7 +61,6 @@ bool search_done;
 pthread_cond_t cond;
 pthread_mutex_t mutex;
 int ids;
-
 
 class myQueue{
   public:
@@ -94,13 +95,12 @@ class myQueue{
       state* local_being_expanded[num_threads];
       multimap<int,state*>::iterator it;
       while(!search_done){
-        // printf("start of remove\n");
+        //printf("start of remove\n");
         //make a local copy of BE to avoid race conditions
         for(int i=0; i<num_threads; i++)
           local_being_expanded[i] = being_expanded[i];
         //loop over open list to find a state we can expand
         for(it=m.begin(); it!=m.end(); it++){
-          // printf("in loop\n");
           //if the being_expanded changed (some state is done being expanded) start over
           bool changed = false;
           bool valid = true;
@@ -113,13 +113,12 @@ class myQueue{
             //check if the state in BE passes the independence check
             if(local_being_expanded[i] &&
                it->second->g - local_being_expanded[i]->g > pA_eps*p2pH(it->second,local_being_expanded[i])){
-              // printf("invalid 1\n");
               valid = false;
               break;
             }
           }
           if(changed){
-            // printf("being expanded changed!\n");
+            //printf("being expanded changed!\n");
             break;
           }
 
@@ -127,7 +126,6 @@ class myQueue{
             //loop over states in open ahead of this state and run independence checks
             for(multimap<int,state*>::iterator it2=m.begin(); it2!=it; it2++){
               if(it->second->g - it2->second->g > pA_eps*p2pH(it->second, it2->second)){
-                // printf("invalid 2\n");
                 valid = false;
                 break;
               }
@@ -142,12 +140,12 @@ class myQueue{
             return s;
           }
           else{
-            // printf("invalid!");
+            //printf("invalid!");
           }
 
         }
         pthread_mutex_unlock(&mutex);
-        // printf("crappy spin\n");
+        //printf("crappy spin\n");
         pthread_mutex_lock(&mutex);
       }
       return NULL;
@@ -190,18 +188,18 @@ void readMaze(char* filename){
 }
 */
 
-// uint64_t GetTimeStamp() {
-//   struct timeval tv;
-//   gettimeofday(&tv,NULL);
-//   return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
-// }
+uint64_t GetTimeStamp() {
+  struct timeval tv;
+  gettimeofday(&tv,NULL);
+  return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
+}
 
 void astar_thread( void *ptr ){
   pthread_mutex_lock(&mutex);
   int thread_id = ids;
   ids++;
   while(!search_done){
-    // printf("thread %d get state\n",thread_id);
+    //printf("thread %d get state\n",thread_id);
 
     //get a state to expand
     state* s = q.remove();
@@ -211,10 +209,12 @@ void astar_thread( void *ptr ){
       break;
     }
     being_expanded[thread_id] = s;
-    // printf("thread %d is expanding (%d %d). obs? %d\n",thread_id,s->x,s->y,s->obs);
+    //printf("thread %d is expanding (%d %d)\n",thread_id,s->x,s->y);
     num_expands++;
-    if(s->closed)
-      // printf("Uh oh! already closed!\n");
+    if(s->closed) {
+      printf("Uh oh! already closed!\n");
+      error_during_run = true;
+    }
     s->closed = true;
 
     if(s->x==goal_x && s->y==goal_y){
@@ -226,21 +226,20 @@ void astar_thread( void *ptr ){
 
 
     for(int i=0; i<8; i++){
-    //  printf("neighbor %d\n", i);
       int newX = s->x+dx[i];
       int newY = s->y+dy[i];
       state* t = &(grid[newX][newY]);
       //artificial collision checking time
 
-      //usleep(1);
       timing::busy_loop_secs(SEC_PER_EXPAND);
+      //usleep(1);
       // uint64_t t0 = GetTimeStamp();
       // uint64_t t1;
       // uint64_t dt;
       // do{
       //   t1 = GetTimeStamp();
       //   dt = t1-t0;
-      // } while(dt < /*EXP_TIME*/ (SEC_PER_EXPAND*1000000.0));
+      // } while(dt<EXP_TIME);
 
       if(newX<0 || newX==size_x || newY<0 || newY==size_y || t->obs)
         continue;
@@ -257,13 +256,12 @@ void astar_thread( void *ptr ){
       pthread_mutex_unlock(&mutex);
       //printf("thread %d done adding successor\n",thread_id);
     }
-    //printf("done with neighbors\n");
 
     //lock for the start of the next iteration
     being_expanded[thread_id] = NULL;
-    // printf("thread %d post expand get lock\n",thread_id);
+    //printf("thread %d post expand get lock\n",thread_id);
     pthread_mutex_lock(&mutex);
-    // printf("thread %d post expand locked\n",thread_id);
+    //printf("thread %d post expand locked\n",thread_id);
   }
   //printf("thread %d exit\n",thread_id);
   ids--;
@@ -303,7 +301,7 @@ void solveMaze(int& path_length, int& num_discovered, int& num_expands){
 
   if(grid[goal_x][goal_y].g==INFINITE || q.contains(grid[goal_x][goal_y])){
     printf("Queue is empty....failed to find goal!\n");
-    std::exit(EXIT_FAILURE);
+    error_during_run = true;
   }
   path_length = grid[goal_x][goal_y].g;
 }
@@ -458,6 +456,10 @@ int main(int argc, char** argv){
   uint64_t t0 = timing::now();
   solveMaze(path_length, num_discovered, num_expands);
   uint64_t t1 = timing::now();
+
+  if (error_during_run) {
+    return 1; // fail
+  }
 
   double dt = double(t1-t0)/1000000.0;
   printf("exectime %f\n", dt);
