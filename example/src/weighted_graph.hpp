@@ -64,6 +64,27 @@ public:
     neighbor_offsets[vertices.size()] = curr_offset; // number of edges
   }
 
+  bool check_neighbors() {
+    std::cout << "Checking graph... ";
+    for (int v = 0; v < vertices.size(); v++) {
+      int deg = 0;
+      for (int i = 0; i < 8; i++) {
+        int nghrow = vertices[v].row + drow[i];
+        int nghcol = vertices[v].col + dcol[i];
+        if (0 <= nghrow && nghrow < height &&
+            0 <= nghcol && nghcol < width &&
+            grid[nghrow][nghcol] != OBSTACLE) {
+          if (neighbors[neighbor_offsets[v] + deg].vertex != grid[nghrow][nghcol]) return false;
+          if (neighbors[neighbor_offsets[v] + deg].weight != dist[i]) return false;
+          deg++;
+        }
+      }
+      if (deg != degree(v)) return false;
+    }
+    std::cout << "done!" << std::endl;
+    return true;
+  }
+
   Graph() {
     height = 0;
     width = 0;
@@ -107,6 +128,7 @@ public:
     fclose(fin);
 
     populate_neighbors();
+    assert(check_neighbors());
   }
 
   void pebble_dump(int* pebbles, int* predecessors, int src, int dst, const char* fname) {
@@ -172,6 +194,7 @@ public:
 
   template <class FUNC>
   void for_each_neighbor_in_range(int v, int start, int end, const FUNC& f) {
+    assert(0 <= start && start <= end && end <= degree(v));
     for (int i = start; i < end; i++) {
       neighbor u = neighbors[neighbor_offsets[v] + i];
       f(u.vertex, u.weight);

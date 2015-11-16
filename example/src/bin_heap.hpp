@@ -88,6 +88,8 @@ private:
 
 public:
 
+  //typedef VALUE value_type;
+
   void resize_bigger(long new_cap) {
     assert(n <= new_cap);
 

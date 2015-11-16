@@ -29,6 +29,7 @@ int main(int argc, char** argv) {
 
   std::atomic<int>* res_normal;
   std::atomic<vertpack>* res_pathcorrect;
+  std::atomic<bool>* expanded_pathcorrect;
   int* pebbles = nullptr;
   int* predecessors = nullptr;
 
@@ -74,11 +75,15 @@ int main(int argc, char** argv) {
     };
 
     if (pathcorrect) {
-      res_pathcorrect = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      //res_pathcorrect = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      auto pair = pwsa_pathcorrect<Graph, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      res_pathcorrect = pair.first;
+      expanded_pathcorrect = pair.second;
       //res_pathcorrect = pwsa_simple_pathcorrect<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
     }
     else {
-      res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+      //res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+      res_normal = pwsa<Graph, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
     }
   };
 
@@ -88,19 +93,37 @@ int main(int argc, char** argv) {
     for (int i = 0; i < G.number_vertices(); i++) {
       if (!pathcorrect) {
         res[i] = res_normal[i].load();
+        if (res[i] != -1) num_expanded++;
       }
       else {
         res[i] = res_pathcorrect[i].load().distance;
         if (predecessors) {
           predecessors[i] = res_pathcorrect[i].load().pred;
         }
+        if (expanded_pathcorrect[i].load()) {
+          num_expanded++;
+        }
       }
-      if (res[i] != -1) num_expanded++;
     }
+    // if (predecessors) {
+    //   int i = dst;
+    //   std::cout << "source is " << src << std::endl;
+    //   while (i != predecessors[i] && 0 <= i && i < G.number_vertices()) {
+    //     std::cout << i << "," << std::flush;
+    //     i = predecessors[i];
+    //   }
+    //   std::cout << i << std::endl;
+    // }
     double pathlen = double(res[dst])/10000.0;
     if (pathcorrect) {
       pathlen = double(G.pathlen(predecessors, src, dst)) / 10000.0;
     }
+    // else {
+    //   double bypath = double(G.pathlen(predecessors, src, dst)) / 10000.0;
+    //   if (pathlen != bypath) {
+    //     std::cout << pathlen << ", " << bypath << std::endl;
+    //   }
+    // }
     std::cout << "expanded " << num_expanded << std::endl;
     std::cout << "pathlen " << pathlen << std::endl;
     std::cout << "deviation " << pathlen / opt << std::endl;
