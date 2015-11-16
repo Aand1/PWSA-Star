@@ -99,7 +99,8 @@ with tempfile.SpooledTemporaryFile(max_size=10*1024) as log:
       print "expanded %d" % expanded
       print "exectime %f" % exectime
       print "deviation %f" % deviation
-    elif line == "# No Solution\n":
+      break
+    if line == "# No Solution\n":
       retcode = 1 # failure...
 
 if retcode != 0:

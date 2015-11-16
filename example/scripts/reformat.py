@@ -14,6 +14,18 @@ def combineResults(rs1, rs2):
          , "expansion-improvement" : rs2["expanded"] / rs1["expanded"]
          }
 
+def chooseParams(params):
+  return { "algo" : params["algo"]
+         , "map" : params["map"]
+         , "sr" : params["sr"]
+         , "sc" : params["sc"]
+         , "dr" : params["dr"]
+         , "dc" : params["dc"]
+         , "proc" : int(params.get("proc", "1"))
+         , "w" : float(params.get("w", "1.0"))
+         , "exptime" : float(params.get("exptime", "0.0"))
+         }
+
 def simplifyParams(params):
   return { "algo" : params["algo"]
          , "map" : params["map"]
@@ -85,6 +97,7 @@ def mergeDictsWith(combine):
 def intersectDictsWith(combine):
   def doIntersect(d1, d2):
     result = { k : v for k,v in d1.iteritems() if k in d2 }
+    #print "Num items in d1 that are in d2: %d" % len(result)
     for k,v in d2.iteritems():
       if k in result:
         result[k] = combine(result[k], v)
@@ -117,6 +130,7 @@ def refreezeAfter(f):
   return (lambda d: frozenset(f(dict(d)).items()))
 
 def combineAlgoParam(algo1, algo2, frozen):
+  #return frozenset([ (k,v) for k,v in frozen if k != "opt" and k != "algo" ])
   return frozenset([ ((k,v) if k != "algo" else (k, algo1 + "_vs_" + algo2)) for k,v in frozen ])
 
 # ============================================================================
@@ -133,17 +147,23 @@ if __name__ == "__main__":
   outputfile = args["-output"]
 
   runs = [ x for fin in inputfiles.split(",") for x in readResultsFile(fin) ]
-  filtered = [ (frozenset(ps.items()), simplifyResults(rs))
+  filtered = [ (frozenset(chooseParams(ps).items()), simplifyResults(rs))
                for ps, rs in runs if keep(keepdict, ps) ]
   averaged1 = collectWith(keywiseAverages)(filtered)
 
   def doComparison(runsdict):
     [algo1, algo2] = args["-compare"].split(",")
+    print "Comparing %s against %s" % (algo1, algo2)
     algoRuns1 = { combineAlgoParam(algo1, algo2, ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo1) in ps }
     algoRuns2 = { combineAlgoParam(algo1, algo2, ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo2) in ps }
+    print "Found %d entries for %s and %d entries for %s" % (len(algoRuns1), algo1, len(algoRuns2), algo2)
+    #print algoRuns1
+    #print algoRuns2
     return intersectDictsWith(combineResults)(algoRuns1, algoRuns2)
 
   beforeSimplify = doComparison(averaged1) if args["-compare"] else averaged1
+
+  print "Size after combine: %d" % len(beforeSimplify)
 
   simplified = [ (refreezeAfter(simplifyParams)(ps), rs) for ps, rs in beforeSimplify.iteritems() ]
   averaged2 = collectWith(keywiseAverages)(simplified)
