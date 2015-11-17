@@ -276,7 +276,8 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
     }
   };
 
-  pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  //pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  pasl::sched::native::parallel_while_pwsa_maybe_faster(initF, size, fork, do_work);
   return finalized;
 }
 
@@ -566,6 +567,7 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
     work_since_split.mine() += work_this_round;
   };
 
-  pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  //pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  pasl::sched::native::parallel_while_pwsa_maybe_faster(initF, size, fork, do_work);
   return std::make_pair(gpred, is_expanded);
 }

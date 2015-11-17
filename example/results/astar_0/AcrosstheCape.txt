@@ -1,0 +1,9500 @@
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2745
+utilization 1.0000
+expanded 117361
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0570
+utilization 1.0000
+expanded 24414
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0318
+utilization 1.0000
+expanded 13773
+pathlen 1218.6
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0256
+utilization 1.0000
+expanded 10810
+pathlen 1254.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2791
+utilization 1.0000
+expanded 117361
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0571
+utilization 1.0000
+expanded 24414
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0324
+utilization 1.0000
+expanded 13773
+pathlen 1218.6
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0256
+utilization 1.0000
+expanded 10810
+pathlen 1254.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2790
+utilization 1.0000
+expanded 117361
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0570
+utilization 1.0000
+expanded 24414
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0318
+utilization 1.0000
+expanded 13773
+pathlen 1218.6
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0252
+utilization 1.0000
+expanded 10810
+pathlen 1254.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2793
+utilization 1.0000
+expanded 117361
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0570
+utilization 1.0000
+expanded 24414
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0324
+utilization 1.0000
+expanded 13773
+pathlen 1218.6
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0255
+utilization 1.0000
+expanded 10810
+pathlen 1254.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2792
+utilization 1.0000
+expanded 117361
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0558
+utilization 1.0000
+expanded 24414
+pathlen 1175.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0325
+utilization 1.0000
+expanded 13773
+pathlen 1218.6
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 756
+sc 39
+dr 12
+dc 753
+opt 1175.14
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0252
+utilization 1.0000
+expanded 10810
+pathlen 1254.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3348
+utilization 1.0000
+expanded 146142
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1226
+utilization 1.0000
+expanded 53367
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0728
+utilization 1.0000
+expanded 32720
+pathlen 1185.05
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0574
+utilization 1.0000
+expanded 25595
+pathlen 1278.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3413
+utilization 1.0000
+expanded 146142
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1224
+utilization 1.0000
+expanded 53367
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0731
+utilization 1.0000
+expanded 32720
+pathlen 1185.05
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0574
+utilization 1.0000
+expanded 25595
+pathlen 1278.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3406
+utilization 1.0000
+expanded 146142
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1226
+utilization 1.0000
+expanded 53367
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0728
+utilization 1.0000
+expanded 32720
+pathlen 1185.05
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0575
+utilization 1.0000
+expanded 25595
+pathlen 1278.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3354
+utilization 1.0000
+expanded 146142
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1226
+utilization 1.0000
+expanded 53367
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0710
+utilization 1.0000
+expanded 32720
+pathlen 1185.05
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0564
+utilization 1.0000
+expanded 25595
+pathlen 1278.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3409
+utilization 1.0000
+expanded 146142
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1225
+utilization 1.0000
+expanded 53367
+pathlen 1175.11
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0729
+utilization 1.0000
+expanded 32720
+pathlen 1185.05
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 310
+sc 690
+dr 685
+dc 8
+opt 1175.11
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0575
+utilization 1.0000
+expanded 25595
+pathlen 1278.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3701
+utilization 1.0000
+expanded 159978
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1998
+utilization 1.0000
+expanded 87085
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0789
+utilization 1.0000
+expanded 33480
+pathlen 1198.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0583
+utilization 1.0000
+expanded 25317
+pathlen 1228.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3633
+utilization 1.0000
+expanded 159978
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2048
+utilization 1.0000
+expanded 87085
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0772
+utilization 1.0000
+expanded 33480
+pathlen 1198.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0585
+utilization 1.0000
+expanded 25317
+pathlen 1228.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3706
+utilization 1.0000
+expanded 159978
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2035
+utilization 1.0000
+expanded 87085
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0760
+utilization 1.0000
+expanded 33480
+pathlen 1198.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0586
+utilization 1.0000
+expanded 25317
+pathlen 1228.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3703
+utilization 1.0000
+expanded 159978
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2034
+utilization 1.0000
+expanded 87085
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0771
+utilization 1.0000
+expanded 33480
+pathlen 1198.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0583
+utilization 1.0000
+expanded 25317
+pathlen 1228.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3719
+utilization 1.0000
+expanded 159978
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2033
+utilization 1.0000
+expanded 87085
+pathlen 1174.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0772
+utilization 1.0000
+expanded 33480
+pathlen 1198.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 748
+sc 749
+dr 27
+dc 116
+opt 1174.95
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0576
+utilization 1.0000
+expanded 25317
+pathlen 1228.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3267
+utilization 1.0000
+expanded 143069
+pathlen 1174.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1089
+utilization 1.0000
+expanded 44779
+pathlen 1175.59
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0443
+utilization 1.0000
+expanded 18966
+pathlen 1202.1
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0374
+utilization 1.0000
+expanded 16004
+pathlen 1299.06
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3253
+utilization 1.0000
+expanded 143069
+pathlen 1174.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1087
+utilization 1.0000
+expanded 44779
+pathlen 1175.59
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0445
+utilization 1.0000
+expanded 18966
+pathlen 1202.1
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0373
+utilization 1.0000
+expanded 16004
+pathlen 1299.06
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3346
+utilization 1.0000
+expanded 143069
+pathlen 1174.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1087
+utilization 1.0000
+expanded 44779
+pathlen 1175.59
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0444
+utilization 1.0000
+expanded 18966
+pathlen 1202.1
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0372
+utilization 1.0000
+expanded 16004
+pathlen 1299.06
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3255
+utilization 1.0000
+expanded 143069
+pathlen 1174.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1090
+utilization 1.0000
+expanded 44779
+pathlen 1175.59
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0434
+utilization 1.0000
+expanded 18966
+pathlen 1202.1
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0366
+utilization 1.0000
+expanded 16004
+pathlen 1299.06
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3253
+utilization 1.0000
+expanded 143069
+pathlen 1174.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1087
+utilization 1.0000
+expanded 44779
+pathlen 1175.59
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0444
+utilization 1.0000
+expanded 18966
+pathlen 1202.1
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 16
+sc 13
+dr 734
+dc 704
+opt 1174.76
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0373
+utilization 1.0000
+expanded 16004
+pathlen 1299.06
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3775
+utilization 1.0000
+expanded 163976
+pathlen 1174.64
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2818
+utilization 1.0000
+expanded 126012
+pathlen 1188.24
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2502
+utilization 1.0000
+expanded 111802
+pathlen 1201.56
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2074
+utilization 1.0000
+expanded 93693
+pathlen 1269.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3772
+utilization 1.0000
+expanded 163976
+pathlen 1174.64
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2818
+utilization 1.0000
+expanded 126012
+pathlen 1188.24
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2502
+utilization 1.0000
+expanded 111802
+pathlen 1201.56
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2107
+utilization 1.0000
+expanded 93693
+pathlen 1269.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3710
+utilization 1.0000
+expanded 163976
+pathlen 1174.64
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2820
+utilization 1.0000
+expanded 126012
+pathlen 1188.24
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2499
+utilization 1.0000
+expanded 111802
+pathlen 1201.56
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2074
+utilization 1.0000
+expanded 93693
+pathlen 1269.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3711
+utilization 1.0000
+expanded 163976
+pathlen 1174.64
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2821
+utilization 1.0000
+expanded 126012
+pathlen 1188.24
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2502
+utilization 1.0000
+expanded 111802
+pathlen 1201.56
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2076
+utilization 1.0000
+expanded 93693
+pathlen 1269.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3775
+utilization 1.0000
+expanded 163976
+pathlen 1174.64
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2792
+utilization 1.0000
+expanded 126012
+pathlen 1188.24
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2501
+utilization 1.0000
+expanded 111802
+pathlen 1201.56
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 45
+sc 738
+dr 22
+dc 20
+opt 1174.64
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2077
+utilization 1.0000
+expanded 93693
+pathlen 1269.14
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3024
+utilization 1.0000
+expanded 129826
+pathlen 1174.27
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1067
+utilization 1.0000
+expanded 46125
+pathlen 1187.86
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0407
+utilization 1.0000
+expanded 17781
+pathlen 1206.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0361
+utilization 1.0000
+expanded 15589
+pathlen 1252.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2965
+utilization 1.0000
+expanded 129826
+pathlen 1174.27
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1064
+utilization 1.0000
+expanded 46125
+pathlen 1187.86
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0401
+utilization 1.0000
+expanded 17781
+pathlen 1206.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0366
+utilization 1.0000
+expanded 15589
+pathlen 1252.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3028
+utilization 1.0000
+expanded 129826
+pathlen 1174.27
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1062
+utilization 1.0000
+expanded 46125
+pathlen 1187.86
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0401
+utilization 1.0000
+expanded 17781
+pathlen 1206.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0366
+utilization 1.0000
+expanded 15589
+pathlen 1252.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3023
+utilization 1.0000
+expanded 129826
+pathlen 1174.27
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1066
+utilization 1.0000
+expanded 46125
+pathlen 1187.86
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0408
+utilization 1.0000
+expanded 17781
+pathlen 1206.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0361
+utilization 1.0000
+expanded 15589
+pathlen 1252.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3022
+utilization 1.0000
+expanded 129826
+pathlen 1174.27
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1042
+utilization 1.0000
+expanded 46125
+pathlen 1187.86
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0401
+utilization 1.0000
+expanded 17781
+pathlen 1206.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 737
+sc 666
+dr 5
+dc 10
+opt 1174.27
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0362
+utilization 1.0000
+expanded 15589
+pathlen 1252.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3593
+utilization 1.0000
+expanded 153690
+pathlen 1173.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1476
+utilization 1.0000
+expanded 63301
+pathlen 1178.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0535
+utilization 1.0000
+expanded 22588
+pathlen 1211.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0463
+utilization 1.0000
+expanded 20098
+pathlen 1293.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3592
+utilization 1.0000
+expanded 153690
+pathlen 1173.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1471
+utilization 1.0000
+expanded 63301
+pathlen 1178.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0537
+utilization 1.0000
+expanded 22588
+pathlen 1211.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0462
+utilization 1.0000
+expanded 20098
+pathlen 1293.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3599
+utilization 1.0000
+expanded 153690
+pathlen 1173.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1510
+utilization 1.0000
+expanded 63301
+pathlen 1178.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0527
+utilization 1.0000
+expanded 22588
+pathlen 1211.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0462
+utilization 1.0000
+expanded 20098
+pathlen 1293.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3522
+utilization 1.0000
+expanded 153690
+pathlen 1173.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1471
+utilization 1.0000
+expanded 63301
+pathlen 1178.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0536
+utilization 1.0000
+expanded 22588
+pathlen 1211.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0462
+utilization 1.0000
+expanded 20098
+pathlen 1293.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3504
+utilization 1.0000
+expanded 153690
+pathlen 1173.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1472
+utilization 1.0000
+expanded 63301
+pathlen 1178.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0535
+utilization 1.0000
+expanded 22588
+pathlen 1211.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 5
+sc 77
+dr 760
+dc 676
+opt 1173.66
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0461
+utilization 1.0000
+expanded 20098
+pathlen 1293.77
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5842
+utilization 1.0000
+expanded 255701
+pathlen 1173.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5335
+utilization 1.0000
+expanded 222545
+pathlen 1174.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3907
+utilization 1.0000
+expanded 165970
+pathlen 1189.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1594
+utilization 1.0000
+expanded 69386
+pathlen 1204.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5934
+utilization 1.0000
+expanded 255701
+pathlen 1173.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5340
+utilization 1.0000
+expanded 222545
+pathlen 1174.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3830
+utilization 1.0000
+expanded 165970
+pathlen 1189.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1603
+utilization 1.0000
+expanded 69386
+pathlen 1204.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5946
+utilization 1.0000
+expanded 255701
+pathlen 1173.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5331
+utilization 1.0000
+expanded 222545
+pathlen 1174.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3911
+utilization 1.0000
+expanded 165970
+pathlen 1189.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1599
+utilization 1.0000
+expanded 69386
+pathlen 1204.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5925
+utilization 1.0000
+expanded 255701
+pathlen 1173.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5245
+utilization 1.0000
+expanded 222545
+pathlen 1174.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3911
+utilization 1.0000
+expanded 165970
+pathlen 1189.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1595
+utilization 1.0000
+expanded 69386
+pathlen 1204.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5929
+utilization 1.0000
+expanded 255701
+pathlen 1173.63
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5217
+utilization 1.0000
+expanded 222545
+pathlen 1174.8
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3909
+utilization 1.0000
+expanded 165970
+pathlen 1189.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 757
+sc 116
+dr 331
+dc 675
+opt 1173.63
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1569
+utilization 1.0000
+expanded 69386
+pathlen 1204.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3796
+utilization 1.0000
+expanded 165037
+pathlen 1173.46
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2832
+utilization 1.0000
+expanded 126616
+pathlen 1175.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2800
+utilization 1.0000
+expanded 117506
+pathlen 1188.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2209
+utilization 1.0000
+expanded 100076
+pathlen 1261.55
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3788
+utilization 1.0000
+expanded 165037
+pathlen 1173.46
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2831
+utilization 1.0000
+expanded 126616
+pathlen 1175.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2624
+utilization 1.0000
+expanded 117506
+pathlen 1188.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2246
+utilization 1.0000
+expanded 100076
+pathlen 1261.55
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3786
+utilization 1.0000
+expanded 165037
+pathlen 1173.46
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2827
+utilization 1.0000
+expanded 126616
+pathlen 1175.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2627
+utilization 1.0000
+expanded 117506
+pathlen 1188.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2211
+utilization 1.0000
+expanded 100076
+pathlen 1261.55
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3788
+utilization 1.0000
+expanded 165037
+pathlen 1173.46
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2830
+utilization 1.0000
+expanded 126616
+pathlen 1175.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2624
+utilization 1.0000
+expanded 117506
+pathlen 1188.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2248
+utilization 1.0000
+expanded 100076
+pathlen 1261.55
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3787
+utilization 1.0000
+expanded 165037
+pathlen 1173.46
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2831
+utilization 1.0000
+expanded 126616
+pathlen 1175.95
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2625
+utilization 1.0000
+expanded 117506
+pathlen 1188.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 40
+sc 742
+dr 17
+dc 51
+opt 1173.46
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2217
+utilization 1.0000
+expanded 100076
+pathlen 1261.55
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5380
+utilization 1.0000
+expanded 235468
+pathlen 1173.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4675
+utilization 1.0000
+expanded 201931
+pathlen 1174.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3679
+utilization 1.0000
+expanded 160096
+pathlen 1185.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1987
+utilization 1.0000
+expanded 84961
+pathlen 1195.61
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5382
+utilization 1.0000
+expanded 235468
+pathlen 1173.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4671
+utilization 1.0000
+expanded 201931
+pathlen 1174.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3740
+utilization 1.0000
+expanded 160096
+pathlen 1185.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2026
+utilization 1.0000
+expanded 84961
+pathlen 1195.61
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5382
+utilization 1.0000
+expanded 235468
+pathlen 1173.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4665
+utilization 1.0000
+expanded 201931
+pathlen 1174.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3737
+utilization 1.0000
+expanded 160096
+pathlen 1185.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2026
+utilization 1.0000
+expanded 84961
+pathlen 1195.61
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5381
+utilization 1.0000
+expanded 235468
+pathlen 1173.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4677
+utilization 1.0000
+expanded 201931
+pathlen 1174.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3679
+utilization 1.0000
+expanded 160096
+pathlen 1185.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2026
+utilization 1.0000
+expanded 84961
+pathlen 1195.61
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5404
+utilization 1.0000
+expanded 235468
+pathlen 1173.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4669
+utilization 1.0000
+expanded 201931
+pathlen 1174.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3681
+utilization 1.0000
+expanded 160096
+pathlen 1185.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 33
+sc 40
+dr 314
+dc 636
+opt 1173.41
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2021
+utilization 1.0000
+expanded 84961
+pathlen 1195.61
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3287
+utilization 1.0000
+expanded 145109
+pathlen 1173.36
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2578
+utilization 1.0000
+expanded 113136
+pathlen 1185.79
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2082
+utilization 1.0000
+expanded 89236
+pathlen 1226.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1620
+utilization 1.0000
+expanded 72628
+pathlen 1265.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3303
+utilization 1.0000
+expanded 145109
+pathlen 1173.36
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2522
+utilization 1.0000
+expanded 113136
+pathlen 1185.79
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2038
+utilization 1.0000
+expanded 89236
+pathlen 1226.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1620
+utilization 1.0000
+expanded 72628
+pathlen 1265.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3300
+utilization 1.0000
+expanded 145109
+pathlen 1173.36
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2575
+utilization 1.0000
+expanded 113136
+pathlen 1185.79
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2082
+utilization 1.0000
+expanded 89236
+pathlen 1226.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1656
+utilization 1.0000
+expanded 72628
+pathlen 1265.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3293
+utilization 1.0000
+expanded 145109
+pathlen 1173.36
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2523
+utilization 1.0000
+expanded 113136
+pathlen 1185.79
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2080
+utilization 1.0000
+expanded 89236
+pathlen 1226.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1661
+utilization 1.0000
+expanded 72628
+pathlen 1265.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3248
+utilization 1.0000
+expanded 145109
+pathlen 1173.36
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2535
+utilization 1.0000
+expanded 113136
+pathlen 1185.79
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2038
+utilization 1.0000
+expanded 89236
+pathlen 1226.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 29
+sc 28
+dr 61
+dc 756
+opt 1173.36
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1618
+utilization 1.0000
+expanded 72628
+pathlen 1265.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2721
+utilization 1.0000
+expanded 118168
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0894
+utilization 1.0000
+expanded 38655
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0407
+utilization 1.0000
+expanded 18975
+pathlen 1187.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0325
+utilization 1.0000
+expanded 15178
+pathlen 1221.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2675
+utilization 1.0000
+expanded 118168
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0874
+utilization 1.0000
+expanded 38655
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0407
+utilization 1.0000
+expanded 18975
+pathlen 1187.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0324
+utilization 1.0000
+expanded 15178
+pathlen 1221.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2683
+utilization 1.0000
+expanded 118168
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0890
+utilization 1.0000
+expanded 38655
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0407
+utilization 1.0000
+expanded 18975
+pathlen 1187.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0323
+utilization 1.0000
+expanded 15178
+pathlen 1221.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2673
+utilization 1.0000
+expanded 118168
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0872
+utilization 1.0000
+expanded 38655
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0408
+utilization 1.0000
+expanded 18975
+pathlen 1187.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0323
+utilization 1.0000
+expanded 15178
+pathlen 1221.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2724
+utilization 1.0000
+expanded 118168
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0890
+utilization 1.0000
+expanded 38655
+pathlen 1173.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0409
+utilization 1.0000
+expanded 18975
+pathlen 1187.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 326
+sc 721
+dr 669
+dc 33
+opt 1173.13
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0323
+utilization 1.0000
+expanded 15178
+pathlen 1221.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3162
+utilization 1.0000
+expanded 129938
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0778
+utilization 1.0000
+expanded 35426
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0482
+utilization 1.0000
+expanded 22288
+pathlen 1183.03
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0452
+utilization 1.0000
+expanded 20978
+pathlen 1227.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3086
+utilization 1.0000
+expanded 129938
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0795
+utilization 1.0000
+expanded 35426
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0483
+utilization 1.0000
+expanded 22288
+pathlen 1183.03
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0445
+utilization 1.0000
+expanded 20978
+pathlen 1227.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3088
+utilization 1.0000
+expanded 129938
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0794
+utilization 1.0000
+expanded 35426
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0479
+utilization 1.0000
+expanded 22288
+pathlen 1183.03
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0450
+utilization 1.0000
+expanded 20978
+pathlen 1227.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3081
+utilization 1.0000
+expanded 129938
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0796
+utilization 1.0000
+expanded 35426
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0482
+utilization 1.0000
+expanded 22288
+pathlen 1183.03
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0453
+utilization 1.0000
+expanded 20978
+pathlen 1227.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3032
+utilization 1.0000
+expanded 129938
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0795
+utilization 1.0000
+expanded 35426
+pathlen 1173.09
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0474
+utilization 1.0000
+expanded 22288
+pathlen 1183.03
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 312
+sc 661
+dr 737
+dc 11
+opt 1173.09
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0452
+utilization 1.0000
+expanded 20978
+pathlen 1227.76
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3463
+utilization 1.0000
+expanded 149743
+pathlen 1172.73
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1244
+utilization 1.0000
+expanded 53831
+pathlen 1173.31
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0538
+utilization 1.0000
+expanded 23734
+pathlen 1185.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0482
+utilization 1.0000
+expanded 20818
+pathlen 1231.54
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3464
+utilization 1.0000
+expanded 149743
+pathlen 1172.73
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1219
+utilization 1.0000
+expanded 53831
+pathlen 1173.31
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0548
+utilization 1.0000
+expanded 23734
+pathlen 1185.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0477
+utilization 1.0000
+expanded 20818
+pathlen 1231.54
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3462
+utilization 1.0000
+expanded 149743
+pathlen 1172.73
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1221
+utilization 1.0000
+expanded 53831
+pathlen 1173.31
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0555
+utilization 1.0000
+expanded 23734
+pathlen 1185.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0477
+utilization 1.0000
+expanded 20818
+pathlen 1231.54
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3475
+utilization 1.0000
+expanded 149743
+pathlen 1172.73
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1220
+utilization 1.0000
+expanded 53831
+pathlen 1173.31
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0555
+utilization 1.0000
+expanded 23734
+pathlen 1185.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0477
+utilization 1.0000
+expanded 20818
+pathlen 1231.54
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3461
+utilization 1.0000
+expanded 149743
+pathlen 1172.73
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1220
+utilization 1.0000
+expanded 53831
+pathlen 1173.31
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0548
+utilization 1.0000
+expanded 23734
+pathlen 1185.15
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 694
+sc 766
+dr 28
+dc 76
+opt 1172.73
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0471
+utilization 1.0000
+expanded 20818
+pathlen 1231.54
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3708
+utilization 1.0000
+expanded 163175
+pathlen 1172.04
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2908
+utilization 1.0000
+expanded 130628
+pathlen 1174.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2511
+utilization 1.0000
+expanded 109479
+pathlen 1186.7
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2053
+utilization 1.0000
+expanded 92590
+pathlen 1262.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3691
+utilization 1.0000
+expanded 163175
+pathlen 1172.04
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2949
+utilization 1.0000
+expanded 130628
+pathlen 1174.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2473
+utilization 1.0000
+expanded 109479
+pathlen 1186.7
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2071
+utilization 1.0000
+expanded 92590
+pathlen 1262.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3707
+utilization 1.0000
+expanded 163175
+pathlen 1172.04
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2896
+utilization 1.0000
+expanded 130628
+pathlen 1174.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2512
+utilization 1.0000
+expanded 109479
+pathlen 1186.7
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2072
+utilization 1.0000
+expanded 92590
+pathlen 1262.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3628
+utilization 1.0000
+expanded 163175
+pathlen 1172.04
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2946
+utilization 1.0000
+expanded 130628
+pathlen 1174.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2475
+utilization 1.0000
+expanded 109479
+pathlen 1186.7
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2070
+utilization 1.0000
+expanded 92590
+pathlen 1262.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3694
+utilization 1.0000
+expanded 163175
+pathlen 1172.04
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2946
+utilization 1.0000
+expanded 130628
+pathlen 1174.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2477
+utilization 1.0000
+expanded 109479
+pathlen 1186.7
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 334
+sc 680
+dr 61
+dc 68
+opt 1172.04
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2080
+utilization 1.0000
+expanded 92590
+pathlen 1262.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3431
+utilization 1.0000
+expanded 154367
+pathlen 1171.9
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2757
+utilization 1.0000
+expanded 122248
+pathlen 1185.16
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2325
+utilization 1.0000
+expanded 103285
+pathlen 1192.96
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1906
+utilization 1.0000
+expanded 84888
+pathlen 1238.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3483
+utilization 1.0000
+expanded 154367
+pathlen 1171.9
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2801
+utilization 1.0000
+expanded 122248
+pathlen 1185.16
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2315
+utilization 1.0000
+expanded 103285
+pathlen 1192.96
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1907
+utilization 1.0000
+expanded 84888
+pathlen 1238.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3485
+utilization 1.0000
+expanded 154367
+pathlen 1171.9
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2803
+utilization 1.0000
+expanded 122248
+pathlen 1185.16
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2309
+utilization 1.0000
+expanded 103285
+pathlen 1192.96
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1906
+utilization 1.0000
+expanded 84888
+pathlen 1238.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3442
+utilization 1.0000
+expanded 154367
+pathlen 1171.9
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2757
+utilization 1.0000
+expanded 122248
+pathlen 1185.16
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2309
+utilization 1.0000
+expanded 103285
+pathlen 1192.96
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1909
+utilization 1.0000
+expanded 84888
+pathlen 1238.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3424
+utilization 1.0000
+expanded 154367
+pathlen 1171.9
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2803
+utilization 1.0000
+expanded 122248
+pathlen 1185.16
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2308
+utilization 1.0000
+expanded 103285
+pathlen 1192.96
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 13
+sc 650
+dr 43
+dc 10
+opt 1171.9
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1909
+utilization 1.0000
+expanded 84888
+pathlen 1238.66
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3949
+utilization 1.0000
+expanded 170673
+pathlen 1171.78
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3066
+utilization 1.0000
+expanded 136061
+pathlen 1172.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2775
+utilization 1.0000
+expanded 123517
+pathlen 1187.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2423
+utilization 1.0000
+expanded 108415
+pathlen 1249.65
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3894
+utilization 1.0000
+expanded 170673
+pathlen 1171.78
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3066
+utilization 1.0000
+expanded 136061
+pathlen 1172.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2779
+utilization 1.0000
+expanded 123517
+pathlen 1187.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2429
+utilization 1.0000
+expanded 108415
+pathlen 1249.65
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3902
+utilization 1.0000
+expanded 170673
+pathlen 1171.78
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3070
+utilization 1.0000
+expanded 136061
+pathlen 1172.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2774
+utilization 1.0000
+expanded 123517
+pathlen 1187.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2389
+utilization 1.0000
+expanded 108415
+pathlen 1249.65
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3896
+utilization 1.0000
+expanded 170673
+pathlen 1171.78
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3066
+utilization 1.0000
+expanded 136061
+pathlen 1172.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2773
+utilization 1.0000
+expanded 123517
+pathlen 1187.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2392
+utilization 1.0000
+expanded 108415
+pathlen 1249.65
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3878
+utilization 1.0000
+expanded 170673
+pathlen 1171.78
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3072
+utilization 1.0000
+expanded 136061
+pathlen 1172.37
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2727
+utilization 1.0000
+expanded 123517
+pathlen 1187.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 292
+sc 647
+dr 6
+dc 67
+opt 1171.78
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2397
+utilization 1.0000
+expanded 108415
+pathlen 1249.65
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3520
+utilization 1.0000
+expanded 149466
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1345
+utilization 1.0000
+expanded 56543
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0599
+utilization 1.0000
+expanded 26118
+pathlen 1218.07
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0357
+utilization 1.0000
+expanded 15514
+pathlen 1276.89
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3519
+utilization 1.0000
+expanded 149466
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1344
+utilization 1.0000
+expanded 56543
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0614
+utilization 1.0000
+expanded 26118
+pathlen 1218.07
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0356
+utilization 1.0000
+expanded 15514
+pathlen 1276.89
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3523
+utilization 1.0000
+expanded 149466
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1343
+utilization 1.0000
+expanded 56543
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0613
+utilization 1.0000
+expanded 26118
+pathlen 1218.07
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0355
+utilization 1.0000
+expanded 15514
+pathlen 1276.89
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3519
+utilization 1.0000
+expanded 149466
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1342
+utilization 1.0000
+expanded 56543
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0611
+utilization 1.0000
+expanded 26118
+pathlen 1218.07
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0355
+utilization 1.0000
+expanded 15514
+pathlen 1276.89
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3526
+utilization 1.0000
+expanded 149466
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1341
+utilization 1.0000
+expanded 56543
+pathlen 1171.21
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0614
+utilization 1.0000
+expanded 26118
+pathlen 1218.07
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 27
+sc 109
+dr 717
+dc 761
+opt 1171.21
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0353
+utilization 1.0000
+expanded 15514
+pathlen 1276.89
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3235
+utilization 1.0000
+expanded 145242
+pathlen 1170.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2555
+utilization 1.0000
+expanded 111865
+pathlen 1185.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1997
+utilization 1.0000
+expanded 85578
+pathlen 1224.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1621
+utilization 1.0000
+expanded 70896
+pathlen 1274.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3286
+utilization 1.0000
+expanded 145242
+pathlen 1170.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2500
+utilization 1.0000
+expanded 111865
+pathlen 1185.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1997
+utilization 1.0000
+expanded 85578
+pathlen 1224.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1618
+utilization 1.0000
+expanded 70896
+pathlen 1274.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3292
+utilization 1.0000
+expanded 145242
+pathlen 1170.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2501
+utilization 1.0000
+expanded 111865
+pathlen 1185.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1996
+utilization 1.0000
+expanded 85578
+pathlen 1224.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1619
+utilization 1.0000
+expanded 70896
+pathlen 1274.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3289
+utilization 1.0000
+expanded 145242
+pathlen 1170.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2558
+utilization 1.0000
+expanded 111865
+pathlen 1185.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1996
+utilization 1.0000
+expanded 85578
+pathlen 1224.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1625
+utilization 1.0000
+expanded 70896
+pathlen 1274.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3227
+utilization 1.0000
+expanded 145242
+pathlen 1170.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2508
+utilization 1.0000
+expanded 111865
+pathlen 1185.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1954
+utilization 1.0000
+expanded 85578
+pathlen 1224.92
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 26
+sc 18
+dr 73
+dc 751
+opt 1170.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1623
+utilization 1.0000
+expanded 70896
+pathlen 1274.02
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5218
+utilization 1.0000
+expanded 230564
+pathlen 1169.12
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4713
+utilization 1.0000
+expanded 199231
+pathlen 1172.19
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3709
+utilization 1.0000
+expanded 159320
+pathlen 1247.45
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1641
+utilization 1.0000
+expanded 71266
+pathlen 1302.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5313
+utilization 1.0000
+expanded 230564
+pathlen 1169.12
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4713
+utilization 1.0000
+expanded 199231
+pathlen 1172.19
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3638
+utilization 1.0000
+expanded 159320
+pathlen 1247.45
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1641
+utilization 1.0000
+expanded 71266
+pathlen 1302.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5215
+utilization 1.0000
+expanded 230564
+pathlen 1169.12
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4713
+utilization 1.0000
+expanded 199231
+pathlen 1172.19
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3705
+utilization 1.0000
+expanded 159320
+pathlen 1247.45
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1641
+utilization 1.0000
+expanded 71266
+pathlen 1302.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5341
+utilization 1.0000
+expanded 230564
+pathlen 1169.12
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4709
+utilization 1.0000
+expanded 199231
+pathlen 1172.19
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3734
+utilization 1.0000
+expanded 159320
+pathlen 1247.45
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1640
+utilization 1.0000
+expanded 71266
+pathlen 1302.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5318
+utilization 1.0000
+expanded 230564
+pathlen 1169.12
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4711
+utilization 1.0000
+expanded 199231
+pathlen 1172.19
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3708
+utilization 1.0000
+expanded 159320
+pathlen 1247.45
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 714
+sc 760
+dr 349
+dc 66
+opt 1169.12
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1647
+utilization 1.0000
+expanded 71266
+pathlen 1302.18
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2625
+utilization 1.0000
+expanded 111531
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0771
+utilization 1.0000
+expanded 33049
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0292
+utilization 1.0000
+expanded 12605
+pathlen 1180.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0241
+utilization 1.0000
+expanded 10371
+pathlen 1237.29
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2626
+utilization 1.0000
+expanded 111531
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0783
+utilization 1.0000
+expanded 33049
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0293
+utilization 1.0000
+expanded 12605
+pathlen 1180.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0236
+utilization 1.0000
+expanded 10371
+pathlen 1237.29
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2631
+utilization 1.0000
+expanded 111531
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0784
+utilization 1.0000
+expanded 33049
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0287
+utilization 1.0000
+expanded 12605
+pathlen 1180.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0236
+utilization 1.0000
+expanded 10371
+pathlen 1237.29
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2588
+utilization 1.0000
+expanded 111531
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0768
+utilization 1.0000
+expanded 33049
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0292
+utilization 1.0000
+expanded 12605
+pathlen 1180.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0239
+utilization 1.0000
+expanded 10371
+pathlen 1237.29
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2629
+utilization 1.0000
+expanded 111531
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0783
+utilization 1.0000
+expanded 33049
+pathlen 1168.53
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0292
+utilization 1.0000
+expanded 12605
+pathlen 1180.13
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 0
+sc 717
+dr 719
+dc 18
+opt 1168.53
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0236
+utilization 1.0000
+expanded 10371
+pathlen 1237.29
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3310
+utilization 1.0000
+expanded 146136
+pathlen 1167.5
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2655
+utilization 1.0000
+expanded 119277
+pathlen 1177.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2308
+utilization 1.0000
+expanded 101344
+pathlen 1210.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1981
+utilization 1.0000
+expanded 86470
+pathlen 1267.39
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3252
+utilization 1.0000
+expanded 146136
+pathlen 1167.5
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2724
+utilization 1.0000
+expanded 119277
+pathlen 1177.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2304
+utilization 1.0000
+expanded 101344
+pathlen 1210.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1986
+utilization 1.0000
+expanded 86470
+pathlen 1267.39
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3316
+utilization 1.0000
+expanded 146136
+pathlen 1167.5
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2718
+utilization 1.0000
+expanded 119277
+pathlen 1177.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2254
+utilization 1.0000
+expanded 101344
+pathlen 1210.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1983
+utilization 1.0000
+expanded 86470
+pathlen 1267.39
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3315
+utilization 1.0000
+expanded 146136
+pathlen 1167.5
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2656
+utilization 1.0000
+expanded 119277
+pathlen 1177.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2313
+utilization 1.0000
+expanded 101344
+pathlen 1210.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1989
+utilization 1.0000
+expanded 86470
+pathlen 1267.39
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3259
+utilization 1.0000
+expanded 146136
+pathlen 1167.5
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2714
+utilization 1.0000
+expanded 119277
+pathlen 1177.44
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.2313
+utilization 1.0000
+expanded 101344
+pathlen 1210.58
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 44
+sc 33
+dr 26
+dc 741
+opt 1167.5
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1982
+utilization 1.0000
+expanded 86470
+pathlen 1267.39
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3368
+utilization 1.0000
+expanded 143171
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1244
+utilization 1.0000
+expanded 52547
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0581
+utilization 1.0000
+expanded 24311
+pathlen 1190.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0342
+utilization 1.0000
+expanded 15066
+pathlen 1276.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3368
+utilization 1.0000
+expanded 143171
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1220
+utilization 1.0000
+expanded 52547
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0580
+utilization 1.0000
+expanded 24311
+pathlen 1190.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0345
+utilization 1.0000
+expanded 15066
+pathlen 1276.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3379
+utilization 1.0000
+expanded 143171
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1253
+utilization 1.0000
+expanded 52547
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0569
+utilization 1.0000
+expanded 24311
+pathlen 1190.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0347
+utilization 1.0000
+expanded 15066
+pathlen 1276.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3371
+utilization 1.0000
+expanded 143171
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1218
+utilization 1.0000
+expanded 52547
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0572
+utilization 1.0000
+expanded 24311
+pathlen 1190.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0346
+utilization 1.0000
+expanded 15066
+pathlen 1276.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3369
+utilization 1.0000
+expanded 143171
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1221
+utilization 1.0000
+expanded 52547
+pathlen 1167.43
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0581
+utilization 1.0000
+expanded 24311
+pathlen 1190.62
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 22
+sc 121
+dr 720
+dc 746
+opt 1167.43
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0346
+utilization 1.0000
+expanded 15066
+pathlen 1276.67
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5507
+utilization 1.0000
+expanded 243739
+pathlen 1166.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5063
+utilization 1.0000
+expanded 211660
+pathlen 1167.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3918
+utilization 1.0000
+expanded 166583
+pathlen 1180.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1643
+utilization 1.0000
+expanded 70939
+pathlen 1200.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5525
+utilization 1.0000
+expanded 243739
+pathlen 1166.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5060
+utilization 1.0000
+expanded 211660
+pathlen 1167.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3916
+utilization 1.0000
+expanded 166583
+pathlen 1180.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1641
+utilization 1.0000
+expanded 70939
+pathlen 1200.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5507
+utilization 1.0000
+expanded 243739
+pathlen 1166.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5057
+utilization 1.0000
+expanded 211660
+pathlen 1167.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3916
+utilization 1.0000
+expanded 166583
+pathlen 1180.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1644
+utilization 1.0000
+expanded 70939
+pathlen 1200.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5525
+utilization 1.0000
+expanded 243739
+pathlen 1166.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4975
+utilization 1.0000
+expanded 211660
+pathlen 1167.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3845
+utilization 1.0000
+expanded 166583
+pathlen 1180.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1644
+utilization 1.0000
+expanded 70939
+pathlen 1200.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5616
+utilization 1.0000
+expanded 243739
+pathlen 1166.93
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.4965
+utilization 1.0000
+expanded 211660
+pathlen 1167.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3917
+utilization 1.0000
+expanded 166583
+pathlen 1180.41
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 66
+sc 52
+dr 309
+dc 693
+opt 1166.93
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1641
+utilization 1.0000
+expanded 70939
+pathlen 1200.85
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.6018
+utilization 1.0000
+expanded 254816
+pathlen 1166.35
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5198
+utilization 1.0000
+expanded 220938
+pathlen 1171.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3061
+utilization 1.0000
+expanded 130557
+pathlen 1192.25
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1307
+utilization 1.0000
+expanded 56367
+pathlen 1212.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5926
+utilization 1.0000
+expanded 254816
+pathlen 1166.35
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5104
+utilization 1.0000
+expanded 220938
+pathlen 1171.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3068
+utilization 1.0000
+expanded 130557
+pathlen 1192.25
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1308
+utilization 1.0000
+expanded 56367
+pathlen 1212.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.6048
+utilization 1.0000
+expanded 254816
+pathlen 1166.35
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5194
+utilization 1.0000
+expanded 220938
+pathlen 1171.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3062
+utilization 1.0000
+expanded 130557
+pathlen 1192.25
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1284
+utilization 1.0000
+expanded 56367
+pathlen 1212.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.6020
+utilization 1.0000
+expanded 254816
+pathlen 1166.35
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5195
+utilization 1.0000
+expanded 220938
+pathlen 1171.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3080
+utilization 1.0000
+expanded 130557
+pathlen 1192.25
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1288
+utilization 1.0000
+expanded 56367
+pathlen 1212.72
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5940
+utilization 1.0000
+expanded 254816
+pathlen 1166.35
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.5195
+utilization 1.0000
+expanded 220938
+pathlen 1171.52
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.3065
+utilization 1.0000
+expanded 130557
+pathlen 1192.25
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/AcrosstheCape.map
+sr 695
+sc 32
+dr 303
+dc 704
+opt 1166.35
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.1307
+utilization 1.0000
+expanded 56367
+pathlen 1212.72
+==========
