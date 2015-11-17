@@ -67,8 +67,8 @@ argdefaults = { "-map" : "maps/simple_map.map"
               , "-w"   : "1.0"
               , "-proc" : "1"
               , "-opt" : "1.0"
-              , "-minexpand" : "64"
-              , "-nblocks" : "6400"
+              , "-minexpand" : "32"
+              , "-nblocks" : "1024"
               }
 args = parseArgs(argdefaults)
 
@@ -79,7 +79,8 @@ convert(args["-map"], pbnfgrid, args["-sr"], args["-sc"], args["-dr"], args["-dc
 with tempfile.SpooledTemporaryFile(max_size=10*1024) as log:
   #wpbnf-<weight>-<min_expansions>-<threads>-<nblocks>
   executable = "../pbnf/src/grid_search.x86_64"
-  arg = "wpbnf-%s-%s-%s-%s" % (args["-w"], args["-minexpand"], args["-proc"], args["-nblocks"])
+  alg = "safepbnf" if float(args["-w"]) == 1.0 else "wpbnf"
+  arg = "%s-%s-%s-%s-%s" % (alg, args["-w"], args["-minexpand"], args["-proc"], args["-nblocks"])
   cmd = [executable, arg]
   #print ' '.join(cmd)
   with open(pbnfgrid, "r") as grid:
