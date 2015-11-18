@@ -189,6 +189,8 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   pasl::data::perworker::array<int> work_since_split;
   work_since_split.init(0);
 
+  bool reached_goal = false;
+
   auto size = [&] (Frontier& frontier) {
     auto sz = frontier.size();
     if (sz == 0) {
@@ -220,6 +222,11 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
       int vpred;
       int edge_start;
       bool continue_previous;
+
+      if (reached_goal) {
+        return true;
+      }
+
       if (frontier.current.vertex == -1) {
         auto tup = frontier.delete_min();
         v = std::get<0>(tup);
@@ -241,6 +248,7 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
         if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
         if (predecessors) predecessors[v] = vpred;
         if (v == destination) {
+          reached_goal = true;
           is_done.store(true);
           return;
         }
@@ -452,6 +460,8 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
     gpred[i].store(ith);
   });
 
+  bool reached_goal = false;
+
   vertpack src;
   src.distance = 0;
   src.pred = source;
@@ -500,6 +510,10 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
       // if (v != -1 || (!is_expanded[v = frontier.delete_min()].load() &&
       // int v = frontier.delete_min();
 
+      if (reached_goal) {
+        return true;
+      }
+  
       int v;
       int edge_start;
       bool continue_previous;
@@ -519,6 +533,7 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
         if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
 
         if (v == destination) {
+          reached_goal = true; // really redundant, but this should be non-atomic
           is_done.store(true);
           return;
         }
