@@ -804,6 +804,123 @@ void parallel_while_pwsa_maybe_faster(Input& input, const Size_input& size_input
 #endif
 }
 
+template <class Input, class Size_input, class Fork_input, class Body>
+void parallel_while_pwsa_new(Input& input, const Size_input& size_input, const Fork_input& fork_input, const Body& body) {
+#if defined(SEQUENTIAL_ELISION)
+  parallel_while(input, size_input, fork_input, set_in_env, body);
+#elif defined(USE_CILK_RUNTIME) && defined(__PASL_CILK_EXT)
+  parallel_while(input, size_input, fork_input, set_in_env, body);
+#else
+  using request_type = worker_id_t;
+  const request_type Request_blocked = -2;
+  const request_type Request_waiting = -1;
+  using answer_type = enum {
+    Answer_waiting,
+    Answer_transfered
+  };
+  data::perworker::array<Input> frontier;
+  data::perworker::array<std::atomic<request_type>> request;
+  data::perworker::array<std::atomic<answer_type>> answer;
+  worker_id_t leader_id = threaddag::get_my_id();
+  request.for_each([&] (worker_id_t i, std::atomic<request_type>& r) {
+    request_type t = (i == leader_id) ? Request_waiting : Request_blocked;
+    r.store(t);
+  });
+  answer.for_each([] (worker_id_t, std::atomic<answer_type>& a) {
+    a.store(Answer_waiting);
+  });
+  bool is_done = false;
+  auto b = [&] {
+    worker_id_t my_id = threaddag::get_my_id();
+    scheduler_p sched = threaddag::my_sched();
+    multishot* thread = my_thread();
+    int nb_workers = threaddag::get_nb_workers();
+    Input my_frontier;
+    if (my_id == leader_id) {
+      my_frontier.swap(input);
+    }
+    long sz;
+    bool init = (my_id != leader_id);
+    while (true) {
+      if (init) {
+        init = false;
+        goto acquire;
+      }
+      // try to perform some local work
+      while (true) {
+        thread->yield();
+        if (is_done)
+          return;
+        sz = (long)size_input(my_frontier);
+        if (sz == 0) {
+          break;
+        } else { // have some work to do
+          // TODO: should communicate first, before working
+          body(is_done /* passed by reference, modified by body */, my_frontier);
+          // communicate
+          request_type req = request[my_id].load();
+          assert(req != Request_blocked);
+          if (req != Request_waiting) {
+            worker_id_t j = req;
+            if (size_input(my_frontier) > 1) {
+              fork_input(my_frontier, frontier[j]);
+            }
+            answer[j].store(Answer_transfered);
+            request[my_id].store(Request_waiting);
+          }
+        }
+      }
+      assert(sz == 0);
+    acquire:
+      sz = 0;
+      // reject
+      while (true) {
+        request_type t = request[my_id].load();
+        if (t == Request_blocked) {
+          break;
+        } else if (t == Request_waiting) {
+          request[my_id].compare_exchange_strong(t, Request_blocked);
+        } else {
+          worker_id_t j = t;
+          request[my_id].compare_exchange_strong(t, Request_blocked);
+          answer[j].store(Answer_transfered);
+        }
+      }
+      // acquire
+      while (true) {
+        thread->yield();
+        if (is_done)
+          return;
+        answer[my_id].store(Answer_waiting);
+        util::ticks::microseconds_sleep(1.0);
+        if (nb_workers > 1) {
+          worker_id_t id = sched->random_other();
+          if (request[id].load() == Request_blocked)
+            continue;
+          request_type orig = Request_waiting;
+          bool s = request[id].compare_exchange_strong(orig, my_id);
+          if (! s)
+            continue;
+          while (answer[my_id].load() == Answer_waiting) {
+            thread->yield();
+            util::ticks::microseconds_sleep(1.0);
+            if (is_done)
+              return;
+          }
+          frontier[my_id].swap(my_frontier);
+          sz = (long)size_input(my_frontier);
+        }
+        if (sz > 0) {
+          request[my_id].store(Request_waiting);
+          break;
+        }
+      }
+    }
+  };
+  parallel_while(b);
+#endif
+}
+
 template <class Input, class Output,
           class Size_input, class Fork_input, class Join_output,
           class Set_in_env, class Set_out_env,

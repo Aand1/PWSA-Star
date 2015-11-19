@@ -9,6 +9,7 @@
 #define _PWSA_WEIGHTED_GRAPH_H_
 
 #include <fstream>
+#include "timing.hpp"
 
 using namespace std;
 
@@ -190,6 +191,10 @@ public:
     //   }
     // }
     // return deg;
+  }
+
+  void simulate_get_successors(double exptime) {
+    timing::busy_loop_secs(8.0 * exptime);
   }
 
   template <class FUNC>

@@ -106,8 +106,8 @@ public:
 
   Heap() {
     n = 0;
-    capacity = 2;
-    values = array_util::my_malloc<KV>(2);
+    capacity = 4096;
+    values = array_util::my_malloc<KV>(capacity);
   }
 
   void insert(long priority, const VALUE& value) {
@@ -126,6 +126,18 @@ public:
     n--;
     heapify_down_from(0);
     return result;
+  }
+
+  void discard_min() {
+    assert(n > 0);
+    values[0] = values[n-1];
+    n--;
+    heapify_down_from(0);
+  }
+
+  VALUE* peek() {
+    assert(n > 0);
+    return &(values[0].value);
   }
 
   // bool isEmpty() {

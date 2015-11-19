@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
   int dcol;
   double w;
   double exptime;
-  bool pathcorrect;
+  bool pathcorrect = true;
   double opt;
   std::string visualize;
 
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
     dcol = (int)pasl::util::cmdline::parse_or_default_int("dc", 1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0);
-    pathcorrect = pasl::util::cmdline::parse_or_default_bool("pathcorrect", false);
+    //pathcorrect = pasl::util::cmdline::parse_or_default_bool("pathcorrect", true);
     opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
 //    checkdev = pasl::util::cmdline::parse_or_default_bool("checkdev", false);
 //    debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
@@ -76,15 +76,15 @@ int main(int argc, char** argv) {
 
     if (pathcorrect) {
       //res_pathcorrect = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
-      auto pair = pwsa_pathcorrect<Graph, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      auto pair = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
       res_pathcorrect = pair.first;
       expanded_pathcorrect = pair.second;
       //res_pathcorrect = pwsa_simple_pathcorrect<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
     }
-    else {
-      //res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
-      res_normal = pwsa<Graph, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
-    }
+    // else {
+    //   //res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+    //   res_normal = pwsa<Graph, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+    // }
   };
 
   auto output = [&] {
