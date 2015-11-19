@@ -92,6 +92,7 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
     int expanded_this_round = 0;
     while (expanded_this_round < poll_cutoff && frontier.size() > 0 /*&& !is_done*/) {
       int v = frontier.delete_min();
+      expanded_this_round++;
 
       bool orig = is_expanded[v].load();
       if (!orig && is_expanded[v].compare_exchange_strong(orig, true)) {
@@ -105,7 +106,6 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
 
         // SIMULATE EXPANSION
         graph.simulate_get_successors(exptime);
-        expanded_this_round++;
 
         graph.for_each_neighbor_of(v, [&] (int nbr, int weight) {
           vertpack gpred_v = gpred[v].load();
@@ -129,7 +129,7 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
             }
           }
         });
-      }
+      } 
     }
     expanded_since_exchange.mine() += expanded_this_round;
   };
@@ -182,6 +182,7 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
       int v = std::get<0>(tup);
       int vdist = std::get<1>(tup);
       //int pred = std::get<2>(tup);
+      expanded_this_round++;
 
       int orig = finalized[v].load();
       if (orig == -1 && finalized[v].compare_exchange_strong(orig, vdist)) {
@@ -194,14 +195,12 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
         }
 
         graph.simulate_get_successors(exptime);
-        expanded_this_round++;
 
         graph.for_each_neighbor_of(v, [&] (int ngh, int weight) {
           int nghdist = vdist + weight;
           frontier.insert(heuristic(ngh) + nghdist, std::make_tuple(ngh, nghdist/*, v*/));
         });
       }
-      expanded_this_round++;
     }
     expanded_since_exchange.mine() += expanded_this_round;
   };
