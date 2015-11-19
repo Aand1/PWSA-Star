@@ -12,6 +12,158 @@ proc 1
 exptime 0.0
 ---
 timeout -1
+exectime 0.0837
+utilization 1.0000
+expanded 46512
+pathlen 662.295
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 578
+pathlen 668.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 546
+pathlen 675.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 538
+pathlen 676.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0854
+utilization 1.0000
+expanded 46512
+pathlen 662.295
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 578
+pathlen 668.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 546
+pathlen 675.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 538
+pathlen 676.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
 exectime 0.0853
 utilization 1.0000
 expanded 46512
@@ -26,53 +178,53 @@ dr 49
 dc 494
 opt 662.295
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0155
-utilization 1.0000
-expanded 8948
-pathlen 663.71
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 657
-pathlen 666.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 668.739
+expanded 578
+pathlen 668.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 546
+pathlen 675.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 538
+pathlen 676.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -102,53 +254,53 @@ dr 49
 dc 494
 opt 662.295
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0155
-utilization 1.0000
-expanded 8948
-pathlen 663.71
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 657
-pathlen 666.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 668.739
+expanded 578
+pathlen 668.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 546
+pathlen 675.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 456
+sc 12
+dr 49
+dc 494
+opt 662.295
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 538
+pathlen 676.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -164,7 +316,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0835
+exectime 0.0853
 utilization 1.0000
 expanded 46512
 pathlen 662.295
@@ -178,15 +330,15 @@ dr 49
 dc 494
 opt 662.295
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0156
+exectime 0.0016
 utilization 1.0000
-expanded 8948
-pathlen 663.71
+expanded 578
+pathlen 668.153
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -197,15 +349,15 @@ dr 49
 dc 494
 opt 662.295
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 657
-pathlen 666.982
+expanded 546
+pathlen 675.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -216,167 +368,243 @@ dr 49
 dc 494
 opt 662.295
 algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 668.739
+expanded 538
+pathlen 676.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0856
+exectime 0.0755
 utilization 1.0000
-expanded 46512
-pathlen 662.295
+expanded 41294
+pathlen 662.195
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0155
+exectime 0.0018
 utilization 1.0000
-expanded 8948
-pathlen 663.71
+expanded 552
+pathlen 667.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
 algo wA*
-w 1.1
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 552
+pathlen 677.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 680.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0743
+utilization 1.0000
+expanded 41294
+pathlen 662.195
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
+algo wA*
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 657
-pathlen 666.982
+expanded 552
+pathlen 667.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 668.739
+expanded 552
+pathlen 677.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 680.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0852
+exectime 0.0761
 utilization 1.0000
-expanded 46512
-pathlen 662.295
+expanded 41294
+pathlen 662.195
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0155
-utilization 1.0000
-expanded 8948
-pathlen 663.71
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 657
-pathlen 666.982
+expanded 552
+pathlen 667.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 456
-sc 12
-dr 49
-dc 494
-opt 662.295
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 668.739
+expanded 552
+pathlen 677.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 680.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -392,7 +620,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0760
+exectime 0.0759
 utilization 1.0000
 expanded 41294
 pathlen 662.195
@@ -406,52 +634,14 @@ dr 467
 dc 25
 opt 662.195
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0041
+exectime 0.0017
 utilization 1.0000
-expanded 2108
-pathlen 662.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 689
-pathlen 668.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 576
+expanded 552
 pathlen 667.467
 ==========
 machine pbbs
@@ -463,15 +653,15 @@ dr 467
 dc 25
 opt 662.195
 algo wA*
-w 1.0
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0758
+exectime 0.0017
 utilization 1.0000
-expanded 41294
-pathlen 662.195
+expanded 552
+pathlen 677.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -482,205 +672,15 @@ dr 467
 dc 25
 opt 662.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0041
-utilization 1.0000
-expanded 2108
-pathlen 662.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 689
-pathlen 668.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 576
-pathlen 667.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0758
-utilization 1.0000
-expanded 41294
-pathlen 662.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0041
-utilization 1.0000
-expanded 2108
-pathlen 662.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 689
-pathlen 668.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 576
-pathlen 667.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0758
-utilization 1.0000
-expanded 41294
-pathlen 662.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0040
-utilization 1.0000
-expanded 2108
-pathlen 662.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 689
-pathlen 668.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 576
-pathlen 667.467
+expanded 545
+pathlen 680.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -710,57 +710,57 @@ dr 467
 dc 25
 opt 662.195
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0041
+exectime 0.0017
 utilization 1.0000
-expanded 2108
-pathlen 662.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 689
-pathlen 668.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 57
-sc 508
-dr 467
-dc 25
-opt 662.195
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 576
+expanded 552
 pathlen 667.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 552
+pathlen 677.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 57
+sc 508
+dr 467
+dc 25
+opt 662.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 680.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
 sr 11
 sc 21
 dr 492
@@ -772,7 +772,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0754
+exectime 0.0790
 utilization 1.0000
 expanded 41947
 pathlen 660.195
@@ -786,53 +786,53 @@ dr 492
 dc 431
 opt 660.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0058
-utilization 1.0000
-expanded 3183
-pathlen 661.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 848
-pathlen 666.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 637
-pathlen 669.568
+expanded 614
+pathlen 670.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 569
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 563
+pathlen 681.952
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -848,7 +848,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0771
+exectime 0.0794
 utilization 1.0000
 expanded 41947
 pathlen 660.195
@@ -862,53 +862,53 @@ dr 492
 dc 431
 opt 660.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0058
-utilization 1.0000
-expanded 3183
-pathlen 661.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 848
-pathlen 666.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 637
-pathlen 669.568
+expanded 614
+pathlen 670.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 569
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 563
+pathlen 681.952
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -924,7 +924,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0753
+exectime 0.0774
 utilization 1.0000
 expanded 41947
 pathlen 660.195
@@ -938,53 +938,53 @@ dr 492
 dc 431
 opt 660.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0059
-utilization 1.0000
-expanded 3183
-pathlen 661.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 848
-pathlen 666.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 637
-pathlen 669.568
+expanded 614
+pathlen 670.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 569
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 563
+pathlen 681.952
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1000,7 +1000,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0771
+exectime 0.0772
 utilization 1.0000
 expanded 41947
 pathlen 660.195
@@ -1014,53 +1014,53 @@ dr 492
 dc 431
 opt 660.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0058
-utilization 1.0000
-expanded 3183
-pathlen 661.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 848
-pathlen 666.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 637
-pathlen 669.568
+expanded 614
+pathlen 670.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 569
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 563
+pathlen 681.952
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1076,7 +1076,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0770
+exectime 0.0773
 utilization 1.0000
 expanded 41947
 pathlen 660.195
@@ -1090,53 +1090,53 @@ dr 492
 dc 431
 opt 660.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0058
-utilization 1.0000
-expanded 3183
-pathlen 661.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0021
-utilization 1.0000
-expanded 848
-pathlen 666.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 21
-dr 492
-dc 431
-opt 660.195
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 637
-pathlen 669.568
+expanded 614
+pathlen 670.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 569
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 21
+dr 492
+dc 431
+opt 660.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 563
+pathlen 681.952
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1152,7 +1152,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0810
+exectime 0.0795
 utilization 1.0000
 expanded 44379
 pathlen 659.124
@@ -1166,53 +1166,53 @@ dr 95
 dc 500
 opt 659.124
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0171
-utilization 1.0000
-expanded 9614
-pathlen 660.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 739
-pathlen 665.568
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 597
-pathlen 665.568
+expanded 583
+pathlen 669.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 672.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 534
+pathlen 674.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1228,7 +1228,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0810
+exectime 0.0812
 utilization 1.0000
 expanded 44379
 pathlen 659.124
@@ -1242,53 +1242,53 @@ dr 95
 dc 500
 opt 659.124
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0171
-utilization 1.0000
-expanded 9614
-pathlen 660.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 739
-pathlen 665.568
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 597
-pathlen 665.568
+expanded 583
+pathlen 669.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 672.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 534
+pathlen 674.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1304,7 +1304,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0809
+exectime 0.0811
 utilization 1.0000
 expanded 44379
 pathlen 659.124
@@ -1318,15 +1318,15 @@ dr 95
 dc 500
 opt 659.124
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0173
+exectime 0.0017
 utilization 1.0000
-expanded 9614
-pathlen 660.295
+expanded 583
+pathlen 669.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1337,34 +1337,34 @@ dr 95
 dc 500
 opt 659.124
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 739
-pathlen 665.568
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 597
-pathlen 665.568
+expanded 546
+pathlen 672.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 534
+pathlen 674.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1380,7 +1380,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0810
+exectime 0.0811
 utilization 1.0000
 expanded 44379
 pathlen 659.124
@@ -1394,53 +1394,53 @@ dr 95
 dc 500
 opt 659.124
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0167
-utilization 1.0000
-expanded 9614
-pathlen 660.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 739
-pathlen 665.568
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 597
-pathlen 665.568
+expanded 583
+pathlen 669.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 672.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 534
+pathlen 674.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1456,7 +1456,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0810
+exectime 0.0813
 utilization 1.0000
 expanded 44379
 pathlen 659.124
@@ -1470,53 +1470,53 @@ dr 95
 dc 500
 opt 659.124
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0170
-utilization 1.0000
-expanded 9614
-pathlen 660.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 739
-pathlen 665.568
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 494
-sc 14
-dr 95
-dc 500
-opt 659.124
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 597
-pathlen 665.568
+expanded 583
+pathlen 669.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 672.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 494
+sc 14
+dr 95
+dc 500
+opt 659.124
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 534
+pathlen 674.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1546,53 +1546,53 @@ dr 21
 dc 456
 opt 656.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0038
-utilization 1.0000
-expanded 1954
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 761
-pathlen 663.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 633
-pathlen 664.639
+expanded 622
+pathlen 666.396
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 555
+pathlen 670.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 672.982
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1608,7 +1608,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0745
+exectime 0.0748
 utilization 1.0000
 expanded 40689
 pathlen 656.437
@@ -1622,53 +1622,205 @@ dr 21
 dc 456
 opt 656.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0038
-utilization 1.0000
-expanded 1954
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 761
-pathlen 663.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 633
-pathlen 664.639
+expanded 622
+pathlen 666.396
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 555
+pathlen 670.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 672.982
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0748
+utilization 1.0000
+expanded 40689
+pathlen 656.437
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 622
+pathlen 666.396
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 555
+pathlen 670.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 672.982
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0749
+utilization 1.0000
+expanded 40689
+pathlen 656.437
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 622
+pathlen 666.396
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 555
+pathlen 670.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 672.982
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1698,53 +1850,15 @@ dr 21
 dc 456
 opt 656.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1954
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 761
-pathlen 663.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 633
-pathlen 664.639
+expanded 622
+pathlen 666.396
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -1754,82 +1868,424 @@ sc 33
 dr 21
 dc 456
 opt 656.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 555
+pathlen 670.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 487
+sc 33
+dr 21
+dc 456
+opt 656.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 672.982
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0746
+exectime 0.0869
 utilization 1.0000
-expanded 40689
-pathlen 656.437
+expanded 47956
+pathlen 656.426
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0038
-utilization 1.0000
-expanded 1954
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 761
-pathlen 663.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 633
-pathlen 664.639
+expanded 594
+pathlen 661.698
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 670.769
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 530
+pathlen 676.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0879
+utilization 1.0000
+expanded 47956
+pathlen 656.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 594
+pathlen 661.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 545
+pathlen 670.769
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 530
+pathlen 676.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0859
+utilization 1.0000
+expanded 47956
+pathlen 656.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 594
+pathlen 661.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 670.769
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 530
+pathlen 676.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0879
+utilization 1.0000
+expanded 47956
+pathlen 656.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 594
+pathlen 661.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 670.769
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 530
+pathlen 676.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0880
+utilization 1.0000
+expanded 47956
+pathlen 656.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 594
+pathlen 661.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 670.769
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 133
+sc 511
+dr 508
+dc 14
+opt 656.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 530
+pathlen 676.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
 w 1.0
 proc 1
@@ -1838,445 +2294,65 @@ exptime 0.0
 timeout -1
 exectime 0.0762
 utilization 1.0000
-expanded 40689
-pathlen 656.437
+expanded 41319
+pathlen 655.952
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0038
-utilization 1.0000
-expanded 1954
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 761
-pathlen 663.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 487
-sc 33
-dr 21
-dc 456
-opt 656.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 633
-pathlen 664.639
+expanded 613
+pathlen 665.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0876
-utilization 1.0000
-expanded 47956
-pathlen 656.426
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0332
-utilization 1.0000
-expanded 18029
-pathlen 657.597
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 637
-pathlen 659.355
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 590
-pathlen 659.94
+expanded 566
+pathlen 667.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0860
-utilization 1.0000
-expanded 47956
-pathlen 656.426
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0331
-utilization 1.0000
-expanded 18029
-pathlen 657.597
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 637
-pathlen 659.355
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 590
-pathlen 659.94
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0877
-utilization 1.0000
-expanded 47956
-pathlen 656.426
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0331
-utilization 1.0000
-expanded 18029
-pathlen 657.597
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 637
-pathlen 659.355
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 590
-pathlen 659.94
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0876
-utilization 1.0000
-expanded 47956
-pathlen 656.426
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0332
-utilization 1.0000
-expanded 18029
-pathlen 657.597
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 637
-pathlen 659.355
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 590
-pathlen 659.94
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0877
-utilization 1.0000
-expanded 47956
-pathlen 656.426
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0325
-utilization 1.0000
-expanded 18029
-pathlen 657.597
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 637
-pathlen 659.355
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 133
-sc 511
-dr 508
-dc 14
-opt 656.426
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 590
-pathlen 659.94
+expanded 560
+pathlen 677.71
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -2292,7 +2368,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0760
+exectime 0.0780
 utilization 1.0000
 expanded 41319
 pathlen 655.952
@@ -2306,53 +2382,15 @@ dr 489
 dc 429
 opt 655.952
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0060
-utilization 1.0000
-expanded 3278
-pathlen 657.124
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 841
-pathlen 662.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 633
-pathlen 665.325
+expanded 613
+pathlen 665.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -2363,528 +2401,262 @@ dr 489
 dc 429
 opt 655.952
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0760
-utilization 1.0000
-expanded 41319
-pathlen 655.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0060
-utilization 1.0000
-expanded 3278
-pathlen 657.124
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 841
-pathlen 662.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 633
-pathlen 665.325
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0760
-utilization 1.0000
-expanded 41319
-pathlen 655.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0060
-utilization 1.0000
-expanded 3278
-pathlen 657.124
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 841
-pathlen 662.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 633
-pathlen 665.325
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0758
-utilization 1.0000
-expanded 41319
-pathlen 655.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0060
-utilization 1.0000
-expanded 3278
-pathlen 657.124
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 841
-pathlen 662.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 633
-pathlen 665.325
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0760
-utilization 1.0000
-expanded 41319
-pathlen 655.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0060
-utilization 1.0000
-expanded 3278
-pathlen 657.124
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 841
-pathlen 662.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 11
-sc 22
-dr 489
-dc 429
-opt 655.952
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 633
-pathlen 665.325
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0664
-utilization 1.0000
-expanded 36520
-pathlen 655.508
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0042
-utilization 1.0000
-expanded 2218
-pathlen 657.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 619
-pathlen 659.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 666.639
+expanded 566
+pathlen 667.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0652
-utilization 1.0000
-expanded 36520
-pathlen 655.508
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0042
-utilization 1.0000
-expanded 2218
-pathlen 657.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 619
-pathlen 659.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 666.639
+expanded 560
+pathlen 677.71
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0654
+exectime 0.0780
 utilization 1.0000
-expanded 36520
-pathlen 655.508
+expanded 41319
+pathlen 655.952
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0042
-utilization 1.0000
-expanded 2218
-pathlen 657.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 619
-pathlen 659.023
+expanded 613
+pathlen 665.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 666.639
+expanded 566
+pathlen 667.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 560
+pathlen 677.71
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0778
+utilization 1.0000
+expanded 41319
+pathlen 655.952
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 613
+pathlen 665.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 566
+pathlen 667.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 560
+pathlen 677.71
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0779
+utilization 1.0000
+expanded 41319
+pathlen 655.952
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 613
+pathlen 665.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 566
+pathlen 667.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 11
+sc 22
+dr 489
+dc 429
+opt 655.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 560
+pathlen 677.71
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -2914,34 +2686,15 @@ dr 56
 dc 58
 opt 655.508
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0042
-utilization 1.0000
-expanded 2218
-pathlen 657.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 510
-dr 56
-dc 58
-opt 655.508
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 619
-pathlen 659.023
+expanded 570
+pathlen 666.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -2952,15 +2705,186 @@ dr 56
 dc 58
 opt 655.508
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 583
-pathlen 666.639
+expanded 554
+pathlen 675.082
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 545
+pathlen 676.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0653
+utilization 1.0000
+expanded 36520
+pathlen 655.508
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 570
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 554
+pathlen 675.082
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 545
+pathlen 676.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0666
+utilization 1.0000
+expanded 36520
+pathlen 655.508
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 570
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 554
+pathlen 675.082
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 545
+pathlen 676.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -2990,15 +2914,15 @@ dr 56
 dc 58
 opt 655.508
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0042
+exectime 0.0016
 utilization 1.0000
-expanded 2218
-pathlen 657.852
+expanded 570
+pathlen 666.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3009,15 +2933,15 @@ dr 56
 dc 58
 opt 655.508
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0017
+exectime 0.0016
 utilization 1.0000
-expanded 619
-pathlen 659.023
+expanded 554
+pathlen 675.082
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3028,319 +2952,91 @@ dr 56
 dc 58
 opt 655.508
 algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 583
-pathlen 666.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0719
-utilization 1.0000
-expanded 39158
-pathlen 655.266
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1925
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 756
-pathlen 660.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 614
-pathlen 666.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0718
-utilization 1.0000
-expanded 39158
-pathlen 655.266
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1925
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 756
-pathlen 660.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 614
-pathlen 666.982
+expanded 545
+pathlen 676.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0703
+exectime 0.0666
 utilization 1.0000
-expanded 39158
-pathlen 655.266
+expanded 36520
+pathlen 655.508
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1925
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 756
-pathlen 660.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 614
-pathlen 666.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0719
-utilization 1.0000
-expanded 39158
-pathlen 655.266
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1925
-pathlen 657.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 756
-pathlen 660.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 460
-sc 23
-dr 27
-dc 479
-opt 655.266
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 614
-pathlen 666.982
+expanded 570
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 554
+pathlen 675.082
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 510
+dr 56
+dc 58
+opt 655.508
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 545
+pathlen 676.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3356,7 +3052,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0718
+exectime 0.0720
 utilization 1.0000
 expanded 39158
 pathlen 655.266
@@ -3370,15 +3066,15 @@ dr 27
 dc 479
 opt 655.266
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0037
+exectime 0.0017
 utilization 1.0000
-expanded 1925
-pathlen 657.023
+expanded 590
+pathlen 667.568
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3389,15 +3085,15 @@ dr 27
 dc 479
 opt 655.266
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0019
+exectime 0.0017
 utilization 1.0000
-expanded 756
-pathlen 660.538
+expanded 542
+pathlen 672.153
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3408,15 +3104,319 @@ dr 27
 dc 479
 opt 655.266
 algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 614
-pathlen 666.982
+expanded 542
+pathlen 673.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0720
+utilization 1.0000
+expanded 39158
+pathlen 655.266
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 590
+pathlen 667.568
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 673.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0705
+utilization 1.0000
+expanded 39158
+pathlen 655.266
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 590
+pathlen 667.568
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 542
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 673.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0720
+utilization 1.0000
+expanded 39158
+pathlen 655.266
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 590
+pathlen 667.568
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 542
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 673.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0722
+utilization 1.0000
+expanded 39158
+pathlen 655.266
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 590
+pathlen 667.568
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 542
+pathlen 672.153
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 460
+sc 23
+dr 27
+dc 479
+opt 655.266
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 542
+pathlen 673.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3432,7 +3432,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0697
+exectime 0.0698
 utilization 1.0000
 expanded 38096
 pathlen 654.923
@@ -3446,15 +3446,15 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0036
+exectime 0.0017
 utilization 1.0000
-expanded 1789
-pathlen 656.68
+expanded 548
+pathlen 662.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3465,34 +3465,110 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 666
-pathlen 657.266
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 503
-sc 30
-dr 48
-dc 464
-opt 654.923
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 559
-pathlen 663.467
+expanded 531
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 503
+sc 30
+dr 48
+dc 464
+opt 654.923
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 524
+pathlen 670.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 503
+sc 30
+dr 48
+dc 464
+opt 654.923
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0685
+utilization 1.0000
+expanded 38096
+pathlen 654.923
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 503
+sc 30
+dr 48
+dc 464
+opt 654.923
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 548
+pathlen 662.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 503
+sc 30
+dr 48
+dc 464
+opt 654.923
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 531
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 503
+sc 30
+dr 48
+dc 464
+opt 654.923
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 524
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3522,34 +3598,15 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0036
-utilization 1.0000
-expanded 1789
-pathlen 656.68
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 503
-sc 30
-dr 48
-dc 464
-opt 654.923
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 666
-pathlen 657.266
+expanded 548
+pathlen 662.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3560,15 +3617,34 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 559
-pathlen 663.467
+expanded 531
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 503
+sc 30
+dr 48
+dc 464
+opt 654.923
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 524
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3584,7 +3660,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0684
+exectime 0.0685
 utilization 1.0000
 expanded 38096
 pathlen 654.923
@@ -3598,15 +3674,15 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0035
+exectime 0.0017
 utilization 1.0000
-expanded 1789
-pathlen 656.68
+expanded 548
+pathlen 662.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3617,34 +3693,34 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 666
-pathlen 657.266
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 503
-sc 30
-dr 48
-dc 464
-opt 654.923
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 559
-pathlen 663.467
+expanded 531
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 503
+sc 30
+dr 48
+dc 464
+opt 654.923
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 524
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3660,7 +3736,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0700
+exectime 0.0702
 utilization 1.0000
 expanded 38096
 pathlen 654.923
@@ -3674,34 +3750,15 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0036
-utilization 1.0000
-expanded 1789
-pathlen 656.68
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 503
-sc 30
-dr 48
-dc 464
-opt 654.923
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 666
-pathlen 657.266
+expanded 548
+pathlen 662.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3712,15 +3769,15 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 559
-pathlen 663.467
+expanded 531
+pathlen 666.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3731,72 +3788,15 @@ dr 48
 dc 464
 opt 654.923
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0696
-utilization 1.0000
-expanded 38096
-pathlen 654.923
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 503
-sc 30
-dr 48
-dc 464
-opt 654.923
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0036
-utilization 1.0000
-expanded 1789
-pathlen 656.68
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 503
-sc 30
-dr 48
-dc 464
-opt 654.923
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 666
-pathlen 657.266
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 503
-sc 30
-dr 48
-dc 464
-opt 654.923
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 559
-pathlen 663.467
+expanded 524
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -3812,7 +3812,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0765
+exectime 0.0766
 utilization 1.0000
 expanded 41578
 pathlen 654.852
@@ -3826,357 +3826,357 @@ dr 493
 dc 47
 opt 654.852
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0148
-utilization 1.0000
-expanded 8526
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0024
-utilization 1.0000
-expanded 1111
-pathlen 660.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 695
-pathlen 663.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0765
-utilization 1.0000
-expanded 41578
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0148
-utilization 1.0000
-expanded 8526
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0024
-utilization 1.0000
-expanded 1111
-pathlen 660.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 695
-pathlen 663.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0764
-utilization 1.0000
-expanded 41578
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0144
-utilization 1.0000
-expanded 8526
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0024
-utilization 1.0000
-expanded 1111
-pathlen 660.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 695
-pathlen 663.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0765
-utilization 1.0000
-expanded 41578
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0148
-utilization 1.0000
-expanded 8526
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0024
-utilization 1.0000
-expanded 1111
-pathlen 660.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 695
-pathlen 663.639
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0749
-utilization 1.0000
-expanded 41578
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0147
-utilization 1.0000
-expanded 8526
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0024
-utilization 1.0000
-expanded 1111
-pathlen 660.366
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 61
-sc 501
-dr 493
-dc 47
-opt 654.852
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 695
-pathlen 663.639
+expanded 610
+pathlen 662.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 664.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 666.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0783
+utilization 1.0000
+expanded 41578
+pathlen 654.852
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 610
+pathlen 662.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 664.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 666.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0785
+utilization 1.0000
+expanded 41578
+pathlen 654.852
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 610
+pathlen 662.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 664.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 666.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0768
+utilization 1.0000
+expanded 41578
+pathlen 654.852
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 610
+pathlen 662.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 664.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 666.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0766
+utilization 1.0000
+expanded 41578
+pathlen 654.852
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 610
+pathlen 662.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 546
+pathlen 664.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 61
+sc 501
+dr 493
+dc 47
+opt 654.852
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 666.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4192,7 +4192,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0713
+exectime 0.0699
 utilization 1.0000
 expanded 39000
 pathlen 654.781
@@ -4206,15 +4206,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0072
+exectime 0.0017
 utilization 1.0000
-expanded 3986
-pathlen 657.71
+expanded 575
+pathlen 658.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4225,15 +4225,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0018
+exectime 0.0016
 utilization 1.0000
-expanded 713
-pathlen 662.982
+expanded 545
+pathlen 665.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4244,15 +4244,91 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0018
+exectime 0.0017
 utilization 1.0000
-expanded 668
-pathlen 666.497
+expanded 527
+pathlen 667.71
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 511
+sc 450
+dr 43
+dc 33
+opt 654.781
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0700
+utilization 1.0000
+expanded 39000
+pathlen 654.781
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 511
+sc 450
+dr 43
+dc 33
+opt 654.781
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 575
+pathlen 658.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 511
+sc 450
+dr 43
+dc 33
+opt 654.781
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 665.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 511
+sc 450
+dr 43
+dc 33
+opt 654.781
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 527
+pathlen 667.71
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4282,15 +4358,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0071
+exectime 0.0017
 utilization 1.0000
-expanded 3986
-pathlen 657.71
+expanded 575
+pathlen 658.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4301,15 +4377,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0018
+exectime 0.0016
 utilization 1.0000
-expanded 713
-pathlen 662.982
+expanded 545
+pathlen 665.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4320,15 +4396,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0018
+exectime 0.0017
 utilization 1.0000
-expanded 668
-pathlen 666.497
+expanded 527
+pathlen 667.71
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4358,53 +4434,53 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0072
-utilization 1.0000
-expanded 3986
-pathlen 657.71
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 511
-sc 450
-dr 43
-dc 33
-opt 654.781
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 713
-pathlen 662.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 511
-sc 450
-dr 43
-dc 33
-opt 654.781
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 668
-pathlen 666.497
+expanded 575
+pathlen 658.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 511
+sc 450
+dr 43
+dc 33
+opt 654.781
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 545
+pathlen 665.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 511
+sc 450
+dr 43
+dc 33
+opt 654.781
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 527
+pathlen 667.71
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4420,7 +4496,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0711
+exectime 0.0712
 utilization 1.0000
 expanded 39000
 pathlen 654.781
@@ -4434,53 +4510,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0072
-utilization 1.0000
-expanded 3986
-pathlen 657.71
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 511
-sc 450
-dr 43
-dc 33
-opt 654.781
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 713
-pathlen 662.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 511
-sc 450
-dr 43
-dc 33
-opt 654.781
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 668
-pathlen 666.497
+expanded 575
+pathlen 658.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4491,15 +4529,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.0
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0710
+exectime 0.0016
 utilization 1.0000
-expanded 39000
-pathlen 654.781
+expanded 545
+pathlen 665.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4510,129 +4548,15 @@ dr 43
 dc 33
 opt 654.781
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0072
-utilization 1.0000
-expanded 3986
-pathlen 657.71
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 511
-sc 450
-dr 43
-dc 33
-opt 654.781
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 713
-pathlen 662.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 511
-sc 450
-dr 43
-dc 33
-opt 654.781
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 668
-pathlen 666.497
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0878
-utilization 1.0000
-expanded 48206
-pathlen 654.355
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0381
-utilization 1.0000
-expanded 20412
-pathlen 654.94
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.1
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 680
-pathlen 655.526
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 622
-pathlen 655.526
+expanded 527
+pathlen 667.71
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4662,53 +4586,53 @@ dr 138
 dc 499
 opt 654.355
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0381
-utilization 1.0000
-expanded 20412
-pathlen 654.94
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 680
-pathlen 655.526
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 622
-pathlen 655.526
+expanded 558
+pathlen 656.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 562
+pathlen 670.112
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 540
+pathlen 670.84
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4724,7 +4648,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0872
+exectime 0.0855
 utilization 1.0000
 expanded 48206
 pathlen 654.355
@@ -4738,53 +4662,53 @@ dr 138
 dc 499
 opt 654.355
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0381
-utilization 1.0000
-expanded 20412
-pathlen 654.94
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 680
-pathlen 655.526
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 622
-pathlen 655.526
+expanded 558
+pathlen 656.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 562
+pathlen 670.112
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 540
+pathlen 670.84
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4814,53 +4738,53 @@ dr 138
 dc 499
 opt 654.355
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0382
-utilization 1.0000
-expanded 20412
-pathlen 654.94
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 680
-pathlen 655.526
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 509
-sc 3
-dr 138
-dc 499
-opt 654.355
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 622
-pathlen 655.526
+expanded 558
+pathlen 656.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 562
+pathlen 670.112
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 540
+pathlen 670.84
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4876,7 +4800,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0871
+exectime 0.0872
 utilization 1.0000
 expanded 48206
 pathlen 654.355
@@ -4890,15 +4814,15 @@ dr 138
 dc 499
 opt 654.355
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0382
+exectime 0.0017
 utilization 1.0000
-expanded 20412
-pathlen 654.94
+expanded 558
+pathlen 656.698
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4909,15 +4833,15 @@ dr 138
 dc 499
 opt 654.355
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0017
+exectime 0.0016
 utilization 1.0000
-expanded 680
-pathlen 655.526
+expanded 562
+pathlen 670.112
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4928,15 +4852,243 @@ dr 138
 dc 499
 opt 654.355
 algo wA*
-w 1.15
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 540
+pathlen 670.84
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0873
+utilization 1.0000
+expanded 48206
+pathlen 654.355
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 558
+pathlen 656.698
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 562
+pathlen 670.112
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 509
+sc 3
+dr 138
+dc 499
+opt 654.355
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 540
+pathlen 670.84
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0747
+utilization 1.0000
+expanded 40806
+pathlen 654.295
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0018
+utilization 1.0000
+expanded 563
+pathlen 659.568
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 528
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 521
+pathlen 666.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0732
+utilization 1.0000
+expanded 40806
+pathlen 654.295
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 622
-pathlen 655.526
+expanded 563
+pathlen 659.568
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 528
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 508
+sc 85
+dr 24
+dc 482
+opt 654.295
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 521
+pathlen 666.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4952,7 +5104,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0748
+exectime 0.0746
 utilization 1.0000
 expanded 40806
 pathlen 654.295
@@ -4966,15 +5118,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0153
+exectime 0.0017
 utilization 1.0000
-expanded 8798
-pathlen 657.224
+expanded 563
+pathlen 659.568
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -4985,34 +5137,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 741
-pathlen 661.911
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 599
-pathlen 661.325
+expanded 528
+pathlen 666.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5023,148 +5156,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0743
-utilization 1.0000
-expanded 40806
-pathlen 654.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0153
-utilization 1.0000
-expanded 8798
-pathlen 657.224
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 741
-pathlen 661.911
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 599
-pathlen 661.325
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0745
-utilization 1.0000
-expanded 40806
-pathlen 654.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0153
-utilization 1.0000
-expanded 8798
-pathlen 657.224
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 741
-pathlen 661.911
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 508
-sc 85
-dr 24
-dc 482
-opt 654.295
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 599
-pathlen 661.325
+expanded 521
+pathlen 666.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5194,15 +5194,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0150
+exectime 0.0016
 utilization 1.0000
-expanded 8798
-pathlen 657.224
+expanded 563
+pathlen 659.568
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5213,15 +5213,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0019
+exectime 0.0016
 utilization 1.0000
-expanded 741
-pathlen 661.911
+expanded 528
+pathlen 666.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5232,15 +5232,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0017
+exectime 0.0016
 utilization 1.0000
-expanded 599
-pathlen 661.325
+expanded 521
+pathlen 666.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5256,7 +5256,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0749
+exectime 0.0746
 utilization 1.0000
 expanded 40806
 pathlen 654.295
@@ -5270,15 +5270,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0154
+exectime 0.0016
 utilization 1.0000
-expanded 8798
-pathlen 657.224
+expanded 563
+pathlen 659.568
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5289,15 +5289,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0019
+exectime 0.0016
 utilization 1.0000
-expanded 741
-pathlen 661.911
+expanded 528
+pathlen 666.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5308,243 +5308,15 @@ dr 24
 dc 482
 opt 654.295
 algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 599
-pathlen 661.325
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0722
-utilization 1.0000
-expanded 39596
-pathlen 654.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1856
-pathlen 654.609
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 624
-pathlen 657.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 557
-pathlen 660.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0723
-utilization 1.0000
-expanded 39596
-pathlen 654.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1856
-pathlen 654.609
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 624
-pathlen 657.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 557
-pathlen 660.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0723
-utilization 1.0000
-expanded 39596
-pathlen 654.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1856
-pathlen 654.609
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 624
-pathlen 657.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0015
 utilization 1.0000
-expanded 557
-pathlen 660.467
+expanded 521
+pathlen 666.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5560,7 +5332,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0722
+exectime 0.0727
 utilization 1.0000
 expanded 39596
 pathlen 654.023
@@ -5574,53 +5346,53 @@ dr 6
 dc 482
 opt 654.023
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1856
-pathlen 654.609
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 624
-pathlen 657.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 557
+expanded 541
 pathlen 660.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 670.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 674.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5636,7 +5408,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0722
+exectime 0.0745
 utilization 1.0000
 expanded 39596
 pathlen 654.023
@@ -5650,129 +5422,281 @@ dr 6
 dc 482
 opt 654.023
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0037
-utilization 1.0000
-expanded 1856
-pathlen 654.609
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 624
-pathlen 657.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 431
-sc 21
-dr 6
-dc 482
-opt 654.023
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 557
+expanded 541
 pathlen 660.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 670.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 674.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0652
+exectime 0.0726
 utilization 1.0000
-expanded 35597
-pathlen 653.68
+expanded 39596
+pathlen 654.023
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0031
-utilization 1.0000
-expanded 1484
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 640
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 587
-pathlen 661.295
+expanded 541
+pathlen 660.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 670.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 674.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0741
+utilization 1.0000
+expanded 39596
+pathlen 654.023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 660.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 670.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 674.911
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0726
+utilization 1.0000
+expanded 39596
+pathlen 654.023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 660.467
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 670.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 431
+sc 21
+dr 6
+dc 482
+opt 654.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 674.911
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5802,53 +5726,53 @@ dr 27
 dc 437
 opt 653.68
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0031
-utilization 1.0000
-expanded 1484
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 640
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 587
-pathlen 661.295
+expanded 571
+pathlen 663.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 665.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 524
+pathlen 670.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5864,7 +5788,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0652
+exectime 0.0654
 utilization 1.0000
 expanded 35597
 pathlen 653.68
@@ -5878,53 +5802,53 @@ dr 27
 dc 437
 opt 653.68
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0031
-utilization 1.0000
-expanded 1484
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 640
-pathlen 657.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 587
-pathlen 661.295
+expanded 571
+pathlen 663.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 536
+pathlen 665.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 524
+pathlen 670.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5940,7 +5864,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0652
+exectime 0.0653
 utilization 1.0000
 expanded 35597
 pathlen 653.68
@@ -5954,34 +5878,15 @@ dr 27
 dc 437
 opt 653.68
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0030
-utilization 1.0000
-expanded 1484
-pathlen 654.852
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 493
-sc 15
-dr 27
-dc 437
-opt 653.68
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 640
-pathlen 657.195
+expanded 571
+pathlen 663.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -5992,15 +5897,34 @@ dr 27
 dc 437
 opt 653.68
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 587
-pathlen 661.295
+expanded 536
+pathlen 665.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 524
+pathlen 670.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6016,7 +5940,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0652
+exectime 0.0654
 utilization 1.0000
 expanded 35597
 pathlen 653.68
@@ -6030,15 +5954,15 @@ dr 27
 dc 437
 opt 653.68
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0031
+exectime 0.0017
 utilization 1.0000
-expanded 1484
-pathlen 654.852
+expanded 571
+pathlen 663.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6049,15 +5973,15 @@ dr 27
 dc 437
 opt 653.68
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0017
+exectime 0.0016
 utilization 1.0000
-expanded 640
-pathlen 657.195
+expanded 536
+pathlen 665.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6068,167 +5992,91 @@ dr 27
 dc 437
 opt 653.68
 algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 587
-pathlen 661.295
+expanded 524
+pathlen 670.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0726
+exectime 0.0654
 utilization 1.0000
-expanded 39427
-pathlen 653.023
+expanded 35597
+pathlen 653.68
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0046
-utilization 1.0000
-expanded 2455
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 687
-pathlen 656.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 564
-pathlen 659.467
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0724
-utilization 1.0000
-expanded 39427
-pathlen 653.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0046
-utilization 1.0000
-expanded 2455
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 687
-pathlen 656.538
+expanded 571
+pathlen 663.053
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0016
+exectime 0.0015
 utilization 1.0000
-expanded 564
-pathlen 659.467
+expanded 536
+pathlen 665.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 493
+sc 15
+dr 27
+dc 437
+opt 653.68
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 524
+pathlen 670.467
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6244,7 +6092,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0726
+exectime 0.0729
 utilization 1.0000
 expanded 39427
 pathlen 653.023
@@ -6258,15 +6106,15 @@ dr 493
 dc 32
 opt 653.023
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0046
+exectime 0.0015
 utilization 1.0000
-expanded 2455
-pathlen 654.781
+expanded 551
+pathlen 660.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6277,15 +6125,15 @@ dr 493
 dc 32
 opt 653.023
 algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0018
+exectime 0.0017
 utilization 1.0000
-expanded 687
-pathlen 656.538
+expanded 528
+pathlen 665.325
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6296,15 +6144,167 @@ dr 493
 dc 32
 opt 653.023
 algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 564
-pathlen 659.467
+expanded 528
+pathlen 665.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0728
+utilization 1.0000
+expanded 39427
+pathlen 653.023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 551
+pathlen 660.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 528
+pathlen 665.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 528
+pathlen 665.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0731
+utilization 1.0000
+expanded 39427
+pathlen 653.023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 551
+pathlen 660.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 528
+pathlen 665.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 528
+pathlen 665.325
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6334,53 +6334,53 @@ dr 493
 dc 32
 opt 653.023
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0046
-utilization 1.0000
-expanded 2455
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 687
-pathlen 656.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 564
-pathlen 659.467
+expanded 551
+pathlen 660.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 528
+pathlen 665.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 528
+pathlen 665.325
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6396,7 +6396,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0726
+exectime 0.0710
 utilization 1.0000
 expanded 39427
 pathlen 653.023
@@ -6410,53 +6410,129 @@ dr 493
 dc 32
 opt 653.023
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0046
+exectime 0.0016
 utilization 1.0000
-expanded 2455
+expanded 551
+pathlen 660.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 528
+pathlen 665.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 70
+sc 494
+dr 493
+dc 32
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 528
+pathlen 665.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0700
+utilization 1.0000
+expanded 38814
+pathlen 653.023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 541
 pathlen 654.781
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
+sr 55
+sc 492
+dr 472
+dc 24
 opt 653.023
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 687
-pathlen 656.538
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 70
-sc 494
-dr 493
-dc 32
-opt 653.023
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 564
-pathlen 659.467
+expanded 553
+pathlen 671.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 550
+pathlen 671.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6472,7 +6548,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0714
+exectime 0.0703
 utilization 1.0000
 expanded 38814
 pathlen 653.023
@@ -6486,53 +6562,53 @@ dr 472
 dc 24
 opt 653.023
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0035
-utilization 1.0000
-expanded 1733
-pathlen 654.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 663
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 575
-pathlen 657.71
+expanded 541
+pathlen 654.781
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 553
+pathlen 671.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 550
+pathlen 671.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6548,7 +6624,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0715
+exectime 0.0719
 utilization 1.0000
 expanded 38814
 pathlen 653.023
@@ -6562,53 +6638,15 @@ dr 472
 dc 24
 opt 653.023
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0035
-utilization 1.0000
-expanded 1733
-pathlen 654.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 663
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 575
-pathlen 657.71
+expanded 541
+pathlen 654.781
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6619,72 +6657,15 @@ dr 472
 dc 24
 opt 653.023
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0715
-utilization 1.0000
-expanded 38814
-pathlen 653.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0035
-utilization 1.0000
-expanded 1733
-pathlen 654.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 663
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 575
-pathlen 657.71
+expanded 553
+pathlen 671.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6695,72 +6676,15 @@ dr 472
 dc 24
 opt 653.023
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0713
-utilization 1.0000
-expanded 38814
-pathlen 653.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0035
-utilization 1.0000
-expanded 1733
-pathlen 654.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 663
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 575
-pathlen 657.71
+expanded 550
+pathlen 671.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -6770,234 +6694,6 @@ sc 492
 dr 472
 dc 24
 opt 653.023
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0714
-utilization 1.0000
-expanded 38814
-pathlen 653.023
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0035
-utilization 1.0000
-expanded 1733
-pathlen 654.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 663
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 55
-sc 492
-dr 472
-dc 24
-opt 653.023
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 575
-pathlen 657.71
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0728
-utilization 1.0000
-expanded 39874
-pathlen 652.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0057
-utilization 1.0000
-expanded 3122
-pathlen 655.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 625
-pathlen 659.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 577
-pathlen 659.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0728
-utilization 1.0000
-expanded 39874
-pathlen 652.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0057
-utilization 1.0000
-expanded 3122
-pathlen 655.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 625
-pathlen 659.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0016
-utilization 1.0000
-expanded 577
-pathlen 659.982
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
 algo wA*
 w 1.0
 proc 1
@@ -7006,65 +6702,141 @@ exptime 0.0
 timeout -1
 exectime 0.0716
 utilization 1.0000
-expanded 39874
-pathlen 652.952
+expanded 38814
+pathlen 653.023
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0056
-utilization 1.0000
-expanded 3122
-pathlen 655.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 625
-pathlen 659.396
+expanded 541
+pathlen 654.781
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 577
-pathlen 659.982
+expanded 553
+pathlen 671.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 550
+pathlen 671.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0715
+utilization 1.0000
+expanded 38814
+pathlen 653.023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 654.781
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 553
+pathlen 671.668
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 55
+sc 492
+dr 472
+dc 24
+opt 653.023
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 550
+pathlen 671.668
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7080,7 +6852,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0727
+exectime 0.0729
 utilization 1.0000
 expanded 39874
 pathlen 652.952
@@ -7094,53 +6866,53 @@ dr 27
 dc 92
 opt 652.952
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0057
-utilization 1.0000
-expanded 3122
-pathlen 655.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 625
-pathlen 659.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 577
-pathlen 659.982
+expanded 552
+pathlen 658.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 555
+pathlen 666.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 521
+pathlen 665.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7156,7 +6928,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0714
+exectime 0.0729
 utilization 1.0000
 expanded 39874
 pathlen 652.952
@@ -7170,53 +6942,281 @@ dr 27
 dc 92
 opt 652.952
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0057
-utilization 1.0000
-expanded 3122
-pathlen 655.295
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 625
-pathlen 659.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 498
-sc 503
-dr 27
-dc 92
-opt 652.952
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 577
-pathlen 659.982
+expanded 552
+pathlen 658.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 555
+pathlen 666.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 521
+pathlen 665.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0729
+utilization 1.0000
+expanded 39874
+pathlen 652.952
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 552
+pathlen 658.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 555
+pathlen 666.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 521
+pathlen 665.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0730
+utilization 1.0000
+expanded 39874
+pathlen 652.952
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 552
+pathlen 658.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 555
+pathlen 666.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 521
+pathlen 665.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0729
+utilization 1.0000
+expanded 39874
+pathlen 652.952
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 552
+pathlen 658.81
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 555
+pathlen 666.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 498
+sc 503
+dr 27
+dc 92
+opt 652.952
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 521
+pathlen 665.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7232,7 +7232,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0718
+exectime 0.0720
 utilization 1.0000
 expanded 39989
 pathlen 652.437
@@ -7246,52 +7246,14 @@ dr 19
 dc 78
 opt 652.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0074
-utilization 1.0000
-expanded 4200
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 839
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 645
+expanded 605
 pathlen 660.639
 ==========
 machine pbbs
@@ -7303,15 +7265,15 @@ dr 19
 dc 78
 opt 652.437
 algo wA*
-w 1.0
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0733
+exectime 0.0016
 utilization 1.0000
-expanded 39989
-pathlen 652.437
+expanded 557
+pathlen 668.982
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7322,53 +7284,15 @@ dr 19
 dc 78
 opt 652.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0074
-utilization 1.0000
-expanded 4200
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 839
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 645
-pathlen 660.639
+expanded 528
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7398,53 +7322,129 @@ dr 19
 dc 78
 opt 652.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0075
-utilization 1.0000
-expanded 4200
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 839
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 645
+expanded 605
 pathlen 660.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 557
+pathlen 668.982
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 528
+pathlen 670.881
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0732
+utilization 1.0000
+expanded 39989
+pathlen 652.437
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0018
+utilization 1.0000
+expanded 605
+pathlen 660.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 557
+pathlen 668.982
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 528
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7474,53 +7474,53 @@ dr 19
 dc 78
 opt 652.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0075
-utilization 1.0000
-expanded 4200
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 839
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 645
+expanded 605
 pathlen 660.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 557
+pathlen 668.982
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 483
+sc 497
+dr 19
+dc 78
+opt 652.437
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 528
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7536,7 +7536,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0731
+exectime 0.0732
 utilization 1.0000
 expanded 39989
 pathlen 652.437
@@ -7550,129 +7550,53 @@ dr 19
 dc 78
 opt 652.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0076
-utilization 1.0000
-expanded 4200
-pathlen 654.781
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 839
-pathlen 660.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 483
-sc 497
-dr 19
-dc 78
-opt 652.437
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 645
+expanded 605
 pathlen 660.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
+sr 483
+sc 497
+dr 19
 dc 78
-opt 652.195
+opt 652.437
 algo wA*
-w 1.0
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0716
+exectime 0.0016
 utilization 1.0000
-expanded 39147
-pathlen 652.195
+expanded 557
+pathlen 668.982
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
+sr 483
+sc 497
+dr 19
 dc 78
-opt 652.195
+opt 652.437
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0044
-utilization 1.0000
-expanded 2283
-pathlen 653.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 744
-pathlen 658.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 629
-pathlen 660.396
+expanded 528
+pathlen 670.881
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7688,7 +7612,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0716
+exectime 0.0717
 utilization 1.0000
 expanded 39147
 pathlen 652.195
@@ -7702,53 +7626,15 @@ dr 15
 dc 78
 opt 652.195
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0044
-utilization 1.0000
-expanded 2283
-pathlen 653.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 744
-pathlen 658.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 629
-pathlen 660.396
+expanded 593
+pathlen 659.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7759,205 +7645,15 @@ dr 15
 dc 78
 opt 652.195
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0716
-utilization 1.0000
-expanded 39147
-pathlen 652.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0044
-utilization 1.0000
-expanded 2283
-pathlen 653.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 744
-pathlen 658.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 629
-pathlen 660.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0716
-utilization 1.0000
-expanded 39147
-pathlen 652.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0044
-utilization 1.0000
-expanded 2283
-pathlen 653.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 744
-pathlen 658.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 629
-pathlen 660.396
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0715
-utilization 1.0000
-expanded 39147
-pathlen 652.195
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0043
-utilization 1.0000
-expanded 2283
-pathlen 653.952
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 482
-sc 494
-dr 15
-dc 78
-opt 652.195
-algo wA*
-w 1.1
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0018
 utilization 1.0000
-expanded 744
-pathlen 658.053
+expanded 552
+pathlen 669.325
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -7968,15 +7664,471 @@ dr 15
 dc 78
 opt 652.195
 algo wA*
-w 1.15
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0717
+utilization 1.0000
+expanded 39147
+pathlen 652.195
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 629
-pathlen 660.396
+expanded 593
+pathlen 659.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0018
+utilization 1.0000
+expanded 552
+pathlen 669.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0721
+utilization 1.0000
+expanded 39147
+pathlen 652.195
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 593
+pathlen 659.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 552
+pathlen 669.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0718
+utilization 1.0000
+expanded 39147
+pathlen 652.195
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 593
+pathlen 659.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0018
+utilization 1.0000
+expanded 552
+pathlen 669.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0705
+utilization 1.0000
+expanded 39147
+pathlen 652.195
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 593
+pathlen 659.224
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0018
+utilization 1.0000
+expanded 552
+pathlen 669.325
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 482
+sc 494
+dr 15
+dc 78
+opt 652.195
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 666.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0758
+utilization 1.0000
+expanded 41280
+pathlen 652.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 574
+pathlen 658.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 537
+pathlen 669.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 662.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0754
+utilization 1.0000
+expanded 41280
+pathlen 652.053
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 574
+pathlen 658.739
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 537
+pathlen 669.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 662.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8006,34 +8158,15 @@ dr 72
 dc 504
 opt 652.053
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0097
-utilization 1.0000
-expanded 5590
-pathlen 653.81
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 693
-pathlen 658.153
+expanded 574
+pathlen 658.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8044,15 +8177,34 @@ dr 72
 dc 504
 opt 652.053
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 590
-pathlen 661.082
+expanded 537
+pathlen 669.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 662.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8082,34 +8234,15 @@ dr 72
 dc 504
 opt 652.053
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0097
-utilization 1.0000
-expanded 5590
-pathlen 653.81
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0018
 utilization 1.0000
-expanded 693
-pathlen 658.153
+expanded 574
+pathlen 658.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8120,15 +8253,34 @@ dr 72
 dc 504
 opt 652.053
 algo wA*
-w 1.15
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 537
+pathlen 669.426
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 466
+sc 21
+dr 72
+dc 504
+opt 652.053
+algo wA*
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 590
-pathlen 661.082
+expanded 523
+pathlen 662.639
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8144,7 +8296,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0737
+exectime 0.0740
 utilization 1.0000
 expanded 41280
 pathlen 652.053
@@ -8158,34 +8310,15 @@ dr 72
 dc 504
 opt 652.053
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0096
-utilization 1.0000
-expanded 5590
-pathlen 653.81
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0018
 utilization 1.0000
-expanded 693
-pathlen 658.153
+expanded 574
+pathlen 658.739
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8196,15 +8329,15 @@ dr 72
 dc 504
 opt 652.053
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 590
-pathlen 661.082
+expanded 537
+pathlen 669.426
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8214,149 +8347,92 @@ sc 21
 dr 72
 dc 504
 opt 652.053
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 523
+pathlen 662.639
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
 algo wA*
 w 1.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0752
+exectime 0.0830
 utilization 1.0000
-expanded 41280
-pathlen 652.053
+expanded 45501
+pathlen 652.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0096
-utilization 1.0000
-expanded 5590
-pathlen 653.81
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
-algo wA*
-w 1.1
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 693
-pathlen 658.153
+expanded 595
+pathlen 660.597
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
 algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 590
-pathlen 661.082
+expanded 541
+pathlen 662.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
 map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
 algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0752
-utilization 1.0000
-expanded 41280
-pathlen 652.053
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0097
-utilization 1.0000
-expanded 5590
-pathlen 653.81
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 693
-pathlen 658.153
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 466
-sc 21
-dr 72
-dc 504
-opt 652.053
-algo wA*
-w 1.15
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0016
 utilization 1.0000
-expanded 590
-pathlen 661.082
+expanded 563
+pathlen 672.396
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8386,53 +8462,205 @@ dr 494
 dc 124
 opt 652.011
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0219
-utilization 1.0000
-expanded 12177
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 731
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 622
-pathlen 657.284
+expanded 595
+pathlen 660.597
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 662.011
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 563
+pathlen 672.396
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0848
+utilization 1.0000
+expanded 45501
+pathlen 652.011
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 595
+pathlen 660.597
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 662.011
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 563
+pathlen 672.396
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 1.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0848
+utilization 1.0000
+expanded 45501
+pathlen 652.011
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 1.2
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0017
+utilization 1.0000
+expanded 595
+pathlen 660.597
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 541
+pathlen 662.011
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 2
+sc 499
+dr 494
+dc 124
+opt 652.011
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 563
+pathlen 672.396
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8462,53 +8690,15 @@ dr 494
 dc 124
 opt 652.011
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0219
-utilization 1.0000
-expanded 12177
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 731
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 622
-pathlen 657.284
+expanded 595
+pathlen 660.597
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8519,15 +8709,15 @@ dr 494
 dc 124
 opt 652.011
 algo wA*
-w 1.0
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0829
+exectime 0.0016
 utilization 1.0000
-expanded 45501
-pathlen 652.011
+expanded 541
+pathlen 662.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8538,205 +8728,15 @@ dr 494
 dc 124
 opt 652.011
 algo wA*
-w 1.05
+w 2.0
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0219
+exectime 0.0016
 utilization 1.0000
-expanded 12177
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0018
-utilization 1.0000
-expanded 731
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 622
-pathlen 657.284
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0831
-utilization 1.0000
-expanded 45501
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0219
-utilization 1.0000
-expanded 12177
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 731
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 622
-pathlen 657.284
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.0
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0828
-utilization 1.0000
-expanded 45501
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0219
-utilization 1.0000
-expanded 12177
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 731
-pathlen 652.011
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 2
-sc 499
-dr 494
-dc 124
-opt 652.011
-algo wA*
-w 1.15
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 622
-pathlen 657.284
+expanded 563
+pathlen 672.396
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8752,7 +8752,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0814
+exectime 0.0815
 utilization 1.0000
 expanded 44692
 pathlen 651.668
@@ -8766,53 +8766,53 @@ dr 468
 dc 509
 opt 651.668
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0288
-utilization 1.0000
-expanded 15865
-pathlen 653.769
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 662
-pathlen 657.284
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0015
 utilization 1.0000
-expanded 554
+expanded 543
 pathlen 658.455
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 525
+pathlen 661.284
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 525
+pathlen 668.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8828,7 +8828,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0821
+exectime 0.0816
 utilization 1.0000
 expanded 44692
 pathlen 651.668
@@ -8842,53 +8842,53 @@ dr 468
 dc 509
 opt 651.668
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0288
-utilization 1.0000
-expanded 15865
-pathlen 653.769
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 662
-pathlen 657.284
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0015
 utilization 1.0000
-expanded 554
+expanded 543
 pathlen 658.455
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 525
+pathlen 661.284
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 525
+pathlen 668.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8904,7 +8904,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0813
+exectime 0.0796
 utilization 1.0000
 expanded 44692
 pathlen 651.668
@@ -8918,53 +8918,53 @@ dr 468
 dc 509
 opt 651.668
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0288
-utilization 1.0000
-expanded 15865
-pathlen 653.769
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 662
-pathlen 657.284
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0015
 utilization 1.0000
-expanded 554
+expanded 543
 pathlen 658.455
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 525
+pathlen 661.284
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 525
+pathlen 668.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -8980,7 +8980,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0814
+exectime 0.0797
 utilization 1.0000
 expanded 44692
 pathlen 651.668
@@ -8994,53 +8994,53 @@ dr 468
 dc 509
 opt 651.668
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0288
-utilization 1.0000
-expanded 15865
-pathlen 653.769
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 662
-pathlen 657.284
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0015
 utilization 1.0000
-expanded 554
+expanded 543
 pathlen 658.455
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 525
+pathlen 661.284
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 525
+pathlen 668.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9056,7 +9056,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0814
+exectime 0.0816
 utilization 1.0000
 expanded 44692
 pathlen 651.668
@@ -9070,53 +9070,53 @@ dr 468
 dc 509
 opt 651.668
 algo wA*
-w 1.05
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0288
-utilization 1.0000
-expanded 15865
-pathlen 653.769
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0017
-utilization 1.0000
-expanded 662
-pathlen 657.284
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 97
-sc 13
-dr 468
-dc 509
-opt 651.668
-algo wA*
-w 1.15
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0015
 utilization 1.0000
-expanded 554
+expanded 543
 pathlen 658.455
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 1.5
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0015
+utilization 1.0000
+expanded 525
+pathlen 661.284
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 97
+sc 13
+dr 468
+dc 509
+opt 651.668
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 525
+pathlen 668.011
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9132,7 +9132,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0842
+exectime 0.0840
 utilization 1.0000
 expanded 45944
 pathlen 651.426
@@ -9146,15 +9146,15 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0310
+exectime 0.0016
 utilization 1.0000
-expanded 16810
-pathlen 653.183
+expanded 545
+pathlen 653.769
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9165,34 +9165,34 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 797
-pathlen 659.041
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 13
-dr 1
-dc 386
-opt 651.426
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 611
-pathlen 656.94
+expanded 538
+pathlen 662.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 13
+dr 1
+dc 386
+opt 651.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 532
+pathlen 669.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9222,15 +9222,15 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0310
+exectime 0.0016
 utilization 1.0000
-expanded 16810
-pathlen 653.183
+expanded 545
+pathlen 653.769
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9241,34 +9241,34 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 797
-pathlen 659.041
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 13
-dr 1
-dc 386
-opt 651.426
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 611
-pathlen 656.94
+expanded 538
+pathlen 662.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 13
+dr 1
+dc 386
+opt 651.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 532
+pathlen 669.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9284,7 +9284,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0822
+exectime 0.0840
 utilization 1.0000
 expanded 45944
 pathlen 651.426
@@ -9298,15 +9298,15 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0310
+exectime 0.0016
 utilization 1.0000
-expanded 16810
-pathlen 653.183
+expanded 545
+pathlen 653.769
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9317,34 +9317,34 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0020
-utilization 1.0000
-expanded 797
-pathlen 659.041
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 13
-dr 1
-dc 386
-opt 651.426
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 611
-pathlen 656.94
+expanded 538
+pathlen 662.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 13
+dr 1
+dc 386
+opt 651.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 532
+pathlen 669.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9360,7 +9360,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0837
+exectime 0.0839
 utilization 1.0000
 expanded 45944
 pathlen 651.426
@@ -9374,15 +9374,15 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0311
+exectime 0.0016
 utilization 1.0000
-expanded 16810
-pathlen 653.183
+expanded 545
+pathlen 653.769
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9393,34 +9393,34 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 797
-pathlen 659.041
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 13
-dr 1
-dc 386
-opt 651.426
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 611
-pathlen 656.94
+expanded 538
+pathlen 662.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 13
+dr 1
+dc 386
+opt 651.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 532
+pathlen 669.224
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9436,7 +9436,7 @@ proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0838
+exectime 0.0825
 utilization 1.0000
 expanded 45944
 pathlen 651.426
@@ -9450,15 +9450,15 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.05
+w 1.2
 proc 1
 exptime 0.0
 ---
 timeout -1
-exectime 0.0310
+exectime 0.0016
 utilization 1.0000
-expanded 16810
-pathlen 653.183
+expanded 545
+pathlen 653.769
 ==========
 machine pbbs
 prog ./scripts/select_algo.py
@@ -9469,32 +9469,32 @@ dr 1
 dc 386
 opt 651.426
 algo wA*
-w 1.1
-proc 1
-exptime 0.0
----
-timeout -1
-exectime 0.0019
-utilization 1.0000
-expanded 797
-pathlen 659.041
-==========
-machine pbbs
-prog ./scripts/select_algo.py
-map maps/random/random512-25-0.map
-sr 495
-sc 13
-dr 1
-dc 386
-opt 651.426
-algo wA*
-w 1.15
+w 1.5
 proc 1
 exptime 0.0
 ---
 timeout -1
 exectime 0.0017
 utilization 1.0000
-expanded 611
-pathlen 656.94
+expanded 538
+pathlen 662.254
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/random/random512-25-0.map
+sr 495
+sc 13
+dr 1
+dc 386
+opt 651.426
+algo wA*
+w 2.0
+proc 1
+exptime 0.0
+---
+timeout -1
+exectime 0.0016
+utilization 1.0000
+expanded 532
+pathlen 669.224
 ==========
