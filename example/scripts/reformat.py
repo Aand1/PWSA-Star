@@ -24,6 +24,8 @@ def chooseParams(params):
          , "proc" : int(params.get("proc", "1"))
          , "w" : float(params.get("w", "1.0"))
          , "exptime" : float(params.get("exptime", "0.0"))
+#         , "K" : params["K"]
+#         , "D" : params["D"]
          }
 
 def simplifyParams(params):
@@ -32,11 +34,14 @@ def simplifyParams(params):
          , "proc" : int(params.get("proc", "1"))
          , "w" : float(params.get("w", "1.0"))
          , "exptime" : float(params.get("exptime", "0.0"))
+#         , "K" : params["K"]
+#         , "D" : params["D"]
          }
 
 # here's a crappy lexicographic ordering over assumed parameters
 def cmpForSortedOutput ((ps1,rs1),(ps2,rs2)):
   for key in ["map", "algo", "proc", "w", "exptime"]:
+#  for key in ["map", "algo", "proc", "w", "exptime", "K", "D"]:
     if ps1[key] < ps2[key]:
       return -1
     if ps1[key] > ps2[key]:

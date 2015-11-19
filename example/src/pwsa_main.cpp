@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
   int dcol;
   double w;
   double exptime;
-  bool pathcorrect = true;
+  bool pathcorrect;
   double opt;
   std::string visualize;
 
@@ -34,8 +34,8 @@ int main(int argc, char** argv) {
   int* predecessors = nullptr;
 
   auto init = [&] {
-    split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 100);
-    poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 100);
+    split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 80);
+    poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 10);
     fname = pasl::util::cmdline::parse_or_default_string("map", "maps/simple_map.map");
     srow = (int)pasl::util::cmdline::parse_or_default_int("sr", 1);
     scol = (int)pasl::util::cmdline::parse_or_default_int("sc", 1);
@@ -43,7 +43,7 @@ int main(int argc, char** argv) {
     dcol = (int)pasl::util::cmdline::parse_or_default_int("dc", 1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0);
-    //pathcorrect = pasl::util::cmdline::parse_or_default_bool("pathcorrect", true);
+    pathcorrect = pasl::util::cmdline::parse_or_default_bool("pathcorrect", false);
     opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
 //    checkdev = pasl::util::cmdline::parse_or_default_bool("checkdev", false);
 //    debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
@@ -81,10 +81,10 @@ int main(int argc, char** argv) {
       expanded_pathcorrect = pair.second;
       //res_pathcorrect = pwsa_simple_pathcorrect<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
     }
-    // else {
-    //   //res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
-    //   res_normal = pwsa<Graph, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
-    // }
+    else {
+      //res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+      res_normal = pwsa<Graph, Heap<std::tuple<int,int/*,int*/>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+    }
   };
 
   auto output = [&] {

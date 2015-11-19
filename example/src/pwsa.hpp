@@ -87,9 +87,10 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
     expanded_since_exchange.mine() = 0;
   };
 
-  auto do_work = [&] (bool& is_done, HEAP& frontier) {
+  auto do_work = [&] (std::atomic<bool>& is_done, HEAP& frontier) {
+  //auto do_work = [&] (bool& is_done, HEAP& frontier) {
     int expanded_this_round = 0;
-    while (expanded_this_round < poll_cutoff && frontier.size() > 0 && !is_done) {
+    while (expanded_this_round < poll_cutoff && frontier.size() > 0 /*&& !is_done*/) {
       int v = frontier.delete_min();
 
       bool orig = is_expanded[v].load();
@@ -97,7 +98,8 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
         if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
 
         if (v == destination) {
-          is_done = true;
+          is_done.store(true);
+          //is_done = true;
           return;
         }
 
@@ -132,6 +134,80 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
     expanded_since_exchange.mine() += expanded_this_round;
   };
 
-  pasl::sched::native::parallel_while_pwsa_new(initF, size, fork, do_work);
+  pasl::sched::native::parallel_while_pwsa_maybe_faster(initF, size, fork, do_work);
+  //pasl::sched::native::parallel_while_pwsa_new(initF, size, fork, do_work);
   return std::make_pair(gpred, is_expanded);
+}
+
+template <class GRAPH, class HEAP, class HEURISTIC>
+std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
+                       const int& source, const int& destination,
+                       int split_cutoff, int poll_cutoff, double exptime,
+                       int* pebbles = nullptr, int* predecessors = nullptr) {
+  int N = graph.number_vertices();
+  std::atomic<int>* finalized = pasl::data::mynew_array<std::atomic<int>>(N);
+  fill_array_par(finalized, N, -1);
+
+  HEAP initF = HEAP();
+  int heur = heuristic(source);
+  initF.insert(heur, std::make_tuple(source, 0/*, source*/));
+
+  pasl::data::perworker::array<int> expanded_since_exchange;
+  expanded_since_exchange.init(0);
+
+  auto size = [&] (HEAP& frontier) {
+    auto sz = frontier.size();
+    if (sz == 0) {
+      expanded_since_exchange.mine() = 0;
+      return 0; // no work left
+    }
+    if (sz > split_cutoff || (expanded_since_exchange.mine() > split_cutoff && sz > 1)) {
+      return 2; // split
+    }
+    else {
+      return 1; // don't split
+    }
+  };
+
+  auto fork = [&] (HEAP& src, HEAP& dst) {
+    src.split(dst);
+    expanded_since_exchange.mine() = 0;
+  };
+
+  auto do_work = [&] (std::atomic<bool>& is_done, HEAP& frontier) {
+  //auto do_work = [&] (bool& is_done, HEAP& frontier) {
+    int expanded_this_round = 0;
+    while (expanded_this_round < poll_cutoff && frontier.size() > 0 /*&& !is_done*/) {
+      auto tup = frontier.delete_min();
+      int v = std::get<0>(tup);
+      int vdist = std::get<1>(tup);
+      //int pred = std::get<2>(tup);
+
+      int orig = finalized[v].load();
+      if (orig == -1 && finalized[v].compare_exchange_strong(orig, vdist)) {
+        //if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
+        //if (predecessors) predecessors[v] = pred;
+        if (v == destination) {
+          is_done.store(true);
+          //is_done = true;
+          return;
+        }
+
+        graph.simulate_get_successors(exptime);
+        expanded_this_round++;
+
+        graph.for_each_neighbor_of(v, [&] (int ngh, int weight) {
+          int nghdist = vdist + weight;
+          frontier.insert(heuristic(ngh) + nghdist, std::make_tuple(ngh, nghdist/*, v*/));
+        });
+      }
+      expanded_this_round++;
+    }
+    expanded_since_exchange.mine() += expanded_this_round;
+  };
+
+  //pasl::sched::native::parallel_while_pwsa(initF, size, fork, set_in_env, do_work);
+  //pasl::sched::native::parallel_while_pwsa_new(initF, size, fork, do_work);
+  pasl::sched::native::parallel_while_pwsa_maybe_faster(initF, size, fork, do_work);
+  return finalized;
 }
