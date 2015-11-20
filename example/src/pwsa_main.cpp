@@ -30,6 +30,10 @@ int main(int argc, char** argv) {
   std::atomic<int>* res_normal;
   std::atomic<vertpack>* res_pathcorrect;
   std::atomic<bool>* expanded_pathcorrect;
+
+  state* res_pathcorrect_states;
+  state_simple* res_states;
+
   int* pebbles = nullptr;
   int* predecessors = nullptr;
 
@@ -75,15 +79,15 @@ int main(int argc, char** argv) {
     };
 
     if (pathcorrect) {
-      //res_pathcorrect = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
-      auto pair = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
-      res_pathcorrect = pair.first;
-      expanded_pathcorrect = pair.second;
-      //res_pathcorrect = pwsa_simple_pathcorrect<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      // auto pair = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      // res_pathcorrect = pair.first;
+      // expanded_pathcorrect = pair.second;
+      res_pathcorrect_states = pwsa_pathcorrect_locality<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
     }
     else {
       //res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
-      res_normal = pwsa<Graph, Heap<std::tuple<int,int/*,int*/>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+      //res_normal = pwsa<Graph, Heap<std::tuple<int,int/*,int*/>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
+      res_states = pwsa_locality<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
     }
   };
 
@@ -92,17 +96,26 @@ int main(int argc, char** argv) {
     int num_expanded = 0;
     for (int i = 0; i < G.number_vertices(); i++) {
       if (!pathcorrect) {
-        res[i] = res_normal[i].load();
-        if (res[i] != -1) num_expanded++;
+        res[i] = res_states[i].g;
+        if (res_states[i].is_expanded.load()) num_expanded++;
+        // res[i] = res_normal[i].load();
+        // if (res[i] != -1) num_expanded++;
       }
       else {
-        res[i] = res_pathcorrect[i].load().distance;
+        res[i] = res_pathcorrect_states[i].gpred.load().distance;
         if (predecessors) {
-          predecessors[i] = res_pathcorrect[i].load().pred;
+          predecessors[i] = res_pathcorrect_states[i].gpred.load().pred;
         }
-        if (expanded_pathcorrect[i].load()) {
+        if (res_pathcorrect_states[i].is_expanded.load()) {
           num_expanded++;
         }
+        // res[i] = res_pathcorrect[i].load().distance;
+        // if (predecessors) {
+        //   predecessors[i] = res_pathcorrect[i].load().pred;
+        // }
+        // if (expanded_pathcorrect[i].load()) {
+        //   num_expanded++;
+        // }
       }
     }
     // if (predecessors) {
