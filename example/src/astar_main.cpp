@@ -8,6 +8,7 @@
 #include "astar.hpp"
 #include "bin_heap.hpp"
 #include "weighted_graph.hpp"
+#include <iomanip>
 
 int main(int argc, char** argv) {
   // int split_cutoff; // (K)
@@ -19,7 +20,7 @@ int main(int argc, char** argv) {
   int dcol;
   double w;
   double exptime;
-//  double opt;
+  double opt;
 //  std::string visualize;
 
   Graph G;
@@ -27,6 +28,7 @@ int main(int argc, char** argv) {
   int dst;
 
   int* res;
+  bool* expanded;
   // std::atomic<int>* res;
   // int* pebbles = nullptr;
   // int* predecessors = nullptr;
@@ -41,7 +43,7 @@ int main(int argc, char** argv) {
     dcol = (int)pasl::util::cmdline::parse_or_default_int("dc", 1);
     w = (double)pasl::util::cmdline::parse_or_default_float("w", 1.0);
     exptime = (double)pasl::util::cmdline::parse_or_default_float("exptime", 0.0);
-    // opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
+    opt = (double)pasl::util::cmdline::parse_or_default_float("opt", 1.0);
 //    checkdev = pasl::util::cmdline::parse_or_default_bool("checkdev", false);
 //    debug = pasl::util::cmdline::parse_or_default_bool("debug", false);
 //    visualize = pasl::util::cmdline::parse_or_default_string("visualize", "");
@@ -69,7 +71,9 @@ int main(int argc, char** argv) {
     };
 
     // if (sequential) {
-      res = astar<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, exptime);
+    auto pair = astar<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, exptime);
+    res = pair.first;
+    expanded = pair.second;
     // }
     // else {
     //   res = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
@@ -78,13 +82,18 @@ int main(int argc, char** argv) {
 
   auto output = [&] {
     int num_expanded = 0;
+    // for (int i = 0; i < G.number_vertices(); i++) {
+    //   if (res[i] != -1) num_expanded++;
+    // }
     for (int i = 0; i < G.number_vertices(); i++) {
-      if (res[i] != -1) num_expanded++;
+      if (expanded[i]) num_expanded++;
     }
     double pathlen = double(res[dst])/10000.0;
     std::cout << "expanded " << num_expanded << std::endl;
+
+    std::cout << std::setprecision(10);
     std::cout << "pathlen " << pathlen << std::endl;
-    // std::cout << "deviation " << (pathlen / opt) << std::endl;
+    std::cout << "deviation " << (pathlen / opt) << std::endl;
 
     // if (pebbles && predecessors) {
     //   G.pebble_dump(pebbles, predecessors, src, dst, visualize.c_str());

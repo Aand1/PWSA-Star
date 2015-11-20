@@ -34,8 +34,8 @@ int main(int argc, char** argv) {
   int* predecessors = nullptr;
 
   auto init = [&] {
-    split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 80);
-    poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 10);
+    split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 8000);
+    poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 1000);
     fname = pasl::util::cmdline::parse_or_default_string("map", "maps/simple_map.map");
     srow = (int)pasl::util::cmdline::parse_or_default_int("sr", 1);
     scol = (int)pasl::util::cmdline::parse_or_default_int("sc", 1);

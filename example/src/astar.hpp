@@ -3,9 +3,9 @@
 #include <climits>
 
 template <class GRAPH, class HEAP, class HEURISTIC>
-int* astar(GRAPH& graph, const HEURISTIC& heuristic,
-           const int& source, const int& destination,
-           double exptime) {
+std::pair<int*,bool*> astar(GRAPH& graph, const HEURISTIC& heuristic,
+                            const int& source, const int& destination,
+                            double exptime) {
   int N = graph.number_vertices();
   int* dist = array_util::my_malloc<int>(N);
   bool* exp = array_util::my_malloc<bool>(N);
@@ -26,11 +26,11 @@ int* astar(GRAPH& graph, const HEURISTIC& heuristic,
         int nghdist = dist[v] + weight;
         if (nghdist < dist[ngh]) {
           frontier.insert(heuristic(ngh) + nghdist, ngh);
-          dist[ngh] = nghdist; 
+          dist[ngh] = nghdist;
         }
 
       });
     }
   }
-  return dist;
+  return std::make_pair(dist,exp);
 }
