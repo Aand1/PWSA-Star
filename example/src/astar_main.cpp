@@ -69,7 +69,7 @@ int main(int argc, char** argv) {
     };
 
     // if (sequential) {
-      res = astar<Graph, Heap<std::pair<int,int>>, decltype(heuristic)>(G, heuristic, src, dst, exptime);
+      res = astar<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, exptime);
     // }
     // else {
     //   res = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);

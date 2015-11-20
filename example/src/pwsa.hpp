@@ -90,7 +90,7 @@ pwsa_pathcorrect(GRAPH& graph, const HEURISTIC& heuristic,
   auto do_work = [&] (std::atomic<bool>& is_done, HEAP& frontier) {
   //auto do_work = [&] (bool& is_done, HEAP& frontier) {
     int expanded_this_round = 0;
-    while (expanded_this_round < poll_cutoff && frontier.size() > 0 /*&& !is_done*/) {
+    while (expanded_this_round < poll_cutoff && frontier.size() > 0 && !is_done.load()) {
       int v = frontier.delete_min();
       expanded_this_round++;
 
@@ -177,7 +177,7 @@ std::atomic<int>* pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   auto do_work = [&] (std::atomic<bool>& is_done, HEAP& frontier) {
   //auto do_work = [&] (bool& is_done, HEAP& frontier) {
     int expanded_this_round = 0;
-    while (expanded_this_round < poll_cutoff && frontier.size() > 0 /*&& !is_done*/) {
+    while (expanded_this_round < poll_cutoff && frontier.size() > 0 && !is_done.load()) {
       auto tup = frontier.delete_min();
       int v = std::get<0>(tup);
       int vdist = std::get<1>(tup);
