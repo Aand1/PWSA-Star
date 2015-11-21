@@ -29,7 +29,8 @@ VERBOSE_DEPENDENCIES=0
 
 PROGRAMS=\
 	pwsa_main.cpp \
-	astar_main.cpp
+	astar_main.cpp \
+	wanre_main.cpp
 #       add reference to your cpp source here
 
 ####################################################################
