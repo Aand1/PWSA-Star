@@ -68,12 +68,11 @@ argdefaults = { "-map" : "maps/simple_map.map"
               , "-proc" : "1"
               , "-opt" : "1.0"
               , "-minexpand" : "32"
-              , "-nblocks" : "1024"
+              , "-nblocks" : "4096"
               }
 args = parseArgs(argdefaults)
 
-pbnfgrid = args["-map"].replace(".map","")
-pbnfgrid += '.pbnf_grid'
+pbnfgrid = args["-map"].replace(".map",".pbnf_grid")
 convert(args["-map"], pbnfgrid, args["-sr"], args["-sc"], args["-dr"], args["-dc"])
 
 with tempfile.SpooledTemporaryFile(max_size=10*1024) as log:

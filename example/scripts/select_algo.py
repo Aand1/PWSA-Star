@@ -7,11 +7,11 @@ i = sys.argv.index("-algo")
 algo = sys.argv[i+1]
 newargs = sys.argv[1:i] + sys.argv[(i+2):]
 
-algos = { "wPWSA*"   : "./pwsa_main.opt -pathcorrect 0"
-        , "wPWSA*PC" : "./pwsa_main.opt -pathcorrect 1"
+algos = { "wPWSA*"   : "./pwsa_main.opt -pathcorrect 1"
+        #, "wPWSA*PC" : "./pwsa_main.opt -pathcorrect 1"
         , "wPA*SE"   : "./pase_main.opt"
         , "wA*"      : "./astar_main.opt"
-        , "wPBNF"    : "./scripts/run_pbnf.py"
+        , "PBNF"     : "./scripts/run_pbnf.py"
         }
 
 executable = algos[algo]
