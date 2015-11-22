@@ -17,7 +17,7 @@ OUT_ASTAR_EXPTIME_2=results/astar_1e-6.txt
 OUT_PWSA_EXPTIME_2=results/pwsa_1e-6.txt
 OUT_WPANRE_EXPTIME_2=results/wpanre_1e-6.txt
 
-for i in `seq 1 1`;
+for i in `seq 1 5`;
 do
   ./scripts/run_scen.py -scen $BIG_SCEN -algo "wA*" -w $W -proc 1 -output $OUT_ASTAR -runs 1 -attempts 3
   ./scripts/run_scen.py -scen $BIG_SCEN -algo "wPWSA*" -w $W -proc $PROC -output $OUT_PWSA -runs 1 -attempts 3
