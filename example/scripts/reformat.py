@@ -5,7 +5,12 @@ import sys
 import ast
 
 def simplifyResults(results):
-  floatyKeys = ["exectime", "pathlen", "expanded", "deviation"]
+  floatyKeys = ["exectime", "pathlen", "expanded"]
+#  floatyKeys = ["exectime", "pathlen", "expanded", "deviation"]
+  # try:
+  #   print results['expanded']
+  # except:
+  #   print "no expanded found"
   return { k : float(results[k]) for k,v in results.iteritems() if k in floatyKeys }
 
 def combineResults(rs1, rs2):
@@ -22,7 +27,8 @@ def chooseParams(params):
          , "dr" : params["dr"]
          , "dc" : params["dc"]
          , "proc" : int(params.get("proc", "1"))
-         , "w" : float(params.get("w", "1.0"))
+#         , "expnum" : int(params.get("expnum", "0"))
+         , "w" : float(params.get("w", "1"))
          , "exptime" : float(params.get("exptime", "0.0"))
 #         , "K" : params["K"]
 #         , "D" : params["D"]
@@ -40,8 +46,8 @@ def simplifyParams(params):
 
 # here's a crappy lexicographic ordering over assumed parameters
 def cmpForSortedOutput ((ps1,rs1),(ps2,rs2)):
+#  for key in ["algo", "proc"]:
   for key in ["map", "algo", "proc", "w", "exptime"]:
-#  for key in ["map", "algo", "proc", "w", "exptime", "K", "D"]:
     if ps1[key] < ps2[key]:
       return -1
     if ps1[key] > ps2[key]:
@@ -84,7 +90,7 @@ def readResultsFile(filename):
         out[key] = value
       return out
     i = next(i for i,x in enumerate(lines) if isInnerDelim(x))
-    return (dictify(lines[:i]), dictify(lines[(i+2):]))
+    return (dictify(lines[:i]), dictify(lines[(i+1):]))
 
   return [ dictifyOneRun(group) for group in splitAt(fileGetLines(filename), isOuterDelim) ]
 
@@ -151,10 +157,15 @@ if __name__ == "__main__":
   inputfiles = args["-input"]
   outputfile = args["-output"]
 
+#  print fileGetLines(inputfiles.split(',')[0])
+
   runs = [ x for fin in inputfiles.split(",") for x in readResultsFile(fin) ]
+#  print runs
   filtered = [ (frozenset(chooseParams(ps).items()), simplifyResults(rs))
                for ps, rs in runs if keep(keepdict, ps) ]
+#  print filtered
   averaged1 = collectWith(keywiseAverages)(filtered)
+#  print averaged1
 
   def doComparison(runsdict):
     [algo1, algo2] = args["-compare"].split(",")
@@ -162,8 +173,8 @@ if __name__ == "__main__":
     algoRuns1 = { combineAlgoParam(algo1, algo2, ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo1) in ps }
     algoRuns2 = { combineAlgoParam(algo1, algo2, ps) : rs for ps,rs in runsdict.iteritems() if ("algo", algo2) in ps }
     print "Found %d entries for %s and %d entries for %s" % (len(algoRuns1), algo1, len(algoRuns2), algo2)
-    #print algoRuns1
-    #print algoRuns2
+#    print algoRuns1
+#    print algoRuns2
     return intersectDictsWith(combineResults)(algoRuns1, algoRuns2)
 
   beforeSimplify = doComparison(averaged1) if args["-compare"] else averaged1

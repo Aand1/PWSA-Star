@@ -67,7 +67,7 @@ def readResultsFile(filename):
         out[key] = value
       return out
     i = next(i for i,x in enumerate(lines) if isInnerDelim(x))
-    return (dictify(lines[:i]), dictify(lines[(i+2):]))
+    return (dictify(lines[:i]), dictify(lines[(i+1):]))
 
   return [ dictifyOneRun(group) for group in splitAt(fileGetLines(filename), isOuterDelim) ]
 
@@ -129,7 +129,7 @@ if __name__ == "__main__":
                 , "-output" : "results_reformatted.txt"
                 }
   args = parseArgs(argdefaults)
-  inputfile = args["-input"]
+  inputfiles = args["-input"].split(",")
   outputfile = args["-output"]
 
   keepPathsList = []
@@ -143,7 +143,7 @@ if __name__ == "__main__":
   def keepRun(ps, rs):
     return ((ps['map'], ps['sc'], ps['sr'], ps['dc'], ps['dr']) in keepPaths) and (ps['algo'] in algos)
 
-  filtered = [ (ps, rs) for (ps, rs) in readResultsFile(inputfile) if keepRun(ps, rs) ]
+  filtered = [ (ps, rs) for inputfile in inputfiles for (ps, rs) in readResultsFile(inputfile) if keepRun(ps, rs) ]
 
   with open(outputfile, 'w') as fout:
     for ps,rs in filtered:
