@@ -5,7 +5,7 @@
  * \file pwsa.cpp
  */
 #include "benchmark.hpp"
-#include "wanre.hpp"
+#include "wpanre.hpp"
 #include "bin_heap.hpp"
 #include "weighted_graph.hpp"
 #include <iomanip>
@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
       return G.weighted_euclidean(w, v, dst);
     };
 
-    res = wanre<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, exptime, pebbles);
+    res = wpanre<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, exptime, pebbles);
   };
 
   auto output = [&] {

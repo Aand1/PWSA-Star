@@ -26,9 +26,9 @@ struct state_simple {
 
 template <class GRAPH, class HEAP, class HEURISTIC>
 state_simple*
-wanre(GRAPH& graph, const HEURISTIC& heuristic,
-      const int& source, const int& destination,
-      double exptime, int* pebbles = nullptr) {
+wpanre(GRAPH& graph, const HEURISTIC& heuristic,
+       const int& source, const int& destination,
+       double exptime, int* pebbles = nullptr) {
   int N = graph.number_vertices();
   state_simple* states = pasl::data::mynew_array<state_simple>(N);
   pasl::sched::native::parallel_for(0, N, [&] (int i) {

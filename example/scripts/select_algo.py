@@ -12,6 +12,7 @@ algos = { "wPWSA*"   : "./pwsa_main.opt -pathcorrect 1"
         , "wPA*SE"   : "./pase_main.opt"
         , "wA*"      : "./astar_main.opt"
         , "PBNF"     : "./scripts/run_pbnf.py"
+        , "wPA*NRE"  : "./wpanre_main.opt"
         }
 
 executable = algos[algo]
