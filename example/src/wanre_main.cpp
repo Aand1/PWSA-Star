@@ -80,9 +80,9 @@ int main(int argc, char** argv) {
     // }
     for (int i = 0; i < G.number_vertices(); i++) {
       if (res[i].is_expanded.load()) num_expanded++;
-      if (predecessors) predecessors[i] = res[i].pred.load();
+      if (predecessors) predecessors[i] = res[i].pred;
     }
-    double pathlen = double(res[dst].g.load())/10000.0;
+    double pathlen = double(res[dst].g)/10000.0;
     std::cout << "expanded " << num_expanded << std::endl;
 
     std::cout << std::setprecision(10);
