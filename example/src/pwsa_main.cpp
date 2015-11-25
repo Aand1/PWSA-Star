@@ -37,9 +37,11 @@ int main(int argc, char** argv) {
   int* pebbles = nullptr;
   int* predecessors = nullptr;
 
+  int important = 0;
+
   auto init = [&] {
-    split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 8000);
-    poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 1000);
+    split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 8);
+    poll_cutoff = (int)pasl::util::cmdline::parse_or_default_int("D", 1);
     fname = pasl::util::cmdline::parse_or_default_string("map", "maps/simple_map.map");
     srow = (int)pasl::util::cmdline::parse_or_default_int("sr", 1);
     scol = (int)pasl::util::cmdline::parse_or_default_int("sc", 1);
@@ -82,12 +84,12 @@ int main(int argc, char** argv) {
       // auto pair = pwsa_pathcorrect<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
       // res_pathcorrect = pair.first;
       // expanded_pathcorrect = pair.second;
-      res_pathcorrect_states = pwsa_pathcorrect_locality<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      res_pathcorrect_states = pwsa_pathcorrect_locality<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, important, pebbles);
     }
     else {
       //res_normal = pwsa<Graph, Heap<std::tuple<int,int,int>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
       //res_normal = pwsa<Graph, Heap<std::tuple<int,int/*,int*/>>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles, predecessors);
-      res_states = pwsa_locality<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, pebbles);
+      res_states = pwsa_locality<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, split_cutoff, poll_cutoff, exptime, important, pebbles);
     }
   };
 
@@ -140,6 +142,7 @@ int main(int argc, char** argv) {
     std::cout << "expanded " << num_expanded << std::endl;
     std::cout << "pathlen " << pathlen << std::endl;
     std::cout << "deviation " << pathlen / opt << std::endl;
+    std::cout << "important " << important << std::endl;
 
     if (pebbles && predecessors) {
       G.pebble_dump(pebbles, predecessors, src, dst, visualize.c_str());

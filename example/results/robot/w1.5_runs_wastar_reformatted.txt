@@ -1,0 +1,144 @@
+expnum 0
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 13051
+exectime 14.513
+==========
+expnum 1
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 14652
+exectime 43.469
+==========
+expnum 2
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 15435
+exectime 349.078
+==========
+expnum 3
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 23369
+exectime 80.626
+==========
+expnum 4
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 30459
+exectime 21.018
+==========
+expnum 5
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 20409
+exectime 278.804
+==========
+expnum 6
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 42588
+exectime 162.861
+==========
+expnum 7
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 47541
+exectime 121.034
+==========
+expnum 8
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 51259
+exectime 15.691
+==========
+expnum 9
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 60499
+exectime 10.735
+==========
+expnum 10
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 27144
+exectime 37.796
+==========
+expnum 11
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 65914
+exectime 13.482
+==========
+expnum 12
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 58510
+exectime 9.065
+==========
+expnum 13
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 28063
+exectime 349.233
+==========
+expnum 14
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 26322
+exectime 8.071
+==========
+expnum 15
+algo wastar
+w 1.5
+proc 1
+---
+expanded 0
+pathlen 27880
+exectime 85.215
+==========

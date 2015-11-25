@@ -28,7 +28,7 @@ template <class GRAPH, class HEAP, class HEURISTIC>
 state_simple*
 wpanre(GRAPH& graph, const HEURISTIC& heuristic,
        const int& source, const int& destination,
-       double exptime, int* pebbles = nullptr) {
+       double exptime, int& important, int* pebbles = nullptr) {
   int N = graph.number_vertices();
   state_simple* states = pasl::data::mynew_array<state_simple>(N);
   pasl::sched::native::parallel_for(0, N, [&] (int i) {
@@ -54,6 +54,10 @@ wpanre(GRAPH& graph, const HEURISTIC& heuristic,
   frontier.insert(heur, source);
 
   std::atomic<bool> is_done(false);
+  bool is_dones[32];
+  for (int i = 0; i < 32; i++) {
+    is_dones[i] = false;
+  }
 
   auto body = [&] {
 
@@ -78,6 +82,11 @@ wpanre(GRAPH& graph, const HEURISTIC& heuristic,
 
         if (v == destination) {
           is_done.store(true);
+          for (int i = 0; i < 32; i++) {
+            is_dones[i] = true;
+          }
+          asm("MFENCE");
+
           return;
         }
 

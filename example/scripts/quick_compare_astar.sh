@@ -2,9 +2,9 @@
 
 FILE=temp_quick_compare_vs_astar.txt
 #SCEN=myscen/sc1/AcrosstheCape.map-1.scen,myscen/sc1/Expedition.map-1.scen,myscen/mazes/maze512-4-0.map-1.scen,myscen/random/random512-25-0.map-1.scen
-SCEN=myscen/sc1/Expedition.big5.map-1.scen
+SCEN=myscen/sc1/Expedition.big4.map-1.scen
 W=1.0,1.1
-PROC=1,4,8,16,32
+PROC=4,8,16,32
 ALGO="wPWSA*","wPWSA*PC","wA*"
 
 ./scripts/run_scen.py -scen $SCEN -algo $ALGO -w $W -proc $PROC -output $FILE

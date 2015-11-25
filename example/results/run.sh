@@ -17,18 +17,20 @@ OUT_ASTAR_EXPTIME_2=results/astar_1e-6.txt
 OUT_PWSA_EXPTIME_2=results/pwsa_1e-6.txt
 OUT_WPANRE_EXPTIME_2=results/wpanre_1e-6.txt
 
-for i in `seq 1 5`;
+for i in `seq 1 1`;
 do
-  ./scripts/run_scen.py -scen $BIG_SCEN -algo "wA*" -w $W -proc 1 -output $OUT_ASTAR -runs 1 -attempts 3
-  ./scripts/run_scen.py -scen $BIG_SCEN -algo "wPWSA*" -w $W -proc $PROC -output $OUT_PWSA -runs 1 -attempts 3
-  ./scripts/run_scen.py -scen $BIG_SCEN -algo "PBNF" -w $W -proc $PROC -output $OUT_PBNF -runs 1 -attempts 3
+  # ./scripts/run_scen.py -scen $BIG_SCEN -algo "wA*" -w $W -proc 1 -output $OUT_ASTAR -runs 1 -attempts 3
+  # ./scripts/run_scen.py -scen $BIG_SCEN -algo "wPWSA*" -w $W -proc $PROC -output $OUT_PWSA -runs 1 -attempts 3
+  # ./scripts/run_scen.py -scen $BIG_SCEN -algo "PBNF" -w $W -proc $PROC -output $OUT_PBNF -runs 1 -attempts 3
 
-  ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wA*" -w $W -proc $PROC -exptime 0.00005 -output $OUT_ASTAR_EXPTIME_1 -runs 1 -attempts 3
-  ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPA*SE" -w $W -proc $PROC -exptime 0.00005 -output $OUT_PASE_EXPTIME_1 -runs 1 -attempts 3
-  ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPWSA*" -w $W -proc $PROC -exptime 0.00005 -output $OUT_PWSA_EXPTIME_1 -runs 1 -attempts 3
-  ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPA*NRE" -w $W -proc $PROC -exptime 0.00005 -output $OUT_PWSA_EXPTIME_1 -runs 1 -attempts 3
+  # ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wA*" -w $W -proc 1 -exptime 0.00005 -output $OUT_ASTAR_EXPTIME_1 -runs 1 -attempts 3
 
-  ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wA*" -w $W -proc $PROC -exptime 0.000001 -output $OUT_ASTAR_EXPTIME_2 -runs 1 -attempts 3
+  # ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPWSA*" -w $W -proc $PROC -exptime 0.00005 -output $OUT_PWSA_EXPTIME_1 -runs 1 -attempts 3
+  # ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPA*NRE" -w $W -proc $PROC -exptime 0.00005 -output $OUT_WPANRE_EXPTIME_1 -runs 1 -attempts 3
+  # ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPA*SE" -w $W -proc $PROC -exptime 0.00005 -output $OUT_PASE_EXPTIME_1 -runs 1 -attempts 3
+
+  # ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wA*" -w $W -proc 1 -exptime 0.000001 -output $OUT_ASTAR_EXPTIME_2 -runs 1 -attempts 3
+
   ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPWSA*" -w $W -proc $PROC -exptime 0.000001 -output $OUT_PWSA_EXPTIME_2 -runs 1 -attempts 3
-  ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPA*NRE" -w $W -proc $PROC -exptime 0.000001 -output $OUT_PWSA_EXPTIME_2 -runs 1 -attempts 3
+  ./scripts/run_scen.py -scen $SMALL_SCEN -algo "wPA*NRE" -w $W -proc $PROC -exptime 0.000001 -output $OUT_WPANRE_EXPTIME_2 -runs 1 -attempts 3
 done

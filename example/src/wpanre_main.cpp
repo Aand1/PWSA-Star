@@ -32,6 +32,7 @@ int main(int argc, char** argv) {
   int* pebbles = nullptr;
   int* predecessors = nullptr;
 
+  int important = 0;
 
   auto init = [&] {
     // split_cutoff = (int)pasl::util::cmdline::parse_or_default_int("K", 80);
@@ -70,7 +71,7 @@ int main(int argc, char** argv) {
       return G.weighted_euclidean(w, v, dst);
     };
 
-    res = wpanre<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, exptime, pebbles);
+    res = wpanre<Graph, Heap<int>, decltype(heuristic)>(G, heuristic, src, dst, exptime, important, pebbles);
   };
 
   auto output = [&] {
@@ -88,6 +89,7 @@ int main(int argc, char** argv) {
     std::cout << std::setprecision(10);
     std::cout << "pathlen " << pathlen << std::endl;
     std::cout << "deviation " << (pathlen / opt) << std::endl;
+    std::cout << "important " << important << std::endl;
 
     if (pebbles && predecessors) {
       G.pebble_dump(pebbles, predecessors, src, dst, visualize.c_str());

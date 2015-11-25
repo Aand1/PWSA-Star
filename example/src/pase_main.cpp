@@ -194,6 +194,8 @@ uint64_t GetTimeStamp() {
   return tv.tv_sec*(uint64_t)1000000+tv.tv_usec;
 }
 
+int important = 0;
+
 void astar_thread( void *ptr ){
   pthread_mutex_lock(&mutex);
   int thread_id = ids;
@@ -231,6 +233,7 @@ void astar_thread( void *ptr ){
       state* t = &(grid[newX][newY]);
       //artificial collision checking time
 
+      //important = timing::contention_free_loop();
       timing::busy_loop_secs(SEC_PER_EXPAND);
       //usleep(1);
       // uint64_t t0 = GetTimeStamp();
@@ -467,6 +470,7 @@ int main(int argc, char** argv){
   double pathlen = double(path_length)/10000.0;
   printf("pathlen %f\n", pathlen);
   printf("deviation %f\n", pathlen / opt);
+  printf("important %d\n", important);
 
   //loop over maps
   // for(int i=1; i<argc; i++){

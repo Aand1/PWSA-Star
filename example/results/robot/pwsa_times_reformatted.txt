@@ -1,0 +1,960 @@
+expnum 0
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 9020
+pathlen 13783
+exectime 2.704
+deviation 1.05608765612
+==========
+expnum 1
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 8152
+pathlen 12284
+exectime 2.526
+deviation 0.838383838384
+==========
+expnum 2
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 29756
+pathlen 13364
+exectime 8.338
+deviation 0.865824425008
+==========
+expnum 3
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 24175
+pathlen 20691
+exectime 6.87
+deviation 0.885403739997
+==========
+expnum 4
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 9143
+pathlen 26496
+exectime 2.819
+deviation 0.869890672708
+==========
+expnum 5
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 28901
+pathlen 19865
+exectime 8.036
+deviation 0.973345092851
+==========
+expnum 6
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 36704
+pathlen 45150
+exectime 10.232
+deviation 1.06015779093
+==========
+expnum 7
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 17537
+pathlen 40153
+exectime 5.072
+deviation 0.844597294966
+==========
+expnum 8
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 33787
+pathlen 47981
+exectime 9.443
+deviation 0.936050254589
+==========
+expnum 9
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 51238
+pathlen 51761
+exectime 14.118
+deviation 0.855567860626
+==========
+expnum 10
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 34699
+pathlen 26266
+exectime 9.632
+deviation 0.967653993516
+==========
+expnum 11
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 55806
+pathlen 55657
+exectime 15.391
+deviation 0.844388142125
+==========
+expnum 12
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 24788
+pathlen 65462
+exectime 6.956
+deviation 1.11881729619
+==========
+expnum 13
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 20579
+pathlen 23961
+exectime 5.858
+deviation 0.853828885009
+==========
+expnum 14
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 26383
+pathlen 24333
+exectime 7.407
+deviation 0.924435833143
+==========
+expnum 15
+algo pwsa
+w 1.5
+proc 32
+---
+expanded 25862
+pathlen 24621
+exectime 7.237
+deviation 0.883106169297
+==========
+expnum 0
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 5551
+pathlen 12920
+exectime 14.248
+deviation 0.989962454984
+==========
+expnum 1
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 4080
+pathlen 12212
+exectime 9.849
+deviation 0.83346983347
+==========
+expnum 2
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 15121
+pathlen 13693
+exectime 38.404
+deviation 0.887139617752
+==========
+expnum 3
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 33325
+pathlen 23377
+exectime 81.555
+deviation 1.00034233386
+==========
+expnum 4
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 5143
+pathlen 30203
+exectime 12.542
+deviation 0.991595259201
+==========
+expnum 5
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 8305
+pathlen 18332
+exectime 20.21
+deviation 0.898231172522
+==========
+expnum 6
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 4415
+pathlen 46633
+exectime 10.863
+deviation 1.09497980652
+==========
+expnum 7
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 32439
+pathlen 47296
+exectime 82.562
+deviation 0.994846553501
+==========
+expnum 8
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 5156
+pathlen 51259
+exectime 12.816
+deviation 1.0
+==========
+expnum 9
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 4409
+pathlen 60269
+exectime 10.895
+deviation 0.996198284269
+==========
+expnum 10
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 11458
+pathlen 27120
+exectime 28.469
+deviation 0.999115826702
+==========
+expnum 11
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 48075
+pathlen 56528
+exectime 126.662
+deviation 0.857602330309
+==========
+expnum 12
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 3168
+pathlen 58332
+exectime 8.179
+deviation 0.996957784994
+==========
+expnum 13
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 32555
+pathlen 26942
+exectime 84.057
+deviation 0.960054163846
+==========
+expnum 14
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 2897
+pathlen 24092
+exectime 7.265
+deviation 0.915279993921
+==========
+expnum 15
+algo pwsa
+w 1.5
+proc 2
+---
+expanded 10612
+pathlen 27029
+exectime 27.725
+deviation 0.969476327116
+==========
+expnum 0
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 7056
+pathlen 12817
+exectime 9.223
+deviation 0.982070339438
+==========
+expnum 1
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 7297
+pathlen 12212
+exectime 9.347
+deviation 0.83346983347
+==========
+expnum 2
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 9569
+pathlen 13513
+exectime 12.262
+deviation 0.875477810172
+==========
+expnum 3
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 38556
+pathlen 23062
+exectime 49.675
+deviation 0.98686293808
+==========
+expnum 4
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 5128
+pathlen 27430
+exectime 7.127
+deviation 0.900554844217
+==========
+expnum 5
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 9127
+pathlen 20045
+exectime 11.846
+deviation 0.982164731246
+==========
+expnum 6
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 7936
+pathlen 47134
+exectime 10.304
+deviation 1.10674368367
+==========
+expnum 7
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 9945
+pathlen 45555
+exectime 13.002
+deviation 0.958225531646
+==========
+expnum 8
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 7677
+pathlen 51278
+exectime 10.236
+deviation 1.00037066661
+==========
+expnum 9
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 7982
+pathlen 60269
+exectime 10.589
+deviation 0.996198284269
+==========
+expnum 10
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 12241
+pathlen 27393
+exectime 16.421
+deviation 1.00917329797
+==========
+expnum 11
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 9819
+pathlen 55767
+exectime 13.08
+deviation 0.846056983342
+==========
+expnum 12
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 7093
+pathlen 58332
+exectime 9.332
+deviation 0.996957784994
+==========
+expnum 13
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 10634
+pathlen 26162
+exectime 14.691
+deviation 0.93225955885
+==========
+expnum 14
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 3995
+pathlen 22953
+exectime 5.302
+deviation 0.872008206063
+==========
+expnum 15
+algo pwsa
+w 1.5
+proc 4
+---
+expanded 21824
+pathlen 24653
+exectime 28.634
+deviation 0.884253945481
+==========
+expnum 0
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 6910
+pathlen 13347
+exectime 5.152
+deviation 1.02268025439
+==========
+expnum 1
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 5331
+pathlen 12105
+exectime 3.949
+deviation 0.826167076167
+==========
+expnum 2
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 9504
+pathlen 14614
+exectime 7.064
+deviation 0.94680919987
+==========
+expnum 3
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 25523
+pathlen 22062
+exectime 18.365
+deviation 0.944071205443
+==========
+expnum 4
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 8736
+pathlen 27140
+exectime 6.621
+deviation 0.89103384878
+==========
+expnum 5
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 11857
+pathlen 19596
+exectime 8.752
+deviation 0.96016463325
+==========
+expnum 6
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 13129
+pathlen 39144
+exectime 9.805
+deviation 0.919132149901
+==========
+expnum 7
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 8229
+pathlen 40253
+exectime 6.167
+deviation 0.846700742517
+==========
+expnum 8
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 10165
+pathlen 47997
+exectime 7.651
+deviation 0.936362394897
+==========
+expnum 9
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 13249
+pathlen 60269
+exectime 9.954
+deviation 0.996198284269
+==========
+expnum 10
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 27961
+pathlen 26970
+exectime 19.772
+deviation 0.99358974359
+==========
+expnum 11
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 16531
+pathlen 65722
+exectime 11.829
+deviation 0.997087113512
+==========
+expnum 12
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 7660
+pathlen 65320
+exectime 5.602
+deviation 1.11639036062
+==========
+expnum 13
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 15272
+pathlen 24144
+exectime 11.218
+deviation 0.86034992695
+==========
+expnum 14
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 7652
+pathlen 26290
+exectime 5.734
+deviation 0.998784286908
+==========
+expnum 15
+algo pwsa
+w 1.5
+proc 8
+---
+expanded 15090
+pathlen 25231
+exectime 11.22
+deviation 0.904985652798
+==========
+expnum 0
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 5686
+pathlen 14150
+exectime 2.707
+deviation 1.08420810666
+==========
+expnum 1
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 5348
+pathlen 12121
+exectime 2.532
+deviation 0.827259077259
+==========
+expnum 2
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 19776
+pathlen 13319
+exectime 8.452
+deviation 0.862908973113
+==========
+expnum 3
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 23156
+pathlen 21911
+exectime 10.04
+deviation 0.937609653815
+==========
+expnum 4
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 14448
+pathlen 25645
+exectime 5.962
+deviation 0.841951475754
+==========
+expnum 5
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 20615
+pathlen 19861
+exectime 8.482
+deviation 0.973149100887
+==========
+expnum 6
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 18816
+pathlen 46902
+exectime 7.624
+deviation 1.10129613976
+==========
+expnum 7
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 9956
+pathlen 40162
+exectime 4.563
+deviation 0.844786605246
+==========
+expnum 8
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 17455
+pathlen 47756
+exectime 7.265
+deviation 0.931660781521
+==========
+expnum 9
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 23466
+pathlen 56573
+exectime 10.068
+deviation 0.935106365394
+==========
+expnum 10
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 17692
+pathlen 26717
+exectime 7.84
+deviation 0.984269083407
+==========
+expnum 11
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 29086
+pathlen 56366
+exectime 11.931
+deviation 0.855144582335
+==========
+expnum 12
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 12513
+pathlen 65421
+exectime 5.224
+deviation 1.11811656127
+==========
+expnum 13
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 18218
+pathlen 24131
+exectime 7.865
+deviation 0.859886683533
+==========
+expnum 14
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 10257
+pathlen 25349
+exectime 4.687
+deviation 0.963034723805
+==========
+expnum 15
+algo pwsa
+w 1.5
+proc 16
+---
+expanded 9557
+pathlen 23181
+exectime 4.041
+deviation 0.831456241033
+==========
+expnum 0
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 7054
+pathlen 14135
+exectime 2.507
+deviation 1.08305876944
+==========
+expnum 1
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 7650
+pathlen 12191
+exectime 2.672
+deviation 0.832036582037
+==========
+expnum 2
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 22563
+pathlen 13932
+exectime 7.292
+deviation 0.902623906706
+==========
+expnum 3
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 25087
+pathlen 21648
+exectime 8.092
+deviation 0.926355428131
+==========
+expnum 4
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 17305
+pathlen 27262
+exectime 6.128
+deviation 0.895039233067
+==========
+expnum 5
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 21249
+pathlen 20158
+exectime 6.906
+deviation 0.987701504238
+==========
+expnum 6
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 26953
+pathlen 45196
+exectime 8.719
+deviation 1.06123790739
+==========
+expnum 7
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 13775
+pathlen 40159
+exectime 4.609
+deviation 0.844723501819
+==========
+expnum 8
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 24973
+pathlen 47610
+exectime 8.219
+deviation 0.928812501219
+==========
+expnum 9
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 42441
+pathlen 60084
+exectime 13.543
+deviation 0.993140382486
+==========
+expnum 10
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 34511
+pathlen 26336
+exectime 10.991
+deviation 0.970232832302
+==========
+expnum 11
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 44520
+pathlen 56185
+exectime 14.246
+deviation 0.852398579968
+==========
+expnum 12
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 19112
+pathlen 65361
+exectime 6.138
+deviation 1.11709109554
+==========
+expnum 13
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 25532
+pathlen 24155
+exectime 8.752
+deviation 0.860741902149
+==========
+expnum 14
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 19129
+pathlen 22869
+exectime 6.119
+deviation 0.868816959198
+==========
+expnum 15
+algo pwsa
+w 1.5
+proc 24
+---
+expanded 23067
+pathlen 25128
+exectime 8.026
+deviation 0.901291248207
+==========

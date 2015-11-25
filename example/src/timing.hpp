@@ -5,6 +5,18 @@
 
 namespace timing {
 
+// takes approximately 5e-5 secs on PBBS
+// int contention_free_loop() {
+//   int x = 0;
+//   for (int i = 1; i < 56; i++) {
+//     for (int j = 1; j < 100; j++) {
+//       x += i / j;
+//       __asm__ __volatile__("");
+//     }
+//   }
+//   return x;
+// }
+
 inline uint64_t now() {
   struct timeval X;
   gettimeofday(&X, NULL);

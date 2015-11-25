@@ -1,0 +1,1800 @@
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 494
+sc 72
+dr 3
+dc 373
+opt 637.4908
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 18.5656
+utilization 1.0000
+expanded 46408
+pathlen 637.4908
+deviation 1.000000026
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 494
+sc 72
+dr 3
+dc 373
+opt 637.4908
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 2.7834
+utilization 1.0000
+expanded 6956
+pathlen 637.4908
+deviation 1.000000026
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 494
+sc 72
+dr 3
+dc 373
+opt 637.4908
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 1.1437
+utilization 1.0000
+expanded 2857
+pathlen 641.1476
+deviation 1.005736265
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 509
+sc 55
+dr 29
+dc 379
+opt 637.189
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 16.5926
+utilization 1.0000
+expanded 41475
+pathlen 637.189
+deviation 0.9999999594
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 509
+sc 55
+dr 29
+dc 379
+opt 637.189
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 2.5258
+utilization 1.0000
+expanded 6312
+pathlen 637.189
+deviation 0.9999999594
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 509
+sc 55
+dr 29
+dc 379
+opt 637.189
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 1.4224
+utilization 1.0000
+expanded 3553
+pathlen 643.0884
+deviation 1.009258436
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 132
+sc 486
+dr 493
+dc 39
+opt 636.402
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 26.1513
+utilization 1.0000
+expanded 65365
+pathlen 636.402
+deviation 1.000000035
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 132
+sc 486
+dr 493
+dc 39
+opt 636.402
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 11.1629
+utilization 1.0000
+expanded 27899
+pathlen 636.402
+deviation 1.000000035
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 132
+sc 486
+dr 493
+dc 39
+opt 636.402
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 2.7189
+utilization 1.0000
+expanded 6794
+pathlen 636.402
+deviation 1.000000035
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 471
+sc 20
+dr 171
+dc 501
+opt 636.0056
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 20.3727
+utilization 1.0000
+expanded 50926
+pathlen 636.0056
+deviation 0.999999976
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 471
+sc 20
+dr 171
+dc 501
+opt 636.0056
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 5.3049
+utilization 1.0000
+expanded 13259
+pathlen 636.0056
+deviation 0.999999976
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 471
+sc 20
+dr 171
+dc 501
+opt 636.0056
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 1.5829
+utilization 1.0000
+expanded 3955
+pathlen 636.0056
+deviation 0.999999976
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 91
+sc 474
+dr 480
+dc 55
+opt 635.9168
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 24.4245
+utilization 1.0000
+expanded 61048
+pathlen 635.9168
+deviation 0.9999999857
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 91
+sc 474
+dr 480
+dc 55
+opt 635.9168
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 11.5452
+utilization 1.0000
+expanded 28854
+pathlen 636.5026
+deviation 1.000921175
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 91
+sc 474
+dr 480
+dc 55
+opt 635.9168
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 1.8882
+utilization 1.0000
+expanded 4718
+pathlen 641.189
+deviation 1.008290693
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 167
+sc 502
+dr 484
+dc 30
+opt 635.8044
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 26.9831
+utilization 1.0000
+expanded 67446
+pathlen 635.8044
+deviation 1.000000028
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 167
+sc 502
+dr 484
+dc 30
+opt 635.8044
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 11.9172
+utilization 1.0000
+expanded 29784
+pathlen 636.7334
+deviation 1.001461169
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 167
+sc 502
+dr 484
+dc 30
+opt 635.8044
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 2.8273
+utilization 1.0000
+expanded 7065
+pathlen 636.7334
+deviation 1.001461169
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 507
+sc 29
+dr 45
+dc 356
+opt 635.1416
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 16.7812
+utilization 1.0000
+expanded 41946
+pathlen 635.1416
+deviation 0.9999999975
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 507
+sc 29
+dr 45
+dc 356
+opt 635.1416
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 3.7303
+utilization 1.0000
+expanded 9323
+pathlen 643.1772
+deviation 1.012651664
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 507
+sc 29
+dr 45
+dc 356
+opt 635.1416
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 2.2957
+utilization 1.0000
+expanded 5737
+pathlen 644.5914
+deviation 1.014878255
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 475
+sc 66
+dr 0
+dc 363
+opt 634.5204
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 20.6441
+utilization 1.0000
+expanded 51604
+pathlen 634.5204
+deviation 1.000000022
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 475
+sc 66
+dr 0
+dc 363
+opt 634.5204
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 5.1548
+utilization 1.0000
+expanded 12882
+pathlen 634.5204
+deviation 1.000000022
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 475
+sc 66
+dr 0
+dc 363
+opt 634.5204
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 1.4258
+utilization 1.0000
+expanded 3562
+pathlen 637.1062
+deviation 1.004075226
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 472
+sc 48
+dr 10
+dc 372
+opt 633.899
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 19.4595
+utilization 1.0000
+expanded 48641
+pathlen 633.899
+deviation 1.000000021
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 472
+sc 48
+dr 10
+dc 372
+opt 633.899
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 2.9841
+utilization 1.0000
+expanded 7458
+pathlen 642.5204
+deviation 1.01360061
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 472
+sc 48
+dr 10
+dc 372
+opt 633.899
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 1.9753
+utilization 1.0000
+expanded 4936
+pathlen 645.3488
+deviation 1.01806252
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 93
+sc 479
+dr 449
+dc 46
+opt 632.7984
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 26.4655
+utilization 1.0000
+expanded 66150
+pathlen 632.7984
+deviation 0.9999999986
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 93
+sc 479
+dr 449
+dc 46
+opt 632.7984
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 20.4073
+utilization 1.0000
+expanded 51004
+pathlen 641.4198
+deviation 1.013624243
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/sc1/Expedition.map.min-2
+sr 93
+sc 479
+dr 449
+dc 46
+opt 632.7984
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 6.7963
+utilization 1.0000
+expanded 16984
+pathlen 649.2008
+deviation 1.025920418
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 212
+sc 19
+dr 30
+dc 303
+opt 3749.06
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 70.3833
+utilization 1.0000
+expanded 175945
+pathlen 3749.0578
+deviation 0.9999993976
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 212
+sc 19
+dr 30
+dc 303
+opt 3749.06
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 70.0799
+utilization 1.0000
+expanded 175195
+pathlen 3749.0578
+deviation 0.9999993976
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 212
+sc 19
+dr 30
+dc 303
+opt 3749.06
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 69.8499
+utilization 1.0000
+expanded 174619
+pathlen 3749.8862
+deviation 1.00022036
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 21
+sc 87
+dr 233
+dc 52
+opt 3748.1
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 82.1125
+utilization 1.0000
+expanded 205278
+pathlen 3748.0992
+deviation 0.9999997605
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 21
+sc 87
+dr 233
+dc 52
+opt 3748.1
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.9537
+utilization 1.0000
+expanded 204879
+pathlen 3748.0992
+deviation 0.9999997605
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 21
+sc 87
+dr 233
+dc 52
+opt 3748.1
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.7904
+utilization 1.0000
+expanded 204471
+pathlen 3749.5134
+deviation 1.000377072
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 139
+sc 33
+dr 67
+dc 106
+opt 3747.09
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 70.4497
+utilization 1.0000
+expanded 176120
+pathlen 3747.0874
+deviation 0.9999992827
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 139
+sc 33
+dr 67
+dc 106
+opt 3747.09
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 70.2504
+utilization 1.0000
+expanded 175622
+pathlen 3747.0874
+deviation 0.9999992827
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 139
+sc 33
+dr 67
+dc 106
+opt 3747.09
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 70.0346
+utilization 1.0000
+expanded 175082
+pathlen 3747.9158
+deviation 1.000220361
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 169
+sc 8
+dr 81
+dc 48
+opt 3747.06
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 71.0082
+utilization 1.0000
+expanded 177517
+pathlen 3747.0578
+deviation 0.9999993972
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 169
+sc 8
+dr 81
+dc 48
+opt 3747.06
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 70.6952
+utilization 1.0000
+expanded 176734
+pathlen 3747.0578
+deviation 0.9999993972
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 169
+sc 8
+dr 81
+dc 48
+opt 3747.06
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 70.3774
+utilization 1.0000
+expanded 175939
+pathlen 3750.1288
+deviation 1.000818973
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 118
+sc 28
+dr 147
+dc 17
+opt 3746.57
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.5594
+utilization 1.0000
+expanded 203895
+pathlen 3746.5726
+deviation 1.000000676
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 118
+sc 28
+dr 147
+dc 17
+opt 3746.57
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.3173
+utilization 1.0000
+expanded 203289
+pathlen 3746.5726
+deviation 1.000000676
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 118
+sc 28
+dr 147
+dc 17
+opt 3746.57
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.2732
+utilization 1.0000
+expanded 203178
+pathlen 3747.401
+deviation 1.000221785
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 216
+sc 13
+dr 108
+dc 31
+opt 3745.64
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 69.9648
+utilization 1.0000
+expanded 174909
+pathlen 3745.6436
+deviation 1.00000099
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 216
+sc 13
+dr 108
+dc 31
+opt 3745.64
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 69.5511
+utilization 1.0000
+expanded 173873
+pathlen 3745.6436
+deviation 1.00000099
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 216
+sc 13
+dr 108
+dc 31
+opt 3745.64
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 69.1699
+utilization 1.0000
+expanded 172920
+pathlen 3746.472
+deviation 1.000222154
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 102
+sc 497
+dr 219
+dc 31
+opt 3744.93
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.5918
+utilization 1.0000
+expanded 203976
+pathlen 3744.9276
+deviation 0.9999993774
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 102
+sc 497
+dr 219
+dc 31
+opt 3744.93
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.4528
+utilization 1.0000
+expanded 203627
+pathlen 3744.9276
+deviation 0.9999993774
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 102
+sc 497
+dr 219
+dc 31
+opt 3744.93
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.3920
+utilization 1.0000
+expanded 203475
+pathlen 3746.5844
+deviation 1.000441789
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 459
+sc 82
+dr 191
+dc 409
+opt 3744.58
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 77.7801
+utilization 1.0000
+expanded 194447
+pathlen 3744.5844
+deviation 1.000001154
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 459
+sc 82
+dr 191
+dc 409
+opt 3744.58
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 77.5251
+utilization 1.0000
+expanded 193808
+pathlen 3744.5844
+deviation 1.000001154
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 459
+sc 82
+dr 191
+dc 409
+opt 3744.58
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 76.7930
+utilization 1.0000
+expanded 191977
+pathlen 3744.5844
+deviation 1.000001154
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 403
+sc 96
+dr 183
+dc 393
+opt 3744.34
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.4730
+utilization 1.0000
+expanded 203679
+pathlen 3744.3418
+deviation 1.000000457
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 403
+sc 96
+dr 183
+dc 393
+opt 3744.34
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 81.0701
+utilization 1.0000
+expanded 202670
+pathlen 3744.3418
+deviation 1.000000457
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 403
+sc 96
+dr 183
+dc 393
+opt 3744.34
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 80.2795
+utilization 1.0000
+expanded 200693
+pathlen 3744.9276
+deviation 1.000156907
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 211
+sc 402
+dr 201
+dc 84
+opt 3743.93
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 75.5017
+utilization 1.0000
+expanded 188751
+pathlen 3743.9276
+deviation 0.9999993772
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 211
+sc 402
+dr 201
+dc 84
+opt 3743.93
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 75.2114
+utilization 1.0000
+expanded 188024
+pathlen 3743.9276
+deviation 0.9999993772
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/mazes/maze512-4-0.map
+sr 211
+sc 402
+dr 201
+dc 84
+opt 3743.93
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 74.6495
+utilization 1.0000
+expanded 186619
+pathlen 3745.3418
+deviation 1.000377109
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 167
+sc 85
+dr 485
+dc 299
+opt 509.065
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.5702
+utilization 1.0000
+expanded 21424
+pathlen 509.0648
+deviation 0.9999996023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 167
+sc 85
+dr 485
+dc 299
+opt 509.065
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 6.4484
+utilization 1.0000
+expanded 16118
+pathlen 509.0648
+deviation 0.9999996023
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 167
+sc 85
+dr 485
+dc 299
+opt 509.065
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 5.7909
+utilization 1.0000
+expanded 14474
+pathlen 509.8932
+deviation 1.001626899
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 250
+sc 415
+dr 437
+dc 331
+opt 508.325
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 9.6892
+utilization 1.0000
+expanded 24222
+pathlen 508.3252
+deviation 1.000000369
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 250
+sc 415
+dr 437
+dc 331
+opt 508.325
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 9.1954
+utilization 1.0000
+expanded 22986
+pathlen 508.3252
+deviation 1.000000369
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 250
+sc 415
+dr 437
+dc 331
+opt 508.325
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.8400
+utilization 1.0000
+expanded 22097
+pathlen 508.3252
+deviation 1.000000369
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 286
+sc 416
+dr 376
+dc 196
+opt 508.154
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 9.5540
+utilization 1.0000
+expanded 23884
+pathlen 508.1536
+deviation 0.9999992292
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 286
+sc 416
+dr 376
+dc 196
+opt 508.154
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 9.2562
+utilization 1.0000
+expanded 23139
+pathlen 508.1536
+deviation 0.9999992292
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 286
+sc 416
+dr 376
+dc 196
+opt 508.154
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.8491
+utilization 1.0000
+expanded 22121
+pathlen 508.982
+deviation 1.001629444
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 184
+sc 434
+dr 353
+dc 90
+opt 507.822
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 10.7549
+utilization 1.0000
+expanded 26886
+pathlen 507.8222
+deviation 1.000000412
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 184
+sc 434
+dr 353
+dc 90
+opt 507.822
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 9.5742
+utilization 1.0000
+expanded 23933
+pathlen 507.8222
+deviation 1.000000412
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 184
+sc 434
+dr 353
+dc 90
+opt 507.822
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.3655
+utilization 1.0000
+expanded 20911
+pathlen 512.55
+deviation 1.009310367
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 228
+sc 147
+dr 341
+dc 264
+opt 507.692
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.7788
+utilization 1.0000
+expanded 21946
+pathlen 507.692
+deviation 1.000000027
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 228
+sc 147
+dr 341
+dc 264
+opt 507.692
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 7.5602
+utilization 1.0000
+expanded 18899
+pathlen 507.692
+deviation 1.000000027
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 228
+sc 147
+dr 341
+dc 264
+opt 507.692
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 7.1012
+utilization 1.0000
+expanded 17751
+pathlen 507.692
+deviation 1.000000027
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 319
+sc 52
+dr 163
+dc 389
+opt 507.621
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.0141
+utilization 1.0000
+expanded 20034
+pathlen 507.621
+deviation 0.9999999957
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 319
+sc 52
+dr 163
+dc 389
+opt 507.621
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 6.2210
+utilization 1.0000
+expanded 15551
+pathlen 507.621
+deviation 0.9999999957
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 319
+sc 52
+dr 163
+dc 389
+opt 507.621
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 5.1369
+utilization 1.0000
+expanded 12841
+pathlen 507.621
+deviation 0.9999999957
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 204
+sc 470
+dr 441
+dc 370
+opt 506.793
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 9.4256
+utilization 1.0000
+expanded 23563
+pathlen 506.7926
+deviation 0.9999992122
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 204
+sc 470
+dr 441
+dc 370
+opt 506.793
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.7676
+utilization 1.0000
+expanded 21915
+pathlen 506.7926
+deviation 0.9999992122
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 204
+sc 470
+dr 441
+dc 370
+opt 506.793
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 8.3070
+utilization 1.0000
+expanded 20763
+pathlen 507.621
+deviation 1.001633805
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 113
+sc 331
+dr 394
+dc 409
+opt 506.793
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 10.8412
+utilization 1.0000
+expanded 27102
+pathlen 506.7926
+deviation 0.9999992122
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 113
+sc 331
+dr 394
+dc 409
+opt 506.793
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 10.5777
+utilization 1.0000
+expanded 26438
+pathlen 506.7926
+deviation 0.9999992122
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 113
+sc 331
+dr 394
+dc 409
+opt 506.793
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 10.2053
+utilization 1.0000
+expanded 25507
+pathlen 507.3784
+deviation 1.001155108
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 401
+sc 27
+dr 191
+dc 354
+opt 506.751
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 7.7741
+utilization 1.0000
+expanded 19434
+pathlen 506.7512
+deviation 1.000000381
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 401
+sc 27
+dr 191
+dc 354
+opt 506.751
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 6.8477
+utilization 1.0000
+expanded 17118
+pathlen 506.7512
+deviation 1.000000381
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 401
+sc 27
+dr 191
+dc 354
+opt 506.751
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 5.9026
+utilization 1.0000
+expanded 14755
+pathlen 506.7512
+deviation 1.000000381
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 168
+sc 400
+dr 464
+dc 293
+opt 506.633
+algo wA*
+w 1.0
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 12.1013
+utilization 1.0000
+expanded 30252
+pathlen 506.6328
+deviation 0.9999996139
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 168
+sc 400
+dr 464
+dc 293
+opt 506.633
+algo wA*
+w 1.1
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 11.0059
+utilization 1.0000
+expanded 27512
+pathlen 508.3488
+deviation 1.003386681
+==========
+machine pbbs
+prog ./scripts/select_algo.py
+map maps/bgmaps/AR0602SR.map
+sr 168
+sc 400
+dr 464
+dc 293
+opt 506.633
+algo wA*
+w 1.2
+proc 1
+exptime 0.00005
+---
+timeout -1
+exectime 10.6227
+utilization 1.0000
+expanded 26552
+pathlen 508.3488
+deviation 1.003386681
+==========

@@ -194,6 +194,11 @@ public:
   }
 
   void simulate_get_successors(double exptime) {
+    // int x = 0;
+    // for (int i = 0; i < 8; i++) {
+    //   x += timing::contention_free_loop();
+    // }
+    // return x;
     timing::busy_loop_secs(8.0 * exptime);
   }
 

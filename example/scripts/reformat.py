@@ -5,8 +5,8 @@ import sys
 import ast
 
 def simplifyResults(results):
-  floatyKeys = ["exectime", "pathlen", "expanded"]
-#  floatyKeys = ["exectime", "pathlen", "expanded", "deviation"]
+#  floatyKeys = ["exectime", "pathlen", "expanded"]
+  floatyKeys = ["exectime", "pathlen", "expanded", "deviation"]
   # try:
   #   print results['expanded']
   # except:
