@@ -69,7 +69,7 @@ COMPILE_OPTIONS_FOR_cilk=$(OPTIONS_cilk) $(OPTIONS_O2)
 
 # Folders where to find all the header files and main sources
 
-INCLUDES=. src ../../src/pwsa/ $(SEQUTIL_PATH) $(PARUTIL_PATH) $(SCHED_PATH) $(PBBS_PATH) $(MALLOC_COUNT_PATH)
+INCLUDES=. src ../../src/pwsa/ ../../src/shared/ $(SEQUTIL_PATH) $(PARUTIL_PATH) $(SCHED_PATH) $(PBBS_PATH) $(MALLOC_COUNT_PATH)
 
 # Folders where to find all the source files
 
@@ -84,6 +84,12 @@ all: opt
 opt: $(PROGRAMS:.cpp=.opt)
 
 fib.all: $(call all_modes_for,fib)
+
+pase_main.opt:
+	g++ src/pase_main.cpp -I../../src/shared/ -lpthread -o pase_main.opt
+
+pastar_main.opt:
+	g++ src/pastar_main.cpp -I../../src/shared/ -lpthread -o pastar_main.opt
 
 # example
 # make fib.opt && make benchtools
