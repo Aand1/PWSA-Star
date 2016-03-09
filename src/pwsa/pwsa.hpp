@@ -164,6 +164,7 @@ pwsa_pathcorrect_locality(GRAPH& graph, const HEURISTIC& heuristic,
     return false;
   };
 
+//  pasl::sched::native::parallel_while_pwsa_maybe_faster(initF, size, fork, do_work);
   pasl::sched::native::parallel_while_pwsa(initF, size, fork, do_work);
   return states;
 }
@@ -230,10 +231,10 @@ pwsa_locality(GRAPH& graph, const HEURISTIC& heuristic,
     steps_since_load_balancing.mine() = 0;
   };
 
-  auto do_work = [&] (std::atomic<bool>& is_done, HEAP& frontier) {
+  auto do_work = [&] (/*std::atomic<bool>& is_done, */HEAP& frontier) {
   //auto do_work = [&] (bool& is_done, HEAP& frontier) {
     int steps_this_round = 0;
-    while (steps_this_round < poll_cutoff && frontier.size() > 0 && !is_done.load()) {
+    while (steps_this_round < poll_cutoff && frontier.size() > 0 /*&& !is_done.load()*/) {
       int v = frontier.delete_min();
       steps_this_round++;
 
@@ -242,9 +243,7 @@ pwsa_locality(GRAPH& graph, const HEURISTIC& heuristic,
         //if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
 
         if (v == destination) {
-          is_done.store(true);
-          //is_done = true;
-          return;
+          return true;
         }
 
         // SIMULATE EXPANSION
@@ -262,9 +261,10 @@ pwsa_locality(GRAPH& graph, const HEURISTIC& heuristic,
       }
     }
     steps_since_load_balancing.mine() += steps_this_round;
+    return false;
   };
 
-  pasl::sched::native::parallel_while_pwsa_maybe_faster(initF, size, fork, do_work);
+  pasl::sched::native::parallel_while_pwsa(initF, size, fork, do_work);
   return states;
 }
 

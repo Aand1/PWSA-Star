@@ -727,7 +727,8 @@ void parallel_while_pwsa_maybe_faster(Input& input, const Size_input& size_input
           break;
         } else { // have some work to do
           // TODO: should communicate first, before working
-          body(is_done, my_frontier);
+          bool found_dst = body(my_frontier);
+          if (found_dst) { is_done.store(true); }
           // communicate
           //msg([&] { std::cout << "communicate my_id=" << my_id << std::endl; });
           request_type req = request[my_id].load();
