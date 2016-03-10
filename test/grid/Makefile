@@ -30,7 +30,8 @@ VERBOSE_DEPENDENCIES=0
 PROGRAMS=\
 	pwsa_main.cpp \
 	astar_main.cpp \
-	wpanre_main.cpp
+	wpanre_main.cpp \
+	my_pase_main.cpp
 #       add reference to your cpp source here
 
 ####################################################################
@@ -69,7 +70,7 @@ COMPILE_OPTIONS_FOR_cilk=$(OPTIONS_cilk) $(OPTIONS_O2)
 
 # Folders where to find all the header files and main sources
 
-INCLUDES=. src ../../src/pwsa/ ../../src/shared/ $(SEQUTIL_PATH) $(PARUTIL_PATH) $(SCHED_PATH) $(PBBS_PATH) $(MALLOC_COUNT_PATH)
+INCLUDES=. src ../../src/pwsa/ ../../src/pase/ ../../src/shared/ $(SEQUTIL_PATH) $(PARUTIL_PATH) $(SCHED_PATH) $(PBBS_PATH) $(MALLOC_COUNT_PATH)
 
 # Folders where to find all the source files
 

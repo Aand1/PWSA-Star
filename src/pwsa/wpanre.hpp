@@ -54,10 +54,6 @@ wpanre(GRAPH& graph, const HEURISTIC& heuristic,
   frontier.insert(heur, source);
 
   std::atomic<bool> is_done(false);
-  bool is_dones[32];
-  for (int i = 0; i < 32; i++) {
-    is_dones[i] = false;
-  }
 
   auto body = [&] {
 
@@ -82,11 +78,6 @@ wpanre(GRAPH& graph, const HEURISTIC& heuristic,
 
         if (v == destination) {
           is_done.store(true);
-          for (int i = 0; i < 32; i++) {
-            is_dones[i] = true;
-          }
-          asm("MFENCE");
-
           return;
         }
 
