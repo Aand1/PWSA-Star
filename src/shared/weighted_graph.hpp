@@ -10,6 +10,7 @@
 
 #include <fstream>
 #include "timing.hpp"
+#include "result.hpp"
 
 using namespace std;
 
@@ -166,6 +167,18 @@ public:
     fclose(fout);
   }
 
+  void pebble_dump(SearchResult* result, int src, int dst, const char* fname) {
+    int* pebbles = new int[vertices.size()];
+    int* predecessors = new int[vertices.size()];
+    for (int i = 0; i < vertices.size(); i++) {
+      pebbles[i] = result->pebble(i);
+      predecessors[i] = result->predecessor(i);
+    }
+    pebble_dump(pebbles, predecessors, src, dst, fname);
+    delete [] pebbles;
+    delete [] predecessors;
+  }
+
   int number_vertices() {
     return vertices.size();
   }
@@ -180,25 +193,9 @@ public:
 
   int degree(int v) {
     return neighbor_offsets[v+1] - neighbor_offsets[v];
-    // int deg = 0;
-    // for (int i = 0; i < 8; i++) {
-    //   int nghrow = vertices[v].row + drow[i];
-    //   int nghcol = vertices[v].col + dcol[i];
-    //   if (0 <= nghrow && nghrow < height &&
-    //       0 <= nghcol && nghcol < width &&
-    //       grid[nghrow][nghcol] != OBSTACLE) {
-    //     deg++;
-    //   }
-    // }
-    // return deg;
   }
 
   void simulate_get_successors(double exptime) {
-    // int x = 0;
-    // for (int i = 0; i < 8; i++) {
-    //   x += timing::contention_free_loop();
-    // }
-    // return x;
     timing::busy_loop_secs(8.0 * exptime);
   }
 
@@ -209,15 +206,6 @@ public:
       neighbor u = neighbors[neighbor_offsets[v] + i];
       f(u.vertex, u.weight);
     }
-    // for (int i = start; i < end; i++) {
-    //   int nghrow = vertices[v].row + drow[i];
-    //   int nghcol = vertices[v].col + dcol[i];
-    //   if (0 <= nghrow && nghrow < height &&
-    //       0 <= nghcol && nghcol < width &&
-    //       grid[nghrow][nghcol] != OBSTACLE) {
-    //     f(grid[nghrow][nghcol], dist[i]);
-    //   }
-    // }
   }
 
   template <class FUNC>
@@ -227,15 +215,6 @@ public:
       neighbor u = neighbors[neighbor_offsets[v] + i];
       f(u.vertex, u.weight);
     }
-    // for (int i = 0; i < 8; i++) {
-    //   int nghrow = vertices[v].row + drow[i];
-    //   int nghcol = vertices[v].col + dcol[i];
-    //   if (0 <= nghrow && nghrow < height &&
-    //       0 <= nghcol && nghcol < width &&
-    //       grid[nghrow][nghcol] != OBSTACLE) {
-    //     f(grid[nghrow][nghcol], dist[i]);
-    //   }
-    // }
   }
 
   int weight_between(int u, int v) {
@@ -250,9 +229,17 @@ public:
     else if (diff == 1) return 10000;
     else if (diff == 2) return 14142;
     else {
-      std::cerr << "ERROR (weight_between): vertices not adjacent." << std::endl;
+      std::cerr << "ERROR (weight_between): vertices (" << u << "," << v << ") not adjacent" << std::endl;
       std::exit(EXIT_FAILURE);
     }
+  }
+
+  int pathlen(SearchResult* res, int src, int dst) {
+    int len = 0;
+    for (int curr = dst; curr != src; curr = res->predecessor(curr)) {
+      len += weight_between(curr, res->predecessor(curr));
+    }
+    return len;
   }
 
   int pathlen(int* predecessors, int src, int dst) {

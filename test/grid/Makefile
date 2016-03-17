@@ -28,10 +28,7 @@ VERBOSE_MAKE=0
 VERBOSE_DEPENDENCIES=0
 
 PROGRAMS=\
-	pwsa_main.cpp \
-	astar_main.cpp \
-	wpanre_main.cpp \
-	my_pase_main.cpp
+	grid_main.cpp
 #       add reference to your cpp source here
 
 ####################################################################

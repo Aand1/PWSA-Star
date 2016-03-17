@@ -8,64 +8,80 @@
 #include "native.hpp"
 #include "parallel_while.hpp"
 #include "bin_heap.hpp"
-#include <cstring>
+#include "result.hpp"
 #include <climits>
 
 #ifndef _PWSA_H_
 #define _PWSA_H_
 
-static inline void pmemset(char * ptr, int value, size_t num) {
-  const size_t cutoff = 100000;
-  if (num <= cutoff) {
-    std::memset(ptr, value, num);
-  } else {
-    long m = num/2;
-    pasl::sched::native::fork2([&] {
-      pmemset(ptr, value, m);
-    }, [&] {
-      pmemset(ptr+m, value, num-m);
-    });
-  }
-}
+// static inline void pmemset(char * ptr, int value, size_t num) {
+//   const size_t cutoff = 100000;
+//   if (num <= cutoff) {
+//     std::memset(ptr, value, num);
+//   } else {
+//     long m = num/2;
+//     pasl::sched::native::fork2([&] {
+//       pmemset(ptr, value, m);
+//     }, [&] {
+//       pmemset(ptr+m, value, num-m);
+//     });
+//   }
+// }
+//
+// template <class Number, class Size>
+// void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
+//   pmemset((char*)array, val, sz*sizeof(Number));
+// }
 
-template <class Number, class Size>
-void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
-  pmemset((char*)array, val, sz*sizeof(Number));
-}
+// ===========================================================================
+// ===========================================================================
+// ===========================================================================
+
+// const bool debug_print = true;
+// template <class Body>
+// void msg(const Body& b) {
+//   if (debug_print)
+//     pasl::util::atomic::msg(b);
+// }
 
 struct vertpack {
   int distance;
   int pred;
 };
 
-// ===========================================================================
-// ===========================================================================
-// ===========================================================================
-
-struct state {
+struct pwsapc_state {
   std::atomic<bool> is_expanded;
   std::atomic<vertpack> gpred;
   int h;
 };
 
-const bool debug_print = true;
-template <class Body>
-void msg(const Body& b) {
-  if (debug_print)
-    pasl::util::atomic::msg(b);
-}
+class PWSAPCResult : public SearchResult {
+private:
+  int n;
+  pwsapc_state* states;
+  int* pebbles;
+
+public:
+  PWSAPCResult(int n, pwsapc_state* states, int* pebbles)
+  : n(n), states(states), pebbles(pebbles) { }
+
+  ~PWSAPCResult() override { free(states); if (pebbles) free(pebbles); }
+
+  bool is_expanded(int vertex) override { return states[vertex].is_expanded.load(); }
+  int predecessor(int vertex) override { return states[vertex].gpred.load().pred; }
+  int g(int vertex) override { return states[vertex].gpred.load().distance; }
+  int pebble(int vertex) override { return (pebbles ? pebbles[vertex] : -1); }
+};
 
 template <class GRAPH, class HEAP, class HEURISTIC>
-state*
-pwsa_pathcorrect_locality(GRAPH& graph, const HEURISTIC& heuristic,
-                          const int& source, const int& destination,
-                          int split_cutoff, int poll_cutoff, double exptime,
-                          int& important, int* pebbles = nullptr) {
+SearchResult*
+pwsa_pc(GRAPH& graph, const HEURISTIC& heuristic,
+        const int& source, const int& destination,
+        int split_cutoff, int poll_cutoff, double exptime,
+        bool pebble) {
   int N = graph.number_vertices();
-  state* states = pasl::data::mynew_array<state>(N);
-  // std::atomic<bool>* is_expanded = pasl::data::mynew_array<std::atomic<bool>>(N);
-  // std::atomic<vertpack>* gpred = pasl::data::mynew_array<std::atomic<vertpack>>(N);
-  // fill_array_par(is_expanded, N, false);
+  pwsapc_state* states = pasl::data::mynew_array<pwsapc_state>(N);
+
   pasl::sched::native::parallel_for(0, N, [&] (int i) {
     states[i].is_expanded.store(false);
 
@@ -77,10 +93,15 @@ pwsa_pathcorrect_locality(GRAPH& graph, const HEURISTIC& heuristic,
     states[i].h = -1;
   });
 
+  int* pebbles = nullptr;
+  if (pebble) {
+    pebbles = pasl::data::mynew_array<int>(N);
+    pasl::sched::native::parallel_for(0, N, [&] (int i) { pebbles[i] = -1; });
+  }
+
   // memoize heuristic
   auto my_heur = [&] (int v) {
-    if (states[v].h == -1)
-      states[v].h = heuristic(v);
+    if (states[v].h == -1) states[v].h = heuristic(v);
     return states[v].h;
   };
 
@@ -115,23 +136,16 @@ pwsa_pathcorrect_locality(GRAPH& graph, const HEURISTIC& heuristic,
     steps_since_load_balancing.mine() = 0;
   };
 
-  auto do_work = [&] (/*std::atomic<bool>& is_done, */HEAP& frontier) {
-  //auto do_work = [&] (bool& is_done, HEAP& frontier) {
+  auto do_work = [&] (HEAP& frontier) {
     int steps_this_round = 0;
-    while (steps_this_round < poll_cutoff && frontier.size() > 0/* && !is_done.load()*/) {
+    while (steps_this_round < poll_cutoff && frontier.size() > 0) {
       int v = frontier.delete_min();
       steps_this_round++;
 
       bool orig = states[v].is_expanded.load();
       if (!orig && states[v].is_expanded.compare_exchange_strong(orig, true)) {
         if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
-
-        if (v == destination) {
-          //is_done.store(true);
-
-          msg([&] { std::cout << "found dst" << std::endl; });
-          return true;
-        }
+        if (v == destination) return true;
 
         // SIMULATE EXPANSION
         graph.simulate_get_successors(exptime);
@@ -164,37 +178,60 @@ pwsa_pathcorrect_locality(GRAPH& graph, const HEURISTIC& heuristic,
     return false;
   };
 
-//  pasl::sched::native::parallel_while_pwsa_maybe_faster(initF, size, fork, do_work);
   pasl::sched::native::parallel_while_pwsa(initF, size, fork, do_work);
-  return states;
+  SearchResult* result = new PWSAPCResult(N, states, pebbles);
+  return result;
 }
 
 // ===========================================================================
 // ===========================================================================
 // ===========================================================================
 
-struct state_simple {
+struct pwsa_state {
   std::atomic<bool> is_expanded;
   int g;
+  int pred;
   int h;
 };
 
+class PWSAResult : public SearchResult {
+private:
+  int n;
+  pwsa_state* states;
+  int* pebbles;
+
+public:
+  PWSAResult(int n, pwsa_state* states, int* pebbles)
+  : n(n), states(states), pebbles(pebbles) { }
+
+  ~PWSAResult() override { free(states); if (pebbles) free(pebbles); }
+
+  bool is_expanded(int vertex) override { return states[vertex].is_expanded.load(); }
+  int predecessor(int vertex) override { return states[vertex].pred; }
+  int g(int vertex) override { return states[vertex].g; }
+  int pebble(int vertex) override { return (pebbles ? pebbles[vertex] : -1); }
+};
+
 template <class GRAPH, class HEAP, class HEURISTIC>
-state_simple*
-pwsa_locality(GRAPH& graph, const HEURISTIC& heuristic,
-              const int& source, const int& destination,
-              int split_cutoff, int poll_cutoff, double exptime,
-              int& important, int* pebbles = nullptr) {
+SearchResult*
+pwsa(GRAPH& graph, const HEURISTIC& heuristic,
+     const int& source, const int& destination,
+     int split_cutoff, int poll_cutoff, double exptime,
+     bool pebble) {
   int N = graph.number_vertices();
-  state_simple* states = pasl::data::mynew_array<state_simple>(N);
-  // std::atomic<bool>* is_expanded = pasl::data::mynew_array<std::atomic<bool>>(N);
-  // std::atomic<vertpack>* gpred = pasl::data::mynew_array<std::atomic<vertpack>>(N);
-  // fill_array_par(is_expanded, N, false);
+  pwsa_state* states = pasl::data::mynew_array<pwsa_state>(N);
   pasl::sched::native::parallel_for(0, N, [&] (int i) {
     states[i].is_expanded.store(false);
     states[i].g = INT_MAX; // "infinite"
+    states[i].pred = -1;
     states[i].h = -1;
   });
+
+  int* pebbles = nullptr;
+  if (pebble) {
+    pebbles = pasl::data::mynew_array<int>(N);
+    pasl::sched::native::parallel_for(0, N, [&] (int i) { pebbles[i] = -1; });
+  }
 
   // memoize heuristic
   auto my_heur = [&] (int v) {
@@ -231,20 +268,16 @@ pwsa_locality(GRAPH& graph, const HEURISTIC& heuristic,
     steps_since_load_balancing.mine() = 0;
   };
 
-  auto do_work = [&] (/*std::atomic<bool>& is_done, */HEAP& frontier) {
-  //auto do_work = [&] (bool& is_done, HEAP& frontier) {
+  auto do_work = [&] (HEAP& frontier) {
     int steps_this_round = 0;
-    while (steps_this_round < poll_cutoff && frontier.size() > 0 /*&& !is_done.load()*/) {
+    while (steps_this_round < poll_cutoff && frontier.size() > 0) {
       int v = frontier.delete_min();
       steps_this_round++;
 
       bool orig = states[v].is_expanded.load();
       if (!orig && states[v].is_expanded.compare_exchange_strong(orig, true)) {
-        //if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
-
-        if (v == destination) {
-          return true;
-        }
+        if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
+        if (v == destination) return true;
 
         // SIMULATE EXPANSION
         graph.simulate_get_successors(exptime);
@@ -256,6 +289,7 @@ pwsa_locality(GRAPH& graph, const HEURISTIC& heuristic,
           if (nbrdist < states[nbr].g) {
             frontier.insert(nbrdist + my_heur(nbr), nbr);
             states[nbr].g = nbrdist;
+            states[nbr].pred = v;
           }
         });
       }
@@ -265,7 +299,8 @@ pwsa_locality(GRAPH& graph, const HEURISTIC& heuristic,
   };
 
   pasl::sched::native::parallel_while_pwsa(initF, size, fork, do_work);
-  return states;
+  SearchResult* result = new PWSAResult(N, states, pebbles);
+  return result;
 }
 
 #endif // _PWSA_H_
