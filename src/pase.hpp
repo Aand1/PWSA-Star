@@ -1,21 +1,14 @@
-//include "array_util.hpp"
 #include "container.hpp"
 #include "native.hpp"
 #include "timing.hpp"
 #include "weighted_graph.hpp"
+#include "search_utils.hpp"
 #include <climits>
 #include <pthread.h>
 #include <map>
-#include "utils.hpp"
 
-#ifndef _MY_PASE_H_
-#define _MY_PASE_H_
-
-const bool debug_print = false;
-template <class Body>
-void atomic_log(const Body& b) {
-  if (debug_print) pasl::util::atomic::msg(b);
-}
+#ifndef _PASE_SEARCH_H_
+#define _PASE_SEARCH_H_
 
 struct pase_state {
   bool is_expanded;
@@ -40,27 +33,6 @@ public:
   int predecessor(int vertex) override { return states[vertex].pred; }
   int g(int vertex) override { return states[vertex].g; }
   int pebble(int vertex) override { return (pebbles ? pebbles[vertex] : -1); }
-};
-
-class Locked {
-private:
-  pthread_mutex_t mutex;
-
-public:
-  Locked() { pthread_mutex_init(&mutex,NULL); }
-
-  template <class Body>
-  void action(const Body& b) {
-    atomic_log([&] { std::cout << pasl::sched::threaddag::get_my_id() << " waiting for lock " << std::endl; });
-    pthread_mutex_lock(&mutex);
-    atomic_log([&] { std::cout << pasl::sched::threaddag::get_my_id() << " successfully locked" << std::endl; });
-
-    b();
-
-    atomic_log([&] { std::cout << pasl::sched::threaddag::get_my_id() << " unlocking" << std::endl; });
-    pthread_mutex_unlock(&mutex);
-    atomic_log([&] { std::cout << pasl::sched::threaddag::get_my_id() << " successfully unlocked" << std::endl; });
-  }
 };
 
 // ===========================================================================
@@ -203,4 +175,4 @@ pase(GRAPH& graph, const HEURISTIC& heuristic,
   return result;
 }
 
-#endif // _MY_PASE_H_
+#endif // _PASE_SEARCH_H_

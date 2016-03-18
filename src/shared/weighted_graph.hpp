@@ -10,7 +10,7 @@
 
 #include <fstream>
 #include "timing.hpp"
-#include "result.hpp"
+#include "search_utils.hpp"
 
 using namespace std;
 

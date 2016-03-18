@@ -3,7 +3,7 @@
  *
  * \file astar.hpp
  */
-#include "result.hpp"
+#include "search_utils.hpp"
 #include <climits>
 
 #ifndef _ASTAR_SEARCH_H_

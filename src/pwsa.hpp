@@ -8,41 +8,11 @@
 #include "native.hpp"
 #include "parallel_while.hpp"
 #include "bin_heap.hpp"
-#include "result.hpp"
+#include "search_utils.hpp"
 #include <climits>
 
-#ifndef _PWSA_H_
-#define _PWSA_H_
-
-// static inline void pmemset(char * ptr, int value, size_t num) {
-//   const size_t cutoff = 100000;
-//   if (num <= cutoff) {
-//     std::memset(ptr, value, num);
-//   } else {
-//     long m = num/2;
-//     pasl::sched::native::fork2([&] {
-//       pmemset(ptr, value, m);
-//     }, [&] {
-//       pmemset(ptr+m, value, num-m);
-//     });
-//   }
-// }
-//
-// template <class Number, class Size>
-// void fill_array_par(std::atomic<Number>* array, Size sz, Number val) {
-//   pmemset((char*)array, val, sz*sizeof(Number));
-// }
-
-// ===========================================================================
-// ===========================================================================
-// ===========================================================================
-
-// const bool debug_print = true;
-// template <class Body>
-// void msg(const Body& b) {
-//   if (debug_print)
-//     pasl::util::atomic::msg(b);
-// }
+#ifndef _PWSA_SEARCH_H_
+#define _PWSA_SEARCH_H_
 
 struct vertpack {
   int distance;
@@ -303,4 +273,4 @@ pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   return result;
 }
 
-#endif // _PWSA_H_
+#endif // _PWSA_SEARCH_H_

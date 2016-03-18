@@ -10,7 +10,6 @@
 #include "wpanre.hpp"
 #include "pase.hpp"
 #include "bin_heap.hpp"
-#include "result.hpp"
 #include "weighted_graph.hpp"
 
 int main(int argc, char** argv) {

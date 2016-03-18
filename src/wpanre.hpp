@@ -1,21 +1,12 @@
-//include "array_util.hpp"
 #include "container.hpp"
 #include "native.hpp"
 #include "timing.hpp"
+#include "search_utils.hpp"
 #include <climits>
 #include <pthread.h>
-#include "utils.hpp"
 
-// ===========================================================================
-// ===========================================================================
-// ===========================================================================
-
-// const bool debug_print = true;
-// template <class Body>
-// void msg(const Body& b) {
-//   if (debug_print)
-//     pasl::util::atomic::msg(b);
-// }
+#ifndef _WPANRE_SEARCH_H_
+#define _WPANRE_SEARCH_H_
 
 struct wpanre_state {
   std::atomic<bool> is_expanded;
@@ -47,6 +38,12 @@ SearchResult*
 wpanre(GRAPH& graph, const HEURISTIC& heuristic,
        const int& source, const int& destination,
        double exptime, bool pebble) {
+  // ============= some PASL helpers =============
+  auto yield = [] { pasl::sched::native::yield(); };
+  auto hiccup = [] { pasl::util::ticks::microseconds_sleep(10.0); };
+  auto my_id = [] { return pasl::sched::threaddag::get_my_id(); };
+
+  // ============= initialize ====================
   int N = graph.number_vertices();
   wpanre_state* states = pasl::data::mynew_array<wpanre_state>(N);
   pasl::sched::native::parallel_for(0, N, [&] (int i) {
@@ -71,8 +68,7 @@ wpanre(GRAPH& graph, const HEURISTIC& heuristic,
 
   states[source].g = 0;
 
-  pthread_mutex_t mutex;
-  pthread_mutex_init(&mutex,NULL);
+  Locked locked;
   HEAP frontier = HEAP();
   int heur = my_heur(source);
   frontier.insert(heur, source);
@@ -83,49 +79,35 @@ wpanre(GRAPH& graph, const HEURISTIC& heuristic,
 
     while (!is_done.load()) {
 
-      pthread_mutex_lock(&mutex);
-
-      if (frontier.size() == 0) {
-        pthread_mutex_unlock(&mutex);
-        pasl::sched::native::yield();
-        continue;
-      }
-
-      int v = frontier.delete_min();
-
-      pthread_mutex_unlock(&mutex);
-      pasl::sched::native::yield();
+      int v;
+      locked.action([&] {
+        if (frontier.size() == 0) v = -1;
+        else v = frontier.delete_min();
+      });
+      yield();
+      if (v == -1) { hiccup(); continue; }
 
       bool orig = states[v].is_expanded.load();
       if (!orig && states[v].is_expanded.compare_exchange_strong(orig, true)) {
-        if (pebbles) pebbles[v] = pasl::sched::threaddag::get_my_id();
-
+        if (pebbles) pebbles[v] = my_id();
         if (v == destination) {
           is_done.store(true);
           return;
         }
-
         graph.simulate_get_successors(exptime);
-
         int vdist = states[v].g;
-        graph.for_each_neighbor_of(v, [&] (int nbr, int weight) {
-
-          int nbrdist = vdist + weight;
-          int olddist = states[nbr].g;
-          if (nbrdist < olddist) {
-            pthread_mutex_lock(&mutex);
-
-            frontier.insert(nbrdist + my_heur(nbr), nbr);
-
-            states[nbr].g = nbrdist;
-            states[nbr].pred = v;
-
-            pthread_mutex_unlock(&mutex);
-            pasl::sched::native::yield();
-          }
-
+        locked.action([&] {
+          graph.for_each_neighbor_of(v, [&] (int nbr, int weight) {
+            int nbrdist = vdist + weight;
+            int olddist = states[nbr].g;
+            if (nbrdist < olddist) {
+              frontier.insert(nbrdist + my_heur(nbr), nbr);
+              states[nbr].g = nbrdist;
+              states[nbr].pred = v;
+            }
+          });
         });
-
+        yield();
       }
 
     }
@@ -135,3 +117,5 @@ wpanre(GRAPH& graph, const HEURISTIC& heuristic,
   SearchResult* result = new WPANREResult(N, states, pebbles);
   return result;
 }
+
+#endif // _WPANRE_SEARCH_H_
