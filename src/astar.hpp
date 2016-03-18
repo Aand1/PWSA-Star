@@ -3,6 +3,7 @@
  *
  * \file astar.hpp
  */
+#include "container.hpp" // pasl/sequtil/container.hpp, for pasl::data::mynew_array
 #include "search_utils.hpp"
 #include <climits>
 

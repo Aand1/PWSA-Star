@@ -1,5 +1,5 @@
 #include <climits>
-#include "array_util.hpp"
+#include "container.hpp" // pasl/sequtil/container.hpp, for pasl::data::mynew_array
 
 #ifndef _PWSA_BIN_HEAP_H_
 #define _PWSA_BIN_HEAP_H_
@@ -95,7 +95,7 @@ public:
 
     capacity = new_cap;
     KV* old_values = values;
-    values = array_util::my_malloc<KV>(capacity);
+    values = pasl::data::mynew_array<KV>(capacity);
 
     for (long i = 0; i < n; i++) {
       values[i] = old_values[i];
@@ -107,7 +107,7 @@ public:
   Heap() {
     n = 0;
     capacity = 4096;
-    values = array_util::my_malloc<KV>(capacity);
+    values = pasl::data::mynew_array<KV>(capacity);
   }
 
   void insert(long priority, const VALUE& value) {
