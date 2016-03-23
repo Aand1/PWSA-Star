@@ -6,3 +6,5 @@ run one of wPWSA*, wA*, wPA*SE, wPA*NRE, SafePBNF_<nblocks> (<algo> parameter. f
 
 run a scenario:
 ./scripts/run_scen.py -scen <scenario file> -w <weight> -exptime <expansion time> -proc <# threads> -algo <algo>
+
+note that SafePBNF is unaffected by `w` and `exptime` parameters, and wA* is unaffected by `proc` parameter (obviously).
