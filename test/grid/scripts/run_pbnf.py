@@ -5,6 +5,10 @@ import sys
 import subprocess
 import tempfile
 
+i = sys.argv.index("-algo")
+algo = sys.argv[i+1]
+newargs = sys.argv[1:i] + sys.argv[(i+2):]
+
 def parseArgs(argdefaults):
   result = {}
   for name, default in argdefaults.iteritems():
@@ -71,8 +75,8 @@ argdefaults = { "-map" : "maps/simple_map.map"
               , "-w"   : "1.0"
               , "-proc" : "1"
               , "-opt" : "1.0"
-              , "-minexpand" : "32"
-              , "-nblocks" : "4096"
+              , "-minexpand" : "64"
+              , "-nblocks" : "65536"
               }
 args = parseArgs(argdefaults)
 
@@ -86,8 +90,11 @@ with tempfile.SpooledTemporaryFile(max_size=10*1024) as log:
   if not os.path.isfile(executable):
     sys.stderr.write("ERROR: unable to find executable %s\n" % executable)
     sys.exit(1) # failure
-  alg = "safepbnf" if float(args["-w"]) == 1.0 else "wpbnf"
-  algarg = "%s-%s-%s-%s-%s" % (alg, args["-w"], args["-minexpand"], args["-proc"], args["-nblocks"])
+  algarg = "astar"
+  if algo == "safepbnf":
+    algarg = "safepbnf-%s-%s-%s-%s" % (args["-w"], args["-minexpand"], args["-proc"], args["-nblocks"])
+  #alg = "safepbnf" if float(args["-w"]) == 1.0 else "wpbnf"
+  #algarg = "%s-%s-%s-%s-%s" % (alg, args["-w"], args["-minexpand"], args["-proc"], args["-nblocks"])
   #algarg = "astar"
   #algarg = "%s-%s" % ("wastar", args["-w"])
   formatarg = r'"%s\nUnit\nEight-way\n%d %d\t%d %d"'

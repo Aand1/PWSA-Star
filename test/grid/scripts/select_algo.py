@@ -7,13 +7,16 @@ i = sys.argv.index("-algo")
 algo = sys.argv[i+1]
 newargs = sys.argv[1:i] + sys.argv[(i+2):]
 
-algos = { "wPWSA*"   : "./pwsa_main.opt -pathcorrect 1"
-        , "simple_wPWSA*" : "./pwsa_main.opt -pathcorrect 0"
-        , "wPA*SE"   : "./pase_main.opt"
-        , "my_wPA*SE" : "./my_pase_main.opt"
-        , "wA*"      : "./astar_main.opt"
-        , "PBNF"     : "./scripts/run_pbnf.py"
-        , "wPA*NRE"  : "./wpanre_main.opt"
+algos = { "wPWSA*"          : "./grid_main.opt -algo wPWSA*"
+        , "simple_wPWSA*"   : "./grid_main.opt -algo simple_wPWSA*"
+        , "wPA*SE"          : "./grid_main.opt -algo wPA*SE"
+        , "wA*"             : "./grid_main.opt -algo wA*"
+        , "wPA*NRE"         : "./grid_main.opt -algo wPA*NRE"
+        , "Burns_A*"        : "./scripts/run_pbnf.py -algo astar"
+        , "SafePBNF_4096"   : "./scripts/run_pbnf.py -algo safepbnf -nblocks 4096"
+        , "SafePBNF_16384"  : "./scripts/run_pbnf.py -algo safepbnf -nblocks 16384"
+        , "SafePBNF_65536"  : "./scripts/run_pbnf.py -algo safepbnf -nblocks 65536"
+        , "SafePBNF_262144" : "./scripts/run_pbnf.py -algo safepbnf -nblocks 262144"
         }
 
 executable = algos[algo]

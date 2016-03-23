@@ -20,7 +20,8 @@ def combineResults(rs1, rs2):
          }
 
 def chooseParams(params):
-  return { "algo" : params["algo"]
+  return {
+           "algo" : params["algo"]
          , "map" : params["map"]
          , "sr" : params["sr"]
          , "sc" : params["sc"]
@@ -30,16 +31,19 @@ def chooseParams(params):
 #         , "expnum" : int(params.get("expnum", "0"))
          , "w" : float(params.get("w", "1"))
          , "exptime" : float(params.get("exptime", "0.0"))
+#         , "nblocks" : int(params.get("nblocks", "0"))
 #         , "K" : params["K"]
 #         , "D" : params["D"]
          }
 
 def simplifyParams(params):
-  return { "algo" : params["algo"]
+  return {
+           "algo" : params["algo"]
          , "map" : params["map"]
          , "proc" : int(params.get("proc", "1"))
          , "w" : float(params.get("w", "1.0"))
          , "exptime" : float(params.get("exptime", "0.0"))
+#         , "nblocks" : int(params.get("nblocks", "0"))
 #         , "K" : params["K"]
 #         , "D" : params["D"]
          }
@@ -48,6 +52,7 @@ def simplifyParams(params):
 def cmpForSortedOutput ((ps1,rs1),(ps2,rs2)):
 #  for key in ["algo", "proc"]:
   for key in ["map", "algo", "proc", "w", "exptime"]:
+#  for key in ["map", "proc", "w", "exptime"]:
     if ps1[key] < ps2[key]:
       return -1
     if ps1[key] > ps2[key]:
