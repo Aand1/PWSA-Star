@@ -1,0 +1,8 @@
+make grid_main.opt
+also, in ../../pbnf/src/, run make
+
+run one of wPWSA*, wA*, wPA*SE, wPA*NRE, SafePBNF_<nblocks> (<algo> parameter. for SafepBNF, <nblocks> can be one of 4096, 16384, 65536, or 262144)
+./scripts/select_algo.py -map <map> -sr <row> -sc <col> -dr <row> -dc <col> -w <weight> -exptime <expansion time> -proc <# threads> -algo <algo>
+
+run a scenario:
+./scripts/run_scen.py -scen <scenario file> -w <weight> -exptime <expansion time> -proc <# threads> -algo <algo>
