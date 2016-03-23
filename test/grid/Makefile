@@ -1,4 +1,3 @@
-
 ####################################################################
 # Configuration
 
@@ -6,13 +5,11 @@
 
 TOOLS_BUILD_FOLDER=../../src/pasl/tools/build
 
-
 ####################################################################
 # Mandatory options
 
 USE_PTHREADS=1
 USE_MATH=1
-
 
 ####################################################################
 # Default options
@@ -21,15 +18,12 @@ USE_ALLOCATOR=tcmalloc
 USE_HWLOC=0
 USE_NUMA=0
 
-# todo activate? USE_ANSI=1
-
 USE_FATAL_ERRORS=1
 VERBOSE_MAKE=0
 VERBOSE_DEPENDENCIES=0
 
 PROGRAMS=\
 	grid_main.cpp
-#       add reference to your cpp source here
 
 ####################################################################
 # Makefile options
@@ -39,19 +33,13 @@ PROGRAMS=\
 
 -include settings.sh
 
-# Include here
-
-# Options are then configured by the auxiliary file below
+# Options are configured by the auxiliary file below
 
 include $(TOOLS_BUILD_FOLDER)/Makefile_options
 
 
 ####################################################################
 # Modes
-
-# What are the compilation mode supported, i.e. the "modes"
-# (If extending the list, need to add cases for the definition
-# of COMPILE_OPTIONS_FOR further below, and also for "clean".
 
 MODES=dbg opt log #sta opt seq cilk
 
@@ -88,13 +76,6 @@ old_pase_main.opt:
 
 old_pastar_main.opt:
 	g++ src/old_pastar_main.cpp -I../../src/shared/ -lpthread -o pastar_main.opt
-
-# example
-# make fib.opt && make benchtools
-# ./fib.sta -n 43 -cutoff 27 -proc 40
-# ./run -prog ./fib.opt -n 43 -cutoff 27 -proc 0,1,2,3,4
-# ./plot --speedup --open
-
 
 ####################################################################
 # Clean
