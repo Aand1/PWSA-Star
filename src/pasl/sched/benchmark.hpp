@@ -51,13 +51,42 @@ void launch(const Body& body) {
 
 template <class Init, class Run, class Output, class Destroy>
 void launch(const Init& init, const Run& run, const Output& output,
+            const Destroy& destroy, int num_proc) {
+  bool sequential = (util::cmdline::parse_or_default_int("proc", 1, false) == 0);
+  bool report_time = util::cmdline::parse_or_default_bool("report_time", true, false);
+#ifdef USE_LIBNUMA
+  numa_set_interleave_mask(numa_all_nodes_ptr);
+#endif
+  threaddag::init(num_proc, true);
+  launch(init);
+  LOG_BASIC(ENTER_ALGO);
+  uint64_t start_time = util::microtime::now();
+  launch([&] { run(sequential); });
+  double exec_time = util::microtime::seconds_since(start_time);
+  LOG_BASIC(EXIT_ALGO);
+  if (report_time)
+    printf ("exectime %.7lf\n", exec_time);
+  STAT_IDLE(sum());
+  STAT(dump(stdout));
+  STAT_IDLE(print_idle(stdout));
+#ifdef DUMP_JEMALLOC_STATS
+  // Dump allocator statistics to stderr.
+  malloc_stats_print(NULL, NULL, NULL);
+#endif
+  launch(output);
+  launch(destroy);
+  threaddag::destroy();
+}
+
+template <class Init, class Run, class Output, class Destroy>
+void launch(const Init& init, const Run& run, const Output& output,
             const Destroy& destroy) {
   bool sequential = (util::cmdline::parse_or_default_int("proc", 1, false) == 0);
   bool report_time = util::cmdline::parse_or_default_bool("report_time", true, false);
 #ifdef USE_LIBNUMA
   numa_set_interleave_mask(numa_all_nodes_ptr);
 #endif
-  threaddag::init();
+  threaddag::init(1, false);
   launch(init);
   LOG_BASIC(ENTER_ALGO);
   uint64_t start_time = util::microtime::now();

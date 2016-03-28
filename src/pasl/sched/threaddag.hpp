@@ -42,8 +42,9 @@ int get_my_id();
  * \ingroup threaddag
  *  @{
  */
-  
-void init();  
+ 
+// patch to allow interop with sbpl
+void init(int nb_workers, bool from_cmdline);
 void launch(thread_p thread);
 void destroy();
 

@@ -91,27 +91,32 @@ outstrategy_p new_forkjoin_outstrategy(branch_t branch = UNDEFINED) {
   return out;
 }
 
-// all parameters that are not specific to pasl should be initialized here
-static int init_general_purpose() {
-  util::atomic::verbose = util::cmdline::parse_or_default_bool("verbose", false, false);
+static int init_num_workers(int num_workers, bool from_cmdline) {
+  if (!from_cmdline) {
 #ifdef SEQUENTIAL_ELISION
-  int nb_workers = util::cmdline::parse_or_default_int("proc", 1, false);
-  if (nb_workers > 1)
-    util::atomic::die("Tried to use > 1 processors in sequential-elision mode");
+    int nb_workers = util::cmdline::parse_or_default_int("proc", 1, false);
+    if (nb_workers > 1)
+      util::atomic::die("Tried to use > 1 processors in sequential-elision mode");
 #elif defined(USE_CILK_RUNTIME)
-  int nb_workers = util::cmdline::parse_or_default_int("proc", 1, false);
-  std::string nb_workers_str = std::to_string(nb_workers);
-  __cilkrts_set_param("nworkers", nb_workers_str.c_str());
+    int nb_workers = util::cmdline::parse_or_default_int("proc", 1, false);
+    std::string nb_workers_str = std::to_string(nb_workers);
+    __cilkrts_set_param("nworkers", nb_workers_str.c_str());
 #else
-  int nb_workers = util::cmdline::parse_or_default_int("proc", 1, true);
+    int nb_workers = util::cmdline::parse_or_default_int("proc", 1, true);
 #endif
+    return nb_workers;
+  }
+  return num_workers;
+}
+
+static void init_general_purpose() {
+  util::atomic::verbose = util::cmdline::parse_or_default_bool("verbose", false, false);
   native::loop_cutoff = util::cmdline::parse_or_default_int("loop_cutoff", 10000);
   std::string htmodestr =
     util::cmdline::parse_or_default_string("hyperthreading", "useall", false);
   util::machine::hyperthreading_mode_t htmode = util::machine::htmode_of_string(htmodestr);
   util::machine::init(htmode);
   data::estimator::init();
-  return nb_workers;
 }
 
 static void init_basic(int nb_workers) {
@@ -188,8 +193,9 @@ static void destroy_messagestrategy() {
   delete messagestrategy::the_messagestrategy;
 }
 
-void init() {
-  int nb_workers = init_general_purpose();
+void init(int nb_workers, bool from_cmdline) {
+  nb_workers = init_num_workers(nb_workers, from_cmdline); 
+  init_general_purpose();
   init_basic(nb_workers);
 #ifndef USE_CILK_RUNTIME
   init_scheduler();
