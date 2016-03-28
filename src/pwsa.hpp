@@ -19,23 +19,23 @@ struct vertpack {
   int pred;
 };
 
-struct pwsapc_state {
+struct pwsa_state {
   std::atomic<bool> is_expanded;
   std::atomic<vertpack> gpred;
   int h;
 };
 
-class PWSAPCResult : public SearchResult {
+class PWSAResult : public SearchResult {
 private:
   int n;
-  pwsapc_state* states;
+  pwsa_state* states;
   int* pebbles;
 
 public:
-  PWSAPCResult(int n, pwsapc_state* states, int* pebbles)
+  PWSAResult(int n, pwsa_state* states, int* pebbles)
   : n(n), states(states), pebbles(pebbles) { }
 
-  ~PWSAPCResult() override { free(states); if (pebbles) free(pebbles); }
+  ~PWSAResult() override { free(states); if (pebbles) free(pebbles); }
 
   bool is_expanded(int vertex) override { return states[vertex].is_expanded.load(); }
   int predecessor(int vertex) override { return states[vertex].gpred.load().pred; }
@@ -50,17 +50,16 @@ pwsa_pc(GRAPH& graph, const HEURISTIC& heuristic,
         int split_cutoff, int poll_cutoff, double exptime,
         bool pebble) {
   int N = graph.number_vertices();
-  pwsapc_state* states = pasl::data::mynew_array<pwsapc_state>(N);
+  pwsa_state* states = pasl::data::mynew_array<pwsa_state>(N);
 
   pasl::sched::native::parallel_for(0, N, [&] (int i) {
     states[i].is_expanded.store(false);
+    states[i].h = -1;
 
     vertpack x;
-    x.distance = INT_MAX; // "infinite"
+    x.distance = INT_MAX; 
     x.pred = -1;
     states[i].gpred.store(x);
-
-    states[i].h = -1;
   });
 
   int* pebbles = nullptr;
@@ -149,7 +148,7 @@ pwsa_pc(GRAPH& graph, const HEURISTIC& heuristic,
   };
 
   pasl::sched::native::parallel_while_pwsa(initF, size, fork, do_work);
-  SearchResult* result = new PWSAPCResult(N, states, pebbles);
+  SearchResult* result = new PWSAResult(N, states, pebbles);
   return result;
 }
 
@@ -157,31 +156,7 @@ pwsa_pc(GRAPH& graph, const HEURISTIC& heuristic,
 // ===========================================================================
 // ===========================================================================
 
-struct pwsa_state {
-  std::atomic<bool> is_expanded;
-  int g;
-  int pred;
-  int h;
-};
-
-class PWSAResult : public SearchResult {
-private:
-  int n;
-  pwsa_state* states;
-  int* pebbles;
-
-public:
-  PWSAResult(int n, pwsa_state* states, int* pebbles)
-  : n(n), states(states), pebbles(pebbles) { }
-
-  ~PWSAResult() override { free(states); if (pebbles) free(pebbles); }
-
-  bool is_expanded(int vertex) override { return states[vertex].is_expanded.load(); }
-  int predecessor(int vertex) override { return states[vertex].pred; }
-  int g(int vertex) override { return states[vertex].g; }
-  int pebble(int vertex) override { return (pebbles ? pebbles[vertex] : -1); }
-};
-
+// now exactly the same as pwsa_pc
 template <class GRAPH, class HEAP, class HEURISTIC>
 SearchResult*
 pwsa(GRAPH& graph, const HEURISTIC& heuristic,
@@ -192,9 +167,12 @@ pwsa(GRAPH& graph, const HEURISTIC& heuristic,
   pwsa_state* states = pasl::data::mynew_array<pwsa_state>(N);
   pasl::sched::native::parallel_for(0, N, [&] (int i) {
     states[i].is_expanded.store(false);
-    states[i].g = INT_MAX; // "infinite"
-    states[i].pred = -1;
     states[i].h = -1;
+
+    vertpack x;
+    x.distance = INT_MAX;
+    x.pred = -1;
+    states[i].gpred.store(x);
   });
 
   int* pebbles = nullptr;
@@ -209,8 +187,11 @@ pwsa(GRAPH& graph, const HEURISTIC& heuristic,
       states[v].h = heuristic(v);
     return states[v].h;
   };
-
-  states[source].g = 0;
+ 
+  vertpack src;
+  src.distance = 0;
+  src.pred = source; 
+  states[source].gpred.store(src);
 
   HEAP initF = HEAP();
   int heur = my_heur(source);
@@ -252,14 +233,25 @@ pwsa(GRAPH& graph, const HEURISTIC& heuristic,
         // SIMULATE EXPANSION
         graph.simulate_get_successors(exptime);
 
-        int vdist = states[v].g;
+        int vdistance = states[v].gpred.load().distance;
         graph.for_each_neighbor_of(v, [&] (int nbr, int weight) {
 
-          int nbrdist = vdist + weight;
-          if (nbrdist < states[nbr].g) {
-            frontier.insert(nbrdist + my_heur(nbr), nbr);
-            states[nbr].g = nbrdist;
-            states[nbr].pred = v;
+          vertpack mine;
+          mine.distance = vdistance + weight;
+          mine.pred = v;
+
+          vertpack nbr_prev = states[nbr].gpred.load();
+          int prev_distance = nbr_prev.distance;
+          while (nbr_prev.distance  == prev_distance) {
+            nbr_prev = states[nbr].gpred.load();
+            if (states[nbr].gpred.compare_exchange_weak(gpred_nbr, mine)) {
+              if (!states[nbr].is_expanded.load()) {
+                frontier.insert(mine.distance + my_heur(nbr), nbr);
+              }
+              break;
+            } else {
+              break;
+            }
           }
         });
       }
