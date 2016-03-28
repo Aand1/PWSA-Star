@@ -156,7 +156,6 @@ pwsa_pc(GRAPH& graph, const HEURISTIC& heuristic,
 // ===========================================================================
 // ===========================================================================
 
-// now exactly the same as pwsa_pc
 template <class GRAPH, class HEAP, class HEURISTIC>
 SearchResult*
 pwsa(GRAPH& graph, const HEURISTIC& heuristic,
@@ -244,7 +243,7 @@ pwsa(GRAPH& graph, const HEURISTIC& heuristic,
           int prev_distance = nbr_prev.distance;
           while (nbr_prev.distance  == prev_distance) {
             nbr_prev = states[nbr].gpred.load();
-            if (states[nbr].gpred.compare_exchange_weak(gpred_nbr, mine)) {
+            if (states[nbr].gpred.compare_exchange_weak(nbr_prev, mine)) {
               if (!states[nbr].is_expanded.load()) {
                 frontier.insert(mine.distance + my_heur(nbr), nbr);
               }
