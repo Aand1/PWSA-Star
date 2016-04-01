@@ -142,6 +142,12 @@ def keep(keepdict, params):
       return False
   return True
 
+def exclude(excludedict, params):
+  for k,v in params.iteritems():
+    if k in excludedict and v in excludedict[k]:
+      return True
+  return False
+
 def refreezeAfter(f):
   return (lambda d: frozenset(f(dict(d)).items()))
 
@@ -154,11 +160,13 @@ def combineAlgoParam(algo1, algo2, frozen):
 
 if __name__ == "__main__":
   argdefaults = { "-keep" : "{}"
+                , "-exclude" : "{}"
                 , "-input" : "results.txt"
                 , "-output" : "results_reformatted.txt"
                 , "-compare" : None }
   args = parseArgs(argdefaults)
   keepdict = ast.literal_eval(args["-keep"])
+  excludedict = ast.literal_eval(args["-exclude"])
   inputfiles = args["-input"]
   outputfile = args["-output"]
 
@@ -167,7 +175,7 @@ if __name__ == "__main__":
   runs = [ x for fin in inputfiles.split(",") for x in readResultsFile(fin) ]
 #  print runs
   filtered = [ (frozenset(chooseParams(ps).items()), simplifyResults(rs))
-               for ps, rs in runs if keep(keepdict, ps) ]
+               for ps, rs in runs if (keep(keepdict, ps) and not exclude(excludedict, ps))]
 #  print filtered
   averaged1 = collectWith(keywiseAverages)(filtered)
 #  print averaged1
