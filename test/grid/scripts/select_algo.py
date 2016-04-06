@@ -17,6 +17,7 @@ algos = { "wPWSA*"          : "./grid_main.opt -algo wPWSA*"
         , "SafePBNF_16384"  : "./scripts/run_pbnf.py -algo safepbnf -nblocks 16384"
         , "SafePBNF_65536"  : "./scripts/run_pbnf.py -algo safepbnf -nblocks 65536"
         , "SafePBNF_262144" : "./scripts/run_pbnf.py -algo safepbnf -nblocks 262144"
+        , "SafePBNF_6400"   : "./scripts/run_pbnf.py -algo safepbnf -nblocks 6400"
         }
 
 executable = algos[algo]

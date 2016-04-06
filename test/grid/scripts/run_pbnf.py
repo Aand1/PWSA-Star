@@ -9,6 +9,10 @@ i = sys.argv.index("-algo")
 algo = sys.argv[i+1]
 newargs = sys.argv[1:i] + sys.argv[(i+2):]
 
+i = newargs.index("-cost")
+cost = newargs[i+1]
+newargs = newargs[1:i] + newargs[(i+2):]
+
 def parseArgs(argdefaults):
   result = {}
   for name, default in argdefaults.iteritems():
@@ -97,7 +101,7 @@ with tempfile.SpooledTemporaryFile(max_size=10*1024) as log:
   #algarg = "%s-%s-%s-%s-%s" % (alg, args["-w"], args["-minexpand"], args["-proc"], args["-nblocks"])
   #algarg = "astar"
   #algarg = "%s-%s" % ("wastar", args["-w"])
-  formatarg = r'"%s\nUnit\nEight-way\n%d %d\t%d %d"'
+  formatarg = r'"%s\n' + cost.capitalize() + r'\nEight-way\n%d %d\t%d %d"'
   stubarg = '"$(cat %s)"' % pbnfstub
   coordsarg = "%s %d %s %d" % (args["-sc"], height - int(args["-sr"]) - 1, args["-dc"], height - int(args["-dr"]) - 1)
   cmd = ' '.join(["printf", formatarg, stubarg, coordsarg, "|", executable, algarg])

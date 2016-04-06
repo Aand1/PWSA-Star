@@ -16,6 +16,17 @@ public:
   virtual int pebble(int vertex) { return -1; }
 };
 
+// Other one exists for backwards compatibility, sorry. Don't feel like refactoring..
+template <class Number>
+class SearchResultT {
+public:
+  virtual ~SearchResultT() { }
+  virtual bool is_expanded(int vertex) { return false; }
+  virtual int predecessor(int vertex) { return -1; }
+  virtual Number g(int vertex) { return -1; }
+  virtual int pebble(int vertex) { return -1; }
+};
+
 class Locked {
 private:
   pthread_mutex_t mutex;

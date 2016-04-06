@@ -5,7 +5,7 @@
  */
 #include "container.hpp" // pasl/sequtil/container.hpp, for pasl::data::mynew_array
 #include "search_utils.hpp"
-#include <climits>
+#include <limits>
 
 #ifndef _ASTAR_SEARCH_H_
 #define _ASTAR_SEARCH_H_
@@ -43,7 +43,7 @@ astar(GRAPH& graph, const HEURISTIC& heuristic,
   astar_state* states = pasl::data::mynew_array<astar_state>(N);
   for (int i = 0; i < N; i++) {
     states[i].is_expanded = false;
-    states[i].dist = INT_MAX;
+    states[i].dist = std::numeric_limits<int>::max();
     states[i].pred = -1;
   }
   int* pebbles = nullptr;
@@ -72,6 +72,79 @@ astar(GRAPH& graph, const HEURISTIC& heuristic,
     }
   }
   SearchResult* result = new AStarResult(N, states, pebbles);
+  return result;
+}
+
+// ===========================================================================
+// ===========================================================================
+// ===========================================================================
+
+template <class Number>
+struct astar_stateT {
+  bool is_expanded;
+  Number dist;
+  int pred;
+};
+
+template <class Number>
+class AStarResultT : public SearchResultT<Number> {
+private:
+  int n;
+  astar_stateT<Number>* states;
+  int* pebbles;
+
+public:
+  AStarResultT(int n, astar_stateT<Number>* states, int* pebbles)
+  : n(n), states(states), pebbles(pebbles) { }
+
+  ~AStarResultT() override { free(states); if (pebbles) free(pebbles); }
+
+  bool is_expanded(int vertex) override { return states[vertex].is_expanded; }
+  int predecessor(int vertex) override { return states[vertex].pred; }
+  Number g(int vertex) override { return states[vertex].dist; }
+  int pebble(int vertex) override { return (pebbles ? pebbles[vertex] : -1); }
+};
+
+template <class GRAPH, class HEAP, class HEURISTIC, class Number>
+SearchResultT<Number>*
+astarT(GRAPH& graph, const HEURISTIC& heuristic,
+       const int& source, const int& destination,
+       double exptime, bool pebble) {
+  std::cout << "astarT searching from " << source << " to " << destination << std::endl;
+  int N = graph.number_vertices();
+  astar_stateT<Number>* states = pasl::data::mynew_array<astar_stateT<Number>>(N);
+  for (int i = 0; i < N; i++) {
+    states[i].is_expanded = false;
+    states[i].dist = std::numeric_limits<Number>::max();
+    states[i].pred = -1;
+  }
+  int* pebbles = nullptr;
+  if (pebble) {
+    pebbles = pasl::data::mynew_array<int>(N);
+    for (int i = 0; i < N; i++) pebbles[i] = -1;
+  }
+  states[source].dist = 0;
+  HEAP frontier = HEAP();
+  frontier.insert(heuristic(source), source);
+  while (true) {
+    int v = frontier.delete_min();
+    if (v == destination) break;
+    if (!states[v].is_expanded) {
+      states[v].is_expanded = true;
+      if (states[v].dist < 0) { std::cerr << "ERROR (astarT): negative g" << std::endl; std::exit(EXIT_FAILURE); }
+      if (pebbles) pebbles[v] = 0;
+      graph.simulate_get_successors(exptime);
+      graph.for_each_neighbor_of(v, [&] (int nbr, Number weight) {
+        Number nbrdist = states[v].dist + weight;
+        if (nbrdist < states[nbr].dist) {
+          frontier.insert(heuristic(nbr) + nbrdist, nbr);
+          states[nbr].dist = nbrdist;
+          states[nbr].pred = v;
+        }
+      });
+    }
+  }
+  SearchResultT<Number>* result = new AStarResultT<Number>(N, states, pebbles);
   return result;
 }
 
