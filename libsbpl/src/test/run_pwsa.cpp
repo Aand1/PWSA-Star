@@ -85,7 +85,7 @@ int planxythetalat(char* envCfgFilename, char* motPrimFilename, int eps){
   params.initial_eps = 1.5;
   params.dec_eps = 0.2;
   params.return_first_solution = true;
-  params.num_threads = 32;
+  params.num_threads = 8;
 	printf("start planning...\n");
 	bool bRet = planner->replan(MDPCfg.startstateid, MDPCfg.goalstateid,
                          &solution_stateIDs_V, params, &cost);

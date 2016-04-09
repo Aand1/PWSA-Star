@@ -69,6 +69,7 @@ void pwsaPlanner::run_pwsa() {
   printf("running with %d threads\n", num_threads);
 
   pasl::sched::launch(init, run, output, destroy, num_threads);
+  printf("[sameer] pasl sched done");
 }
 
 pwsaPlanner::pwsaPlanner(DiscreteSpaceInformation* environment, bool bforwardsearch) :

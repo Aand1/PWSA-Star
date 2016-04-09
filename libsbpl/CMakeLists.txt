@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.4.6)
 PROJECT( sbpl )
-
+set(CXX g++-4.9)
+find_library(PASL_LIBRARY NAMES pasl PATHS /usr/local/bin)
+set(CMAKE_SHARED_LINKER_FLAGS -fPIC)
 # version (e.g. for packaging)
 set(SBPL_MAJOR_VERSION 1)
 set(SBPL_MINOR_VERSION 3)
@@ -11,10 +13,12 @@ set(CMAKE_BUILD_TYPE Release)
 include_directories(src/include)
 
 include_directories(${PROJECT_SOURCE_DIR}/code)
-
+set(CMAKE_CXX_FLAGS "-fPIC -std=gnu++1y -pthread -DNDEBUG -fno-optimize-sibling-calls -DDISABLE_INTERRUPTS -DSTATS_IDLE -D_GNU_SOURCE -Wfatal-errors -m64 -DTARGET_X86_64 -DTARGET_LINUX -lm -DHAVE_GCC_TLS")
 add_library(sbpl SHARED
             src/planners/PWSA/pwsaplanner.cpp
-            src/discrete_space_information/nav2d/environment_nav2D.cpp
+            src/planners/pARAStar/pARA.cpp
+	    src/planners/ARAStar/araplanner.cpp
+	    src/discrete_space_information/nav2d/environment_nav2D.cpp
             src/discrete_space_information/navxythetalat/environment_navxythetalat.cpp
             src/discrete_space_information/navxythetalat/environment_navxythetamlevlat.cpp
             src/discrete_space_information/nav2d_uu/environment_nav2Duu.cpp
@@ -25,7 +29,7 @@ add_library(sbpl SHARED
             src/utils/utils.cpp
             src/utils/2Dgridsearch.cpp
 )
-
+target_link_libraries(sbpl ${PASL_LIBRARY})
 set(SBPL_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include")
 set(SBPL_LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib")
 
@@ -71,7 +75,6 @@ link_directories(/usr/local/lib)
 #add_executable(test_sbpl src/test/main.cpp)
 #target_link_libraries(test_sbpl sbpl)
 
-set(CMAKE_CXX_FLAGS "-std=gnu++1y -pthread -DNDEBUG -fno-optimize-sibling-calls -DDISABLE_INTERRUPTS -DSTATS_IDLE -D_GNU_SOURCE -Wfatal-errors -m64 -DTARGET_X86_64 -DTARGET_LINUX -lm -DHAVE_GCC_TLS")
 
 #add_executable(test_para src/test/run.cpp)
 #target_link_libraries(test_para sbpl pasl)
@@ -90,7 +93,7 @@ set(CMAKE_CXX_FLAGS "-std=gnu++1y -pthread -DNDEBUG -fno-optimize-sibling-calls 
 #target_link_libraries(test_adjacency_list sbpl)
 
 add_executable(test_pwsa src/test/run_pwsa.cpp)
-target_link_libraries(test_pwsa sbpl pasl)
+target_link_libraries(test_pwsa sbpl)
 SET(Boost_USE_STATIC_LIBS ON)
 find_package(Boost COMPONENTS thread regex system filesystem REQUIRED)
 find_library(LIBRT_LIBRARIES rt)
@@ -100,10 +103,11 @@ target_link_libraries(test_pwsa
   ${Boost_THREAD_LIBRARY}
   ${Boost_REGEX_LIBRARY}
   ${LIBRT_LIBRARIES_RT}
+  ${PASL_LIBRARY}
 )
 
 add_executable(test_astar src/test/run_astar.cpp)
-target_link_libraries(test_astar sbpl pasl)
+target_link_libraries(test_astar sbpl)
 SET(Boost_USE_STATIC_LIBS ON)
 find_package(Boost COMPONENTS thread regex system filesystem REQUIRED)
 find_library(LIBRT_LIBRARIES rt)
@@ -113,5 +117,6 @@ target_link_libraries(test_astar
   ${Boost_THREAD_LIBRARY}
   ${Boost_REGEX_LIBRARY}
   ${LIBRT_LIBRARIES_RT}
+  ${PASL_LIBRARY}
 )
 

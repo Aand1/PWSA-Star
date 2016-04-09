@@ -28,8 +28,8 @@
  */
 #include <iostream>
 #include <math.h>
-#include "pARA.h"
-#include "pARA_constants.h"
+#include <sbpl/planners/pARA.h>
+#include <sbpl/planners/pARA_constants.h>
 
 using namespace std;
 
