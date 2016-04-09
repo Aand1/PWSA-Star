@@ -1,0 +1,40 @@
+
+1
+bound=10.000000 expands=3941 cost=99296 time=8.071
+total expands=3941 planning time=8.071 reconstruct path time=1.144 total time=9.215 solution cost=99296
+
+bound=10.000000 expands=1080 cost=137322 time=2.115
+total expands=1080 planning time=2.115 reconstruct path time=1.033 total time=3.149 solution cost=137322
+
+bound=10.000000 expands=5391 cost=265500 time=11.249
+total expands=5391 planning time=11.249 reconstruct path time=2.184 total time=13.433 solution cost=265500
+
+2
+bound=10.000000 expands=4071 cost=99995 time=4.352
+total expands=4071 planning time=4.352 reconstruct path time=0.819 total time=5.171 solution cost=99995
+
+bound=10.000000 expands=1435 cost=134536 time=1.493
+total expands=1435 planning time=1.493 reconstruct path time=0.911 total time=2.404 solution cost=134536
+
+bound=10.000000 expands=5944 cost=267396 time=6.391
+total expands=5944 planning time=6.391 reconstruct path time=1.905 total time=8.297 solution cost=267396
+
+4
+bound=10.000000 expands=3171 cost=96077 time=2.236
+total expands=3171 planning time=2.236 reconstruct path time=0.834 total time=3.070 solution cost=96077
+
+bound=10.000000 expands=2308 cost=145587 time=1.352
+total expands=2308 planning time=1.352 reconstruct path time=0.994 total time=2.346 solution cost=145587
+
+bound=10.000000 expands=109799 cost=203704 time=88.736
+total expands=109799 planning time=88.736 reconstruct path time=1.361 total time=90.097 solution cost=203704
+
+8
+bound=10.000000 expands=6194 cost=89921 time=3.021
+total expands=6194 planning time=3.021 reconstruct path time=0.769 total time=3.790 solution cost=89921
+
+bound=10.000000 expands=5882 cost=129910 time=2.799
+total expands=5882 planning time=2.799 reconstruct path time=0.950 total time=3.749 solution cost=129910
+
+bound=10.000000 expands=110915 cost=194864 time=65.161
+total expands=110915 planning time=65.161 reconstruct path time=1.273 total time=66.435 solution cost=194864

@@ -1,0 +1,10 @@
+_build/dbg/pwsa.p: _build/dbg/container.p
+_build/dbg/pwsa.ok: _build/dbg/container.ok
+_build/dbg/pwsa.p: _build/dbg/native.p
+_build/dbg/pwsa.ok: _build/dbg/native.ok
+_build/dbg/pwsa.p: _build/dbg/parallel_while.p
+_build/dbg/pwsa.ok: _build/dbg/parallel_while.ok
+_build/dbg/pwsa.p: _build/dbg/bin_heap.p
+_build/dbg/pwsa.ok: _build/dbg/bin_heap.ok
+_build/dbg/pwsa.p: _build/dbg/search_utils.p
+_build/dbg/pwsa.ok: _build/dbg/search_utils.ok

@@ -1,0 +1,10 @@
+_build/log/pwsa.p: _build/log/container.p
+_build/log/pwsa.ok: _build/log/container.ok
+_build/log/pwsa.p: _build/log/native.p
+_build/log/pwsa.ok: _build/log/native.ok
+_build/log/pwsa.p: _build/log/parallel_while.p
+_build/log/pwsa.ok: _build/log/parallel_while.ok
+_build/log/pwsa.p: _build/log/bin_heap.p
+_build/log/pwsa.ok: _build/log/bin_heap.ok
+_build/log/pwsa.p: _build/log/search_utils.p
+_build/log/pwsa.ok: _build/log/search_utils.ok

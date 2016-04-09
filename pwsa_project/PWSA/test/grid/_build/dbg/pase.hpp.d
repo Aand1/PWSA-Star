@@ -1,0 +1,10 @@
+_build/dbg/pase.p: _build/dbg/container.p
+_build/dbg/pase.ok: _build/dbg/container.ok
+_build/dbg/pase.p: _build/dbg/native.p
+_build/dbg/pase.ok: _build/dbg/native.ok
+_build/dbg/pase.p: _build/dbg/timing.p
+_build/dbg/pase.ok: _build/dbg/timing.ok
+_build/dbg/pase.p: _build/dbg/weighted_graph.p
+_build/dbg/pase.ok: _build/dbg/weighted_graph.ok
+_build/dbg/pase.p: _build/dbg/search_utils.p
+_build/dbg/pase.ok: _build/dbg/search_utils.ok

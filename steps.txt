@@ -1,0 +1,55 @@
+#INSTALL SBPL AND PASL
+#They are in the folder pwsa_project
+#INSTALL ROS GROOVY:
+> sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
+> wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+> sudo apt-get update
+> sudo apt-get install ros-groovy-desktop-full
+> sudo rosdep init
+> rosdep update
+> sudo apt-get install python-rosinstall 
+
+#Add this in .bashrc
+
+> source /opt/ros/groovy/setup.bash
+> source ~/.bashrc
+
+#Install dependencies of icaps:
+
+> sudo apt-get install ros-groovy-arm-navigation
+> sudo apt-get install ros-groovy-arm-navigation-experimental
+> sudo apt-get install ros-groovy-pr2-kinematics
+
+#SETUP PATHS:
+#Assuming you have packages in ~/icaps-2014-code, add this line in .bashrc
+
+> export ROS_PACKAGE_PATH=~/icaps-2014-code:$ROS_PACKAGE_PATH
+> source ~/.bashrc
+
+#Issues regarding gcc with tf (ROS package)
+
+> sudo vim/opt/ros/groovy/include/tf/message_filter.h
+#at lines 55 and 58
+#add a space before 'fmt' so that the lines look like
+#ROS_DEBUG_NAMED("message_filter", "MessageFilter [target=%s]: " fmt, getTargetFramesString().c_str(), __VA_ARGS__)
+
+#Issues regarding gcc with boost
+
+> sudo vim /usr/include/boost/smart_ptr/shared_ptr.hpp
+# go to line 184
+# add 'shared_ptr(const shared_ptr&) = default;'
+
+#You should be all set now
+> roscd icaps_2014_experiments
+> rosmake
+#If it complains about some missing package, you should be able to install it with
+#sudo apt-get install ros-groovy-<package name>
+
+#Running tests
+# In the launch file (levine..... .launch in the folder launch/ of icaps)
+# planner_type:
+# 1. ara = serial weighted a* (also the default value).
+# 2. pwsa = pwsa
+# 3. pase = pa*se planner
+# eps = weight (default is 5)
+# num_threads = number of threads (default is 4)
