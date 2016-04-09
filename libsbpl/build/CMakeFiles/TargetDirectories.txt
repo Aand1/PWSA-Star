@@ -1,3 +1,0 @@
-/home/sameer/pwsa_project/libsbpl/build/CMakeFiles/sbpl.dir
-/home/sameer/pwsa_project/libsbpl/build/CMakeFiles/test_astar.dir
-/home/sameer/pwsa_project/libsbpl/build/CMakeFiles/test_pwsa.dir
