@@ -1,0 +1,1 @@
+prun.pbench speedup -baseline "./pwsa_main.opt -proc 1" -parallel "./pwsa_main.opt -proc 2,3,4,5,6,7,8" -graph test.map -D 500 -K 10000 -isGrid 1 -useEuc 1 -srcX 0 -srcY 0 -dstX 4095 -dstY 4095 && pplot.pbench speedup

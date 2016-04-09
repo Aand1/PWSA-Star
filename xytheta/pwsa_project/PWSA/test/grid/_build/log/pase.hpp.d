@@ -1,0 +1,10 @@
+_build/log/pase.p: _build/log/container.p
+_build/log/pase.ok: _build/log/container.ok
+_build/log/pase.p: _build/log/native.p
+_build/log/pase.ok: _build/log/native.ok
+_build/log/pase.p: _build/log/timing.p
+_build/log/pase.ok: _build/log/timing.ok
+_build/log/pase.p: _build/log/weighted_graph.p
+_build/log/pase.ok: _build/log/weighted_graph.ok
+_build/log/pase.p: _build/log/search_utils.p
+_build/log/pase.ok: _build/log/search_utils.ok
