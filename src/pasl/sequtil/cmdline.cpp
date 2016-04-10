@@ -53,10 +53,10 @@ static void failure()
 
 static void check_set() 
 {
-  if (global_argc == -1) {
-    printf("you must call cmdline::set(argc,argv) in your main.");
-    exit(-1);
-  }
+//  if (global_argc == -1) {
+//    printf("you must call cmdline::set(argc,argv) in your main.");
+//    exit(-1);
+//  }
 }
 
 static void check (std::string name, bool result) 
@@ -149,7 +149,9 @@ static void parse_value(type_t type, void* dest, char* arg_value)
 
 static bool parse(type_t type, std::string name, void* dest) 
 { 
-  check_set();  
+  if (global_argc == -1) {
+    return false;
+  }
   for (int a = 1; a < global_argc; a++)  
   {
     if (*(global_argv[a]) != '-') 
