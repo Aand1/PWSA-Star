@@ -1,0 +1,2475 @@
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.1960
+expanded 23878.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0003
+exectime 0.1766
+expanded 21361.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0015
+exectime 0.1640
+expanded 19778.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0063
+exectime 0.0634
+expanded 27351.3000
+pathlen 510.7748
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0068
+exectime 0.0607
+expanded 24374.7000
+pathlen 511.0232
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0080
+exectime 0.0513
+expanded 19832.9000
+pathlen 511.6477
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0105
+exectime 0.0324
+expanded 29041.4000
+pathlen 512.9003
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0085
+exectime 0.0298
+expanded 25695.7000
+pathlen 511.8559
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0089
+exectime 0.0282
+expanded 24287.5000
+pathlen 512.0659
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0092
+exectime 0.0191
+expanded 30580.4000
+pathlen 512.2418
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0153
+exectime 0.0172
+expanded 27222.0000
+pathlen 515.3430
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0174
+exectime 0.0162
+expanded 25159.2000
+pathlen 516.4116
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0147
+exectime 0.0129
+expanded 30792.6000
+pathlen 515.0317
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0119
+exectime 0.0118
+expanded 27658.3000
+pathlen 513.6274
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0128
+exectime 0.0118
+expanded 27411.9000
+pathlen 514.0560
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.1921
+expanded 23877.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0003
+exectime 0.1729
+expanded 21360.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0015
+exectime 0.1603
+expanded 19777.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.1922
+expanded 23877.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0003
+exectime 0.1727
+expanded 21360.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0015
+exectime 0.1601
+expanded 19777.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.1923
+expanded 23877.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0003
+exectime 0.1727
+expanded 21360.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0015
+exectime 0.1601
+expanded 19777.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.1922
+expanded 23877.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0003
+exectime 0.1727
+expanded 21360.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0015
+exectime 0.1601
+expanded 19777.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.1923
+expanded 23877.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0003
+exectime 0.1728
+expanded 21360.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0015
+exectime 0.1602
+expanded 19777.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo wPA*NRE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.2019
+expanded 23878.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo wPA*NRE
+w 1.1
+exptime 1e-06
+---
+deviation 1.0003
+exectime 0.1840
+expanded 21361.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo wPA*NRE
+w 1.2
+exptime 1e-06
+---
+deviation 1.0015
+exectime 0.1712
+expanded 19778.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0000
+exectime 0.1083
+expanded 23891.7000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0003
+exectime 0.1110
+expanded 21459.3000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0016
+exectime 0.1080
+expanded 19933.8000
+pathlen 508.3607
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0000
+exectime 0.1283
+expanded 23909.6000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0011
+exectime 0.1323
+expanded 21556.2000
+pathlen 508.1466
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0030
+exectime 0.1294
+expanded 20068.8000
+pathlen 509.1121
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0000
+exectime 0.1378
+expanded 23933.9000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0035
+exectime 0.1383
+expanded 21684.1000
+pathlen 509.3423
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0064
+exectime 0.1329
+expanded 20239.7000
+pathlen 510.7910
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0008
+exectime 0.2054
+expanded 23931.4000
+pathlen 507.9648
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0052
+exectime 0.1991
+expanded 21752.6000
+pathlen 510.1867
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0111
+exectime 0.1905
+expanded 20426.8000
+pathlen 513.1968
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo wPA*SE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.2114
+expanded 23880.2000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo wPA*SE
+w 1.1
+exptime 1e-06
+---
+deviation 1.0003
+exectime 0.1922
+expanded 21360.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo wPA*SE
+w 1.2
+exptime 1e-06
+---
+deviation 1.0015
+exectime 0.1776
+expanded 19777.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 0.1672
+expanded 23890.3000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0005
+exectime 0.1581
+expanded 21454.7000
+pathlen 507.7951
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0020
+exectime 0.1479
+expanded 19935.2000
+pathlen 508.5607
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 0.1934
+expanded 23915.6000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0007
+exectime 0.1807
+expanded 21541.7000
+pathlen 507.9122
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0025
+exectime 0.1684
+expanded 20044.6000
+pathlen 508.8294
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 0.2618
+expanded 23944.9000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0014
+exectime 0.2402
+expanded 21671.8000
+pathlen 508.2637
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0040
+exectime 0.2228
+expanded 20247.0000
+pathlen 509.6051
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 3.0177
+expanded 24986.3000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0020
+exectime 0.5384
+expanded 22171.9000
+pathlen 508.5566
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0057
+exectime 0.4573
+expanded 20764.0000
+pathlen 510.4452
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+exptime 1e-06
+w 1.0
+algo wPWSA*
+---
+deviation 1.0000
+exectime 0.1986
+expanded 23878.5000
+pathlen 507.5649
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+exptime 1e-06
+w 1.1
+algo wPWSA*
+---
+deviation 1.0003
+exectime 0.1795
+expanded 21361.9000
+pathlen 507.7365
+==========
+map maps/bgmaps/AR0602SR.map
+proc 1
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0015
+exectime 0.1670
+expanded 19778.2000
+pathlen 508.3163
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+exptime 1e-06
+w 1.0
+algo wPWSA*
+---
+deviation 1.0063
+exectime 0.0655
+expanded 27547.3000
+pathlen 510.7647
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0053
+exectime 0.0643
+expanded 23992.9000
+pathlen 510.2376
+==========
+map maps/bgmaps/AR0602SR.map
+proc 4
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0065
+exectime 0.0570
+expanded 22519.5000
+pathlen 510.8760
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+exptime 1e-06
+w 1.0
+algo wPWSA*
+---
+deviation 1.0087
+exectime 0.0350
+expanded 29944.4000
+pathlen 511.9973
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0064
+exectime 0.0293
+expanded 24420.1000
+pathlen 510.8175
+==========
+map maps/bgmaps/AR0602SR.map
+proc 8
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0112
+exectime 0.0282
+expanded 23557.2000
+pathlen 513.2600
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+exptime 1e-06
+w 1.0
+algo wPWSA*
+---
+deviation 1.0121
+exectime 0.0191
+expanded 29452.8000
+pathlen 513.6844
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0147
+exectime 0.0182
+expanded 27351.1000
+pathlen 515.0441
+==========
+map maps/bgmaps/AR0602SR.map
+proc 16
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0131
+exectime 0.0174
+expanded 25841.2000
+pathlen 514.1974
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+exptime 1e-06
+w 1.0
+algo wPWSA*
+---
+deviation 1.0121
+exectime 0.0136
+expanded 31208.8000
+pathlen 513.6944
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0170
+exectime 0.0128
+expanded 28348.0000
+pathlen 516.2057
+==========
+map maps/bgmaps/AR0602SR.map
+proc 32
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0135
+exectime 0.0125
+expanded 27380.9000
+pathlen 514.4216
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 1.5382
+expanded 190455.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0000
+exectime 1.5336
+expanded 189773.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0002
+exectime 1.5267
+expanded 188898.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0012
+exectime 0.3936
+expanded 192373.4000
+pathlen 3750.8100
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0016
+exectime 0.3888
+expanded 189719.2000
+pathlen 3752.2080
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0018
+exectime 0.3880
+expanded 189571.7000
+pathlen 3752.9450
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0019
+exectime 0.2065
+expanded 195195.2000
+pathlen 3753.3790
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0030
+exectime 0.2069
+expanded 195921.8000
+pathlen 3757.1870
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0036
+exectime 0.2055
+expanded 194437.1000
+pathlen 3759.5180
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0033
+exectime 0.1149
+expanded 194543.3000
+pathlen 3758.6390
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0047
+exectime 0.1139
+expanded 194495.5000
+pathlen 3763.7920
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0053
+exectime 0.1136
+expanded 194429.8000
+pathlen 3765.9240
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0042
+exectime 0.0773
+expanded 195871.6000
+pathlen 3762.0330
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0062
+exectime 0.0752
+expanded 194852.0000
+pathlen 3769.1850
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0070
+exectime 0.0743
+expanded 194556.6000
+pathlen 3772.1720
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 1.5275
+expanded 190454.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0000
+exectime 1.5227
+expanded 189772.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0002
+exectime 1.5158
+expanded 188897.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 1.5282
+expanded 190454.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0000
+exectime 1.5232
+expanded 189772.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0002
+exectime 1.5165
+expanded 188897.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 1.5283
+expanded 190454.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0000
+exectime 1.5235
+expanded 189772.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0002
+exectime 1.5164
+expanded 188897.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 1.5288
+expanded 190454.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0000
+exectime 1.5239
+expanded 189772.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0002
+exectime 1.5169
+expanded 188897.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 1.5292
+expanded 190454.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0000
+exectime 1.5243
+expanded 189772.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0002
+exectime 1.5175
+expanded 188897.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo wPA*NRE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 1.5746
+expanded 190455.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo wPA*NRE
+w 1.1
+exptime 1e-06
+---
+deviation 1.0000
+exectime 1.5837
+expanded 189773.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo wPA*NRE
+w 1.2
+exptime 1e-06
+---
+deviation 1.0002
+exectime 1.5782
+expanded 188898.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0000
+exectime 0.8086
+expanded 190461.5000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0002
+exectime 0.8302
+expanded 189810.2000
+pathlen 3746.9590
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0004
+exectime 0.8493
+expanded 188956.7000
+pathlen 3747.7960
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0003
+exectime 0.9033
+expanded 190497.2000
+pathlen 3747.2650
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0012
+exectime 0.9365
+expanded 189857.9000
+pathlen 3750.5270
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0019
+exectime 0.9424
+expanded 189024.6000
+pathlen 3753.3430
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0024
+exectime 0.9835
+expanded 190554.6000
+pathlen 3754.9770
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0039
+exectime 1.0070
+expanded 189953.3000
+pathlen 3760.8930
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0059
+exectime 1.0095
+expanded 189237.9000
+pathlen 3768.1290
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0078
+exectime 1.4988
+expanded 190652.8000
+pathlen 3775.2450
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0091
+exectime 1.5376
+expanded 190019.6000
+pathlen 3780.0710
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0104
+exectime 1.5077
+expanded 189289.6000
+pathlen 3785.0560
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo wPA*SE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 1.6387
+expanded 190456.7000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo wPA*SE
+w 1.1
+exptime 1e-06
+---
+deviation 1.0000
+exectime 1.6419
+expanded 189772.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo wPA*SE
+w 1.2
+exptime 1e-06
+---
+deviation 1.0002
+exectime 1.6370
+expanded 188897.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 1.2472
+expanded 190462.8000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0000
+exectime 1.2586
+expanded 189789.8000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0003
+exectime 1.2608
+expanded 188926.1000
+pathlen 3747.1330
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 1.4556
+expanded 190471.4000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0000
+exectime 1.4481
+expanded 189815.6000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0001
+exectime 1.4312
+expanded 188953.7000
+pathlen 3746.6370
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 1.9816
+expanded 190509.8000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0000
+exectime 1.9495
+expanded 189860.5000
+pathlen 3746.2470
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0006
+exectime 1.9332
+expanded 189024.6000
+pathlen 3748.3760
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.0
+algo wPA*SE
+---
+deviation 1.0000
+exectime 27.9499
+expanded 191482.8000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0003
+exectime 23.1153
+expanded 190776.9000
+pathlen 3747.3580
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0014
+exectime 21.8817
+expanded 190310.1000
+pathlen 3751.2340
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+exptime 1e-06
+w 1.0
+algo wPWSA*
+---
+deviation 1.0000
+exectime 1.5476
+expanded 190455.0000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+exptime 1e-06
+w 1.1
+algo wPWSA*
+---
+deviation 1.0000
+exectime 1.5435
+expanded 189773.1000
+pathlen 3746.1300
+==========
+map maps/mazes/maze512-4-0.map
+proc 1
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0002
+exectime 1.5367
+expanded 188898.3000
+pathlen 3746.8760
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0011
+exectime 0.4028
+expanded 195226.1000
+pathlen 3750.1560
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0015
+exectime 0.3984
+expanded 192700.4000
+pathlen 3751.6980
+==========
+map maps/mazes/maze512-4-0.map
+proc 4
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0021
+exectime 0.3927
+expanded 190261.0000
+pathlen 3753.8860
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0019
+exectime 0.2090
+expanded 195306.9000
+pathlen 3753.4000
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0027
+exectime 0.2082
+expanded 194762.6000
+pathlen 3756.1880
+==========
+map maps/mazes/maze512-4-0.map
+proc 8
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0035
+exectime 0.2095
+expanded 196172.4000
+pathlen 3759.2080
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0034
+exectime 0.1172
+expanded 194951.7000
+pathlen 3758.8200
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0047
+exectime 0.1161
+expanded 194834.5000
+pathlen 3763.7360
+==========
+map maps/mazes/maze512-4-0.map
+proc 16
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0055
+exectime 0.1154
+expanded 194157.0000
+pathlen 3766.5470
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0043
+exectime 0.0788
+expanded 195372.3000
+pathlen 3762.4190
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0051
+exectime 0.0772
+expanded 195159.6000
+pathlen 3765.3260
+==========
+map maps/mazes/maze512-4-0.map
+proc 32
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0067
+exectime 0.0762
+expanded 194162.3000
+pathlen 3771.1200
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.4474
+expanded 54106.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0042
+exectime 0.1667
+expanded 19374.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0087
+exectime 0.0580
+expanded 6017.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0048
+exectime 0.1495
+expanded 60350.0000
+pathlen 638.5546
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0067
+exectime 0.0615
+expanded 21760.5000
+pathlen 639.7819
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0086
+exectime 0.0357
+expanded 11886.4000
+pathlen 640.9838
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0112
+exectime 0.0780
+expanded 73283.0000
+pathlen 642.6440
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0122
+exectime 0.0332
+expanded 27898.8000
+pathlen 643.2949
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0100
+exectime 0.0230
+expanded 17765.8000
+pathlen 641.8765
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0133
+exectime 0.0447
+expanded 80836.3000
+pathlen 643.9536
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0086
+exectime 0.0245
+expanded 41202.1000
+pathlen 640.9594
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0271
+exectime 0.0189
+expanded 29888.4000
+pathlen 652.7558
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo simple_wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0079
+exectime 0.0284
+expanded 93175.8000
+pathlen 640.5676
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo simple_wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0318
+exectime 0.0175
+expanded 50792.9000
+pathlen 655.7205
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo simple_wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0159
+exectime 0.0146
+expanded 39426.1000
+pathlen 645.6146
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo wA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.4382
+expanded 54105.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0042
+exectime 0.1585
+expanded 19373.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0087
+exectime 0.0502
+expanded 6016.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.4378
+expanded 54105.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0042
+exectime 0.1583
+expanded 19373.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0087
+exectime 0.0501
+expanded 6016.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.4378
+expanded 54105.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0042
+exectime 0.1586
+expanded 19373.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0087
+exectime 0.0501
+expanded 6016.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.4380
+expanded 54105.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0042
+exectime 0.1583
+expanded 19373.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0087
+exectime 0.0501
+expanded 6016.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+exptime 1e-06
+w 1.0
+algo wA*
+---
+deviation 1.0000
+exectime 0.4381
+expanded 54105.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+exptime 1e-06
+w 1.1
+algo wA*
+---
+deviation 1.0042
+exectime 0.1584
+expanded 19373.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+exptime 1e-06
+w 1.2
+algo wA*
+---
+deviation 1.0087
+exectime 0.0502
+expanded 6016.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+exptime 1e-06
+w 1.0
+algo wPA*NRE
+---
+deviation 1.0000
+exectime 0.4693
+expanded 54106.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0042
+exectime 0.1752
+expanded 19374.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0087
+exectime 0.0601
+expanded 6017.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo wPA*NRE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.3031
+expanded 54108.1000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0042
+exectime 0.1178
+expanded 19671.0000
+pathlen 638.1618
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0089
+exectime 0.0415
+expanded 6711.4000
+pathlen 641.1399
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo wPA*NRE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.3500
+expanded 54108.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0044
+exectime 0.1388
+expanded 19799.4000
+pathlen 638.3133
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0094
+exectime 0.0509
+expanded 7156.8000
+pathlen 641.4914
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo wPA*NRE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.3630
+expanded 54114.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0050
+exectime 0.1443
+expanded 20143.3000
+pathlen 638.6889
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0114
+exectime 0.0537
+expanded 7538.5000
+pathlen 642.7801
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo wPA*NRE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.5043
+expanded 54060.7000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+exptime 1e-06
+w 1.1
+algo wPA*NRE
+---
+deviation 1.0059
+exectime 0.2079
+expanded 20624.3000
+pathlen 639.2546
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+exptime 1e-06
+w 1.2
+algo wPA*NRE
+---
+deviation 1.0125
+exectime 0.0837
+expanded 8131.7000
+pathlen 643.4748
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo wPA*SE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.4914
+expanded 54123.5000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo wPA*SE
+w 1.1
+exptime 1e-06
+---
+deviation 1.0042
+exectime 0.1777
+expanded 19373.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo wPA*SE
+w 1.2
+exptime 1e-06
+---
+deviation 1.0087
+exectime 0.0560
+expanded 6016.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo wPA*SE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.4185
+expanded 54124.5000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0042
+exectime 0.1528
+expanded 19609.8000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0085
+exectime 0.0498
+expanded 6604.2000
+pathlen 640.8913
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo wPA*SE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.4616
+expanded 54126.1000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0044
+exectime 0.1713
+expanded 19800.7000
+pathlen 638.3132
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0096
+exectime 0.0587
+expanded 6945.2000
+pathlen 641.6085
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo wPA*SE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.6047
+expanded 54131.6000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0042
+exectime 0.2289
+expanded 19992.2000
+pathlen 638.1960
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0098
+exectime 0.0847
+expanded 7609.5000
+pathlen 641.7316
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo wPA*SE
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 18.7746
+expanded 56119.5000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+exptime 1e-06
+w 1.1
+algo wPA*SE
+---
+deviation 1.0049
+exectime 0.5371
+expanded 20729.6000
+pathlen 638.6061
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+exptime 1e-06
+w 1.2
+algo wPA*SE
+---
+deviation 1.0097
+exectime 0.1427
+expanded 8285.3000
+pathlen 641.6488
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0000
+exectime 0.4552
+expanded 54106.8000
+pathlen 635.5168
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0042
+exectime 0.1735
+expanded 19374.1000
+pathlen 638.1961
+==========
+map maps/sc1/Expedition.map.min-2
+proc 1
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0087
+exectime 0.0643
+expanded 6017.1000
+pathlen 641.0227
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0025
+exectime 0.1457
+expanded 58724.8000
+pathlen 637.1003
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0076
+exectime 0.0665
+expanded 22557.0000
+pathlen 640.3174
+==========
+map maps/sc1/Expedition.map.min-2
+proc 4
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0094
+exectime 0.0383
+expanded 11952.9000
+pathlen 641.5210
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0154
+exectime 0.0834
+expanded 75424.6000
+pathlen 645.3256
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0088
+exectime 0.0347
+expanded 27475.6000
+pathlen 641.0842
+==========
+map maps/sc1/Expedition.map.min-2
+proc 8
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0091
+exectime 0.0260
+expanded 19489.3000
+pathlen 641.3186
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0383
+exectime 0.0465
+expanded 82372.7000
+pathlen 659.9137
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0234
+exectime 0.0233
+expanded 37028.6000
+pathlen 650.4056
+==========
+map maps/sc1/Expedition.map.min-2
+proc 16
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0115
+exectime 0.0192
+expanded 29038.2000
+pathlen 642.8298
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo wPWSA*
+w 1.0
+exptime 1e-06
+---
+deviation 1.0376
+exectime 0.0291
+expanded 91970.5000
+pathlen 659.4410
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo wPWSA*
+w 1.1
+exptime 1e-06
+---
+deviation 1.0161
+exectime 0.0168
+expanded 46184.6000
+pathlen 645.7570
+==========
+map maps/sc1/Expedition.map.min-2
+proc 32
+algo wPWSA*
+w 1.2
+exptime 1e-06
+---
+deviation 1.0159
+exectime 0.0138
+expanded 34790.8000
+pathlen 645.6187
+==========
